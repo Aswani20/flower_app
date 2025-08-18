@@ -1,3 +1,4 @@
+import 'package:flower_app/project_layers/domain_layer/entities/sign_up_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'sign_up_response.g.dart';
@@ -64,4 +65,14 @@ class UserDto {
   Map<String, dynamic> toJson() {
     return _$UserDtoToJson(this);
   }
+
+  SignUpEntity toSignUpEntity() => SignUpEntity(
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    gender: gender,
+    phone: phone,
+    photo: photo,
+    id: id,
+  );
 }

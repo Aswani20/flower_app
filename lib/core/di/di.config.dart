@@ -17,6 +17,17 @@ import 'package:shared_preferences/shared_preferences.dart' as _i460;
 
 import '../../project_layers/api_layer/client/api_client/api_client.dart'
     as _i423;
+import '../../project_layers/api_layer/data_sources_impl/sign_up_remote_data_source_impl.dart'
+    as _i719;
+import '../../project_layers/data_layer/data_source/sign_up_remote_data_source.dart'
+    as _i772;
+import '../../project_layers/data_layer/repos_impl/sign_up_repo_impl.dart'
+    as _i631;
+import '../../project_layers/domain_layer/repos/sign_up_repo.dart' as _i948;
+import '../../project_layers/domain_layer/usecase/sign_up_use_case.dart'
+    as _i1065;
+import '../../project_layers/presentation_layer/sign_up/cubit/sign_up_cubit.dart'
+    as _i987;
 import 'modules/dio_module.dart' as _i983;
 import 'modules/shared_preferences_module.dart' as _i813;
 
@@ -38,6 +49,15 @@ extension GetItInjectableX on _i174.GetIt {
       () => dioModule.providePrettyDioLogger(),
     );
     gh.singleton<_i423.ApiClient>(() => _i423.ApiClient(gh<_i361.Dio>()));
+    gh.factory<_i772.SignUpRemoteDataSource>(
+      () => _i719.SignUpRemoteDataSourceImpl(gh<_i423.ApiClient>()),
+    );
+    gh.factory<_i987.SignUpCubit>(
+      () => _i987.SignUpCubit(gh<_i1065.SignUpUseCase>()),
+    );
+    gh.factory<_i948.SignUpRepo>(
+      () => _i631.SignUpRepoImpl(gh<_i772.SignUpRemoteDataSource>()),
+    );
     return this;
   }
 }
