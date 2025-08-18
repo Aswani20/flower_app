@@ -4,7 +4,7 @@ import 'core/route/app_routes.dart';
 import 'core/route/routes.dart';
 import 'core/theme/app_theme.dart';
 
-void main(){
+void main() {
   runApp(MyApp());
 }
 
@@ -21,8 +21,8 @@ class MyApp extends StatelessWidget {
       locale: Locale("en"),
       theme: AppTheme.lightTheme,
       onGenerateRoute: Routes.generateRoute,
-      //initialRoute: ,
-      routes: {},
+      initialRoute: AppRoutes.signUpScreen,
+      //  routes: {},
     );
   }
 }

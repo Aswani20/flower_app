@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'app_colors.dart';
 
-abstract class AppTheme {static ThemeData getTheme({required ColorScheme colorScheme, required Color textFormFieldBorderColor,}) {
+abstract class AppTheme {
+  static ThemeData getTheme({
+    required ColorScheme colorScheme,
+    required Color textFormFieldBorderColor,
+  }) {
     return ThemeData(
       colorScheme: colorScheme,
       appBarTheme: AppBarTheme(

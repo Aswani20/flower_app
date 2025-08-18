@@ -15,7 +15,8 @@ import 'package:injectable/injectable.dart' as _i526;
 import 'package:pretty_dio_logger/pretty_dio_logger.dart' as _i528;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
 
-import '../../project_layers/api_layer/api_client/api_client.dart' as _i778;
+import '../../project_layers/api_layer/client/api_client/api_client.dart'
+    as _i423;
 import 'modules/dio_module.dart' as _i983;
 import 'modules/shared_preferences_module.dart' as _i813;
 
@@ -36,7 +37,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.singleton<_i528.PrettyDioLogger>(
       () => dioModule.providePrettyDioLogger(),
     );
-    gh.singleton<_i778.ApiClient>(() => _i778.ApiClient(gh<_i361.Dio>()));
+    gh.singleton<_i423.ApiClient>(() => _i423.ApiClient(gh<_i361.Dio>()));
     return this;
   }
 }
