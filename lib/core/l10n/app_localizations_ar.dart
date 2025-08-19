@@ -171,4 +171,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get browse_by_subject => 'البحث بالموضوع';
+
+  @override
+  String get home => 'الرئيسية';
+
+  @override
+  String get categories => 'الفئات';
+
+  @override
+  String get cart => 'عربة التسوق';
 }
