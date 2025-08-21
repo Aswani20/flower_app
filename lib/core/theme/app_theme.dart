@@ -77,7 +77,7 @@ abstract class AppTheme {static ThemeData getTheme({required ColorScheme colorSc
       error: AppColors.red,
       onError: AppColors.white,
       surface: AppColors.white,
-      onSurface: AppColors.pink,
+      onSurface: AppColors.black,
     ),
     textFormFieldBorderColor: AppColors.grey,
   );

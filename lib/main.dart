@@ -1,10 +1,14 @@
+import 'package:flower_app/project_layers/presentaion_layer/login_view.dart';
 import 'package:flutter/material.dart';
+import 'core/di/di.dart';
 import 'core/l10n/translation/app_localizations.dart';
 import 'core/route/app_routes.dart';
 import 'core/route/routes.dart';
 import 'core/theme/app_theme.dart';
 
-void main(){
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await configureDependencies();
   runApp(MyApp());
 }
 
@@ -21,8 +25,8 @@ class MyApp extends StatelessWidget {
       locale: Locale("en"),
       theme: AppTheme.lightTheme,
       onGenerateRoute: Routes.generateRoute,
-      //initialRoute: ,
-      routes: {},
+      initialRoute: AppRoutes.loginScreen,
+      routes: {AppRoutes.loginScreen: (context) => SignInView()},
     );
   }
 }

@@ -29,6 +29,8 @@ dependencies:
   flutter_bloc: ^9.1.1
   fluttertoast: ^8.2.12
   connectivity_plus: ^6.1.4
+  mockito:
+
 
 dev_dependencies:
   flutter_test:

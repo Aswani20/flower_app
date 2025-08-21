@@ -3,7 +3,11 @@ import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class DialogUtils {
-  static showLoading({required BuildContext context, required String loadingMessage, bool isDismissible = false,}) {
+  static showLoading({
+    required BuildContext context,
+    required String loadingMessage,
+    bool isDismissible = false,
+  }) {
     showDialog(
       barrierDismissible: isDismissible,
       context: context,
@@ -37,7 +41,16 @@ class DialogUtils {
     Navigator.pop(context);
   }
 
-  static showMessage({required BuildContext context, String? title, bool isDismissible = true, required String content, String? posActions, Function(BuildContext)? posFunction, String? negActions, Function(BuildContext)? negFunction,}) {
+  static showMessage({
+    required BuildContext context,
+    String? title,
+    bool isDismissible = true,
+    required String content,
+    String? posActions,
+    Function(BuildContext)? posFunction,
+    String? negActions,
+    Function(BuildContext)? negFunction,
+  }) {
     List<Widget> actions = [];
     if (posActions != null) {
       actions.add(
@@ -91,16 +104,15 @@ class DialogUtils {
             side: BorderSide(color: AppColors.pink, width: 2),
           ),
           elevation: 0,
-          title:
-          title != null
+          title: title != null
               ? Text(
-            title ?? "",
-            textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.titleSmall?.copyWith(
-              color: AppColors.black,
-              fontWeight: FontWeight.bold,
-            ),
-          )
+                  title ?? "",
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                    color: AppColors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )
               : null,
           content: Text(
             content,
