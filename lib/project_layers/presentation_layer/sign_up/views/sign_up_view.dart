@@ -1,3 +1,5 @@
+import 'package:flower_app/core/extensions/project_extensions.dart';
+import 'package:flower_app/project_layers/presentation_layer/sign_up/widgets/sign_up_body.dart';
 import 'package:flutter/material.dart';
 
 class SignUpView extends StatelessWidget {
@@ -6,7 +8,8 @@ class SignUpView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(child: Center(child: Text('sign up'))),
+      appBar: AppBar(title: Text(context.l10n.signUp)),
+      body: SafeArea(child: SignUpBody()),
     );
   }
 }
