@@ -29,7 +29,6 @@ dependencies:
   flutter_bloc: ^9.1.1
   fluttertoast: ^8.2.12
   connectivity_plus: ^6.1.4
-  top_snackbar_flutter: ^3.3.0
 
 dev_dependencies:
   flutter_test:
@@ -40,6 +39,9 @@ dev_dependencies:
   json_serializable: ^6.9.5
   flutter_lints: ^5.0.0
   injectable_generator:
+  mockito: ^5.4.0
+  test: ^1.25.15
+  bloc_test: ^10.0.0
 
 flutter:
   generate: true

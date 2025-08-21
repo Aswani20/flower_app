@@ -11,9 +11,26 @@ class AppRegex {
     ).hasMatch(password);
   }
 
+  static bool isConfirmPasswordValid(
+    String password,
+    String confirmPassword,
+  ) {
+    bool isPasswordFormatValid = RegExp(
+      r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$",
+    ).hasMatch(password);
+
+    if (confirmPassword.isEmpty) {
+      return false;
+    }
+
+    bool doPasswordsMatch = (password == confirmPassword);
+
+    return isPasswordFormatValid && doPasswordsMatch;
+  }
+
   static bool isPhoneNumberValid(String phoneNumber) {
     return RegExp(
-      r'^(010|011|012|015)[0-9]{8}$',
+      r'^(\+201|01)[0125][0-9]{8}$',
     ).hasMatch(phoneNumber);
   }
 
@@ -30,7 +47,9 @@ class AppRegex {
   }
 
   static bool hasSpecialCharacter(String password) {
-    return RegExp(r'^(?=.*?[#?!@$%^&*-])').hasMatch(password);
+    return RegExp(
+      r'^(?=.*?[#?!@$%^&*-])',
+    ).hasMatch(password);
   }
 
   static bool hasMinLength(String password) {

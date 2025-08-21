@@ -8,7 +8,8 @@ import 'package:flower_app/project_layers/domain_layer/entities/sign_up_entity.d
 import 'package:injectable/injectable.dart';
 
 @Injectable(as: SignUpRemoteDataSource)
-class SignUpRemoteDataSourceImpl implements SignUpRemoteDataSource {
+class SignUpRemoteDataSourceImpl
+    implements SignUpRemoteDataSource {
   final ApiClient apiClient;
 
   SignUpRemoteDataSourceImpl(this.apiClient);
@@ -17,16 +18,25 @@ class SignUpRemoteDataSourceImpl implements SignUpRemoteDataSource {
     SignUpRequestBody signUpRequest,
   ) async {
     try {
-      SignUpResponse signUpResponse = await apiClient.signUp(signUpRequest);
-      return ApiSuccessResult(signUpResponse.user!.toSignUpEntity());
+      SignUpResponse signUpResponse = await apiClient
+          .signUp(signUpRequest);
+      return ApiSuccessResult(
+        signUpResponse.user!.toSignUpEntity(),
+      );
     } catch (e) {
       if (e is DioException) {
         final responseData = e.response?.data;
-        if (responseData != null && responseData is Map<String, dynamic>) {
-          final message = responseData["message"] ?? "Unknown error";
-          return ApiErrorResult<SignUpEntity>(message.toString());
+        if (responseData != null &&
+            responseData is Map<String, dynamic>) {
+          final message =
+              responseData["message"] ?? "Unknown error";
+          return ApiErrorResult<SignUpEntity>(
+            message.toString(),
+          );
         }
-        return ApiErrorResult<SignUpEntity>(e.message ?? e.toString());
+        return ApiErrorResult<SignUpEntity>(
+          e.message ?? e.toString(),
+        );
       }
       return ApiErrorResult<SignUpEntity>(e.toString());
     }

@@ -14,12 +14,44 @@ abstract class AppTheme {
         foregroundColor: AppColors.black,
         elevation: 0,
       ),
-
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        selectedItemColor: AppColors.pink,
-        unselectedItemColor: AppColors.grey,
-        elevation: 0,
+      textTheme: TextTheme(
+        titleLarge: TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+          color: AppColors.black,
+        ),
+        titleMedium: TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+          color: AppColors.black,
+        ),
+        titleSmall: TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.bold,
+          color: AppColors.black,
+        ),
+        bodyLarge: TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.normal,
+          color: AppColors.black,
+        ),
+        bodyMedium: TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.normal,
+          color: AppColors.black,
+        ),
+        bodySmall: TextStyle(
+          fontSize: 12,
+          fontWeight: FontWeight.normal,
+          color: AppColors.black,
+        ),
       ),
+      bottomNavigationBarTheme:
+          BottomNavigationBarThemeData(
+            selectedItemColor: AppColors.pink,
+            unselectedItemColor: AppColors.grey,
+            elevation: 0,
+          ),
 
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
@@ -37,22 +69,36 @@ abstract class AppTheme {
       inputDecorationTheme: InputDecorationTheme(
         fillColor: AppColors.white,
         filled: true,
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(4)),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(4),
+        ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4),
-          borderSide: BorderSide(color: textFormFieldBorderColor, width: 1),
+          borderSide: BorderSide(
+            color: textFormFieldBorderColor,
+            width: 1,
+          ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4),
-          borderSide: BorderSide(color: textFormFieldBorderColor, width: 1),
+          borderSide: BorderSide(
+            color: textFormFieldBorderColor,
+            width: 1,
+          ),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4),
-          borderSide: BorderSide(color: colorScheme.error, width: 1),
+          borderSide: BorderSide(
+            color: colorScheme.error,
+            width: 1,
+          ),
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4),
-          borderSide: BorderSide(color: colorScheme.error, width: 1),
+          borderSide: BorderSide(
+            color: colorScheme.error,
+            width: 1,
+          ),
         ),
       ),
 

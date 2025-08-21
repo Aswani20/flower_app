@@ -5,9 +5,9 @@ import 'core/route/app_routes.dart';
 import 'core/route/routes.dart';
 import 'core/theme/app_theme.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  configureDependencies();
+  await configureDependencies();
   runApp(MyApp());
 }
 
@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "flower_app",
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates:
+          AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       locale: Locale("en"),
       theme: AppTheme.lightTheme,

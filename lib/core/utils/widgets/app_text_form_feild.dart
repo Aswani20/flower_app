@@ -1,3 +1,4 @@
+import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class AppTextFormFeild extends StatelessWidget {
@@ -36,7 +37,10 @@ class AppTextFormFeild extends StatelessWidget {
         isDense: true,
         contentPadding:
             contentPadding ??
-            EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+            EdgeInsets.symmetric(
+              horizontal: 20,
+              vertical: 18,
+            ),
         focusedBorder:
             focusedBorder ??
             OutlineInputBorder(
@@ -50,20 +54,28 @@ class AppTextFormFeild extends StatelessWidget {
             enabledBorder ??
             OutlineInputBorder(
               borderSide: const BorderSide(
-                //   color: AppColors.lighterGray,
+                color: AppColors.grey,
                 width: 1.3,
               ),
               borderRadius: BorderRadius.circular(16.0),
             ),
         errorBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.red, width: 1.3),
+          borderSide: const BorderSide(
+            color: Colors.red,
+            width: 1.3,
+          ),
           borderRadius: BorderRadius.circular(16.0),
         ),
         focusedErrorBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.red, width: 1.3),
+          borderSide: const BorderSide(
+            color: Colors.red,
+            width: 1.3,
+          ),
           borderRadius: BorderRadius.circular(16.0),
         ),
-        hintStyle: hintStyle ?? null,
+        hintStyle:
+            hintStyle ??
+            const TextStyle(color: AppColors.grey),
         hintText: hintText,
         suffixIcon: suffixIcon,
         fillColor: backgroundColor ?? null,

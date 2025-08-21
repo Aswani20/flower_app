@@ -1,9 +1,12 @@
+import 'package:flower_app/core/di/di.dart';
 import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/gen/assets.gen.dart';
+import 'package:flower_app/project_layers/presentation_layer/sign_up/cubit/sign_up_cubit.dart';
 import 'package:flower_app/project_layers/presentation_layer/sign_up/views/sign_up_view.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'app_routes.dart';
 
 abstract class Routes {
@@ -11,7 +14,12 @@ abstract class Routes {
     final url = Uri.parse(settings.name ?? "/");
     switch (url.path) {
       case AppRoutes.signUpScreen:
-        return MaterialPageRoute(builder: (_) => SignUpView());
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => getIt.get<SignUpCubit>(),
+            child: SignUpView(),
+          ),
+        );
 
       default:
         return MaterialPageRoute(builder: (context) => NotFoundScreen());

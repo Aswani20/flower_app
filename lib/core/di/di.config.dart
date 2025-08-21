@@ -52,11 +52,14 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i772.SignUpRemoteDataSource>(
       () => _i719.SignUpRemoteDataSourceImpl(gh<_i423.ApiClient>()),
     );
-    gh.factory<_i987.SignUpCubit>(
-      () => _i987.SignUpCubit(gh<_i1065.SignUpUseCase>()),
-    );
     gh.factory<_i948.SignUpRepo>(
       () => _i631.SignUpRepoImpl(gh<_i772.SignUpRemoteDataSource>()),
+    );
+    gh.factory<_i1065.SignUpUseCase>(
+      () => _i1065.SignUpUseCase(gh<_i948.SignUpRepo>()),
+    );
+    gh.factory<_i987.SignUpCubit>(
+      () => _i987.SignUpCubit(gh<_i1065.SignUpUseCase>()),
     );
     return this;
   }
