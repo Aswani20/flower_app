@@ -1,6 +1,7 @@
 import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/gen/assets.gen.dart';
+import 'package:flower_app/project_layers/presentation_layer/authentication/forget_password/forget_password_view.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'app_routes.dart';
@@ -9,6 +10,8 @@ abstract class Routes {
   static Route generateRoute(RouteSettings settings) {
     final url = Uri.parse(settings.name ?? "/");
     switch (url.path) {
+      case AppRoutes.forgetPasswordScreen:
+        return MaterialPageRoute(builder: (context) => ForgetPasswordView());
       default:
         return MaterialPageRoute(builder: (context) => NotFoundScreen());
     }
