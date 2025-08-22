@@ -1,10 +1,10 @@
-
-import 'package:flower_app/core/l10n/translation/app_localizations.dart';
+import 'package:flower_app/core/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 extension BuildContextExtension on BuildContext {
   double get width => MediaQuery.sizeOf(this).width;
   double get height => MediaQuery.sizeOf(this).height;
+
   /// width usage -> context.width
   /// height usage -> context.height
 
@@ -13,7 +13,9 @@ extension BuildContextExtension on BuildContext {
   TextTheme get textTheme => theme.textTheme;
   ColorScheme get colorScheme => theme.colorScheme;
   void closeKeyboard() => FocusScope.of(this).unfocus();
-  bool get hasParentRoute => ModalRoute.of(this)?.impliesAppBarDismissal ?? false;
+  bool get hasParentRoute =>
+      ModalRoute.of(this)?.impliesAppBarDismissal ?? false;
+
   /// Usage -> context.<extension name>
 }
 

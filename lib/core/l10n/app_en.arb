@@ -50,5 +50,8 @@
   "profile": "Profile",
   "survey": "Survey",
   "search": "Search",
-  "browse_by_subject": "Browse by subject"
+  "browse_by_subject": "Browse by subject",
+  "home": "Home",
+  "categories": "Categories",
+  "cart": "Cart"
 }
