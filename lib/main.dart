@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'core/di/di.dart';
 import 'core/l10n/translation/app_localizations.dart';
-import 'core/route/app_routes.dart';
 import 'core/route/routes.dart';
 import 'core/theme/app_theme.dart';
 
-void main(){
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await configureDependencies();
   runApp(MyApp());
 }
 
