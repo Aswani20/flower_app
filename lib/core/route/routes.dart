@@ -25,6 +25,7 @@ abstract class Routes {
         return MaterialPageRoute(builder: (context) => NotFoundScreen());
     }
   }
+
 }
 
 class NotFoundScreen extends StatelessWidget {

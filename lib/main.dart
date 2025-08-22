@@ -1,6 +1,5 @@
 import 'package:flower_app/core/di/di.dart';
 import 'package:flutter/material.dart';
-import 'core/l10n/translation/app_localizations.dart';
 import 'core/route/app_routes.dart';
 import 'core/route/routes.dart';
 import 'core/theme/app_theme.dart';
@@ -26,7 +25,6 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       onGenerateRoute: Routes.generateRoute,
       initialRoute: AppRoutes.signUpScreen,
-      //  routes: {},
     );
   }
 }
