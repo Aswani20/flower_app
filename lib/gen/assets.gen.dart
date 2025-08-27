@@ -1,4 +1,4 @@
-// dart format width=80
+// dart format width=58
 
 /// GENERATED CODE - DO NOT MODIFY BY HAND
 /// *****************************************************
@@ -15,23 +15,29 @@ class $AssetsIconsGen {
   const $AssetsIconsGen();
 
   /// File path: assets/icons/Alarm_clock_icon.png
-  AssetGenImage get alarmClockIcon =>
-      const AssetGenImage('assets/icons/Alarm_clock_icon.png');
+  AssetGenImage get alarmClockIcon => const AssetGenImage(
+    'assets/icons/Alarm_clock_icon.png',
+  );
 
   /// File path: assets/icons/add_icon.png
-  AssetGenImage get addIcon => const AssetGenImage('assets/icons/add_icon.png');
+  AssetGenImage get addIcon =>
+      const AssetGenImage('assets/icons/add_icon.png');
 
   /// File path: assets/icons/address_icon.png
-  AssetGenImage get addressIcon =>
-      const AssetGenImage('assets/icons/address_icon.png');
+  AssetGenImage get addressIcon => const AssetGenImage(
+    'assets/icons/address_icon.png',
+  );
 
   /// File path: assets/icons/arrow_back_icon.png
-  AssetGenImage get arrowBackIcon =>
-      const AssetGenImage('assets/icons/arrow_back_icon.png');
+  AssetGenImage get arrowBackIcon => const AssetGenImage(
+    'assets/icons/arrow_back_icon.png',
+  );
 
   /// File path: assets/icons/britain_flag_icon.png
   AssetGenImage get britainFlagIcon =>
-      const AssetGenImage('assets/icons/britain_flag_icon.png');
+      const AssetGenImage(
+        'assets/icons/britain_flag_icon.png',
+      );
 
   /// File path: assets/icons/call_icon.png
   AssetGenImage get callIcon =>
@@ -41,9 +47,14 @@ class $AssetsIconsGen {
   AssetGenImage get cancelIcon =>
       const AssetGenImage('assets/icons/cancel_icon.png');
 
+  /// File path: assets/icons/cart_icon.png
+  AssetGenImage get cartIcon =>
+      const AssetGenImage('assets/icons/cart_icon.png');
+
   /// File path: assets/icons/category_icon.png
-  AssetGenImage get categoryIcon =>
-      const AssetGenImage('assets/icons/category_icon.png');
+  AssetGenImage get categoryIcon => const AssetGenImage(
+    'assets/icons/category_icon.png',
+  );
 
   /// File path: assets/icons/chat_icon.png
   AssetGenImage get chatIcon =>
@@ -51,15 +62,18 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/check_circle_icon.png
   AssetGenImage get checkCircleIcon =>
-      const AssetGenImage('assets/icons/check_circle_icon.png');
+      const AssetGenImage(
+        'assets/icons/check_circle_icon.png',
+      );
 
   /// File path: assets/icons/check_icon.png
   AssetGenImage get checkIcon =>
       const AssetGenImage('assets/icons/check_icon.png');
 
   /// File path: assets/icons/check_list_icon.png
-  AssetGenImage get checkListIcon =>
-      const AssetGenImage('assets/icons/check_list_icon.png');
+  AssetGenImage get checkListIcon => const AssetGenImage(
+    'assets/icons/check_list_icon.png',
+  );
 
   /// File path: assets/icons/delete_icon.png
   AssetGenImage get deleteIcon =>
@@ -67,55 +81,67 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/delivery_boy_icon.png
   AssetGenImage get deliveryBoyIcon =>
-      const AssetGenImage('assets/icons/delivery_boy_icon.png');
+      const AssetGenImage(
+        'assets/icons/delivery_boy_icon.png',
+      );
 
   /// File path: assets/icons/diamond_icon.png
-  AssetGenImage get diamondIcon =>
-      const AssetGenImage('assets/icons/diamond_icon.png');
+  AssetGenImage get diamondIcon => const AssetGenImage(
+    'assets/icons/diamond_icon.png',
+  );
 
   /// File path: assets/icons/egypt_flag_icon.png
-  AssetGenImage get egyptFlagIcon =>
-      const AssetGenImage('assets/icons/egypt_flag_icon.png');
+  AssetGenImage get egyptFlagIcon => const AssetGenImage(
+    'assets/icons/egypt_flag_icon.png',
+  );
 
   /// File path: assets/icons/error_icon.png
   AssetGenImage get errorIcon =>
       const AssetGenImage('assets/icons/error_icon.png');
 
   /// File path: assets/icons/fact_check_icon.png
-  AssetGenImage get factCheckIcon =>
-      const AssetGenImage('assets/icons/fact_check_icon.png');
+  AssetGenImage get factCheckIcon => const AssetGenImage(
+    'assets/icons/fact_check_icon.png',
+  );
 
   /// File path: assets/icons/france_flag_icon.png
-  AssetGenImage get franceFlagIcon =>
-      const AssetGenImage('assets/icons/france_flag_icon.png');
+  AssetGenImage get franceFlagIcon => const AssetGenImage(
+    'assets/icons/france_flag_icon.png',
+  );
 
   /// File path: assets/icons/germany_flag_icon.png
   AssetGenImage get germanyFlagIcon =>
-      const AssetGenImage('assets/icons/germany_flag_icon.png');
+      const AssetGenImage(
+        'assets/icons/germany_flag_icon.png',
+      );
 
   /// File path: assets/icons/gift_icon.png
   AssetGenImage get giftIcon =>
       const AssetGenImage('assets/icons/gift_icon.png');
 
   /// File path: assets/icons/heart-eyes_icon.png
-  AssetGenImage get heartEyesIcon =>
-      const AssetGenImage('assets/icons/heart-eyes_icon.png');
+  AssetGenImage get heartEyesIcon => const AssetGenImage(
+    'assets/icons/heart-eyes_icon.png',
+  );
 
   /// File path: assets/icons/home_icon.png
   AssetGenImage get homeIcon =>
       const AssetGenImage('assets/icons/home_icon.png');
 
   /// File path: assets/icons/japan_flag_icon.png
-  AssetGenImage get japanFlagIcon =>
-      const AssetGenImage('assets/icons/japan_flag_icon.png');
+  AssetGenImage get japanFlagIcon => const AssetGenImage(
+    'assets/icons/japan_flag_icon.png',
+  );
 
   /// File path: assets/icons/location_icon.png
-  AssetGenImage get locationIcon =>
-      const AssetGenImage('assets/icons/location_icon.png');
+  AssetGenImage get locationIcon => const AssetGenImage(
+    'assets/icons/location_icon.png',
+  );
 
   /// File path: assets/icons/location_on_icon.png
-  AssetGenImage get locationOnIcon =>
-      const AssetGenImage('assets/icons/location_on_icon.png');
+  AssetGenImage get locationOnIcon => const AssetGenImage(
+    'assets/icons/location_on_icon.png',
+  );
 
   /// File path: assets/icons/logout_icon.png
   AssetGenImage get logoutIcon =>
@@ -127,15 +153,19 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/motorcycle_delivery_icon.png
   AssetGenImage get motorcycleDeliveryIcon =>
-      const AssetGenImage('assets/icons/motorcycle_delivery_icon.png');
+      const AssetGenImage(
+        'assets/icons/motorcycle_delivery_icon.png',
+      );
 
   /// File path: assets/icons/open_gift_icon.png
-  AssetGenImage get openGiftIcon =>
-      const AssetGenImage('assets/icons/open_gift_icon.png');
+  AssetGenImage get openGiftIcon => const AssetGenImage(
+    'assets/icons/open_gift_icon.png',
+  );
 
   /// File path: assets/icons/payments_icon.png
-  AssetGenImage get paymentsIcon =>
-      const AssetGenImage('assets/icons/payments_icon.png');
+  AssetGenImage get paymentsIcon => const AssetGenImage(
+    'assets/icons/payments_icon.png',
+  );
 
   /// File path: assets/icons/person_icon.png
   AssetGenImage get personIcon =>
@@ -143,19 +173,28 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/photo_camera_icon.png
   AssetGenImage get photoCameraIcon =>
-      const AssetGenImage('assets/icons/photo_camera_icon.png');
+      const AssetGenImage(
+        'assets/icons/photo_camera_icon.png',
+      );
 
   /// File path: assets/icons/process_icon.png
-  AssetGenImage get processIcon =>
-      const AssetGenImage('assets/icons/process_icon.png');
+  AssetGenImage get processIcon => const AssetGenImage(
+    'assets/icons/process_icon.png',
+  );
+
+  /// File path: assets/icons/profile_icon.png
+  AssetGenImage get profileIcon => const AssetGenImage(
+    'assets/icons/profile_icon.png',
+  );
 
   /// File path: assets/icons/remove_icon.png
   AssetGenImage get removeIcon =>
       const AssetGenImage('assets/icons/remove_icon.png');
 
   /// File path: assets/icons/schedule_icon.png
-  AssetGenImage get scheduleIcon =>
-      const AssetGenImage('assets/icons/schedule_icon.png');
+  AssetGenImage get scheduleIcon => const AssetGenImage(
+    'assets/icons/schedule_icon.png',
+  );
 
   /// File path: assets/icons/search_icon.png
   AssetGenImage get searchIcon =>
@@ -163,11 +202,14 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/shopping_cart_icon.png
   AssetGenImage get shoppingCartIcon =>
-      const AssetGenImage('assets/icons/shopping_cart_icon.png');
+      const AssetGenImage(
+        'assets/icons/shopping_cart_icon.png',
+      );
 
   /// File path: assets/icons/solid_home_icon.png
-  AssetGenImage get solidHomeIcon =>
-      const AssetGenImage('assets/icons/solid_home_icon.png');
+  AssetGenImage get solidHomeIcon => const AssetGenImage(
+    'assets/icons/solid_home_icon.png',
+  );
 
   /// File path: assets/icons/sort_icon.png
   AssetGenImage get sortIcon =>
@@ -178,8 +220,9 @@ class $AssetsIconsGen {
       const AssetGenImage('assets/icons/star_icon.png');
 
   /// File path: assets/icons/translate_icon.png
-  AssetGenImage get translateIcon =>
-      const AssetGenImage('assets/icons/translate_icon.png');
+  AssetGenImage get translateIcon => const AssetGenImage(
+    'assets/icons/translate_icon.png',
+  );
 
   /// File path: assets/icons/tulip_icon.png
   AssetGenImage get tulipIcon =>
@@ -194,22 +237,15 @@ class $AssetsIconsGen {
       const AssetGenImage('assets/icons/upload_icon.png');
 
   /// File path: assets/icons/usa_flag_icon.png
-  AssetGenImage get usaFlagIcon =>
-      const AssetGenImage('assets/icons/usa_flag_icon.png');
+  AssetGenImage get usaFlagIcon => const AssetGenImage(
+    'assets/icons/usa_flag_icon.png',
+  );
 
   /// File path: assets/icons/visibility_off_icon.png
   AssetGenImage get visibilityOffIcon =>
-      const AssetGenImage('assets/icons/visibility_off_icon.png');
-
-    /// File path: assets/icons/profile_icon.png
-  AssetGenImage get profileIcon =>
-      const AssetGenImage('assets/icons/profile_icon.png');
-
-    /// File path: assets/icons/cart_icon.png
-  AssetGenImage get cartIcon =>
-      const AssetGenImage('assets/icons/cart_icon.png');
-
-
+      const AssetGenImage(
+        'assets/icons/visibility_off_icon.png',
+      );
 
   /// List of all assets
   List<AssetGenImage> get values => [
@@ -220,6 +256,7 @@ class $AssetsIconsGen {
     britainFlagIcon,
     callIcon,
     cancelIcon,
+    cartIcon,
     categoryIcon,
     chatIcon,
     checkCircleIcon,
@@ -247,6 +284,7 @@ class $AssetsIconsGen {
     personIcon,
     photoCameraIcon,
     processIcon,
+    profileIcon,
     removeIcon,
     scheduleIcon,
     searchIcon,
@@ -278,7 +316,8 @@ class Assets {
   const Assets._();
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
-  static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsImagesGen images =
+      $AssetsImagesGen();
 }
 
 class AssetGenImage {
@@ -348,8 +387,15 @@ class AssetGenImage {
     );
   }
 
-  ImageProvider provider({AssetBundle? bundle, String? package}) {
-    return AssetImage(_assetName, bundle: bundle, package: package);
+  ImageProvider provider({
+    AssetBundle? bundle,
+    String? package,
+  }) {
+    return AssetImage(
+      _assetName,
+      bundle: bundle,
+      package: package,
+    );
   }
 
   String get path => _assetName;
