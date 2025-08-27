@@ -1,3 +1,4 @@
+import 'package:flower_app/core/di/di.dart';
 import 'package:flower_app/core/l10n/app_localizations.dart';
 import 'package:flower_app/project_layers/presentation_layer/home/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -5,7 +6,9 @@ import 'core/route/app_routes.dart';
 import 'core/route/routes.dart';
 import 'core/theme/app_theme.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await configureDependencies();
   runApp(MyApp());
 }
 
