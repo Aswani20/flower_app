@@ -17,13 +17,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "flower_app",
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates:
+          AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       locale: Locale("en"),
       theme: AppTheme.lightTheme,
       onGenerateRoute: Routes.generateRoute,
       initialRoute: AppRoutes.homeScreen,
-      routes: {AppRoutes.homeScreen: (context) => HomeScreen()},
+      routes: {
+        AppRoutes.homeScreen: (context) => HomeScreen(),
+      },
     );
   }
 }
