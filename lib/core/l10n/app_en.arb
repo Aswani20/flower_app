@@ -53,5 +53,18 @@
   "browse_by_subject": "Browse by subject",
   "home": "Home",
   "categories": "Categories",
-  "cart": "Cart"
+  "cart": "Cart",
+  "egp": "EGP",
+  "all_prices_include_tax": "All prices include tax",
+  "product_title": "product title",
+  "status": "Status",
+  "in_stock": "in stock",
+  "product_price": "product price",
+  "description": "Description",
+  "description_body": "Lorem ipsum dolor sit amet consectetur. Id sit morbi ornare morbi duis rhoncus orci massa.",
+  "bouquet_include" : "Bouquet include",
+  "add_to_cart": "Add to cart",
+  "pink_roses": "Pink roses:15",
+  "white_wrap": "White wrap"
+
 }

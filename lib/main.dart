@@ -1,5 +1,6 @@
 import 'package:flower_app/core/l10n/app_localizations.dart';
 import 'package:flower_app/project_layers/presentation_layer/home/home_screen.dart';
+import 'package:flower_app/project_layers/presentation_layer/home/screens/product_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'core/route/app_routes.dart';
 import 'core/route/routes.dart';
@@ -22,8 +23,8 @@ class MyApp extends StatelessWidget {
       locale: Locale("en"),
       theme: AppTheme.lightTheme,
       onGenerateRoute: Routes.generateRoute,
-      initialRoute: AppRoutes.homeScreen,
-      routes: {AppRoutes.homeScreen: (context) => HomeScreen()},
+      initialRoute: AppRoutes.productDetailsScreen,
+      routes: {AppRoutes.homeScreen: (context) => HomeScreen(), AppRoutes.productDetailsScreen: (context) => ProductDetailsScreen()},
     );
   }
 }

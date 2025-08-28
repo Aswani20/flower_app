@@ -427,6 +427,78 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Cart'**
   String get cart;
+
+  /// No description provided for @egp.
+  ///
+  /// In en, this message translates to:
+  /// **'EGP'**
+  String get egp;
+
+  /// No description provided for @all_prices_include_tax.
+  ///
+  /// In en, this message translates to:
+  /// **'All prices include tax'**
+  String get all_prices_include_tax;
+
+  /// No description provided for @product_title.
+  ///
+  /// In en, this message translates to:
+  /// **'product title'**
+  String get product_title;
+
+  /// No description provided for @status.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get status;
+
+  /// No description provided for @in_stock.
+  ///
+  /// In en, this message translates to:
+  /// **'in stock'**
+  String get in_stock;
+
+  /// No description provided for @product_price.
+  ///
+  /// In en, this message translates to:
+  /// **'product price'**
+  String get product_price;
+
+  /// No description provided for @description.
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get description;
+
+  /// No description provided for @description_body.
+  ///
+  /// In en, this message translates to:
+  /// **'Lorem ipsum dolor sit amet consectetur. Id sit morbi ornare morbi duis rhoncus orci massa.'**
+  String get description_body;
+
+  /// No description provided for @bouquet_include.
+  ///
+  /// In en, this message translates to:
+  /// **'Bouquet include'**
+  String get bouquet_include;
+
+  /// No description provided for @add_to_cart.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to cart'**
+  String get add_to_cart;
+
+  /// No description provided for @pink_roses.
+  ///
+  /// In en, this message translates to:
+  /// **'Pink roses:15'**
+  String get pink_roses;
+
+  /// No description provided for @white_wrap.
+  ///
+  /// In en, this message translates to:
+  /// **'White wrap'**
+  String get white_wrap;
 }
 
 class _AppLocalizationsDelegate

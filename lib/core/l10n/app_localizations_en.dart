@@ -180,4 +180,41 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get cart => 'Cart';
+
+  @override
+  String get egp => 'EGP';
+
+  @override
+  String get all_prices_include_tax => 'All prices include tax';
+
+  @override
+  String get product_title => 'product title';
+
+  @override
+  String get status => 'Status';
+
+  @override
+  String get in_stock => 'in stock';
+
+  @override
+  String get product_price => 'product price';
+
+  @override
+  String get description => 'Description';
+
+  @override
+  String get description_body =>
+      'Lorem ipsum dolor sit amet consectetur. Id sit morbi ornare morbi duis rhoncus orci massa.';
+
+  @override
+  String get bouquet_include => 'Bouquet include';
+
+  @override
+  String get add_to_cart => 'Add to cart';
+
+  @override
+  String get pink_roses => 'Pink roses:15';
+
+  @override
+  String get white_wrap => 'White wrap';
 }
