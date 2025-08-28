@@ -17,3 +17,17 @@ final class CategoryError extends CategoryState {
 
   CategoryError({this.message});
 }
+
+class ProductLoading extends CategoryState {}
+
+final class ProductLoaded extends CategoryState {
+  final List<ProductEntity>? products;
+
+  ProductLoaded({this.products});
+}
+
+final class ProductError extends CategoryState {
+  final String? message;
+
+  ProductError({this.message});
+}

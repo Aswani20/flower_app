@@ -12,13 +12,6 @@ class CategoryTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final categoryList = [
-    //   Category(name: 'All'),
-    //   Category(name: 'New'),
-    //   Category(name: 'Popular'),
-    //   Category(name: 'Trending'),
-    //   Category(name: 'Featured'),
-    // ];
     return BlocProvider(
       create: (context) =>
           getIt<CategoryCubit>()..getCategories(),
@@ -30,14 +23,8 @@ class CategoryTab extends StatelessWidget {
               Expanded(
                 flex: 4,
                 child: InkWell(
-                  // onTap: () => Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //     builder: (context) => SearchScreen(),
-                  //   ),
-                  // ),
+                  // onTap: () => Navigator to search screen from here
                   child: IgnorePointer(
-                    // child: CustomSearch(),
                     child: CustomSearch(),
                   ),
                 ),
@@ -46,15 +33,7 @@ class CategoryTab extends StatelessWidget {
               Expanded(
                 child: InkWell(
                   onTap: () async {
-                    // final selectedFilter =
-                    //     await FloatingButton.showModalBottomSheetList(
-                    //       context,
-                    //     );
-                    // if (selectedFilter != null) {
-                    //   context
-                    //       .read<CategoriesCubit>()
-                    //       .getProducts(selectedFilter);
-                    // }
+                    // here we will open filter bottom sheet
                   },
                   child: Container(
                     width: 64,
@@ -84,6 +63,10 @@ class CategoryTab extends StatelessWidget {
         ),
 
         body: BlocBuilder<CategoryCubit, CategoryState>(
+          buildWhen: (previous, current) =>
+              current is CategoryLoaded ||
+              current is CategoryError ||
+              current is CategoryLoading,
           builder: (context, state) {
             if (state is CategoryLoading) {
               return const Center(
@@ -115,16 +98,13 @@ class CategoryTab extends StatelessWidget {
                             AppColors.grey,
                         tabAlignment: TabAlignment.center,
                         onTap: (index) {
-                          // final selectedCategory =
-                          //     state.categoryList?[index].id;
-                          // context
-                          //     .read<CategoriesCubit>()
-                          //     .getProducts(
-                          //       ProductFilter(
-                          //         categoryId:
-                          //             selectedCategory,
-                          //       ),
-                          //     );
+                          final selectedCategory =
+                              state.categories?[index].id;
+                          context
+                              .read<CategoryCubit>()
+                              .getProducts(
+                                selectedCategory,
+                              );
                         },
                         tabs: state.categories!.map((
                           category,
@@ -136,220 +116,7 @@ class CategoryTab extends StatelessWidget {
                     SizedBox(
                       height: 2.heightPercent(context),
                     ),
-                    ...[
-                      Expanded(
-                        child: CustomScrollView(
-                          slivers: [
-                            SliverPadding(
-                              padding:
-                                  const EdgeInsets.all(0),
-                              sliver: SliverGrid(
-                                delegate: SliverChildBuilderDelegate(
-                                  (context, index) {
-                                    return GestureDetector(
-                                      onTap: () {
-                                        // Navigator.pushNamed(
-                                        //   context,
-                                        //   Routes
-                                        //       .productDetails,
-                                        //   arguments: state
-                                        //       .products![index],
-                                        // );
-                                      },
-                                      child: Card(
-                                        color: AppColors
-                                            .white,
-                                        elevation: 0,
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(
-                                                12,
-                                              ),
-                                          side: BorderSide(
-                                            color: AppColors
-                                                .grey
-                                                .withOpacity(
-                                                  .7,
-                                                ),
-                                          ),
-                                        ),
-                                        child: Padding(
-                                          padding:
-                                              const EdgeInsets.all(
-                                                8.0,
-                                              ),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment
-                                                    .center,
-                                            children: [
-                                              Expanded(
-                                                child: Image.network(
-                                                  // state
-                                                  //     .products![index]
-                                                  //     .imgCover
-                                                  //     .toString(),
-                                                  'https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                                                  width: double
-                                                      .infinity,
-                                                  height:
-                                                      200,
-                                                  fit: BoxFit
-                                                      .fill,
-                                                ),
-                                              ),
-                                              SizedBox(
-                                                height: 1
-                                                    .heightPercent(
-                                                      context,
-                                                    ),
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsets.symmetric(
-                                                  horizontal:
-                                                      8.0,
-                                                ),
-                                                child: Align(
-                                                  alignment:
-                                                      Alignment.topLeft,
-                                                  child: Text(
-                                                    // state
-                                                    //     .products![index]
-                                                    //     .title
-                                                    //     .toString(),
-                                                    'red roses',
-                                                    style: TextStyle(
-                                                      color:
-                                                          AppColors.black,
-                                                      fontSize:
-                                                          12,
-                                                      fontWeight:
-                                                          FontWeight.w400,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsets.symmetric(
-                                                  horizontal:
-                                                      8.0,
-                                                ),
-                                                child: Row(
-                                                  children: [
-                                                    Text(
-                                                      // "${lang!.currency} ${state.products![index].priceAfterDiscount}",
-                                                      'EGP 600',
-                                                      style: TextStyle(
-                                                        color: AppColors.black,
-                                                        fontSize: 12,
-                                                        fontWeight: FontWeight.w500,
-                                                      ),
-                                                    ),
-                                                    SizedBox(
-                                                      width: 1.widthPercent(
-                                                        context,
-                                                      ),
-                                                    ),
-                                                    Text(
-                                                      //  "${state.products![index].price}",
-                                                      '800',
-                                                      style: TextStyle(
-                                                        color: AppColors.grey,
-                                                        fontWeight: FontWeight.w400,
-                                                        fontSize: 12,
-                                                        decoration: TextDecoration.lineThrough,
-                                                        decorationColor: AppColors.grey,
-                                                      ),
-                                                    ),
-                                                    SizedBox(
-                                                      width:
-                                                          5,
-                                                    ),
-                                                    Text(
-                                                      //  "${state.products![index].discount}%",
-                                                      '20 %',
-                                                      style: TextStyle(
-                                                        color: AppColors.green,
-                                                        fontSize: 12,
-                                                        fontWeight: FontWeight.w400,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                              SizedBox(
-                                                height: 5,
-                                              ),
-                                              Container(
-                                                width:
-                                                    147,
-                                                height:
-                                                    30,
-                                                decoration: BoxDecoration(
-                                                  color: AppColors
-                                                      .pink,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                        25,
-                                                      ),
-                                                ),
-                                                child: Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  children: [
-                                                    Icon(
-                                                      Icons.shopping_cart,
-                                                      color:
-                                                          AppColors.white,
-                                                    ),
-                                                    SizedBox(
-                                                      width:
-                                                          8,
-                                                    ),
-                                                    Text(
-                                                      // context.l10n.addToCart,
-                                                      'Add To Cart',
-                                                      style: TextStyle(
-                                                        color: AppColors.white,
-                                                        fontSize: 13,
-                                                        fontWeight: FontWeight.w500,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    );
-                                  },
-                                  childCount: 10,
-
-                                  // state
-                                  //     .products
-                                  //     ?.length,
-                                ),
-                                gridDelegate:
-                                    SliverGridDelegateWithFixedCrossAxisCount(
-                                      crossAxisCount: 2,
-                                      mainAxisSpacing: 2
-                                          .heightPercent(
-                                            context,
-                                          ),
-                                      crossAxisSpacing: 2
-                                          .widthPercent(
-                                            context,
-                                          ),
-                                      childAspectRatio:
-                                          0.75,
-                                    ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
+                    ...[ProductsItem()],
                   ],
                 ),
               );
@@ -361,6 +128,254 @@ class CategoryTab extends StatelessWidget {
         floatingActionButtonLocation:
             FloatingActionButtonLocation.centerFloat,
       ),
+    );
+  }
+}
+
+class ProductsItem extends StatelessWidget {
+  const ProductsItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<CategoryCubit, CategoryState>(
+      buildWhen: (previous, current) =>
+          current is ProductLoaded ||
+          current is ProductError ||
+          current is ProductLoading,
+      builder: (context, state) {
+        if (state is ProductLoading) {
+          return const Center(
+            child: CircularProgressIndicator.adaptive(
+              backgroundColor: AppColors.pink,
+            ),
+          );
+        } else if (state is ProductError) {
+          return Center(child: Text(state.message ?? ''));
+        } else if (state is ProductLoaded) {
+          if (state.products!.isEmpty) {
+            return const Center(
+              child: Text('No Products Found'),
+            );
+          }
+          return Expanded(
+            child: CustomScrollView(
+              slivers: [
+                SliverPadding(
+                  padding: const EdgeInsets.all(0),
+                  sliver: SliverGrid(
+                    delegate: SliverChildBuilderDelegate(
+                      (context, index) {
+                        return GestureDetector(
+                          onTap: () {
+                            // Navigator.pushNamed(
+                            //   context,
+                            //   Routes
+                            //       .productDetails,
+                            //   arguments: state
+                            //       .products![index],
+                            // );
+                          },
+                          child: Card(
+                            color: AppColors.white,
+                            elevation: 0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.circular(
+                                    12,
+                                  ),
+                              side: BorderSide(
+                                color: AppColors.grey
+                                    .withOpacity(.7),
+                              ),
+                            ),
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.all(
+                                    8.0,
+                                  ),
+                              child: Column(
+                                crossAxisAlignment:
+                                    CrossAxisAlignment
+                                        .center,
+                                children: [
+                                  Expanded(
+                                    child: Image.network(
+                                      state
+                                              .products![index]
+                                              .imgCover ??
+                                          'https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+
+                                      width:
+                                          double.infinity,
+                                      height: 200,
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 1
+                                        .heightPercent(
+                                          context,
+                                        ),
+                                  ),
+                                  Padding(
+                                    padding:
+                                        const EdgeInsets.symmetric(
+                                          horizontal: 8.0,
+                                        ),
+                                    child: Align(
+                                      alignment: Alignment
+                                          .topLeft,
+                                      child: Text(
+                                        state
+                                            .products![index]
+                                            .title
+                                            .toString(),
+
+                                        style: TextStyle(
+                                          color: AppColors
+                                              .black,
+                                          fontSize: 12,
+                                          fontWeight:
+                                              FontWeight
+                                                  .w400,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding:
+                                        const EdgeInsets.symmetric(
+                                          horizontal: 6.0,
+                                        ),
+                                    child: Row(
+                                      children: [
+                                        Text(
+                                          "${'EGP'} ${state.products![index].priceAfterDiscount}",
+
+                                          style: TextStyle(
+                                            color:
+                                                AppColors
+                                                    .black,
+                                            fontSize: 12,
+                                            fontWeight:
+                                                FontWeight
+                                                    .w500,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 1
+                                              .widthPercent(
+                                                context,
+                                              ),
+                                        ),
+                                        Text(
+                                          "${state.products![index].price}",
+
+                                          style: TextStyle(
+                                            color:
+                                                AppColors
+                                                    .grey,
+                                            fontWeight:
+                                                FontWeight
+                                                    .w400,
+                                            fontSize: 12,
+                                            decoration:
+                                                TextDecoration
+                                                    .lineThrough,
+                                            decorationColor:
+                                                AppColors
+                                                    .grey,
+                                          ),
+                                        ),
+
+                                        // Text(
+                                        //   "${state.products![index].discount}%",
+
+                                        //   style: TextStyle(
+                                        //     color:
+                                        //         AppColors
+                                        //             .green,
+                                        //     fontSize: 12,
+                                        //     fontWeight:
+                                        //         FontWeight
+                                        //             .w400,
+                                        //   ),
+                                        // ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 5),
+                                  Container(
+                                    width: 147,
+                                    height: 30,
+                                    decoration: BoxDecoration(
+                                      color:
+                                          AppColors.pink,
+                                      borderRadius:
+                                          BorderRadius.circular(
+                                            25,
+                                          ),
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment
+                                              .center,
+                                      children: [
+                                        Icon(
+                                          Icons
+                                              .shopping_cart,
+                                          color: AppColors
+                                              .white,
+                                        ),
+                                        SizedBox(
+                                          width: 8,
+                                        ),
+                                        Text(
+                                          // context.l10n.addToCart,
+                                          'Add To Cart',
+                                          style: TextStyle(
+                                            color:
+                                                AppColors
+                                                    .white,
+                                            fontSize: 13,
+                                            fontWeight:
+                                                FontWeight
+                                                    .w500,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                      childCount: state.products!.length,
+
+                      // state
+                      //     .products
+                      //     ?.length,
+                    ),
+                    gridDelegate:
+                        SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          mainAxisSpacing: 2
+                              .heightPercent(context),
+                          crossAxisSpacing: 2
+                              .widthPercent(context),
+                          childAspectRatio: 0.75,
+                        ),
+                  ),
+                ),
+              ],
+            ),
+          );
+        } else {
+          return SizedBox.shrink();
+        }
+      },
     );
   }
 }
