@@ -39,6 +39,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get confirmPassword => 'Confirm Password';
 
   @override
+  String get confirm => 'Confirm';
+
+  @override
   String get confirmPasswordHint => 'Confirm password';
 
   @override
@@ -108,7 +111,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get enter_code_sent_to_email =>
-      'Please enter your code that send to your email address ';
+      'Please enter your code that send to your \n email address ';
 
   @override
   String get didnt_receive_code => 'Didn\'t receive the code?';

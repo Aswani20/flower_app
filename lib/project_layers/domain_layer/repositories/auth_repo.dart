@@ -1,11 +1,26 @@
+import 'package:dartz/dartz.dart';
+import 'package:flower_app/core/errors/failures.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/forget_password_response_entity.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/reset_password_response_entity.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/verify_reset_code_entity.dart';
 
-abstract class AuthRepo{
-  Future<ForgetPasswordResponseEntity> forgetPassword({required String email});
+abstract class AuthRepo {
+  Future<Either<Failures, ForgetPasswordResponseEntity>> forgetPassword({
+    required String email,
+    String? networkError,
+    String? serverError,
+  });
 
-  Future<VerifyResetCodeResponseEntity> verifyResetCode({required String resetCode});
+  Future<Either<Failures, VerifyResetCodeResponseEntity>> verifyResetCode({
+    required String resetCode,
+    String? networkError,
+    String? serverError,
+  });
 
-  Future<ResetPasswordResponseEntity> resetPassword({required String email, required String newPassword});
+  Future<Either<Failures, ResetPasswordResponseEntity>> resetPassword({
+    required String email,
+    required String newPassword,
+    String? networkError,
+    String? serverError,
+  });
 }

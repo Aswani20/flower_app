@@ -158,6 +158,12 @@ abstract class AppLocalizations {
   /// **'Confirm Password'**
   String get confirmPassword;
 
+  /// No description provided for @confirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm'**
+  String get confirm;
+
   /// No description provided for @confirmPasswordHint.
   ///
   /// In en, this message translates to:
@@ -287,7 +293,7 @@ abstract class AppLocalizations {
   /// No description provided for @enter_code_sent_to_email.
   ///
   /// In en, this message translates to:
-  /// **'Please enter your code that send to your email address '**
+  /// **'Please enter your code that send to your \n email address '**
   String get enter_code_sent_to_email;
 
   /// No description provided for @didnt_receive_code.

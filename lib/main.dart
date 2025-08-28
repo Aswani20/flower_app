@@ -1,7 +1,7 @@
+import 'package:flower_app/core/l10n/app_localizations.dart';
 import 'package:flower_app/core/route/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'core/di/di.dart';
-import 'core/l10n/translation/app_localizations.dart';
 import 'core/route/routes.dart';
 import 'core/theme/app_theme.dart';
 import 'project_layers/presentation_layer/authentication/forget_password/forget_password_view.dart';
