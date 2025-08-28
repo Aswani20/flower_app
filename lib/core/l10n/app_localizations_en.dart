@@ -6,7 +6,8 @@ import 'app_localizations.dart';
 
 /// The translations for English (`en`).
 class AppLocalizationsEn extends AppLocalizations {
-  AppLocalizationsEn([String locale = 'en']) : super(locale);
+  AppLocalizationsEn([String locale = 'en'])
+    : super(locale);
 
   @override
   String get appName => 'Flower App';
@@ -70,24 +71,29 @@ class AppLocalizationsEn extends AppLocalizations {
       'Name must be more than 3 characters';
 
   @override
-  String get passwordMustContainUpperLowerAndSpecialCharacter =>
+  String
+  get passwordMustContainUpperLowerAndSpecialCharacter =>
       'Password must contain upper, lower, and special character';
 
   @override
-  String get passwordsDoNotMatch => 'Passwords do not match';
+  String get passwordsDoNotMatch =>
+      'Passwords do not match';
 
   @override
-  String get pleaseEnterYourPassword => 'Please enter your password';
+  String get pleaseEnterYourPassword =>
+      'Please enter your password';
 
   @override
-  String get pleaseEnterYourEmail => 'Please enter your email';
+  String get pleaseEnterYourEmail =>
+      'Please enter your email';
 
   @override
   String get emailMustBeLikeThisExampleGmailCom =>
       'Email must be like this \"example@gmail.com';
 
   @override
-  String get pleaseEnterYourPhoneNumber => 'Please enter your phone number';
+  String get pleaseEnterYourPhoneNumber =>
+      'Please enter your phone number';
 
   @override
   String get enterAValidEgyptianPhoneNumber =>
@@ -111,7 +117,8 @@ class AppLocalizationsEn extends AppLocalizations {
       'Please enter your code that send to your email address ';
 
   @override
-  String get didnt_receive_code => 'Didn\'t receive the code?';
+  String get didnt_receive_code =>
+      'Didn\'t receive the code?';
 
   @override
   String get resend => 'Resend';
@@ -148,7 +155,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get server_error => 'Server error';
 
   @override
-  String get reset_pass_success => 'Password reset successfully';
+  String get reset_pass_success =>
+      'Password reset successfully';
 
   @override
   String get otp_resend_to_mail =>

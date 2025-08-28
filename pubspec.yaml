@@ -29,6 +29,7 @@ dependencies:
   flutter_bloc: ^8.0.1
   fluttertoast: ^8.2.12
   connectivity_plus: ^6.1.4
+  flutter_svg: ^2.2.0
 
 dev_dependencies:
   flutter_test:
