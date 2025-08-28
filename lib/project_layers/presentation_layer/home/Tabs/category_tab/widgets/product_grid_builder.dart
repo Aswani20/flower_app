@@ -42,13 +42,7 @@ class ProductsGridBuilder extends StatelessWidget {
                             state.products![index];
                         return GestureDetector(
                           onTap: () {
-                            // Navigator.pushNamed(
-                            //   context,
-                            //   Routes
-                            //       .productDetails,
-                            //   arguments: state
-                            //       .products![index],
-                            // );
+                            // Navigator to product details screen and give the product[index]
                           },
                           child: ProductItem(
                             product: product,
