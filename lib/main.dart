@@ -1,15 +1,17 @@
 import 'package:flower_app/core/l10n/app_localizations.dart';
+
 import 'package:flower_app/core/route/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'core/di/di.dart';
+import 'package:flower_app/project_layers/presentation_layer/home/home_screen.dart';
 import 'core/route/routes.dart';
 import 'core/theme/app_theme.dart';
 import 'project_layers/presentation_layer/authentication/forget_password/forget_password_view.dart';
 
+
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await configureDependencies();
-  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -25,10 +27,11 @@ class MyApp extends StatelessWidget {
       locale: Locale("en"),
       theme: AppTheme.lightTheme,
       onGenerateRoute: Routes.generateRoute,
-      initialRoute: AppRoutes.forgetPasswordScreen,
-      routes: {
-        AppRoutes.forgetPasswordScreen: (context) => ForgetPasswordView(),
-      },
+
+      initialRoute: AppRoutes.homeScreen,
+      routes: {AppRoutes.homeScreen: (context) => HomeScreen(), AppRoutes.forgetPasswordScreen: (context) => ForgetPasswordView(),},
+      
+
     );
   }
 }

@@ -174,4 +174,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get browse_by_subject => 'Browse by subject';
+
+  @override
+  String get home => 'Home';
+
+  @override
+  String get categories => 'Categories';
+
+  @override
+  String get cart => 'Cart';
 }

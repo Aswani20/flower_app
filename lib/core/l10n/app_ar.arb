@@ -49,5 +49,8 @@
   "profile": "الصفحة الشخصية",
   "survey": "استطلاع",
   "search": "بحث",
-  "browse_by_subject": "البحث بالموضوع"
+  "browse_by_subject": "البحث بالموضوع",
+  "home": "الرئيسية",
+  "categories": "الفئات",
+  "cart": "عربة التسوق"
 }
