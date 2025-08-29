@@ -27,18 +27,18 @@ class ProductCard extends StatelessWidget {
                 color: AppColors.grey,
                 image: product.imgCover != null
                     ? DecorationImage(
-                  image: NetworkImage(product.imgCover!),
-                  fit: BoxFit.cover,
-                )
+                        image: NetworkImage(product.imgCover!),
+                        fit: BoxFit.cover,
+                      )
                     : null,
               ),
               child: product.imgCover == null
                   ? const Center(
-                child: Icon(
-                  Icons.image_not_supported,
-                  color: Colors.grey,
-                ),
-              )
+                      child: Icon(
+                        Icons.image_not_supported,
+                        color: Colors.grey,
+                      ),
+                    )
                   : null,
             ),
           ),
@@ -66,8 +66,7 @@ class ProductCard extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      ' ${product.priceAfterDiscount?.toStringAsFixed(2) ??
-                          '0.00'}',
+                      ' ${product.priceAfterDiscount?.toStringAsFixed(2) ?? '0.00'}',
                       style: TextStyle(
                         color: AppColors.grey,
                         fontWeight: FontWeight.w500,
@@ -102,18 +101,15 @@ class ProductCard extends StatelessWidget {
                   children: [
                     Expanded(
                       child: ElevatedButton.icon(
-                        onPressed: () {
-                          print("Added to cart: ${product.title}");
-                        },
+                        onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.pink,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(22),
                           ),
                           elevation: 2,
                         ),
                         icon: const Icon(
-                          Icons.add_shopping_cart,
+                          Icons.shopping_cart_outlined,
                           size: 16,
                           color: Colors.white,
                         ),
