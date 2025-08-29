@@ -1,4 +1,10 @@
 import 'package:dio/dio.dart';
+import 'package:flower_app/project_layers/api_layer/model/requests/forget_password_request_dto.dart';
+import 'package:flower_app/project_layers/api_layer/model/requests/reset_password_request_dto.dart';
+import 'package:flower_app/project_layers/api_layer/model/requests/verify_reset_code_request_dto.dart';
+import 'package:flower_app/project_layers/api_layer/model/responses/forget_password_response_dto.dart';
+import 'package:flower_app/project_layers/api_layer/model/responses/reset_password_response_dto.dart';
+import 'package:flower_app/project_layers/api_layer/model/responses/verify_reset_code_response.dart';
 import 'package:flower_app/core/utils/app_constants.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/sign_up_request.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/sign_up_response.dart';
@@ -19,4 +25,19 @@ abstract class ApiClient {
 
   @POST('v1/auth/signin')
   Future<LoginResponse> login({@Body() required LoginRequest request});
+
+  @POST('/v1/auth/forgotPassword')
+  Future<HttpResponse<ForgetPasswordResponseDto>> forgetPassword({
+    @Body() required ForgetPasswordRequestDto forgetPasswordRequestDto,
+  });
+
+  @POST('/v1/auth/verifyResetCode')
+  Future<HttpResponse<VerifyResetCodeResponseDto>> verifyResetCode({
+    @Body() required VerifyResetCodeRequestDto verifyResetCodeRequestDto,
+  });
+
+  @PUT('/v1/auth/resetPassword')
+  Future<HttpResponse<ResetPasswordResponseDto>> resetPassword({
+    @Body() required ResetPasswordRequestDto resetPasswordRequestDto,
+});
 }

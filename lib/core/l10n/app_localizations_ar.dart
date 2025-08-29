@@ -40,6 +40,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get confirmPassword => 'تاكيد كلمة المرور';
 
   @override
+  String get confirm => 'Confirm';
+
+  @override
   String get confirmPasswordHint =>
       'ادخل كلمة المرور مره اخري';
 
