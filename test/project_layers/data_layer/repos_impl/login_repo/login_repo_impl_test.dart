@@ -1,11 +1,11 @@
-import 'package:flower_app/project_layers/data_layer/data_source/login_data_source/login_data_source.dart';
-import 'package:flower_app/project_layers/data_layer/repos_impl/login_repo/login_repo_impl.dart';
+import 'package:flower_app/project_layers/data_layer/data_source/login_data_source.dart';
+import 'package:flower_app/project_layers/data_layer/repos_impl/login_repo_impl.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:mockito/annotations.dart';
 import 'package:dartz/dartz.dart';
-import 'package:flower_app/project_layers/api_layer/requests/login_request/login_request.dart';
-import 'package:flower_app/project_layers/api_layer/responses/login_response/login_response.dart';
+import 'package:flower_app/project_layers/api_layer/models/request/login_request.dart';
+import 'package:flower_app/project_layers/api_layer/models/response/login_response.dart';
 import 'package:flower_app/core/errors/failures.dart';
 
 import 'login_repo_impl_test.mocks.dart';

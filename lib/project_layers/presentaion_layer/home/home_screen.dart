@@ -1,0 +1,64 @@
+import 'package:flower_app/gen/assets.gen.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:flower_app/core/l10n/app_localizations.dart';
+
+import 'home_view_model.dart';
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider(
+      create: (context) => HomeViewModel(),
+      child: const _HomeScreenBody(),
+    );
+  }
+}
+
+class _HomeScreenBody extends StatelessWidget {
+  const _HomeScreenBody();
+
+  @override
+  Widget build(BuildContext context) {
+    final AppLocalizations locale = AppLocalizations.of(context)!;
+    return Consumer<HomeViewModel>(
+      builder: (context, viewModel, child) {
+        return Scaffold(
+          // indexed stack for save tab state across navigation
+          body: IndexedStack(
+            index: viewModel.currentIndex,
+            children: viewModel.pages,
+          ),
+          bottomNavigationBar: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+            currentIndex: viewModel.currentIndex,
+            onTap: viewModel.setCurrentIndex,
+            elevation: 0,
+            selectedItemColor: Theme.of(context).primaryColor,
+            unselectedItemColor: Colors.grey,
+            items: [
+              BottomNavigationBarItem(
+                icon: ImageIcon(AssetImage(Assets.icons.homeIcon.path)),
+                label: locale.home,
+              ),
+              BottomNavigationBarItem(
+                icon: ImageIcon(AssetImage(Assets.icons.categoryIcon.path)),
+                label: locale.categories,
+              ),
+              BottomNavigationBarItem(
+                icon: ImageIcon(AssetImage(Assets.icons.cartIcon.path)),
+                label: locale.cart,
+              ),
+              BottomNavigationBarItem(
+                icon: ImageIcon(AssetImage(Assets.icons.personIcon.path)),
+                label: locale.profile,
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+}

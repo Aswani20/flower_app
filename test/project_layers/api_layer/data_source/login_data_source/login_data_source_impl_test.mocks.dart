@@ -3,13 +3,17 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i4;
+import 'dart:async' as _i5;
 
 import 'package:flower_app/project_layers/api_layer/api_client/api_client.dart'
+    as _i4;
+import 'package:flower_app/project_layers/api_layer/models/request/login_request.dart'
+    as _i7;
+import 'package:flower_app/project_layers/api_layer/models/request/sign_up_request.dart'
+    as _i6;
+import 'package:flower_app/project_layers/api_layer/models/response/login_response.dart'
     as _i3;
-import 'package:flower_app/project_layers/api_layer/requests/login_request/login_request.dart'
-    as _i5;
-import 'package:flower_app/project_layers/api_layer/responses/login_response/login_response.dart'
+import 'package:flower_app/project_layers/api_layer/models/response/sign_up_response.dart'
     as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 
@@ -27,29 +31,48 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeLoginResponse_0 extends _i1.SmartFake implements _i2.LoginResponse {
-  _FakeLoginResponse_0(Object parent, Invocation parentInvocation)
+class _FakeSignUpResponse_0 extends _i1.SmartFake
+    implements _i2.SignUpResponse {
+  _FakeSignUpResponse_0(Object parent, Invocation parentInvocation)
+    : super(parent, parentInvocation);
+}
+
+class _FakeLoginResponse_1 extends _i1.SmartFake implements _i3.LoginResponse {
+  _FakeLoginResponse_1(Object parent, Invocation parentInvocation)
     : super(parent, parentInvocation);
 }
 
 /// A class which mocks [ApiClient].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockApiClient extends _i1.Mock implements _i3.ApiClient {
+class MockApiClient extends _i1.Mock implements _i4.ApiClient {
   MockApiClient() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i4.Future<_i2.LoginResponse> login({required _i5.LoginRequest? request}) =>
+  _i5.Future<_i2.SignUpResponse> signUp(_i6.SignUpRequestBody? signUpRequest) =>
+      (super.noSuchMethod(
+            Invocation.method(#signUp, [signUpRequest]),
+            returnValue: _i5.Future<_i2.SignUpResponse>.value(
+              _FakeSignUpResponse_0(
+                this,
+                Invocation.method(#signUp, [signUpRequest]),
+              ),
+            ),
+          )
+          as _i5.Future<_i2.SignUpResponse>);
+
+  @override
+  _i5.Future<_i3.LoginResponse> login({required _i7.LoginRequest? request}) =>
       (super.noSuchMethod(
             Invocation.method(#login, [], {#request: request}),
-            returnValue: _i4.Future<_i2.LoginResponse>.value(
-              _FakeLoginResponse_0(
+            returnValue: _i5.Future<_i3.LoginResponse>.value(
+              _FakeLoginResponse_1(
                 this,
                 Invocation.method(#login, [], {#request: request}),
               ),
             ),
           )
-          as _i4.Future<_i2.LoginResponse>);
+          as _i5.Future<_i3.LoginResponse>);
 }

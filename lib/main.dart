@@ -1,7 +1,9 @@
-import 'package:flower_app/project_layers/presentaion_layer/login_view.dart';
+import 'package:flower_app/core/di/di.dart';
+import 'package:flower_app/project_layers/presentaion_layer/auth/sign_in/login_view.dart';
+import 'package:flower_app/project_layers/presentaion_layer/auth/sign_up/sign_up_view.dart';
+import 'package:flower_app/project_layers/presentaion_layer/home/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'core/di/di.dart';
-import 'core/l10n/translation/app_localizations.dart';
+import 'core/l10n/app_localizations.dart';
 import 'core/route/app_routes.dart';
 import 'core/route/routes.dart';
 import 'core/theme/app_theme.dart';
@@ -26,7 +28,11 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       onGenerateRoute: Routes.generateRoute,
       initialRoute: AppRoutes.loginScreen,
-      routes: {AppRoutes.loginScreen: (context) => SignInView()},
+      routes: {
+        AppRoutes.loginScreen: (context) => SignInView(),
+        AppRoutes.signUpScreen: (context) => SignUpView(),
+        AppRoutes.homeScreen: (context) => HomeScreen(),
+      },
     );
   }
 }

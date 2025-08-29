@@ -5,11 +5,11 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i4;
 
-import 'package:flower_app/project_layers/api_layer/requests/login_request/login_request.dart'
+import 'package:flower_app/project_layers/api_layer/models/request/login_request.dart'
     as _i5;
-import 'package:flower_app/project_layers/api_layer/responses/login_response/login_response.dart'
+import 'package:flower_app/project_layers/api_layer/models/response/login_response.dart'
     as _i2;
-import 'package:flower_app/project_layers/data_layer/data_source/login_data_source/login_data_source.dart'
+import 'package:flower_app/project_layers/data_layer/data_source/login_data_source.dart'
     as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 

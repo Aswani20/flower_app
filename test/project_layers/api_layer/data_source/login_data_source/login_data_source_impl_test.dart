@@ -3,10 +3,10 @@ import 'dart:async';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:mockito/annotations.dart';
-import 'package:flower_app/project_layers/api_layer/data_source/login_data_source/login_data_source_impl.dart';
+import 'package:flower_app/project_layers/api_layer/data_source/login_data_source_impl.dart';
 import 'package:flower_app/project_layers/api_layer/api_client/api_client.dart';
-import 'package:flower_app/project_layers/api_layer/requests/login_request/login_request.dart';
-import 'package:flower_app/project_layers/api_layer/responses/login_response/login_response.dart';
+import 'package:flower_app/project_layers/api_layer/models/request/login_request.dart';
+import 'package:flower_app/project_layers/api_layer/models/response/login_response.dart';
 import 'package:flower_app/core/errors/failures.dart';
 
 @GenerateMocks([ApiClient])

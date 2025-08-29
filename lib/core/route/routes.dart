@@ -1,20 +1,26 @@
+import 'package:flower_app/core/di/di.dart';
 import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/gen/assets.gen.dart';
-import 'package:flower_app/project_layers/presentation_layer/home/home_screen.dart';
+import 'package:flower_app/project_layers/presentaion_layer/auth/sign_in/login_view.dart';
+import 'package:flower_app/project_layers/presentaion_layer/auth/sign_up/cubit/sign_up_cubit.dart';
+import 'package:flower_app/project_layers/presentaion_layer/auth/sign_up/sign_up_view.dart';
+import 'package:flower_app/project_layers/presentaion_layer/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import '../../project_layers/presentaion_layer/login_view.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'app_routes.dart';
 
 abstract class Routes {
   static Route generateRoute(RouteSettings settings) {
     final url = Uri.parse(settings.name ?? "/");
     switch (url.path) {
+      case AppRoutes.signUpScreen:
+        return MaterialPageRoute(builder: (_) => BlocProvider(create: (context) => getIt.get<SignUpCubit>(), child: SignUpView(),),);
       case AppRoutes.loginScreen:
         return MaterialPageRoute(builder: (context) => const SignInView());
-      // case AppRoutes.homeScreen:
-      //   return MaterialPageRoute(builder: (context) => const HomeScreen());
+      case AppRoutes.homeScreen:
+        return MaterialPageRoute(builder: (context) => const HomeScreen());
       default:
         return MaterialPageRoute(builder: (context) => NotFoundScreen());
     }
@@ -66,10 +72,7 @@ class NotFoundScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 10.0,
-                    vertical: 5,
-                  ),
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5),
                   child: Text(
                     "Oops! We couldn't find the page you're looking for.",
                     style: TextStyle(

@@ -7,11 +7,11 @@ import 'dart:async' as _i4;
 
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:flower_app/core/errors/failures.dart' as _i5;
-import 'package:flower_app/project_layers/api_layer/requests/login_request/login_request.dart'
+import 'package:flower_app/project_layers/api_layer/models/request/login_request.dart'
     as _i7;
-import 'package:flower_app/project_layers/api_layer/responses/login_response/login_response.dart'
+import 'package:flower_app/project_layers/api_layer/models/response/login_response.dart'
     as _i6;
-import 'package:flower_app/project_layers/domain_layer/repos/login_repo/login_repo.dart'
+import 'package:flower_app/project_layers/domain_layer/repos/login_repo.dart'
     as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 
