@@ -1,7 +1,6 @@
 import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flutter/material.dart';
 
-
 class AppValidators {
   //Non_empty validator
   static String? nonEmptyField(value, BuildContext context) {

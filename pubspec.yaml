@@ -29,7 +29,10 @@ dependencies:
   flutter_bloc: ^9.1.1
   fluttertoast: ^8.2.12
   connectivity_plus: ^6.1.4
-
+  flutter_screenutil: ^5.9.3
+  flutter_svg: ^2.2.0  
+  cached_network_image: ^3.4.1
+  skeletonizer: ^2.1.0+1
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -47,7 +50,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
-
+    - assets/svg/
   # fonts:
   #   - family: Schyler
   #     fonts:

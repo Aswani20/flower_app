@@ -41,6 +41,10 @@ class $AssetsIconsGen {
   AssetGenImage get cancelIcon =>
       const AssetGenImage('assets/icons/cancel_icon.png');
 
+  /// File path: assets/icons/cart_icon.png
+  AssetGenImage get cartIcon =>
+      const AssetGenImage('assets/icons/cart_icon.png');
+
   /// File path: assets/icons/category_icon.png
   AssetGenImage get categoryIcon =>
       const AssetGenImage('assets/icons/category_icon.png');
@@ -149,6 +153,10 @@ class $AssetsIconsGen {
   AssetGenImage get processIcon =>
       const AssetGenImage('assets/icons/process_icon.png');
 
+  /// File path: assets/icons/profile_icon.png
+  AssetGenImage get profileIcon =>
+      const AssetGenImage('assets/icons/profile_icon.png');
+
   /// File path: assets/icons/remove_icon.png
   AssetGenImage get removeIcon =>
       const AssetGenImage('assets/icons/remove_icon.png');
@@ -201,16 +209,6 @@ class $AssetsIconsGen {
   AssetGenImage get visibilityOffIcon =>
       const AssetGenImage('assets/icons/visibility_off_icon.png');
 
-    /// File path: assets/icons/profile_icon.png
-  AssetGenImage get profileIcon =>
-      const AssetGenImage('assets/icons/profile_icon.png');
-
-    /// File path: assets/icons/cart_icon.png
-  AssetGenImage get cartIcon =>
-      const AssetGenImage('assets/icons/cart_icon.png');
-
-
-
   /// List of all assets
   List<AssetGenImage> get values => [
     alarmClockIcon,
@@ -220,6 +218,7 @@ class $AssetsIconsGen {
     britainFlagIcon,
     callIcon,
     cancelIcon,
+    cartIcon,
     categoryIcon,
     chatIcon,
     checkCircleIcon,
@@ -247,6 +246,7 @@ class $AssetsIconsGen {
     personIcon,
     photoCameraIcon,
     processIcon,
+    profileIcon,
     removeIcon,
     scheduleIcon,
     searchIcon,
@@ -274,11 +274,48 @@ class $AssetsImagesGen {
   List<AssetGenImage> get values => [noRoutes];
 }
 
+class $AssetsSvgGen {
+  const $AssetsSvgGen();
+
+  /// File path: assets/svg/arrow_down.svg
+  String get arrowDown => 'assets/svg/arrow_down.svg';
+
+  /// File path: assets/svg/circle_flower.svg
+  String get circleFlower => 'assets/svg/circle_flower.svg';
+
+  /// File path: assets/svg/diamond.svg
+  String get diamond => 'assets/svg/diamond.svg';
+
+  /// File path: assets/svg/gift-1.svg
+  String get gift1 => 'assets/svg/gift-1.svg';
+
+  /// File path: assets/svg/gift.svg
+  String get gift => 'assets/svg/gift.svg';
+
+  /// File path: assets/svg/location.svg
+  String get location => 'assets/svg/location.svg';
+
+  /// File path: assets/svg/tulip.svg
+  String get tulip => 'assets/svg/tulip.svg';
+
+  /// List of all assets
+  List<String> get values => [
+    arrowDown,
+    circleFlower,
+    diamond,
+    gift1,
+    gift,
+    location,
+    tulip,
+  ];
+}
+
 class Assets {
   const Assets._();
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsSvgGen svg = $AssetsSvgGen();
 }
 
 class AssetGenImage {

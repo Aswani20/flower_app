@@ -10,13 +10,12 @@ abstract class Routes {
   static Route generateRoute(RouteSettings settings) {
     final url = Uri.parse(settings.name ?? "/");
     switch (url.path) {
-      case AppRoutes.signUpScreen:
+      case AppRoutes.homeScreen:
         return MaterialPageRoute(builder: (_) => HomeScreen());
       default:
         return MaterialPageRoute(builder: (context) => NotFoundScreen());
     }
   }
-
 }
 
 class NotFoundScreen extends StatelessWidget {
@@ -63,7 +62,10 @@ class NotFoundScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10.0,
+                    vertical: 5,
+                  ),
                   child: Text(
                     "Oops! We couldn't find the page you're looking for.",
                     style: TextStyle(

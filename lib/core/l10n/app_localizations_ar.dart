@@ -180,4 +180,19 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get cart => 'عربة التسوق';
+
+  @override
+  String get flowery => 'زهري';
+
+  @override
+  String get view_all => 'عرض الكل';
+
+  @override
+  String get best_seller => 'الأكثر مبيعًا';
+
+  @override
+  String get occasion => 'تخفيضات';
+
+  @override
+  String get egp => 'جنيه مصري';
 }

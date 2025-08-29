@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'app_colors.dart';
 
-abstract class AppTheme {static ThemeData getTheme({required ColorScheme colorScheme, required Color textFormFieldBorderColor,}) {
+abstract class AppTheme {
+  static ThemeData getTheme({
+    required ColorScheme colorScheme,
+    required Color textFormFieldBorderColor,
+  }) {
     return ThemeData(
       colorScheme: colorScheme,
       appBarTheme: AppBarTheme(
@@ -62,6 +68,24 @@ abstract class AppTheme {static ThemeData getTheme({required ColorScheme colorSc
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50),
           ),
+        ),
+      ),
+      textTheme: TextTheme(
+        titleMedium: TextStyle(
+          fontSize: 16.sp,
+          fontWeight: FontWeight.w500,
+          fontFamily: GoogleFonts.imFellEnglish().fontFamily,
+        ),
+        bodyMedium: TextStyle(
+          fontSize: 14.sp,
+          fontWeight: FontWeight.w500,
+          fontFamily: GoogleFonts.inter().fontFamily,
+        ),
+        bodyLarge: TextStyle(
+          fontSize: 18.sp,
+          fontWeight: FontWeight.w500,
+          fontFamily: GoogleFonts.inter().fontFamily,
+          color: AppColors.black[500],
         ),
       ),
     );

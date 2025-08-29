@@ -1,4 +1,4 @@
-abstract class AppAssets{
+abstract class AppAssets {
   /// Images
   static const String _baseImagePath = "assets/images/";
 

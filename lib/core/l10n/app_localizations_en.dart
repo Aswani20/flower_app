@@ -180,4 +180,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get cart => 'Cart';
+
+  @override
+  String get flowery => 'Flowery';
+
+  @override
+  String get view_all => 'View All';
+
+  @override
+  String get best_seller => 'Best Seller';
+
+  @override
+  String get occasion => 'Occasion';
+
+  @override
+  String get egp => 'EGP';
 }
