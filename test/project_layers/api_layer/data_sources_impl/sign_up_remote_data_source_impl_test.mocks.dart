@@ -8,27 +8,33 @@ import 'dart:async' as _i6;
 import 'package:flower_app/project_layers/api_layer/api_client/api_client.dart'
     as _i5;
 import 'package:flower_app/project_layers/api_layer/models/request/forget_password_request_dto.dart'
-    as _i10;
-import 'package:flower_app/project_layers/api_layer/models/request/login_request.dart'
-    as _i8;
-import 'package:flower_app/project_layers/api_layer/models/request/reset_password_request_dto.dart'
-    as _i14;
-import 'package:flower_app/project_layers/api_layer/models/request/sign_up_request.dart'
-    as _i7;
-import 'package:flower_app/project_layers/api_layer/models/request/verify_reset_code_request_dto.dart'
-    as _i12;
-import 'package:flower_app/project_layers/api_layer/models/response/forget_password_response_dto.dart'
-    as _i9;
-import 'package:flower_app/project_layers/api_layer/models/response/login_response.dart'
-    as _i3;
-import 'package:flower_app/project_layers/api_layer/models/response/reset_password_response_dto.dart'
     as _i13;
-import 'package:flower_app/project_layers/api_layer/models/response/sign_up_response.dart'
-    as _i2;
-import 'package:flower_app/project_layers/api_layer/models/response/verify_reset_code_response.dart'
+import 'package:flower_app/project_layers/api_layer/models/request/login_request.dart'
     as _i11;
+import 'package:flower_app/project_layers/api_layer/models/request/reset_password_request_dto.dart'
+    as _i17;
+import 'package:flower_app/project_layers/api_layer/models/request/sign_up_request.dart'
+    as _i10;
+import 'package:flower_app/project_layers/api_layer/models/request/verify_reset_code_request_dto.dart'
+    as _i15;
+import 'package:flower_app/project_layers/api_layer/models/response/forget_password_response_dto.dart'
+    as _i12;
+import 'package:flower_app/project_layers/api_layer/models/response/login_response.dart'
+    as _i4;
+import 'package:flower_app/project_layers/api_layer/models/response/reset_password_response_dto.dart'
+    as _i16;
+import 'package:flower_app/project_layers/api_layer/models/response/sign_up_response.dart'
+    as _i3;
+import 'package:flower_app/project_layers/api_layer/models/response/verify_reset_code_response.dart'
+    as _i14;
+import 'package:flower_app/project_layers/data_layer/model/best_seller_response_dto.dart'
+    as _i8;
+import 'package:flower_app/project_layers/data_layer/model/category_response_dto.dart'
+    as _i7;
+import 'package:flower_app/project_layers/data_layer/model/occasion_response_dto.dart'
+    as _i9;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:retrofit/retrofit.dart' as _i4;
+import 'package:retrofit/retrofit.dart' as _i2;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -44,20 +50,20 @@ import 'package:retrofit/retrofit.dart' as _i4;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeSignUpResponse_0 extends _i1.SmartFake
-    implements _i2.SignUpResponse {
-  _FakeSignUpResponse_0(Object parent, Invocation parentInvocation)
+class _FakeHttpResponse_0<T> extends _i1.SmartFake
+    implements _i2.HttpResponse<T> {
+  _FakeHttpResponse_0(Object parent, Invocation parentInvocation)
     : super(parent, parentInvocation);
 }
 
-class _FakeLoginResponse_1 extends _i1.SmartFake implements _i3.LoginResponse {
-  _FakeLoginResponse_1(Object parent, Invocation parentInvocation)
+class _FakeSignUpResponse_1 extends _i1.SmartFake
+    implements _i3.SignUpResponse {
+  _FakeSignUpResponse_1(Object parent, Invocation parentInvocation)
     : super(parent, parentInvocation);
 }
 
-class _FakeHttpResponse_2<T> extends _i1.SmartFake
-    implements _i4.HttpResponse<T> {
-  _FakeHttpResponse_2(Object parent, Invocation parentInvocation)
+class _FakeLoginResponse_2 extends _i1.SmartFake implements _i4.LoginResponse {
+  _FakeLoginResponse_2(Object parent, Invocation parentInvocation)
     : super(parent, parentInvocation);
 }
 
@@ -70,34 +76,78 @@ class MockApiClient extends _i1.Mock implements _i5.ApiClient {
   }
 
   @override
-  _i6.Future<_i2.SignUpResponse> signUp(_i7.SignUpRequestBody? signUpRequest) =>
+  _i6.Future<_i2.HttpResponse<_i7.CategoryResponseDto>> getCategories() =>
+      (super.noSuchMethod(
+            Invocation.method(#getCategories, []),
+            returnValue:
+                _i6.Future<_i2.HttpResponse<_i7.CategoryResponseDto>>.value(
+                  _FakeHttpResponse_0<_i7.CategoryResponseDto>(
+                    this,
+                    Invocation.method(#getCategories, []),
+                  ),
+                ),
+          )
+          as _i6.Future<_i2.HttpResponse<_i7.CategoryResponseDto>>);
+
+  @override
+  _i6.Future<_i2.HttpResponse<_i8.BestSellerResponseDto>> getBestSellers() =>
+      (super.noSuchMethod(
+            Invocation.method(#getBestSellers, []),
+            returnValue:
+                _i6.Future<_i2.HttpResponse<_i8.BestSellerResponseDto>>.value(
+                  _FakeHttpResponse_0<_i8.BestSellerResponseDto>(
+                    this,
+                    Invocation.method(#getBestSellers, []),
+                  ),
+                ),
+          )
+          as _i6.Future<_i2.HttpResponse<_i8.BestSellerResponseDto>>);
+
+  @override
+  _i6.Future<_i2.HttpResponse<_i9.OccasionResponseDto>> getOccasions() =>
+      (super.noSuchMethod(
+            Invocation.method(#getOccasions, []),
+            returnValue:
+                _i6.Future<_i2.HttpResponse<_i9.OccasionResponseDto>>.value(
+                  _FakeHttpResponse_0<_i9.OccasionResponseDto>(
+                    this,
+                    Invocation.method(#getOccasions, []),
+                  ),
+                ),
+          )
+          as _i6.Future<_i2.HttpResponse<_i9.OccasionResponseDto>>);
+
+  @override
+  _i6.Future<_i3.SignUpResponse> signUp(
+    _i10.SignUpRequestBody? signUpRequest,
+  ) =>
       (super.noSuchMethod(
             Invocation.method(#signUp, [signUpRequest]),
-            returnValue: _i6.Future<_i2.SignUpResponse>.value(
-              _FakeSignUpResponse_0(
+            returnValue: _i6.Future<_i3.SignUpResponse>.value(
+              _FakeSignUpResponse_1(
                 this,
                 Invocation.method(#signUp, [signUpRequest]),
               ),
             ),
           )
-          as _i6.Future<_i2.SignUpResponse>);
+          as _i6.Future<_i3.SignUpResponse>);
 
   @override
-  _i6.Future<_i3.LoginResponse> login({required _i8.LoginRequest? request}) =>
+  _i6.Future<_i4.LoginResponse> login({required _i11.LoginRequest? request}) =>
       (super.noSuchMethod(
             Invocation.method(#login, [], {#request: request}),
-            returnValue: _i6.Future<_i3.LoginResponse>.value(
-              _FakeLoginResponse_1(
+            returnValue: _i6.Future<_i4.LoginResponse>.value(
+              _FakeLoginResponse_2(
                 this,
                 Invocation.method(#login, [], {#request: request}),
               ),
             ),
           )
-          as _i6.Future<_i3.LoginResponse>);
+          as _i6.Future<_i4.LoginResponse>);
 
   @override
-  _i6.Future<_i4.HttpResponse<_i9.ForgetPasswordResponseDto>> forgetPassword({
-    required _i10.ForgetPasswordRequestDto? forgetPasswordRequestDto,
+  _i6.Future<_i2.HttpResponse<_i12.ForgetPasswordResponseDto>> forgetPassword({
+    required _i13.ForgetPasswordRequestDto? forgetPasswordRequestDto,
   }) =>
       (super.noSuchMethod(
             Invocation.method(#forgetPassword, [], {
@@ -105,9 +155,9 @@ class MockApiClient extends _i1.Mock implements _i5.ApiClient {
             }),
             returnValue:
                 _i6.Future<
-                  _i4.HttpResponse<_i9.ForgetPasswordResponseDto>
+                  _i2.HttpResponse<_i12.ForgetPasswordResponseDto>
                 >.value(
-                  _FakeHttpResponse_2<_i9.ForgetPasswordResponseDto>(
+                  _FakeHttpResponse_0<_i12.ForgetPasswordResponseDto>(
                     this,
                     Invocation.method(#forgetPassword, [], {
                       #forgetPasswordRequestDto: forgetPasswordRequestDto,
@@ -115,12 +165,12 @@ class MockApiClient extends _i1.Mock implements _i5.ApiClient {
                   ),
                 ),
           )
-          as _i6.Future<_i4.HttpResponse<_i9.ForgetPasswordResponseDto>>);
+          as _i6.Future<_i2.HttpResponse<_i12.ForgetPasswordResponseDto>>);
 
   @override
-  _i6.Future<_i4.HttpResponse<_i11.VerifyResetCodeResponseDto>>
+  _i6.Future<_i2.HttpResponse<_i14.VerifyResetCodeResponseDto>>
   verifyResetCode({
-    required _i12.VerifyResetCodeRequestDto? verifyResetCodeRequestDto,
+    required _i15.VerifyResetCodeRequestDto? verifyResetCodeRequestDto,
   }) =>
       (super.noSuchMethod(
             Invocation.method(#verifyResetCode, [], {
@@ -128,9 +178,9 @@ class MockApiClient extends _i1.Mock implements _i5.ApiClient {
             }),
             returnValue:
                 _i6.Future<
-                  _i4.HttpResponse<_i11.VerifyResetCodeResponseDto>
+                  _i2.HttpResponse<_i14.VerifyResetCodeResponseDto>
                 >.value(
-                  _FakeHttpResponse_2<_i11.VerifyResetCodeResponseDto>(
+                  _FakeHttpResponse_0<_i14.VerifyResetCodeResponseDto>(
                     this,
                     Invocation.method(#verifyResetCode, [], {
                       #verifyResetCodeRequestDto: verifyResetCodeRequestDto,
@@ -138,11 +188,11 @@ class MockApiClient extends _i1.Mock implements _i5.ApiClient {
                   ),
                 ),
           )
-          as _i6.Future<_i4.HttpResponse<_i11.VerifyResetCodeResponseDto>>);
+          as _i6.Future<_i2.HttpResponse<_i14.VerifyResetCodeResponseDto>>);
 
   @override
-  _i6.Future<_i4.HttpResponse<_i13.ResetPasswordResponseDto>> resetPassword({
-    required _i14.ResetPasswordRequestDto? resetPasswordRequestDto,
+  _i6.Future<_i2.HttpResponse<_i16.ResetPasswordResponseDto>> resetPassword({
+    required _i17.ResetPasswordRequestDto? resetPasswordRequestDto,
   }) =>
       (super.noSuchMethod(
             Invocation.method(#resetPassword, [], {
@@ -150,9 +200,9 @@ class MockApiClient extends _i1.Mock implements _i5.ApiClient {
             }),
             returnValue:
                 _i6.Future<
-                  _i4.HttpResponse<_i13.ResetPasswordResponseDto>
+                  _i2.HttpResponse<_i16.ResetPasswordResponseDto>
                 >.value(
-                  _FakeHttpResponse_2<_i13.ResetPasswordResponseDto>(
+                  _FakeHttpResponse_0<_i16.ResetPasswordResponseDto>(
                     this,
                     Invocation.method(#resetPassword, [], {
                       #resetPasswordRequestDto: resetPasswordRequestDto,
@@ -160,5 +210,5 @@ class MockApiClient extends _i1.Mock implements _i5.ApiClient {
                   ),
                 ),
           )
-          as _i6.Future<_i4.HttpResponse<_i13.ResetPasswordResponseDto>>);
+          as _i6.Future<_i2.HttpResponse<_i16.ResetPasswordResponseDto>>);
 }

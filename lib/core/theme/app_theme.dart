@@ -16,39 +16,7 @@ abstract class AppTheme {
         foregroundColor: AppColors.black,
         elevation: 0,
       ),
-      textTheme: TextTheme(
-        titleLarge: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-          color: AppColors.black,
-        ),
-        titleMedium: TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.bold,
-          color: AppColors.black,
-        ),
-        titleSmall: TextStyle(
-          fontSize: 14,
-          fontWeight: FontWeight.bold,
-          color: AppColors.black,
-        ),
-        bodyLarge: TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.normal,
-          color: AppColors.black,
-        ),
-        bodyMedium: TextStyle(
-          fontSize: 14,
-          fontWeight: FontWeight.normal,
-          color: AppColors.black,
-        ),
-        bodySmall: TextStyle(
-          fontSize: 12,
-          fontWeight: FontWeight.normal,
-          color: AppColors.black,
-        ),
-      ),
-      bottomNavigationBarTheme:
+    bottomNavigationBarTheme:
           BottomNavigationBarThemeData(
             selectedItemColor: AppColors.pink,
             unselectedItemColor: AppColors.grey,
