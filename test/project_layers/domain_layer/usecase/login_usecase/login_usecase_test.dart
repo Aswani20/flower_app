@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:dartz/dartz.dart';
-import 'package:flower_app/project_layers/domain_layer/usecase/login_usecase.dart';
+import 'package:flower_app/project_layers/domain_layer/use_cases/login_usecase.dart';
 import 'package:flower_app/project_layers/domain_layer/repos/login_repo.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/login_request.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/login_response.dart';

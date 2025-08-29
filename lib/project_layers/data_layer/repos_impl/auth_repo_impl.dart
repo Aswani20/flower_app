@@ -4,7 +4,7 @@ import 'package:flower_app/project_layers/data_layer/data_source/auth_remote_dat
 import 'package:flower_app/project_layers/domain_layer/entities/forget_password_response_entity.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/reset_password_response_entity.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/verify_reset_code_entity.dart';
-import 'package:flower_app/project_layers/domain_layer/repositories/auth_repo.dart';
+import 'package:flower_app/project_layers/domain_layer/repos/auth_repo.dart';
 import 'package:injectable/injectable.dart';
 
 @Injectable(as: AuthRepo)

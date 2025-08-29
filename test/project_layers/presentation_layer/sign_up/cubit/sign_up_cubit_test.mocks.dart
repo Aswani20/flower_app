@@ -12,7 +12,7 @@ import 'package:flower_app/project_layers/domain_layer/entities/sign_up_entity.d
     as _i6;
 import 'package:flower_app/project_layers/domain_layer/repos/sign_up_repo.dart'
     as _i2;
-import 'package:flower_app/project_layers/domain_layer/usecase/sign_up_use_case.dart'
+import 'package:flower_app/project_layers/domain_layer/use_cases/sign_up_use_case.dart'
     as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i8;

@@ -4,11 +4,10 @@ import 'package:flower_app/core/theme/app_styles.dart';
 import 'package:flower_app/project_layers/domain_layer/use_cases/forget_password_use_case.dart';
 import 'package:flower_app/project_layers/domain_layer/use_cases/reset_password_use_case.dart';
 import 'package:flower_app/project_layers/domain_layer/use_cases/verify_reset_code_use_case.dart';
-import 'package:flower_app/project_layers/presentation_layer/authentication/forget_password/components/forget_password_component.dart';
-import 'package:flower_app/project_layers/presentation_layer/authentication/forget_password/components/otp_component.dart';
-import 'package:flower_app/project_layers/presentation_layer/authentication/forget_password/components/reset_password_component.dart';
 import 'package:flutter/material.dart';
-
+import 'components/forget_password_component.dart';
+import 'components/otp_component.dart';
+import 'components/reset_password_component.dart';
 import 'cubit/forget_password_view_model.dart';
 
 class ForgetPasswordView extends StatelessWidget {

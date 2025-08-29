@@ -1,13 +1,11 @@
-import 'package:flower_app/project_layers/domain_layer/usecase/sign_up_use_case.dart';
+import 'package:flower_app/project_layers/domain_layer/repos/sign_up_repo.dart';
+import 'package:flower_app/project_layers/domain_layer/use_cases/sign_up_use_case.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
-
 import 'package:flower_app/core/api_result/api_result.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/sign_up_request.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/sign_up_entity.dart';
-import 'package:flower_app/project_layers/domain_layer/repos/sign_up_repo.dart';
-
 import 'sign_up_use_case_test.mocks.dart';
 
 @GenerateMocks([SignUpRepo])
@@ -17,7 +15,7 @@ void main() {
 
   setUp(() {
     mockSignUpRepo = MockSignUpRepo();
-    signUpUseCase = SignUpUseCase(mockSignUpRepo);
+    signUpUseCase = SignUpUseCase(mockSignUpRepo as SignUpRepo);
     provideDummy<ApiResult<SignUpEntity>>(
       ApiSuccessResult<SignUpEntity>(
         SignUpEntity(

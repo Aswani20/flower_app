@@ -5,7 +5,7 @@ import 'package:flower_app/project_layers/domain_layer/entities/sign_up_entity.d
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 
-import 'package:flower_app/project_layers/domain_layer/usecase/sign_up_use_case.dart';
+import 'package:flower_app/project_layers/domain_layer/use_cases/sign_up_use_case.dart';
 
 part 'sign_up_state.dart';
 

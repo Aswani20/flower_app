@@ -6,7 +6,7 @@ import 'package:mockito/mockito.dart';
 
 import 'package:flower_app/core/api_result/api_result.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/sign_up_entity.dart';
-import 'package:flower_app/project_layers/domain_layer/usecase/sign_up_use_case.dart';
+import 'package:flower_app/project_layers/domain_layer/use_cases/sign_up_use_case.dart';
 
 import 'sign_up_cubit_test.mocks.dart';
 
