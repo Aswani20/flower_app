@@ -12,6 +12,7 @@ import 'project_layers/presentation_layer/authentication/forget_password/forget_
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await configureDependencies();
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -27,8 +28,7 @@ class MyApp extends StatelessWidget {
       locale: Locale("en"),
       theme: AppTheme.lightTheme,
       onGenerateRoute: Routes.generateRoute,
-
-      initialRoute: AppRoutes.homeScreen,
+      initialRoute: AppRoutes.forgetPasswordScreen,
       routes: {AppRoutes.homeScreen: (context) => HomeScreen(), AppRoutes.forgetPasswordScreen: (context) => ForgetPasswordView(),},
       
 
