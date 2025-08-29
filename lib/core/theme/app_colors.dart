@@ -9,7 +9,7 @@ abstract class AppColors {
   static const MaterialColor white = MaterialColor(
     0xFFF9F9F9, // BASE
     <int, Color>{
-      50:  Color(0xFFFEFEFE), // 10%
+      50: Color(0xFFFEFEFE), // 10%
       100: Color(0xFFFDFDFD), // 20%
       200: Color(0xFFFCFCFC), // 30%
       300: Color(0xFFFBFBFB), // 40%
@@ -23,11 +23,10 @@ abstract class AppColors {
     },
   );
 
-
   static const MaterialColor pink = MaterialColor(
     0xFFD21E6A, // BASE
     <int, Color>{
-      50:  Color(0xFFF6D2E1), // 10%
+      50: Color(0xFFF6D2E1), // 10%
       100: Color(0xFFF0B4CD), // 20%
       200: Color(0xFFE98FB5), // 30%
       300: Color(0xFFE1699C), // 40%
@@ -41,11 +40,10 @@ abstract class AppColors {
     },
   );
 
-
   static const MaterialColor black = MaterialColor(
     0xFF0C1015, // BASE
     <int, Color>{
-      50:  Color(0xFFCECFD0), // 10%
+      50: Color(0xFFCECFD0), // 10%
       100: Color(0xFFAEAFB1), // 20%
       200: Color(0xFF86888A), // 30%
       300: Color(0xFF5D6063), // 40%

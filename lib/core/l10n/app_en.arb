@@ -54,5 +54,11 @@
   "browse_by_subject": "Browse by subject",
   "home": "Home",
   "categories": "Categories",
-  "cart": "Cart"
+  "cart": "Cart" ,
+  "flowery": "Flowery",
+  "view_all": "View All" ,
+  "best_seller": "Best Seller",
+  "occasion": "Occasion",
+  "egp": "EGP"
+
 }

@@ -33,5 +33,3 @@ abstract class AppStyles{
     fontWeight: FontWeight.w400,
     color: AppColors.black,
   );
-
-}

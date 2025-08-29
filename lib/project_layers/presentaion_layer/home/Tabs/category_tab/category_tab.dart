@@ -5,8 +5,6 @@ class CategoryTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('Category Tab'),
-    );
+    return Center(child: Text('Category Tab'));
   }
 }

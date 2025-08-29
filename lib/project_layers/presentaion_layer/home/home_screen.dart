@@ -1,5 +1,6 @@
 import 'package:flower_app/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:flower_app/core/l10n/app_localizations.dart';
 
@@ -27,9 +28,14 @@ class _HomeScreenBody extends StatelessWidget {
       builder: (context, viewModel, child) {
         return Scaffold(
           // indexed stack for save tab state across navigation
-          body: IndexedStack(
-            index: viewModel.currentIndex,
-            children: viewModel.pages,
+          body: SafeArea(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+              child: IndexedStack(
+                index: viewModel.currentIndex,
+                children: viewModel.pages,
+              ),
+            ),
           ),
           bottomNavigationBar: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,

@@ -1,4 +1,7 @@
 import 'package:dio/dio.dart';
+import 'package:flower_app/project_layers/data_layer/model/best_seller_response_dto.dart';
+import 'package:flower_app/project_layers/data_layer/model/category_response_dto.dart';
+import 'package:flower_app/project_layers/data_layer/model/occasion_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/forget_password_request_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/reset_password_request_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/verify_reset_code_request_dto.dart';
@@ -19,6 +22,18 @@ part 'api_client.g.dart';
 abstract class ApiClient {
   @factoryMethod
   factory ApiClient(Dio dio) = _ApiClient;
+
+
+  @GET("/v1/categories")
+  Future<HttpResponse<CategoryResponseDto>> getCategories();
+
+  @GET("/v1/best-seller")
+  Future<HttpResponse<BestSellerResponseDto>> getBestSellers();
+
+
+  @GET("/v1/occasions")
+  Future<HttpResponse<OccasionResponseDto>> getOccasions();
+
 
   @POST(AppConstants.signUp)
   Future<SignUpResponse> signUp(@Body() SignUpRequestBody signUpRequest);
