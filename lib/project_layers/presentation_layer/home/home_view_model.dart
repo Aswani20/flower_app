@@ -3,7 +3,9 @@ import 'package:flower_app/project_layers/presentation_layer/home/Tabs/category_
 import 'package:flower_app/project_layers/presentation_layer/home/Tabs/home_tab/home_tab.dart';
 import 'package:flower_app/project_layers/presentation_layer/home/Tabs/profile_tab/profile_tab.dart';
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
 
+@injectable
 class HomeViewModel extends ChangeNotifier {
   // hold data
   int currentIndex = 0;

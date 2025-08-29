@@ -1,5 +1,7 @@
-import 'package:flower_app/project_layers/api_layer/responses/best_seller_response.dart';
+import 'package:dartz/dartz.dart';
+import '../../../core/errors/failures.dart';
+import '../../domain_layer/entities/best_seller_response_entity.dart';
 
 abstract class BestSellerDataSource {
-  Future<BestSellerResponse> bestSeller();
+  Future<Either<BestSellerResponseEntity, Failures>> getBestSellers();
 }

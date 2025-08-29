@@ -20,16 +20,16 @@ class _ApiClient implements ApiClient {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<BestSellerResponse> getBestSeller() async {
+  Future<HttpResponse<BestSellerResponse>> getBestSellers() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<BestSellerResponse>(
+    final _options = _setStreamType<HttpResponse<BestSellerResponse>>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'best-seller',
+            '/v1/best-seller',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -43,7 +43,8 @@ class _ApiClient implements ApiClient {
       errorLogger?.logError(e, s, _options);
       rethrow;
     }
-    return _value;
+    final httpResponse = HttpResponse(_value, _result);
+    return httpResponse;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {

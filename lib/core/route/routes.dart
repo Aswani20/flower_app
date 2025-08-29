@@ -4,6 +4,7 @@ import 'package:flower_app/gen/assets.gen.dart';
 import 'package:flower_app/project_layers/presentation_layer/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import '../../project_layers/presentation_layer/best_seller/best_seller_screen.dart';
 import 'app_routes.dart';
 
 abstract class Routes {
@@ -12,11 +13,12 @@ abstract class Routes {
     switch (url.path) {
       case AppRoutes.signUpScreen:
         return MaterialPageRoute(builder: (_) => HomeScreen());
+      case AppRoutes.bestSeller:
+        return MaterialPageRoute(builder: (_) => BestSellerScreen());
       default:
         return MaterialPageRoute(builder: (context) => NotFoundScreen());
     }
   }
-
 }
 
 class NotFoundScreen extends StatelessWidget {
@@ -63,7 +65,10 @@ class NotFoundScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10.0,
+                    vertical: 5,
+                  ),
                   child: Text(
                     "Oops! We couldn't find the page you're looking for.",
                     style: TextStyle(
