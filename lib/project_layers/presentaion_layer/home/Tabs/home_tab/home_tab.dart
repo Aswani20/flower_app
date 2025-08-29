@@ -3,17 +3,18 @@ import 'package:flower_app/core/l10n/app_localizations.dart';
 import 'package:flower_app/project_layers/domain_layer/use_cases/home/best_seller_use_case.dart';
 import 'package:flower_app/project_layers/domain_layer/use_cases/home/category_use_case.dart';
 import 'package:flower_app/project_layers/domain_layer/use_cases/home/occaison_use_case.dart';
-import 'package:flower_app/project_layers/presentation_layer/home/Tabs/home_tab/components/address_selector.dart';
-import 'package:flower_app/project_layers/presentation_layer/home/Tabs/home_tab/components/home_card.dart';
-import 'package:flower_app/project_layers/presentation_layer/home/Tabs/home_tab/components/home_category.dart';
-import 'package:flower_app/project_layers/presentation_layer/home/Tabs/home_tab/components/home_header_section.dart';
-import 'package:flower_app/project_layers/presentation_layer/home/Tabs/home_tab/components/home_search_section.dart';
-import 'package:flower_app/project_layers/presentation_layer/home/Tabs/home_tab/cubit/home_tab_state.dart';
-import 'package:flower_app/project_layers/presentation_layer/home/Tabs/home_tab/cubit/home_tab_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skeletonizer/skeletonizer.dart';
+
+import 'components/address_selector.dart';
+import 'components/home_card.dart';
+import 'components/home_category.dart';
+import 'components/home_header_section.dart';
+import 'components/home_search_section.dart';
+import 'cubit/home_tab_state.dart';
+import 'cubit/home_tab_view_model.dart';
 
 class HomeTab extends StatelessWidget {
   const HomeTab({super.key});

@@ -34,16 +34,16 @@ import '../../project_layers/data_layer/data_source/sign_up_remote_data_source.d
     as _i772;
 import '../../project_layers/data_layer/repos_impl/auth_repo_impl.dart'
     as _i253;
+import '../../project_layers/data_layer/repos_impl/home_repo_impl.dart'
+    as _i157;
 import '../../project_layers/data_layer/repos_impl/login_repo_impl.dart'
     as _i674;
 import '../../project_layers/data_layer/repos_impl/sign_up_repo_impl.dart'
     as _i631;
-import '../../project_layers/data_layer/repositories/home_repo_impl.dart'
-    as _i84;
 import '../../project_layers/domain_layer/repos/auth_repo.dart' as _i326;
+import '../../project_layers/domain_layer/repos/home_repo.dart' as _i900;
 import '../../project_layers/domain_layer/repos/login_repo.dart' as _i974;
 import '../../project_layers/domain_layer/repos/sign_up_repo.dart' as _i948;
-import '../../project_layers/domain_layer/repositories/home_repo.dart' as _i401;
 import '../../project_layers/domain_layer/use_cases/forget_password_use_case.dart'
     as _i18;
 import '../../project_layers/domain_layer/use_cases/home/best_seller_use_case.dart'
@@ -66,8 +66,8 @@ import '../../project_layers/presentaion_layer/auth/sign_in/cubit/login_cubit.da
     as _i498;
 import '../../project_layers/presentaion_layer/auth/sign_up/cubit/sign_up_cubit.dart'
     as _i785;
-import '../../project_layers/presentation_layer/home/Tabs/home_tab/cubit/home_tab_view_model.dart'
-    as _i536;
+import '../../project_layers/presentaion_layer/home/Tabs/home_tab/cubit/home_tab_view_model.dart'
+    as _i661;
 import 'modules/dio_module.dart' as _i983;
 import 'modules/shared_preferences_module.dart' as _i813;
 
@@ -92,18 +92,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i1054.HomeRemoteDataSource>(
       () => _i329.HomeRemoteDataSourceImpl(gh<_i778.ApiClient>()),
     );
-    gh.factory<_i401.HomeRepo>(
-      () => _i84.HomeRepoImpl(gh<_i1054.HomeRemoteDataSource>()),
-    );
-    gh.factory<_i990.BestSellerUseCase>(
-      () => _i990.BestSellerUseCase(homeRepo: gh<_i401.HomeRepo>()),
-    );
-    gh.factory<_i858.CategoryUseCase>(
-      () => _i858.CategoryUseCase(homeRepo: gh<_i401.HomeRepo>()),
-    );
-    gh.factory<_i7.OccasionUseCase>(
-      () => _i7.OccasionUseCase(homeRepo: gh<_i401.HomeRepo>()),
-    );
     gh.factory<_i772.SignUpRemoteDataSource>(
       () => _i477.SignUpRemoteDataSourceImpl(gh<_i778.ApiClient>()),
     );
@@ -116,27 +104,29 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i948.SignUpRepo>(
       () => _i631.SignUpRepoImpl(gh<_i772.SignUpRemoteDataSource>()),
     );
+    gh.factory<_i900.HomeRepo>(
+      () => _i157.HomeRepoImpl(gh<_i1054.HomeRemoteDataSource>()),
+    );
     gh.factory<_i326.AuthRepo>(
       () => _i253.AuthRepoImpl(gh<_i956.AuthRemoteDataSource>()),
     );
     gh.factory<_i974.LoginRepository>(
       () => _i674.LoginRepositoryImpl(gh<_i196.LoginDataSource>()),
     );
-    gh.factory<_i536.HomeTabViewModel>(
-      () => _i536.HomeTabViewModel(
-        categoryUseCase: gh<_i858.CategoryUseCase>(),
-        bestSellerUseCase: gh<_i990.BestSellerUseCase>(),
-        occasionUseCase: gh<_i7.OccasionUseCase>(),
-      ),
-    );
     gh.factory<_i123.SignUpUseCase>(
       () => _i123.SignUpUseCase(gh<_i948.SignUpRepo>()),
     );
+    gh.factory<_i7.OccasionUseCase>(
+      () => _i7.OccasionUseCase(homeRepo: gh<_i900.HomeRepo>()),
+    );
+    gh.factory<_i858.CategoryUseCase>(
+      () => _i858.CategoryUseCase(homeRepo: gh<_i900.HomeRepo>()),
+    );
+    gh.factory<_i990.BestSellerUseCase>(
+      () => _i990.BestSellerUseCase(homeRepo: gh<_i900.HomeRepo>()),
+    );
     gh.factory<_i1027.LoginUseCase>(
       () => _i1027.LoginUseCase(loginRepository: gh<_i974.LoginRepository>()),
-    );
-    gh.factory<_i18.ForgetPasswordUseCase>(
-      () => _i18.ForgetPasswordUseCase(gh<_i326.AuthRepo>()),
     );
     gh.factory<_i194.ResetPasswordUseCase>(
       () => _i194.ResetPasswordUseCase(gh<_i326.AuthRepo>()),
@@ -144,8 +134,18 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i649.VerifyResetCodeUseCase>(
       () => _i649.VerifyResetCodeUseCase(gh<_i326.AuthRepo>()),
     );
+    gh.factory<_i18.ForgetPasswordUseCase>(
+      () => _i18.ForgetPasswordUseCase(gh<_i326.AuthRepo>()),
+    );
     gh.factory<_i785.SignUpCubit>(
       () => _i785.SignUpCubit(gh<_i123.SignUpUseCase>()),
+    );
+    gh.factory<_i661.HomeTabViewModel>(
+      () => _i661.HomeTabViewModel(
+        categoryUseCase: gh<_i858.CategoryUseCase>(),
+        bestSellerUseCase: gh<_i990.BestSellerUseCase>(),
+        occasionUseCase: gh<_i7.OccasionUseCase>(),
+      ),
     );
     gh.factory<_i498.LoginCubit>(
       () => _i498.LoginCubit(loginUseCase: gh<_i1027.LoginUseCase>()),

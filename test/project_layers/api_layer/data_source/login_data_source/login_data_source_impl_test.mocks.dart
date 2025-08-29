@@ -17,22 +17,22 @@ import 'package:flower_app/project_layers/api_layer/models/request/sign_up_reque
     as _i10;
 import 'package:flower_app/project_layers/api_layer/models/request/verify_reset_code_request_dto.dart'
     as _i15;
+import 'package:flower_app/project_layers/api_layer/models/response/best_seller_response_dto.dart'
+    as _i8;
+import 'package:flower_app/project_layers/api_layer/models/response/category_response_dto.dart'
+    as _i7;
 import 'package:flower_app/project_layers/api_layer/models/response/forget_password_response_dto.dart'
     as _i12;
 import 'package:flower_app/project_layers/api_layer/models/response/login_response.dart'
     as _i4;
+import 'package:flower_app/project_layers/api_layer/models/response/occasion_response_dto.dart'
+    as _i9;
 import 'package:flower_app/project_layers/api_layer/models/response/reset_password_response_dto.dart'
     as _i16;
 import 'package:flower_app/project_layers/api_layer/models/response/sign_up_response.dart'
     as _i3;
 import 'package:flower_app/project_layers/api_layer/models/response/verify_reset_code_response.dart'
     as _i14;
-import 'package:flower_app/project_layers/data_layer/model/best_seller_response_dto.dart'
-    as _i8;
-import 'package:flower_app/project_layers/data_layer/model/category_response_dto.dart'
-    as _i7;
-import 'package:flower_app/project_layers/data_layer/model/occasion_response_dto.dart'
-    as _i9;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:retrofit/retrofit.dart' as _i2;
 

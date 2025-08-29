@@ -4,7 +4,7 @@ import 'package:flower_app/project_layers/data_layer/data_source/home_remote_dat
 import 'package:flower_app/project_layers/domain_layer/entities/best_seller_response_entity.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/category_response_entity.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/occasion_response_entity.dart';
-import 'package:flower_app/project_layers/domain_layer/repositories/home_repo.dart';
+import 'package:flower_app/project_layers/domain_layer/repos/home_repo.dart';
 import 'package:injectable/injectable.dart';
 
 @Injectable(as: HomeRepo)

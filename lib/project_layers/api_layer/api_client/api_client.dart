@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:flower_app/project_layers/data_layer/model/best_seller_response_dto.dart';
-import 'package:flower_app/project_layers/data_layer/model/category_response_dto.dart';
-import 'package:flower_app/project_layers/data_layer/model/occasion_response_dto.dart';
+import 'package:flower_app/project_layers/api_layer/models/response/best_seller_response_dto.dart';
+import 'package:flower_app/project_layers/api_layer/models/response/category_response_dto.dart';
+import 'package:flower_app/project_layers/api_layer/models/response/occasion_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/forget_password_request_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/reset_password_request_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/verify_reset_code_request_dto.dart';

@@ -1,4 +1,4 @@
-import 'package:flower_app/project_layers/data_layer/model/category_response_dto.dart';
+import 'package:flower_app/project_layers/api_layer/models/response/category_response_dto.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/occasion_response_entity.dart';
 
 class OccasionResponseDto extends OccasionResponseEntity {
