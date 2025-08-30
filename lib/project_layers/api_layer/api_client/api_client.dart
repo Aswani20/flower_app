@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flower_app/project_layers/api_layer/models/response/best_seller_response.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/best_seller_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/category_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/occasion_response_dto.dart';
@@ -30,6 +31,8 @@ abstract class ApiClient {
 
   @GET("/v1/best-seller")
   Future<HttpResponse<BestSellerResponse>> getBestSellersProduct();
+
+  @GET("/v1/best-seller")
   Future<HttpResponse<BestSellerResponseDto>> getBestSellers();
 
 

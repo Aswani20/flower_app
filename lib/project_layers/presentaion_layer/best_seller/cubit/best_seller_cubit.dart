@@ -1,5 +1,5 @@
 import 'package:flower_app/project_layers/domain_layer/entities/best_seller_response_entity.dart';
-import 'package:flower_app/project_layers/domain_layer/usecase/best_seller_use_case.dart';
+import 'package:flower_app/project_layers/domain_layer/use_cases/best_seller_use_case.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
@@ -10,7 +10,7 @@ class BestSellerViewModel extends Cubit<BestSellerState> {
   final BestSellerUseCase bestSellerUseCase;
 
   BestSellerViewModel(this.bestSellerUseCase)
-    : super(const BestSellerInitialState());
+      : super(const BestSellerInitialState());
 
   List<BestSellerEntity> get bestSellers {
     if (state is BestSellerLoadingState) {
@@ -48,7 +48,7 @@ class BestSellerViewModel extends Cubit<BestSellerState> {
       final either = await bestSellerUseCase.invoke();
 
       either.fold(
-        (bestSellerResponse) {
+            (bestSellerResponse) {
           // Success - extract best sellers list from response and set loading to false
           final bestSellerList = bestSellerResponse.bestSeller ?? [];
           final currentState = state;
@@ -75,7 +75,7 @@ class BestSellerViewModel extends Cubit<BestSellerState> {
             );
           }
         },
-        (error) {
+            (error) {
           // Error - emit error state
           emit(
             BestSellerErrorState(

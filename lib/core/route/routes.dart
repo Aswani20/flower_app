@@ -9,6 +9,7 @@ import 'package:flower_app/project_layers/presentaion_layer/home/home_screen.dar
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../project_layers/presentaion_layer/best_seller/best_seller_screen.dart';
 import '../di/di.dart';
 import 'app_routes.dart';
 
@@ -24,6 +25,8 @@ abstract class Routes {
         return MaterialPageRoute(builder: (context) => const SignInView());
       case AppRoutes.homeScreen:
         return MaterialPageRoute(builder: (context) => const HomeScreen());
+      case AppRoutes.bestSeller:
+        return MaterialPageRoute(builder: (context) =>  BestSellerScreen());
       default:
         return MaterialPageRoute(builder: (context) => NotFoundScreen());
     }
