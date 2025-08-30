@@ -44,3 +44,5 @@ class BestSellerEntity {
   bool? isSuperAdmin;
   int? sold;
 }
+
+

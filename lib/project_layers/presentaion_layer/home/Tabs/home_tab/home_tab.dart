@@ -1,5 +1,6 @@
 import 'package:flower_app/core/di/di.dart';
 import 'package:flower_app/core/l10n/app_localizations.dart';
+import 'package:flower_app/core/route/app_routes.dart';
 import 'package:flower_app/project_layers/domain_layer/use_cases/home/best_seller_use_case.dart';
 import 'package:flower_app/project_layers/domain_layer/use_cases/home/category_use_case.dart';
 import 'package:flower_app/project_layers/domain_layer/use_cases/home/occaison_use_case.dart';
@@ -7,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skeletonizer/skeletonizer.dart';
-
 import 'components/address_selector.dart';
 import 'components/home_card.dart';
 import 'components/home_category.dart';
@@ -178,7 +178,7 @@ class _HomeTabBody extends StatelessWidget {
         HomeHeaderSection(
           sectionTitle: AppLocalizations.of(context)!.best_seller,
           onPressed: () {
-            //TODO: Handle view all best sellers
+            Navigator.pushNamed(context, AppRoutes.bestSeller);
           },
         ),
         Skeletonizer(

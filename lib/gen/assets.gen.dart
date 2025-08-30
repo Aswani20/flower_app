@@ -434,39 +434,6 @@ class AssetGenImage {
       bundle: bundle,
       package: package,
     );
-  AssetGenImage get alarmClockIcon => const AssetGenImage(
-    'assets/icons/Alarm_clock_icon.png',
-  );
-  AssetGenImage get addIcon =>
-      const AssetGenImage('assets/icons/add_icon.png');
-  AssetGenImage get addressIcon => const AssetGenImage(
-    'assets/icons/address_icon.png',
-  );
-  AssetGenImage get arrowBackIcon => const AssetGenImage(
-    'assets/icons/arrow_back_icon.png',
-  );
-      const AssetGenImage(
-        'assets/icons/britain_flag_icon.png',
-      );
-  /// File path: assets/icons/cart_icon.png
-  AssetGenImage get cartIcon =>
-      const AssetGenImage('assets/icons/cart_icon.png');
-
-  AssetGenImage get categoryIcon => const AssetGenImage(
-    'assets/icons/category_icon.png',
-  );
-      const AssetGenImage(
-        'assets/icons/check_circle_icon.png',
-      );
-  ImageProvider provider({
-    AssetBundle? bundle,
-    String? package,
-  }) {
-    return AssetImage(
-      _assetName,
-      bundle: bundle,
-      package: package,
-    );
   }
 
   String get path => _assetName;
