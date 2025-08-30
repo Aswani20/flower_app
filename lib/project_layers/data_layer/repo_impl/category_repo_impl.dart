@@ -10,7 +10,7 @@ class CategoryRepoImpl implements CategoryRepo {
   CategoryRepoImpl(this.categoryRemoteDataSource);
   @override
   Future<ApiResult<List<CategoryEntity>>>
-  getCategories() async {
-    return await categoryRemoteDataSource.getCategories();
+  getAllCategories() async {
+    return await categoryRemoteDataSource.getAllCategories();
   }
 }

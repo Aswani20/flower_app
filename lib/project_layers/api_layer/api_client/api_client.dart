@@ -12,8 +12,9 @@ abstract class ApiClient {
   @factoryMethod
   factory ApiClient(Dio dio) = _ApiClient;
 
+
   @GET(AppConstants.categories)
-  Future<CategoriesResponse> getCategories();
+  Future<CategoriesResponse> getAllCategories();
 
   @GET(AppConstants.products)
   Future<ProductsResponse> getProductsById(

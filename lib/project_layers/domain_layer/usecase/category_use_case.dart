@@ -9,7 +9,7 @@ class CategoryUseCase {
   CategoryUseCase(this.categoryRepo);
 
   Future<ApiResult<List<CategoryEntity>>> call() async {
-    final result = await categoryRepo.getCategories();
+    final result = await categoryRepo.getAllCategories();
     return result;
   }
 }

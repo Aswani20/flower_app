@@ -14,10 +14,10 @@ class CategoryRemoteDataSourceImpl
   CategoryRemoteDataSourceImpl(this.apiClient);
   @override
   Future<ApiResult<List<CategoryEntity>>>
-  getCategories() async {
+  getAllCategories() async {
     try {
       CategoriesResponse categoriesResponse =
-          await apiClient.getCategories();
+          await apiClient.getAllCategories();
       return ApiSuccessResult(
         categoriesResponse.categories!
             .map((e) => e.toCategoryEntity())

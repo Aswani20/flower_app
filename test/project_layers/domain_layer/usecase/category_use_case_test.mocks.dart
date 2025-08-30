@@ -36,14 +36,14 @@ class MockCategoryRepo extends _i1.Mock implements _i2.CategoryRepo {
   }
 
   @override
-  _i3.Future<_i4.ApiResult<List<_i5.CategoryEntity>>> getCategories() =>
+  _i3.Future<_i4.ApiResult<List<_i5.CategoryEntity>>> getAllCategories() =>
       (super.noSuchMethod(
-            Invocation.method(#getCategories, []),
+            Invocation.method(#getAllCategories, []),
             returnValue:
                 _i3.Future<_i4.ApiResult<List<_i5.CategoryEntity>>>.value(
                   _i6.dummyValue<_i4.ApiResult<List<_i5.CategoryEntity>>>(
                     this,
-                    Invocation.method(#getCategories, []),
+                    Invocation.method(#getAllCategories, []),
                   ),
                 ),
           )

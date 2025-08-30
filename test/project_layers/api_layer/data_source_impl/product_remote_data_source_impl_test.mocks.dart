@@ -48,13 +48,13 @@ class MockApiClient extends _i1.Mock implements _i4.ApiClient {
   }
 
   @override
-  _i5.Future<_i2.CategoriesResponse> getCategories() =>
+  _i5.Future<_i2.CategoriesResponse> getAllCategories() =>
       (super.noSuchMethod(
-            Invocation.method(#getCategories, []),
+            Invocation.method(#getAllCategories, []),
             returnValue: _i5.Future<_i2.CategoriesResponse>.value(
               _FakeCategoriesResponse_0(
                 this,
-                Invocation.method(#getCategories, []),
+                Invocation.method(#getAllCategories, []),
               ),
             ),
           )
