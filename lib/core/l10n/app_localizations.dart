@@ -234,7 +234,8 @@ abstract class AppLocalizations {
   ///
   /// In en, this message translates to:
   /// **'Password must contain upper, lower, and special character'**
-  String get passwordMustContainUpperLowerAndSpecialCharacter;
+  String
+  get passwordMustContainUpperLowerAndSpecialCharacter;
 
   /// No description provided for @passwordsDoNotMatch.
   ///
@@ -440,36 +441,6 @@ abstract class AppLocalizations {
   /// **'Cart'**
   String get cart;
 
-  /// No description provided for @flowery.
-  ///
-  /// In en, this message translates to:
-  /// **'Flowery'**
-  String get flowery;
-
-  /// No description provided for @view_all.
-  ///
-  /// In en, this message translates to:
-  /// **'View All'**
-  String get view_all;
-
-  /// No description provided for @best_seller.
-  ///
-  /// In en, this message translates to:
-  /// **'Best Seller'**
-  String get best_seller;
-
-  /// No description provided for @occasion.
-  ///
-  /// In en, this message translates to:
-  /// **'Occasion'**
-  String get occasion;
-
-  /// No description provided for @egp.
-  ///
-  /// In en, this message translates to:
-  /// **'EGP'**
-  String get egp;
-
   /// No description provided for @egp.
   ///
   /// In en, this message translates to:
@@ -541,6 +512,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'White wrap'**
   String get white_wrap;
+
+  /// No description provided for @flowery.
+  ///
+  /// In en, this message translates to:
+  /// **'Flowery'**
+  String get flowery;
+
+  /// No description provided for @view_all.
+  ///
+  /// In en, this message translates to:
+  /// **'View All'**
+  String get view_all;
+
+  /// No description provided for @best_seller.
+  ///
+  /// In en, this message translates to:
+  /// **'Best Seller'**
+  String get best_seller;
+
+  /// No description provided for @occasion.
+  ///
+  /// In en, this message translates to:
+  /// **'Occasion'**
+  String get occasion;
 }
 
 class _AppLocalizationsDelegate
@@ -559,7 +554,8 @@ class _AppLocalizationsDelegate
       <String>['ar', 'en'].contains(locale.languageCode);
 
   @override
-  bool shouldReload(_AppLocalizationsDelegate old) => false;
+  bool shouldReload(_AppLocalizationsDelegate old) =>
+      false;
 }
 
 AppLocalizations lookupAppLocalizations(Locale locale) {

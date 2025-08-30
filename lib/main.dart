@@ -5,8 +5,7 @@ import 'package:flower_app/project_layers/presentaion_layer/auth/sign_up/sign_up
 import 'package:flower_app/project_layers/presentaion_layer/best_seller/best_seller_screen.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/home_screen.dart';
 import 'package:flower_app/core/l10n/app_localizations.dart';
-import 'package:flower_app/project_layers/presentation_layer/home/home_screen.dart';
-import 'package:flower_app/project_layers/presentation_layer/home/screens/product_details_screen.dart';
+import 'package:flower_app/project_layers/presentaion_layer/home/screens/product_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'core/route/app_routes.dart';
@@ -42,7 +41,8 @@ class MyApp extends StatelessWidget {
           AppRoutes.signUpScreen : (context) => SignUpView(),
           AppRoutes.forgetPasswordScreen : (context) => ForgetPasswordView(),
           AppRoutes.homeScreen: (context) => HomeScreen(),
-          AppRoutes.bestSeller: (context) => BestSellerScreen()
+          AppRoutes.bestSeller: (context) => BestSellerScreen(),
+          AppRoutes.productDetailsScreen: (context) => ProductDetailsScreen(),
         },
       ),
     );

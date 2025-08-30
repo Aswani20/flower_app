@@ -206,7 +206,7 @@ class _HomeTabBody extends StatelessWidget {
                 }
                 return HomeCard(
                   onTap: () {
-                    //TODO: Handle card tap
+                    Navigator.pushNamed(context, AppRoutes.productDetailsScreen, arguments: viewModel.bestSellers[index]);
                   },
                   bestSeller: viewModel.bestSellers[index],
                 );
@@ -256,7 +256,7 @@ class _HomeTabBody extends StatelessWidget {
                 }
                 return HomeCard(
                   onTap: () {
-                    //TODO: Handle card tap
+                    Navigator.pushNamed(context, AppRoutes.productDetailsScreen, arguments: viewModel.occasions[index]);
                   },
                   occasion: viewModel.occasions[index],
                 );

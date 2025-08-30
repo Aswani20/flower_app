@@ -1,4 +1,5 @@
 import 'package:flower_app/core/extensions/spacer_media_quiey.dart';
+import 'package:flower_app/core/route/app_routes.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/category_tab/widgets/product_item.dart';
 import 'package:flutter/material.dart';
@@ -44,6 +45,7 @@ class ProductsGridBuilder extends StatelessWidget {
                         return GestureDetector(
                           onTap: () {
                             // Navigator to product details screen and give the product[index]
+                            Navigator.pushNamed(context, AppRoutes.productDetailsScreen, arguments: product);
                           },
                           child: ProductItem(
                             product: product,

@@ -1,8 +1,6 @@
 import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/gen/assets.gen.dart';
-import 'package:flower_app/project_layers/presentation_layer/home/home_screen.dart';
-import 'package:flower_app/project_layers/presentation_layer/home/screens/product_details_screen.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/forget_password/forget_password_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/sign_in/login_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/sign_up/cubit/sign_up_cubit.dart';
@@ -12,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../project_layers/presentaion_layer/best_seller/best_seller_screen.dart';
+import '../../project_layers/presentaion_layer/home/screens/product_details_screen.dart';
 import '../di/di.dart';
 import 'app_routes.dart';
 
@@ -29,7 +28,6 @@ abstract class Routes {
         return MaterialPageRoute(builder: (context) => const HomeScreen());
       case AppRoutes.bestSeller:
         return MaterialPageRoute(builder: (context) =>  BestSellerScreen());
-        return MaterialPageRoute(builder: (_) => HomeScreen());
       case AppRoutes.productDetailsScreen:
         return MaterialPageRoute(builder: (_) => ProductDetailsScreen());
       default:

@@ -6,7 +6,8 @@ import 'app_localizations.dart';
 
 /// The translations for Arabic (`ar`).
 class AppLocalizationsAr extends AppLocalizations {
-  AppLocalizationsAr([String locale = 'ar']) : super(locale);
+  AppLocalizationsAr([String locale = 'ar'])
+    : super(locale);
 
   @override
   String get appName => 'تطبيق الامتحانات ';
@@ -74,24 +75,29 @@ class AppLocalizationsAr extends AppLocalizations {
       'الاسم يجب ان يكون اكبر من 3 حروف';
 
   @override
-  String get passwordMustContainUpperLowerAndSpecialCharacter =>
+  String
+  get passwordMustContainUpperLowerAndSpecialCharacter =>
       'يحب ان يحتوي علي حرف كبير و حرف صغير ورمز مميز';
 
   @override
-  String get passwordsDoNotMatch => 'كلمة المرور غير متطابقه';
+  String get passwordsDoNotMatch =>
+      'كلمة المرور غير متطابقه';
 
   @override
-  String get pleaseEnterYourPassword => 'ادخل كلمة المرور';
+  String get pleaseEnterYourPassword =>
+      'ادخل كلمة المرور';
 
   @override
-  String get pleaseEnterYourEmail => 'ادخل البريد الالكتروني';
+  String get pleaseEnterYourEmail =>
+      'ادخل البريد الالكتروني';
 
   @override
   String get emailMustBeLikeThisExampleGmailCom =>
       'البريد الالكتروني يجب ان يكون  \"example@gmail.com';
 
   @override
-  String get pleaseEnterYourPhoneNumber => 'ادخل رقم الهاتف ';
+  String get pleaseEnterYourPhoneNumber =>
+      'ادخل رقم الهاتف ';
 
   @override
   String get enterAValidEgyptianPhoneNumber =>
@@ -108,7 +114,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get continue_btn => 'استمرار';
 
   @override
-  String get email_verification => 'تحقق البريد الالكتروني';
+  String get email_verification =>
+      'تحقق البريد الالكتروني';
 
   @override
   String get enter_code_sent_to_email =>
@@ -134,7 +141,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get new_password => 'كلمة المرور الجديدة';
 
   @override
-  String get enter_your_password => 'أدخل كلمة المرور الخاصة بك';
+  String get enter_your_password =>
+      'أدخل كلمة المرور الخاصة بك';
 
   @override
   String get loading => 'جاري التحميل...';
@@ -152,7 +160,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get server_error => 'خطأ في الخادم';
 
   @override
-  String get reset_pass_success => 'تم تغيير كلمة المرور بنجاح';
+  String get reset_pass_success =>
+      'تم تغيير كلمة المرور بنجاح';
 
   @override
   String get otp_resend_to_mail =>
@@ -186,10 +195,11 @@ class AppLocalizationsAr extends AppLocalizations {
   String get cart => 'عربة التسوق';
 
   @override
-  String get egp => 'EGP';
+  String get egp => 'جنيه مصري';
 
   @override
-  String get all_prices_include_tax => 'All prices include tax';
+  String get all_prices_include_tax =>
+      'All prices include tax';
 
   @override
   String get product_title => 'product title';
@@ -233,7 +243,4 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get occasion => 'تخفيضات';
-
-  @override
-  String get egp => 'جنيه مصري';
 }

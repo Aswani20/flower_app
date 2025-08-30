@@ -2,8 +2,10 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/core/theme/app_styles.dart';
-import 'package:flower_app/project_layers/presentation_layer/home/screens/dot_indicator.dart';
 import 'package:flutter/material.dart';
+import '../../../domain_layer/entities/best_seller_response_entity.dart';
+import '../../../domain_layer/entities/product_entity.dart';
+import 'dot_indicator.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
   const ProductDetailsScreen({super.key});
@@ -15,18 +17,10 @@ class ProductDetailsScreen extends StatefulWidget {
 class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   final CarouselSliderController carouselSliderController = CarouselSliderController();
   int selectedPage = 0;
-  List<String> images = [
-    'assets/icons/add_icon.png',
-    'assets/images/no_routes.png',
-    'assets/icons/add_icon.png',
-    'assets/images/no_routes.png',
-    'assets/icons/add_icon.png',
-    'assets/images/no_routes.png',
-    'assets/icons/add_icon.png',
-  ];
 
   @override
   Widget build(BuildContext context) {
+    var productItem = ModalRoute.of(context)!.settings.arguments as ProductEntity;
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
@@ -41,7 +35,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                   children: [
                     CarouselSlider(
                       carouselController: carouselSliderController,
-                      items: images.map((image) => Image.asset(image, width: context.width, fit: BoxFit.fill)).toList(),
+                      items: productItem.images!.map((image) => Image.network(image, width: context.width, fit: BoxFit.fill)).toList(),
                       options: CarouselOptions(
                         height: context.height,
                         autoPlay: true,
@@ -73,7 +67,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                     ),
                     Positioned(
                       bottom: 10,
-                      child: DotIndicator(imagesList: images, controller: carouselSliderController, selectedPage: selectedPage),
+                      child: DotIndicator(imagesList: productItem.images!, controller: carouselSliderController, selectedPage: selectedPage),
                     ),
                   ],
                 ),
@@ -100,7 +94,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                     style: AppStyles.bold20black,
                                   ),
                                   TextSpan(
-                                    text: context.l10n.product_price,
+                                    text: "${productItem.price}",
                                     style: AppStyles.bold20black,
                                   ),
                                 ],
@@ -111,8 +105,10 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                               style: AppStyles.regular13grey,
                             ),
                             Text(
-                              context.l10n.product_title,
-                              style: AppStyles.medium16black,
+                              productItem.title ?? context.l10n.product_title,
+                              style: AppStyles.medium16black.copyWith(fontSize: 14),
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ],
                         ),
@@ -137,11 +133,11 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          context.l10n.description,
+                           context.l10n.description,
                           style: AppStyles.medium16black,
                         ),
                         Text(
-                          context.l10n.description_body,
+                          productItem.description ?? context.l10n.description_body,
                           style: AppStyles.regular14black,
                           textAlign: TextAlign.justify,
                         ),
@@ -157,11 +153,11 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                         ),
                         4.heightBox,
                         Text(
-                          context.l10n.pink_roses,
+                          "${productItem.quantity} ${productItem.title}",
                           style: AppStyles.regular14black,
                         ),
                         Text(
-                          context.l10n.white_wrap,
+                          "Rating: ${productItem.rateAvg}",
                           style: AppStyles.regular14black,
                         ),
                       ],
@@ -170,7 +166,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
                 child: ElevatedButton(
                   onPressed: () {},
                   child: Text(
