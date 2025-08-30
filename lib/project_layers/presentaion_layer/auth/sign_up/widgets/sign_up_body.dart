@@ -34,8 +34,8 @@ class SignUpBody extends StatelessWidget {
 
                   child: state is SignupLoading
                       ? CircularProgressIndicator(
-                          color: AppColors.white,
-                        )
+                    color: AppColors.white,
+                  )
                       : Text(context.l10n.signUp),
                 );
               },

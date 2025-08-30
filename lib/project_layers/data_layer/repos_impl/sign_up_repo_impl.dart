@@ -12,8 +12,8 @@ class SignUpRepoImpl implements SignUpRepo {
   SignUpRepoImpl(this.signUpRemoteDataSource);
   @override
   Future<ApiResult<SignUpEntity>> signUp(
-    SignUpRequestBody signUpRequest,
-  ) async {
+      SignUpRequestBody signUpRequest,
+      ) async {
     return await signUpRemoteDataSource.signUp(signUpRequest);
   }
 }

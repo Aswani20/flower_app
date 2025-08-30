@@ -86,7 +86,7 @@ class _SignUpFieldsState extends State<SignUpFields> {
                     onPressed: () {
                       setState(() {
                         isPasswordObscureText =
-                            !isPasswordObscureText;
+                        !isPasswordObscureText;
                       });
                     },
                   ),
@@ -110,7 +110,7 @@ class _SignUpFieldsState extends State<SignUpFields> {
               Expanded(
                 child: AppTextFormFeild(
                   isObscureText:
-                      isConfirmPasswordObscureText,
+                  isConfirmPasswordObscureText,
                   suffixIcon: IconButton(
                     icon: Icon(
                       isConfirmPasswordObscureText
@@ -120,7 +120,7 @@ class _SignUpFieldsState extends State<SignUpFields> {
                     onPressed: () {
                       setState(() {
                         isConfirmPasswordObscureText =
-                            !isConfirmPasswordObscureText;
+                        !isConfirmPasswordObscureText;
                       });
                     },
                   ),
@@ -128,7 +128,7 @@ class _SignUpFieldsState extends State<SignUpFields> {
                       .read<SignUpCubit>()
                       .confirmPasswordController,
                   hintText:
-                      context.l10n.confirmPasswordHint,
+                  context.l10n.confirmPasswordHint,
                   validator: (value) {
                     if (value == null ||
                         value.isEmpty ||

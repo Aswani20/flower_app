@@ -1,6 +1,6 @@
 import 'package:flower_app/core/extensions/project_extensions.dart';
+import 'package:flower_app/project_layers/presentaion_layer/auth/sign_up/widgets/sign_up_body.dart';
 import 'package:flutter/material.dart';
-import 'widgets/sign_up_body.dart';
 
 class SignUpView extends StatelessWidget {
   const SignUpView({super.key});

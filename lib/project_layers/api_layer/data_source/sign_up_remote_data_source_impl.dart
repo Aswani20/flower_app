@@ -15,8 +15,8 @@ class SignUpRemoteDataSourceImpl
   SignUpRemoteDataSourceImpl(this.apiClient);
   @override
   Future<ApiResult<SignUpEntity>> signUp(
-    SignUpRequestBody signUpRequest,
-  ) async {
+      SignUpRequestBody signUpRequest,
+      ) async {
     try {
       SignUpResponse signUpResponse = await apiClient
           .signUp(signUpRequest);

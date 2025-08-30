@@ -2,32 +2,30 @@ import 'package:bloc/bloc.dart';
 import 'package:flower_app/core/api_result/api_result.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/sign_up_request.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/sign_up_entity.dart';
+import 'package:flower_app/project_layers/domain_layer/use_cases/sign_up_use_case.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
-
-import 'package:flower_app/project_layers/domain_layer/use_cases/sign_up_use_case.dart';
-
 part 'sign_up_state.dart';
 
 @injectable
 class SignUpCubit extends Cubit<SignUpState> {
   SignUpCubit(this.signUpUseCase)
-    : super(SignUpInitial());
+      : super(SignUpInitial());
   final SignUpUseCase signUpUseCase;
   TextEditingController emailController =
-      TextEditingController();
+  TextEditingController();
   TextEditingController passwordController =
-      TextEditingController();
+  TextEditingController();
   TextEditingController confirmPasswordController =
-      TextEditingController();
+  TextEditingController();
   TextEditingController firstNameController =
-      TextEditingController();
+  TextEditingController();
   TextEditingController lastNameController =
-      TextEditingController();
+  TextEditingController();
   TextEditingController phoneNumberController =
-      TextEditingController();
+  TextEditingController();
   GlobalKey<FormState> signUpFormKey =
-      GlobalKey<FormState>();
+  GlobalKey<FormState>();
 
   String selectedGender = '';
 

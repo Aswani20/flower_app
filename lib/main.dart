@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         locale: Locale("en"),
         theme: AppTheme.lightTheme,
         onGenerateRoute: Routes.generateRoute,
-        initialRoute: AppRoutes.loginScreen,
+        initialRoute: AppRoutes.signUpScreen,
         routes: {
           AppRoutes.loginScreen : (context) => SignInView(),
           AppRoutes.signUpScreen : (context) => SignUpView(),

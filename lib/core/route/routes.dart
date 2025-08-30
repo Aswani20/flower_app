@@ -19,13 +19,11 @@ abstract class Routes {
       case AppRoutes.forgetPasswordScreen:
         return MaterialPageRoute(builder: (context) => ForgetPasswordView());
       case AppRoutes.signUpScreen:
-        return MaterialPageRoute(builder: (_) => BlocProvider(create: (context) => getIt.get<SignUpCubit>(), child: SignUpView(),),);
+        return MaterialPageRoute(builder: (_) => BlocProvider<SignUpCubit>(create: (_) => getIt.get<SignUpCubit>(), child: SignUpView(),),);
       case AppRoutes.loginScreen:
         return MaterialPageRoute(builder: (context) => const SignInView());
       case AppRoutes.homeScreen:
         return MaterialPageRoute(builder: (context) => const HomeScreen());
-      // case AppRoutes.bestSeller:
-      //   return MaterialPageRoute(builder: (_) => BestSellerScreen());
       default:
         return MaterialPageRoute(builder: (context) => NotFoundScreen());
     }
