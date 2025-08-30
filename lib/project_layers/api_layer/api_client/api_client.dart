@@ -29,6 +29,7 @@ abstract class ApiClient {
   Future<HttpResponse<CategoryResponseDto>> getCategories();
 
   @GET("/v1/best-seller")
+  Future<HttpResponse<BestSellerResponse>> getBestSellersProduct();
   Future<HttpResponse<BestSellerResponseDto>> getBestSellers();
 
 
