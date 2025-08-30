@@ -16,19 +16,18 @@ class BestSellerDataSourceImpl implements BestSellerDataSource {
   BestSellerDataSourceImpl({required this.apiClient});
 
   @override
-  Future<Either<BestSellerResponseEntity, Failures>> getBestSellers() async {
+  Future<Either<BestSellerResponseEntity, Failures>> getBestSellersProduct() async {
     try {
-      var response = await apiClient.getBestSellers();
+      var response = await apiClient.getBestSellersProduct();
       var statusCode = response.response.statusCode;
 
       if (statusCode! >= 200 && statusCode < 300) {
-        // استخدم المapper للتحويل بدلاً من Cast المباشر
-        final bestSellerResponse = response.data as BestSellerResponse;
+        final bestSellerResponse = response.data;
         final entity = BestSellerMapper.toEntity(bestSellerResponse);
         return Left(entity);
       } else {
         return Right(
-          ServerError(errorMessage: response.data?.message ?? "Server Error"),
+          ServerError(errorMessage: response.data.message ?? "Server Error"),
         );
       }
     } on DioException catch (e) {

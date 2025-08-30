@@ -20,7 +20,7 @@ class _ApiClient implements ApiClient {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<HttpResponse<BestSellerResponse>> getBestSellers() async {
+  Future<HttpResponse<BestSellerResponse>> getBestSellersProduct() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};

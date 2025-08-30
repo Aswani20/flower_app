@@ -1,5 +1,5 @@
 import 'package:flower_app/project_layers/domain_layer/entities/best_seller_response_entity.dart';
-import 'package:flower_app/project_layers/domain_layer/usecase/best_seller_usecase.dart';
+import 'package:flower_app/project_layers/domain_layer/usecase/best_seller_use_case.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
@@ -7,7 +7,7 @@ import 'best_seller_state.dart';
 
 @injectable
 class BestSellerViewModel extends Cubit<BestSellerState> {
-  final BestSellerUsecase bestSellerUseCase;
+  final BestSellerUseCase bestSellerUseCase;
 
   BestSellerViewModel(this.bestSellerUseCase)
     : super(const BestSellerInitialState());

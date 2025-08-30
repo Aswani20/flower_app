@@ -12,5 +12,5 @@ abstract class ApiClient {
   factory ApiClient(Dio dio) = _ApiClient;
 
   @GET("/v1/best-seller")
-  Future<HttpResponse<BestSellerResponse>> getBestSellers();
+  Future<HttpResponse<BestSellerResponse>> getBestSellersProduct();
 }

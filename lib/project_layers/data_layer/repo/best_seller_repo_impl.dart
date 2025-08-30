@@ -13,8 +13,7 @@ class BestSellerRepoImpl implements BestSellerRepo {
   BestSellerRepoImpl({required this.bestSellerDataSource});
 
   @override
-  Future<Either<BestSellerResponseEntity, Failures>> getBestSellers() async {
-    // هذا صحيح - الDataSource سيعيد Either<BestSellerResponseEntity, Failures>
-    return await bestSellerDataSource.getBestSellers();
+  Future<Either<BestSellerResponseEntity, Failures>> getBestSellersProduct() async {
+    return await bestSellerDataSource.getBestSellersProduct();
   }
 }

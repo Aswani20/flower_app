@@ -7,12 +7,12 @@ import '../../../core/errors/failures.dart';
 import '../entities/best_seller_response_entity.dart';
 
 @injectable
-class BestSellerUsecase {
+class BestSellerUseCase {
   BestSellerRepo bestSellerRepo;
 
-  BestSellerUsecase({required this.bestSellerRepo});
+  BestSellerUseCase({required this.bestSellerRepo});
 
   Future<Either<BestSellerResponseEntity, Failures>> invoke() {
-    return bestSellerRepo.getBestSellers();
+    return bestSellerRepo.getBestSellersProduct();
   }
 }

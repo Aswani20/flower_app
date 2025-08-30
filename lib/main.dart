@@ -32,8 +32,8 @@ class MyApp extends StatelessWidget {
         locale: Locale("en"),
         theme: AppTheme.lightTheme,
         onGenerateRoute: Routes.generateRoute,
-        initialRoute: AppRoutes.homeScreen,
-        routes: {AppRoutes.homeScreen: (context) => BestSellerScreen()},
+        initialRoute: AppRoutes.bestSeller,
+        routes: {AppRoutes.bestSeller: (context) => BestSellerScreen()},
       ),
     );
   }

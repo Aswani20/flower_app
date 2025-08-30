@@ -1,4 +1,4 @@
-import 'package:flower_app/project_layers/domain_layer/usecase/best_seller_usecase.dart';
+import 'package:flower_app/project_layers/domain_layer/usecase/best_seller_use_case.dart';
 import 'package:flower_app/project_layers/presentation_layer/best_seller/widgets/app_bar_best_seller.dart';
 import 'package:flower_app/project_layers/presentation_layer/best_seller/widgets/product_card.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +15,7 @@ class BestSellerScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBarBestSeller(),
       body: BlocProvider(
-        create: (_) => BestSellerViewModel(getIt<BestSellerUsecase>()),
+        create: (_) => BestSellerViewModel(getIt<BestSellerUseCase>()),
         child: BlocBuilder<BestSellerViewModel, BestSellerState>(
           builder: (context, state) {
             final cubit = BlocProvider.of<BestSellerViewModel>(context);

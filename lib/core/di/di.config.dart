@@ -23,8 +23,8 @@ import '../../project_layers/data_layer/data_source/best_seller_data_source.dart
 import '../../project_layers/data_layer/repo/best_seller_repo_impl.dart'
     as _i895;
 import '../../project_layers/domain_layer/repo/best_seller_repo.dart' as _i623;
-import '../../project_layers/domain_layer/usecase/best_seller_usecase.dart'
-    as _i1022;
+import '../../project_layers/domain_layer/usecase/best_seller_use_case.dart'
+    as _i410;
 import '../../project_layers/presentation_layer/best_seller/cubit/best_seller_cubit.dart'
     as _i734;
 import '../../project_layers/presentation_layer/home/home_view_model.dart'
@@ -59,12 +59,11 @@ extension GetItInjectableX on _i174.GetIt {
         bestSellerDataSource: gh<_i1012.BestSellerDataSource>(),
       ),
     );
-    gh.factory<_i1022.BestSellerUsecase>(
-      () =>
-          _i1022.BestSellerUsecase(bestSellerRepo: gh<_i623.BestSellerRepo>()),
+    gh.factory<_i410.BestSellerUseCase>(
+      () => _i410.BestSellerUseCase(bestSellerRepo: gh<_i623.BestSellerRepo>()),
     );
     gh.factory<_i734.BestSellerViewModel>(
-      () => _i734.BestSellerViewModel(gh<_i1022.BestSellerUsecase>()),
+      () => _i734.BestSellerViewModel(gh<_i410.BestSellerUseCase>()),
     );
     return this;
   }
