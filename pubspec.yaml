@@ -1,6 +1,6 @@
 name: flower_app
 description: "A new Flutter project."
-publish_to: "none"
+publish_to: 'none'
 version: 1.0.0+1
 environment:
   sdk: ^3.8.1
@@ -34,6 +34,10 @@ dependencies:
   cached_network_image: ^3.4.1
   skeletonizer: ^2.1.0+1
   mockito:
+  flutter_svg: ^2.2.0
+  cached_network_image: ^3.4.1
+  skeletonizer: ^2.1.0+1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

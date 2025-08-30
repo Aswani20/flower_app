@@ -3,4 +3,5 @@ abstract class AppRoutes {
   static const String signUpScreen = "/sign_up_view";
   static const String forgetPasswordScreen = "/forget_password_view";
   static const String homeScreen = "/home_view";
+  static const String bestSeller = "/best_seller_view";
 }

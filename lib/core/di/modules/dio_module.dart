@@ -16,7 +16,20 @@ abstract class DioModule {
         validateStatus: (status) => status != null && status < 500,
       ),
     );
-    dio.interceptors.add(PrettyDioLogger());
+
+    // ✅ هنا ضيف الـ token في الهيدر مره واحدة
+    dio.options.headers['token'] =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjhhNGRjMDJhOGJjYTMwN2Y5ZGYwODlhIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3NTY0Mjk2OTF9.N8SGLseqee5U1IKd3BXeihVUZLhrXu3B2MnK9XfS7z8";
+
+    // Logger
+    dio.interceptors.add(PrettyDioLogger(
+      request: true,
+      requestBody: true,
+      responseBody: true,
+      requestHeader: true,
+      responseHeader: true,
+    ));
+
     return dio;
   }
 
