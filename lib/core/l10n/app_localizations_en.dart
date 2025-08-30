@@ -6,8 +6,7 @@ import 'app_localizations.dart';
 
 /// The translations for English (`en`).
 class AppLocalizationsEn extends AppLocalizations {
-  AppLocalizationsEn([String locale = 'en'])
-    : super(locale);
+  AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
   String get appName => 'Flower App';
@@ -74,29 +73,24 @@ class AppLocalizationsEn extends AppLocalizations {
       'Name must be more than 3 characters';
 
   @override
-  String
-  get passwordMustContainUpperLowerAndSpecialCharacter =>
+  String get passwordMustContainUpperLowerAndSpecialCharacter =>
       'Password must contain upper, lower, and special character';
 
   @override
-  String get passwordsDoNotMatch =>
-      'Passwords do not match';
+  String get passwordsDoNotMatch => 'Passwords do not match';
 
   @override
-  String get pleaseEnterYourPassword =>
-      'Please enter your password';
+  String get pleaseEnterYourPassword => 'Please enter your password';
 
   @override
-  String get pleaseEnterYourEmail =>
-      'Please enter your email';
+  String get pleaseEnterYourEmail => 'Please enter your email';
 
   @override
   String get emailMustBeLikeThisExampleGmailCom =>
       'Email must be like this \"example@gmail.com';
 
   @override
-  String get pleaseEnterYourPhoneNumber =>
-      'Please enter your phone number';
+  String get pleaseEnterYourPhoneNumber => 'Please enter your phone number';
 
   @override
   String get enterAValidEgyptianPhoneNumber =>
@@ -117,11 +111,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get enter_code_sent_to_email =>
-      'Please enter your code that send to your \n email address ';
+      'Please enter your code that send to your email address ';
 
   @override
-  String get didnt_receive_code =>
-      'Didn\'t receive the code?';
+  String get didnt_receive_code => 'Didn\'t receive the code?';
 
   @override
   String get resend => 'Resend';
@@ -158,8 +151,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get server_error => 'Server error';
 
   @override
-  String get reset_pass_success =>
-      'Password reset successfully';
+  String get reset_pass_success => 'Password reset successfully';
 
   @override
   String get otp_resend_to_mail =>
@@ -191,6 +183,43 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get cart => 'Cart';
+
+  @override
+  String get egp => 'EGP';
+
+  @override
+  String get all_prices_include_tax => 'All prices include tax';
+
+  @override
+  String get product_title => 'product title';
+
+  @override
+  String get status => 'Status';
+
+  @override
+  String get in_stock => 'in stock';
+
+  @override
+  String get product_price => 'product price';
+
+  @override
+  String get description => 'Description';
+
+  @override
+  String get description_body =>
+      'Lorem ipsum dolor sit amet consectetur. Id sit morbi ornare morbi duis rhoncus orci massa.';
+
+  @override
+  String get bouquet_include => 'Bouquet include';
+
+  @override
+  String get add_to_cart => 'Add to cart';
+
+  @override
+  String get pink_roses => 'Pink roses:15';
+
+  @override
+  String get white_wrap => 'White wrap';
 
   @override
   String get flowery => 'Flowery';

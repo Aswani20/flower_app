@@ -1,6 +1,8 @@
 import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/gen/assets.gen.dart';
+import 'package:flower_app/project_layers/presentation_layer/home/home_screen.dart';
+import 'package:flower_app/project_layers/presentation_layer/home/screens/product_details_screen.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/forget_password/forget_password_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/sign_in/login_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/sign_up/cubit/sign_up_cubit.dart';
@@ -27,6 +29,9 @@ abstract class Routes {
         return MaterialPageRoute(builder: (context) => const HomeScreen());
       case AppRoutes.bestSeller:
         return MaterialPageRoute(builder: (context) =>  BestSellerScreen());
+        return MaterialPageRoute(builder: (_) => HomeScreen());
+      case AppRoutes.productDetailsScreen:
+        return MaterialPageRoute(builder: (_) => ProductDetailsScreen());
       default:
         return MaterialPageRoute(builder: (context) => NotFoundScreen());
     }
@@ -78,10 +83,7 @@ class NotFoundScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 10.0,
-                    vertical: 5,
-                  ),
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5),
                   child: Text(
                     "Oops! We couldn't find the page you're looking for.",
                     style: TextStyle(

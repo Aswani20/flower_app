@@ -29,6 +29,7 @@ dependencies:
   flutter_bloc:
   fluttertoast: ^8.2.12
   connectivity_plus: ^6.1.4
+  carousel_slider: ^5.1.1
 
 
   flutter_screenutil: ^5.9.3
