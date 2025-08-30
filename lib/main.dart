@@ -1,12 +1,10 @@
 import 'package:flower_app/core/di/di.dart';
-import 'package:flower_app/core/di/di.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/forget_password/forget_password_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/sign_in/login_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/sign_up/sign_up_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/best_seller/best_seller_screen.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/home_screen.dart';
 import 'package:flower_app/core/l10n/app_localizations.dart';
-import 'package:flower_app/project_layers/presentation_layer/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'core/route/app_routes.dart';
@@ -24,7 +22,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       minTextAdapt: true,

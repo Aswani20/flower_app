@@ -1,12 +1,13 @@
 import 'package:flower_app/core/di/di.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/gen/assets.gen.dart';
-import 'package:flower_app/project_layers/presentation_layer/home/Tabs/category_tab/cubit/category_cubit.dart';
-import 'package:flower_app/project_layers/presentation_layer/home/Tabs/category_tab/widgets/category_body_builder.dart';
-import 'package:flower_app/project_layers/presentation_layer/home/Tabs/category_tab/widgets/custtom_search.dart';
-import 'package:flower_app/project_layers/presentation_layer/home/Tabs/category_tab/widgets/filter_bottom.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../cubit/category_cubit.dart';
+import '../widgets/category_body_builder.dart';
+import '../widgets/custtom_search.dart';
+import '../widgets/filter_bottom.dart';
 
 class CategoryTab extends StatelessWidget {
   const CategoryTab({super.key});

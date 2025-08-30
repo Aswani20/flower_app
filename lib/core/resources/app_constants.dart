@@ -1,6 +1,5 @@
 class AppConstants {
-  static const String baseUrl =
-      'https://flower.elevateegy.com/api/v1/';
-  static const String categories = 'categories';
-  static const String products = 'products';
+  static  String baseUrl = 'https://flower.elevateegy.com/api/v1/';
+  static  String categories = 'categories';
+  static  String products = 'products';
 }

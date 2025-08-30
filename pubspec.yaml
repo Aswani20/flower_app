@@ -25,11 +25,11 @@ dependencies:
   animated_text_kit: ^4.2.3
   provider: ^6.1.5
   dartz: ^0.10.1
-  bloc: ^9.0.0
-  flutter_bloc: ^9.1.1
+  bloc: ^8.1.1
+  flutter_bloc:
   fluttertoast: ^8.2.12
   connectivity_plus: ^6.1.4
-  flutter_svg: ^2.2.0
+
 
   flutter_screenutil: ^5.9.3
   mockito:

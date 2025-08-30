@@ -1,9 +1,0 @@
-
-class CategoryTab extends StatelessWidget {
-  const CategoryTab({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(child: Text('Category Tab'));
-  }
-}

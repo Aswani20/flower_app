@@ -1,9 +1,10 @@
 import 'package:flower_app/core/extensions/spacer_media_quiey.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
-import 'package:flower_app/project_layers/presentation_layer/home/Tabs/category_tab/cubit/category_cubit.dart';
-import 'package:flower_app/project_layers/presentation_layer/home/Tabs/category_tab/widgets/product_item.dart';
+import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/category_tab/widgets/product_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../cubit/category_cubit.dart';
 
 class ProductsGridBuilder extends StatelessWidget {
   const ProductsGridBuilder({super.key});

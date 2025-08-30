@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Tabs/cart_tab/cart_tab.dart';
-import 'Tabs/category_tab/category_tab.dart';
+import 'Tabs/category_tab/views/category_tab.dart';
 import 'Tabs/home_tab/home_tab.dart';
 import 'Tabs/profile_tab/profile_tab.dart';
 

@@ -10,13 +10,13 @@ import 'package:flower_app/project_layers/domain_layer/entities/category_entity.
     as _i7;
 import 'package:flower_app/project_layers/domain_layer/entities/product_entity.dart'
     as _i10;
-import 'package:flower_app/project_layers/domain_layer/repo/category_repo.dart'
+import 'package:flower_app/project_layers/domain_layer/repos/category_repo.dart'
     as _i2;
-import 'package:flower_app/project_layers/domain_layer/repo/product_repo.dart'
+import 'package:flower_app/project_layers/domain_layer/repos/product_repo.dart'
     as _i3;
-import 'package:flower_app/project_layers/domain_layer/usecase/category_use_case.dart'
+import 'package:flower_app/project_layers/domain_layer/use_cases/category_use_case.dart'
     as _i4;
-import 'package:flower_app/project_layers/domain_layer/usecase/product_use_case.dart'
+import 'package:flower_app/project_layers/domain_layer/use_cases/product_use_case.dart'
     as _i9;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i8;

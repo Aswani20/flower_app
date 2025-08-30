@@ -1,8 +1,8 @@
 import 'package:flower_app/core/api_result/api_result.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/category_entity.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/product_entity.dart';
-import 'package:flower_app/project_layers/domain_layer/usecase/category_use_case.dart';
-import 'package:flower_app/project_layers/domain_layer/usecase/product_use_case.dart';
+import 'package:flower_app/project_layers/domain_layer/use_cases/category_use_case.dart';
+import 'package:flower_app/project_layers/domain_layer/use_cases/product_use_case.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
@@ -29,7 +29,7 @@ class CategoryCubit extends Cubit<CategoryState> {
           getProducts(result.data.first.id);
         }
       case ApiErrorResult<List<CategoryEntity>>():
-        emit(CategoryError(message: result.error));
+        emit(CategoryError(message: result.errorMessage));
     }
   }
 
@@ -42,7 +42,7 @@ class CategoryCubit extends Cubit<CategoryState> {
         emit(ProductLoaded(products: result.data));
 
       case ApiErrorResult<List<ProductEntity>>():
-        emit(ProductError(message: result.error));
+        emit(ProductError(message: result.errorMessage));
     }
   }
 }

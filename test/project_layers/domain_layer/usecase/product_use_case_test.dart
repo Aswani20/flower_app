@@ -1,7 +1,7 @@
 import 'package:flower_app/core/api_result/api_result.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/product_entity.dart';
 import 'package:flower_app/project_layers/domain_layer/repo/product_repo.dart';
-import 'package:flower_app/project_layers/domain_layer/usecase/product_use_case.dart';
+import 'package:flower_app/project_layers/domain_layer/use_cases/product_use_case.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
