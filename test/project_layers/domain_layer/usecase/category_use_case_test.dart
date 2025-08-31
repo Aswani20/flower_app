@@ -1,6 +1,6 @@
 import 'package:flower_app/core/api_result/api_result.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/category_entity.dart';
-import 'package:flower_app/project_layers/domain_layer/repo/category_repo.dart';
+import 'package:flower_app/project_layers/domain_layer/repos/category_repo.dart';
 import 'package:flower_app/project_layers/domain_layer/use_cases/category_use_case.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -31,7 +31,9 @@ void main() {
       'should return ApiSuccessResult<List<CategoryEntity>> when getCategories succeeds',
       () async {
         // arrange
-        when(mockCategoryRepo.getCategories()).thenAnswer(
+        when(
+          mockCategoryRepo.getAllCategories(),
+        ).thenAnswer(
           (_) async =>
               ApiSuccessResult(mockCategoryEntities),
         );
@@ -54,7 +56,7 @@ void main() {
         expect(categories[0].name, 'Roses');
         expect(categories[1].name, 'Tulips');
         verify(
-          mockCategoryRepo.getCategories(),
+          mockCategoryRepo.getAllCategories(),
         ).called(1);
       },
     );
@@ -64,7 +66,9 @@ void main() {
       () async {
         // arrange
         const mockError = 'Failed to fetch categories';
-        when(mockCategoryRepo.getCategories()).thenAnswer(
+        when(
+          mockCategoryRepo.getAllCategories(),
+        ).thenAnswer(
           (_) async => ApiErrorResult(mockError),
         );
 
@@ -79,9 +83,9 @@ void main() {
         final error =
             result
                 as ApiErrorResult<List<CategoryEntity>>;
-        expect(error.error, mockError);
+        expect(error.errorMessage, mockError);
         verify(
-          mockCategoryRepo.getCategories(),
+          mockCategoryRepo.getAllCategories(),
         ).called(1);
       },
     );

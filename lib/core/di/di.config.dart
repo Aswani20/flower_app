@@ -173,11 +173,11 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i123.SignUpUseCase>(
       () => _i123.SignUpUseCase(gh<_i948.SignUpRepo>()),
     );
-    gh.factory<_i7.OccasionUseCase>(
-      () => _i7.OccasionUseCase(homeRepo: gh<_i900.HomeRepo>()),
-    );
     gh.factory<_i858.CategoryUseCase>(
       () => _i858.CategoryUseCase(homeRepo: gh<_i900.HomeRepo>()),
+    );
+    gh.factory<_i7.OccasionUseCase>(
+      () => _i7.OccasionUseCase(homeRepo: gh<_i900.HomeRepo>()),
     );
     gh.factory<_i990.BestSellerUseCase>(
       () => _i990.BestSellerUseCase(homeRepo: gh<_i900.HomeRepo>()),
@@ -188,14 +188,14 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i1027.LoginUseCase>(
       () => _i1027.LoginUseCase(loginRepository: gh<_i974.LoginRepository>()),
     );
-    gh.factory<_i194.ResetPasswordUseCase>(
-      () => _i194.ResetPasswordUseCase(gh<_i326.AuthRepo>()),
-    );
     gh.factory<_i649.VerifyResetCodeUseCase>(
       () => _i649.VerifyResetCodeUseCase(gh<_i326.AuthRepo>()),
     );
     gh.factory<_i18.ForgetPasswordUseCase>(
       () => _i18.ForgetPasswordUseCase(gh<_i326.AuthRepo>()),
+    );
+    gh.factory<_i194.ResetPasswordUseCase>(
+      () => _i194.ResetPasswordUseCase(gh<_i326.AuthRepo>()),
     );
     gh.factory<_i878.CategoryUseCase>(
       () => _i878.CategoryUseCase(gh<_i144.CategoryRepo>()),

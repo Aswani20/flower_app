@@ -1,6 +1,6 @@
 import 'package:flower_app/core/api_result/api_result.dart';
 import 'package:flower_app/project_layers/data_layer/data_source/product_remote_data_source.dart';
-import 'package:flower_app/project_layers/data_layer/repo_impl/product_repo_impl.dart';
+import 'package:flower_app/project_layers/data_layer/repos_impl/product_repo_impl.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/product_entity.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -151,7 +151,7 @@ void main() {
         );
         final error =
             result as ApiErrorResult<List<ProductEntity>>;
-        expect(error.error, mockError);
+        expect(error.errorMessage, mockError);
         verify(
           mockProductRemoteDataSource.getProducts(
             categoryId,

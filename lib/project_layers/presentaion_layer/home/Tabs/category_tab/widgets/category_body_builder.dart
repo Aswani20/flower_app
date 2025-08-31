@@ -26,42 +26,34 @@ class CategoryBodyBuilder extends StatelessWidget {
         } else if (state is CategoryError) {
           return Center(child: Text(state.message ?? ''));
         } else if (state is CategoryLoaded) {
-          return Padding(
-            padding: EdgeInsets.all(10),
-            child: Column(
-              crossAxisAlignment:
-                  CrossAxisAlignment.start,
-              children: [
-                DefaultTabController(
-                  length: state.categories?.length ?? 0,
-                  // state.categoryList?.length ?? 0,
-                  child: TabBar(
-                    isScrollable: true,
-                    indicatorColor: AppColors.pink,
-                    dividerColor: Colors.transparent,
-                    labelColor: AppColors.pink,
-                    unselectedLabelColor: AppColors.grey,
-                    tabAlignment: TabAlignment.center,
-                    onTap: (index) {
-                      final selectedCategory =
-                          state.categories?[index].id;
-                      context
-                          .read<CategoryCubit>()
-                          .getProducts(selectedCategory);
-                    },
-                    tabs: state.categories!.map((
-                      category,
-                    ) {
-                      return Tab(text: category.name);
-                    }).toList(),
-                  ),
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              DefaultTabController(
+                length: state.categories?.length ?? 0,
+                // state.categoryList?.length ?? 0,
+                child: TabBar(
+                  isScrollable: true,
+                  indicatorColor: AppColors.pink,
+                  dividerColor: Colors.transparent,
+                  labelColor: AppColors.pink,
+                  unselectedLabelColor: AppColors.grey,
+                  tabAlignment: TabAlignment.center,
+                  onTap: (index) {
+                    final selectedCategory =
+                        state.categories?[index].id;
+                    context
+                        .read<CategoryCubit>()
+                        .getProducts(selectedCategory);
+                  },
+                  tabs: state.categories!.map((category) {
+                    return Tab(text: category.name);
+                  }).toList(),
                 ),
-                SizedBox(
-                  height: 2.heightPercent(context),
-                ),
-                ProductsGridBuilder(),
-              ],
-            ),
+              ),
+              SizedBox(height: 2.heightPercent(context)),
+              ProductsGridBuilder(),
+            ],
           );
         }
         return SizedBox.shrink();

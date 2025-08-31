@@ -36,7 +36,7 @@ void main() {
       () async {
         // arrange
         when(
-          mockCategoryRemoteDataSource.getCategories(),
+          mockCategoryRemoteDataSource.getAllCategories(),
         ).thenAnswer(
           (_) async =>
               ApiSuccessResult(mockCategoryEntities),
@@ -44,7 +44,7 @@ void main() {
 
         // act
         final result = await categoryRepoImpl
-            .getCategories();
+            .getAllCategories();
 
         // assert
         expect(
@@ -61,7 +61,7 @@ void main() {
         expect(categories[0].name, 'Roses');
         expect(categories[1].name, 'Tulips');
         verify(
-          mockCategoryRemoteDataSource.getCategories(),
+          mockCategoryRemoteDataSource.getAllCategories(),
         ).called(1);
       },
     );
@@ -72,14 +72,14 @@ void main() {
         // arrange
         const mockError = 'Failed to fetch categories';
         when(
-          mockCategoryRemoteDataSource.getCategories(),
+          mockCategoryRemoteDataSource.getAllCategories(),
         ).thenAnswer(
           (_) async => ApiErrorResult(mockError),
         );
 
         // act
         final result = await categoryRepoImpl
-            .getCategories();
+            .getAllCategories();
 
         // assert
         expect(
@@ -89,9 +89,9 @@ void main() {
         final error =
             result
                 as ApiErrorResult<List<CategoryEntity>>;
-        expect(error.error, mockError);
+        expect(error.errorMessage, mockError);
         verify(
-          mockCategoryRemoteDataSource.getCategories(),
+          mockCategoryRemoteDataSource.getAllCategories(),
         ).called(1);
       },
     );

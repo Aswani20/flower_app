@@ -34,11 +34,12 @@ void main() {
           ],
         );
         when(
-          mockApiClient.getCategories(),
+          mockApiClient.getAllCategories(),
         ).thenAnswer((_) async => mockResponse);
 
         // act
-        final result = await dataSource.getCategories();
+        final result = await dataSource
+            .getAllCategories();
 
         // assert
         expect(
@@ -76,7 +77,8 @@ void main() {
         ).thenThrow(dioException);
 
         // act
-        final result = await dataSource.getCategories();
+        final result = await dataSource
+            .getAllCategories();
 
         // assert
         expect(
@@ -86,7 +88,7 @@ void main() {
         final error =
             result
                 as ApiErrorResult<List<CategoryEntity>>;
-        expect(error.error, mockErrorMessage);
+        expect(error.errorMessage, mockErrorMessage);
         verify(mockApiClient.getCategories()).called(1);
       },
     );
@@ -104,7 +106,8 @@ void main() {
         ).thenThrow(dioException);
 
         // act
-        final result = await dataSource.getCategories();
+        final result = await dataSource
+            .getAllCategories();
 
         // assert
         expect(
@@ -114,7 +117,7 @@ void main() {
         final error =
             result
                 as ApiErrorResult<List<CategoryEntity>>;
-        expect(error.error, 'Network error');
+        expect(error.errorMessage, 'Network error');
         verify(mockApiClient.getCategories()).called(1);
       },
     );

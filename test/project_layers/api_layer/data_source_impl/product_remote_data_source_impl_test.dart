@@ -1,6 +1,6 @@
 import 'package:flower_app/core/api_result/api_result.dart';
 import 'package:flower_app/project_layers/api_layer/api_client/api_client.dart';
-import 'package:flower_app/project_layers/api_layer/data_source_impl/product_remote_data_source_impl.dart';
+import 'package:flower_app/project_layers/api_layer/data_source/product_remote_data_source_impl.dart';
 import 'package:flower_app/project_layers/api_layer/models/products_response.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/product_entity.dart';
 import 'package:dio/dio.dart';
@@ -140,7 +140,7 @@ void main() {
         );
         final error =
             result as ApiErrorResult<List<ProductEntity>>;
-        expect(error.error, mockErrorMessage);
+        expect(error.errorMessage, mockErrorMessage);
         verify(
           mockApiClient.getProductsById(categoryId),
         ).called(1);
@@ -172,7 +172,7 @@ void main() {
         );
         final error =
             result as ApiErrorResult<List<ProductEntity>>;
-        expect(error.error, 'Network error');
+        expect(error.errorMessage, 'Network error');
         verify(
           mockApiClient.getProductsById(categoryId),
         ).called(1);

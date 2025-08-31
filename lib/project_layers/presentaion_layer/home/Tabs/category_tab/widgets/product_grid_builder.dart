@@ -35,39 +35,43 @@ class ProductsGridBuilder extends StatelessWidget {
           return Expanded(
             child: CustomScrollView(
               slivers: [
-                SliverPadding(
-                  padding: const EdgeInsets.all(0),
-                  sliver: SliverGrid(
-                    delegate: SliverChildBuilderDelegate(
-                      (context, index) {
-                        final product =
-                            state.products![index];
-                        return GestureDetector(
-                          onTap: () {
-                            // Navigator to product details screen and give the product[index]
-                            Navigator.pushNamed(context, AppRoutes.productDetailsScreen, arguments: product);
-                          },
-                          child: ProductItem(
-                            product: product,
-                          ),
-                        );
-                      },
-                      childCount: state.products!.length,
-
-                      // state
-                      //     .products
-                      //     ?.length,
-                    ),
-                    gridDelegate:
-                        SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          mainAxisSpacing: 2
-                              .heightPercent(context),
-                          crossAxisSpacing: 2
-                              .widthPercent(context),
-                          childAspectRatio: 0.75,
+                SliverGrid(
+                  delegate: SliverChildBuilderDelegate(
+                    (context, index) {
+                      final product =
+                          state.products![index];
+                      return GestureDetector(
+                        onTap: () {
+                          // Navigator to product details screen and give the product[index]
+                          Navigator.pushNamed(
+                            context,
+                            AppRoutes
+                                .productDetailsScreen,
+                            arguments: product,
+                          );
+                        },
+                        child: ProductItem(
+                          product: product,
                         ),
+                      );
+                    },
+                    childCount: state.products!.length,
+
+                    // state
+                    //     .products
+                    //     ?.length,
                   ),
+                  gridDelegate:
+                      SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        mainAxisSpacing: 2.heightPercent(
+                          context,
+                        ),
+                        crossAxisSpacing: 2.widthPercent(
+                          context,
+                        ),
+                        childAspectRatio: 0.75,
+                      ),
                 ),
               ],
             ),

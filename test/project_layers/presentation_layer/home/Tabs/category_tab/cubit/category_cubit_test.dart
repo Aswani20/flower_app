@@ -4,7 +4,7 @@ import 'package:flower_app/project_layers/domain_layer/entities/category_entity.
 import 'package:flower_app/project_layers/domain_layer/entities/product_entity.dart';
 import 'package:flower_app/project_layers/domain_layer/use_cases/category_use_case.dart';
 import 'package:flower_app/project_layers/domain_layer/use_cases/product_use_case.dart';
-import 'package:flower_app/project_layers/presentation_layer/home/Tabs/category_tab/cubit/category_cubit.dart';
+import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/category_tab/cubit/category_cubit.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';

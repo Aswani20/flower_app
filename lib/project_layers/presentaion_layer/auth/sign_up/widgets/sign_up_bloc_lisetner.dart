@@ -1,3 +1,4 @@
+import 'package:flower_app/core/route/app_routes.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/sign_up/cubit/sign_up_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,26 +10,28 @@ class SignUpBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<SignUpCubit, SignUpState>(
       listenWhen: (previous, current) =>
-      current is SignupLoading ||
+          current is SignupLoading ||
           current is SignupSuccess ||
           current is SignupError,
       listener: (context, state) {
         switch (state) {
-        /// TODO: show loading component here /// Elbar Sidaty
+          /// TODO: show loading component here /// Elbar Sidaty
           case SignupLoading():
             Center(child: CircularProgressIndicator());
             break;
           case SignupSuccess():
 
-          /// TODO: show real snackbar message /// Elbar Sidaty
+            /// TODO: show real snackbar message /// Elbar Sidaty
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text('sign up successfully'),
               ),
             );
 
-            /// TODO: navigate to login /// Elbar Sidaty
-            //   context.pushNamed(AppRoutes.loginScreen);
+            Navigator.pushNamed(
+              context,
+              AppRoutes.homeScreen,
+            );
             break;
           case SignupError():
             ScaffoldMessenger.of(context).showSnackBar(
