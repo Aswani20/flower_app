@@ -1,3 +1,4 @@
+import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/project_layers/presentation_layer/occasion/view_model/occasion_cubit.dart';
 import 'package:flower_app/project_layers/presentation_layer/occasion/view_model/occasion_state.dart';
@@ -26,7 +27,7 @@ class ProductsGridBuilder extends StatelessWidget {
           return Center(child: Text(state.message ?? ''));
         } else if (state is ProductLoaded) {
           if (state.products!.isEmpty) {
-            return const Center(child: Text('No Products Found'));
+            return Center(child: Text(context.l10n.noProductsFound));
           }
           return Expanded(
             child: CustomScrollView(

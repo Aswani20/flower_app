@@ -427,6 +427,26 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Cart'**
   String get cart;
+
+  /// No description provided for @occasion.
+  ///
+  /// In en, this message translates to:
+  /// **'Occasion'**
+  String get occasion;
+
+  /// No description provided for @descriptionAppBarBestSeller.
+  ///
+  /// In en, this message translates to:
+  /// **'Bloom with our exquisite best sellers'**
+  String get descriptionAppBarBestSeller;
+
+  /// No description provided for @noProductsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No Products Found'**
+  String get noProductsFound;
+
+  String get addToCart;
 }
 
 class _AppLocalizationsDelegate

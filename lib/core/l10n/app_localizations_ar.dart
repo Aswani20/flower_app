@@ -180,4 +180,17 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get cart => 'عربة التسوق';
+
+  @override
+  String get occasion => 'مناسبة';
+
+  @override
+  String get descriptionAppBarBestSeller => 'ازدهر مع أفضل مبيعاتنا الرائعة';
+
+  @override
+  String get noProductsFound => 'لا يوجد منتحات';
+
+  @override
+  // TODO: implement addToCart
+  String get addToCart => "أضافة الى السلة";
 }

@@ -52,5 +52,9 @@
   "browse_by_subject": "البحث بالموضوع",
   "home": "الرئيسية",
   "categories": "الفئات",
-  "cart": "عربة التسوق"
+  "cart": "عربة التسوق",
+  "occasion": "مناسبة",
+  "descriptionAppBarBestSeller": "ازدهر مع أفضل مبيعاتنا الرائعة",
+  "noProductsFound": "لا يوجد منتحات",
+  "addToCart": "أضافة الى السلة"
 }

@@ -1,4 +1,6 @@
+import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
+import 'package:flower_app/core/theme/app_styles.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/product_entity.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +27,6 @@ class ProductItem extends StatelessWidget {
               child: Image.network(
                 product.imgCover ??
                     'https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-
                 width: double.infinity,
                 height: 200,
                 fit: BoxFit.fill,
@@ -39,12 +40,7 @@ class ProductItem extends StatelessWidget {
                 child: Text(
                   maxLines: 1,
                   product.title.toString(),
-
-                  style: TextStyle(
-                    color: AppColors.black,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w400,
-                  ),
+                  style: AppStyles.font12blackW400,
                 ),
               ),
             ),
@@ -53,40 +49,17 @@ class ProductItem extends StatelessWidget {
               child: Row(
                 children: [
                   Text(
-                    "${'EGP'} ${product.priceAfterDiscount}",
-
-                    style: TextStyle(
-                      color: AppColors.black,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
-                    ),
+                    '\EGP ${product.priceAfterDiscount?.toStringAsFixed(0) ?? '0.00'}',
+                    style: AppStyles.font14BlackW500,
                   ),
-                  SizedBox(width: 1),
                   Text(
-                    "${product.price}",
-
-                    style: TextStyle(
-                      color: AppColors.grey,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12,
-                      decoration: TextDecoration.lineThrough,
-                      decorationColor: AppColors.grey,
-                    ),
+                    ' ${product.price?.toStringAsFixed(0) ?? '0.00'}',
+                    style: AppStyles.font12grayW500LineThrough,
                   ),
-
-                  // Text(
-                  //   "${state.product.discount}%",
-
-                  //   style: TextStyle(
-                  //     color:
-                  //         AppColors
-                  //             .green,
-                  //     fontSize: 12,
-                  //     fontWeight:
-                  //         FontWeight
-                  //             .w400,
-                  //   ),
-                  // ),
+                  Text(
+                    ' ${product.sold?.toStringAsFixed(0) ?? '0'}%',
+                    style: AppStyles.font12greenW500,
+                  ),
                 ],
               ),
             ),
@@ -104,13 +77,8 @@ class ProductItem extends StatelessWidget {
                   Icon(Icons.shopping_cart, color: AppColors.white),
                   SizedBox(width: 8),
                   Text(
-                    // context.l10n.addToCart,
-                    'Add To Cart',
-                    style: TextStyle(
-                      color: AppColors.white,
-                      fontSize: 13,
-                      fontWeight: FontWeight.w500,
-                    ),
+                    context.l10n.addToCart,
+                    style: AppStyles.font13WhiteW500,
                   ),
                 ],
               ),

@@ -53,5 +53,9 @@
   "browse_by_subject": "Browse by subject",
   "home": "Home",
   "categories": "Categories",
-  "cart": "Cart"
+  "cart": "Cart",
+  "occasion": "Occasion",
+  "descriptionAppBarBestSeller": "Bloom with our exquisite best sellers",
+  "noProductsFound": "No Products Found";
+  "addToCart": "Add To Cart"
 }

@@ -17,4 +17,25 @@ abstract class AppStyles {
     fontWeight: FontWeight.w500,
     color: AppColors.black,
   );
+  static TextStyle font13WhiteW500 = TextStyle(
+    fontSize: 13,
+    fontWeight: FontWeight.w500,
+    color: AppColors.white,
+  );
+  static TextStyle font12grayW500LineThrough = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+    color: AppColors.grey,
+    decoration: TextDecoration.lineThrough,
+  );
+  static TextStyle font12greenW500 = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+    color: AppColors.green,
+  );
+  static TextStyle font12blackW400 = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+    color: AppColors.black,
+  );
 }

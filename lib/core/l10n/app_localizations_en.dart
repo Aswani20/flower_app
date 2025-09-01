@@ -180,4 +180,18 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get cart => 'Cart';
+
+  @override
+  String get occasion => 'Occasion';
+
+  @override
+  String get descriptionAppBarBestSeller =>
+      'Bloom with our exquisite best sellers';
+
+  @override
+  String get noProductsFound => 'No Products Found';
+
+  @override
+  // TODO: implement addToCart
+  String get addToCart => "Add To Cart";
 }
