@@ -18,9 +18,9 @@ jobs:
         run: |
           TITLE_REGEX='^(fix|release|feat|hotfix|build|test)\(([A-Z]+-[0-9]+)\):\s.+$'
           if [[ ! "${{ github.event.pull_request.title }}" =~ $TITLE_REGEX ]]; then
-            echo "❌ Invalid PR title: '${{ github.event.pull_request.title }}'"
+            echo "Invalid PR title: '${{ github.event.pull_request.title }}'"
             echo "Must match: type(SCOPE): description"
             echo "Allowed types: fix, release, feat, hotfix, build, test"
             exit 1
           fi
-          echo "✅ PR title is valid."
+          echo "✅PR title is valid."
