@@ -41,6 +41,10 @@ class $AssetsIconsGen {
   AssetGenImage get cancelIcon =>
       const AssetGenImage('assets/icons/cancel_icon.png');
 
+  /// File path: assets/icons/cart_icon.png
+  AssetGenImage get cartIcon =>
+      const AssetGenImage('assets/icons/cart_icon.png');
+
   /// File path: assets/icons/category_icon.png
   AssetGenImage get categoryIcon =>
       const AssetGenImage('assets/icons/category_icon.png');
@@ -149,6 +153,10 @@ class $AssetsIconsGen {
   AssetGenImage get processIcon =>
       const AssetGenImage('assets/icons/process_icon.png');
 
+  /// File path: assets/icons/profile_icon.png
+  AssetGenImage get profileIcon =>
+      const AssetGenImage('assets/icons/profile_icon.png');
+
   /// File path: assets/icons/remove_icon.png
   AssetGenImage get removeIcon =>
       const AssetGenImage('assets/icons/remove_icon.png');
@@ -201,16 +209,6 @@ class $AssetsIconsGen {
   AssetGenImage get visibilityOffIcon =>
       const AssetGenImage('assets/icons/visibility_off_icon.png');
 
-    /// File path: assets/icons/profile_icon.png
-  AssetGenImage get profileIcon =>
-      const AssetGenImage('assets/icons/profile_icon.png');
-
-    /// File path: assets/icons/cart_icon.png
-  AssetGenImage get cartIcon =>
-      const AssetGenImage('assets/icons/cart_icon.png');
-
-
-
   /// List of all assets
   List<AssetGenImage> get values => [
     alarmClockIcon,
@@ -220,6 +218,7 @@ class $AssetsIconsGen {
     britainFlagIcon,
     callIcon,
     cancelIcon,
+    cartIcon,
     categoryIcon,
     chatIcon,
     checkCircleIcon,
@@ -247,6 +246,7 @@ class $AssetsIconsGen {
     personIcon,
     photoCameraIcon,
     processIcon,
+    profileIcon,
     removeIcon,
     scheduleIcon,
     searchIcon,

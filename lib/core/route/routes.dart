@@ -4,14 +4,15 @@ import 'package:flower_app/gen/assets.gen.dart';
 import 'package:flower_app/project_layers/presentation_layer/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import '../../project_layers/presentation_layer/occasion/occasion_screen.dart';
 import 'app_routes.dart';
 
 abstract class Routes {
   static Route generateRoute(RouteSettings settings) {
     final url = Uri.parse(settings.name ?? "/");
     switch (url.path) {
-      case AppRoutes.signUpScreen:
-        return MaterialPageRoute(builder: (_) => HomeScreen());
+      case AppRoutes.OccasionScreen:
+        return MaterialPageRoute(builder: (_) => OccasionScreen());
       default:
         return MaterialPageRoute(builder: (context) => NotFoundScreen());
     }
