@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: "flower_app",
+        title: "this is test 2",
         localizationsDelegates:
             AppLocalizations.localizationsDelegates,
         supportedLocales:
