@@ -30,19 +30,26 @@ class MyApp extends StatelessWidget {
       builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
         title: "flower_app",
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
-        supportedLocales: AppLocalizations.supportedLocales,
+        localizationsDelegates:
+            AppLocalizations.localizationsDelegates,
+        supportedLocales:
+            AppLocalizations.supportedLocales,
         locale: Locale("en"),
         theme: AppTheme.lightTheme,
         onGenerateRoute: Routes.generateRoute,
         initialRoute: AppRoutes.loginScreen,
         routes: {
-          AppRoutes.loginScreen : (context) => SignInView(),
-          AppRoutes.signUpScreen : (context) => SignUpView(),
-          AppRoutes.forgetPasswordScreen : (context) => ForgetPasswordView(),
+          AppRoutes.loginScreen: (context) =>
+              SignInView(),
+          AppRoutes.signUpScreen: (context) =>
+              SignUpView(),
+          AppRoutes.forgetPasswordScreen: (context) =>
+              ForgetPasswordView(),
           AppRoutes.homeScreen: (context) => HomeScreen(),
-          AppRoutes.bestSeller: (context) => BestSellerScreen(),
-          AppRoutes.productDetailsScreen: (context) => ProductDetailsScreen(),
+          AppRoutes.bestSeller: (context) =>
+              BestSellerScreen(),
+          AppRoutes.productDetailsScreen: (context) =>
+              ProductDetailsScreen(),
         },
       ),
     );
