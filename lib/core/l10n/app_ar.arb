@@ -1,5 +1,12 @@
 {
   "appName": "تطبيق الامتحانات ",
+  "appVersion":"1.0.0",
+  "termsAndConditions": "الشروط والاحكام",
+  "logOut": "خروج",
+  "myOrders": "طلباتي",
+  "savedAddresses": "العناوين المحفوظة",
+  "notification": "الاشعارات",
+  "aboutUs": "عن التطبيق",
   "firstName": "الاسم الاول",
   "firstNameHint": "ادخل الاسم الاول",
   "lastName": "الاسم الاخير",

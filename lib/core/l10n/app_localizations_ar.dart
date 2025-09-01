@@ -13,6 +13,27 @@ class AppLocalizationsAr extends AppLocalizations {
   String get appName => 'تطبيق الامتحانات ';
 
   @override
+  String get appVersion => '1.0.0';
+
+  @override
+  String get termsAndConditions => 'الشروط والاحكام';
+
+  @override
+  String get logOut => 'خروج';
+
+  @override
+  String get myOrders => 'طلباتي';
+
+  @override
+  String get savedAddresses => 'العناوين المحفوظة';
+
+  @override
+  String get notification => 'الاشعارات';
+
+  @override
+  String get aboutUs => 'عن التطبيق';
+
+  @override
   String get firstName => 'الاسم الاول';
 
   @override

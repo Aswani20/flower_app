@@ -10,25 +10,25 @@ part 'sign_up_state.dart';
 @injectable
 class SignUpCubit extends Cubit<SignUpState> {
   SignUpCubit(this.signUpUseCase)
-      : super(SignUpInitial());
+    : super(SignUpInitial());
   final SignUpUseCase signUpUseCase;
   TextEditingController emailController =
-  TextEditingController();
+      TextEditingController();
   TextEditingController passwordController =
-  TextEditingController();
+      TextEditingController();
   TextEditingController confirmPasswordController =
-  TextEditingController();
+      TextEditingController();
   TextEditingController firstNameController =
-  TextEditingController();
+      TextEditingController();
   TextEditingController lastNameController =
-  TextEditingController();
+      TextEditingController();
   TextEditingController phoneNumberController =
-  TextEditingController();
+      TextEditingController();
   GlobalKey<FormState> signUpFormKey =
-  GlobalKey<FormState>();
+      GlobalKey<FormState>();
 
   String selectedGender = '';
-
+  SignUpEntity user = SignUpEntity();
   void selectGender(String gender) {
     selectedGender = gender;
     emit(SignupGenderSelected(selectedGender));
@@ -51,6 +51,7 @@ class SignUpCubit extends Cubit<SignUpState> {
     switch (result) {
       case ApiSuccessResult<SignUpEntity>():
         emit(SignupSuccess(result.data));
+
         break;
       case ApiErrorResult<SignUpEntity>():
         emit(SignupError(result.errorMessage));
