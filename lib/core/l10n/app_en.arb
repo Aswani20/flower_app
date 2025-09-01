@@ -1,5 +1,12 @@
 {
   "appName": "Flower App",
+  "appVersion":"1.0.0",
+  "termsAndConditions": "Terms and Conditions",
+  "logOut": "Log Out",
+  "myOrders": "My Orders",
+  "savedAddresses": "Saved Addresses",
+  "notification": "Notifications",
+  "aboutUs": "About Us",
   "firstName": "First Name",
   "firstNameHint": "Enter first name",
   "lastName": "Last Name",

@@ -13,6 +13,27 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appName => 'Flower App';
 
   @override
+  String get appVersion => '1.0.0';
+
+  @override
+  String get termsAndConditions => 'Terms and Conditions';
+
+  @override
+  String get logOut => 'Log Out';
+
+  @override
+  String get myOrders => 'My Orders';
+
+  @override
+  String get savedAddresses => 'Saved Addresses';
+
+  @override
+  String get notification => 'Notifications';
+
+  @override
+  String get aboutUs => 'About Us';
+
+  @override
   String get firstName => 'First Name';
 
   @override
