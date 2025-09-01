@@ -3,8 +3,8 @@ import 'package:flower_app/project_layers/presentation_layer/occasion/view_model
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'app_bar_occasion.dart';
-import 'occation_body_builder.dart';
+import '../widgets/app_bar_occasion.dart';
+import '../widgets/occation_body_builder.dart';
 
 class OccasionScreen extends StatelessWidget {
   const OccasionScreen({super.key});

@@ -1,6 +1,6 @@
 import 'package:flower_app/core/l10n/app_localizations.dart';
 import 'package:flower_app/project_layers/presentation_layer/home/home_screen.dart';
-import 'package:flower_app/project_layers/presentation_layer/occasion/occasion_screen.dart';
+import 'package:flower_app/project_layers/presentation_layer/occasion/view/occasion_screen.dart';
 import 'package:flutter/material.dart';
 import 'core/di/di.dart';
 import 'core/route/app_routes.dart';

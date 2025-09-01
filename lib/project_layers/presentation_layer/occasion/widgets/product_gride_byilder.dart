@@ -2,7 +2,7 @@ import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/project_layers/presentation_layer/occasion/view_model/occasion_cubit.dart';
 import 'package:flower_app/project_layers/presentation_layer/occasion/view_model/occasion_state.dart';
-import 'package:flower_app/project_layers/presentation_layer/occasion/product_item.dart';
+import 'package:flower_app/project_layers/presentation_layer/occasion/widgets/product_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

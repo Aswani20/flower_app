@@ -4,7 +4,7 @@ import 'package:flower_app/gen/assets.gen.dart';
 import 'package:flower_app/project_layers/presentation_layer/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import '../../project_layers/presentation_layer/occasion/occasion_screen.dart';
+import '../../project_layers/presentation_layer/occasion/view/occasion_screen.dart';
 import 'app_routes.dart';
 
 abstract class Routes {

@@ -1,6 +1,6 @@
 import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flutter/material.dart';
-import '../../../../core/theme/app_styles.dart';
+import '../../../../../core/theme/app_styles.dart';
 
 class AppBarOccasion extends StatelessWidget implements PreferredSizeWidget {
   const AppBarOccasion({super.key});
