@@ -7,7 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeCard extends StatelessWidget {
-  HomeCard({this.onTap, this.bestSeller, this.occasion, super.key});
+  HomeCard({
+    this.onTap,
+    this.bestSeller,
+    this.occasion,
+    super.key,
+  });
   final void Function()? onTap;
   BestSellerEntity? bestSeller;
   OccasionEntity? occasion;
@@ -26,29 +31,35 @@ class HomeCard extends StatelessWidget {
             fit: BoxFit.cover,
             width: 130.w,
             height: 140.h,
-            placeholder: (context, url) =>
-                const Center(child: CircularProgressIndicator()),
+            placeholder: (context, url) => const Center(
+              child: CircularProgressIndicator(),
+            ),
             errorWidget: (context, url, error) =>
                 const Center(child: Icon(Icons.error)),
           ),
         ),
         Padding(
-          padding: EdgeInsetsGeometry.only(top: 6.h, bottom: 4.h),
+          padding: EdgeInsetsGeometry.only(
+            top: 6.h,
+            bottom: 4.h,
+          ),
           child: Text(
             bestSeller?.title ?? occasion?.name ?? '',
-            style: Theme.of(
-              context,
-            ).textTheme.bodySmall?.copyWith(color: AppColors.black[300]),
+            style: Theme.of(context).textTheme.bodySmall
+                ?.copyWith(color: AppColors.black[300]),
           ),
         ),
         if (bestSeller != null)
           Text(
             '${bestSeller?.price} ${AppLocalizations.of(context)!.egp}',
-            style: Theme.of(context).textTheme.labelMedium!.copyWith(
-              color: AppColors.black[500],
+            style: Theme.of(context)
+                .textTheme
+                .labelMedium!
+                .copyWith(
+                  color: AppColors.black[500],
 
-              fontSize: 14.sp,
-            ),
+                  fontSize: 14.sp,
+                ),
           ),
       ],
     );
