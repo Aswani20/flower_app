@@ -6,14 +6,15 @@ import 'package:flutter/material.dart';
 import '../cubit/login_cubit.dart';
 
 class EmailAndPassword extends StatefulWidget {
-
-  EmailAndPassword({super.key});
+  const EmailAndPassword({super.key});
 
   @override
-  State<EmailAndPassword> createState() => _EmailAndPasswordState();
+  State<EmailAndPassword> createState() =>
+      _EmailAndPasswordState();
 }
 
-class _EmailAndPasswordState extends State<EmailAndPassword> {
+class _EmailAndPasswordState
+    extends State<EmailAndPassword> {
   LoginCubit signInViewModel = getIt<LoginCubit>();
 
   @override
@@ -21,8 +22,10 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
     return Column(
       children: [
         TextFormField(
-          onChanged: (value) => signInViewModel.checkFormValidity(),
-          validator: (value) => AppValidators.nonEmptyField(value, context),
+          onChanged: (value) =>
+              signInViewModel.checkFormValidity(),
+          validator: (value) =>
+              AppValidators.nonEmptyField(value, context),
           controller: signInViewModel.emailController,
           decoration: InputDecoration(
             labelText: context.l10n.email,
@@ -32,8 +35,13 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
         20.heightBox,
 
         TextFormField(
-          onChanged: (value) => signInViewModel.checkFormValidity(),
-          validator: (value) => AppValidators.passwordValidator(value, context),
+          onChanged: (value) =>
+              signInViewModel.checkFormValidity(),
+          validator: (value) =>
+              AppValidators.passwordValidator(
+                value,
+                context,
+              ),
           controller: signInViewModel.passwordController,
           obscureText: signInViewModel.isObscureText,
           decoration: InputDecoration(

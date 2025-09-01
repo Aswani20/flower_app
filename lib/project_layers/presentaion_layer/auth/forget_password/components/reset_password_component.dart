@@ -10,7 +10,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class ResetPasswordComponent extends StatelessWidget {
   final ForgetPasswordViewModel viewModel;
 
-  ResetPasswordComponent({super.key, required this.viewModel});
+  const ResetPasswordComponent({
+    super.key,
+    required this.viewModel,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +22,16 @@ class ResetPasswordComponent extends StatelessWidget {
       builder: (context, state) {
         return SafeArea(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: context.width * 0.05),
+            padding: EdgeInsets.symmetric(
+              horizontal: context.width * 0.05,
+            ),
             child: SingleChildScrollView(
               child: Form(
                 key: viewModel.resetPassFormKey,
                 child: Column(
                   spacing: 5,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  crossAxisAlignment:
+                      CrossAxisAlignment.stretch,
                   children: [
                     Text(
                       context.l10n.reset_password,
@@ -42,20 +48,31 @@ class ResetPasswordComponent extends StatelessWidget {
                     TextFormField(
                       controller: viewModel.newPassword,
                       validator: (value) =>
-                          AppValidators.passwordValidator(value, context),
-                      onChanged: (value) => viewModel.validateResetPassBtn(),
+                          AppValidators.passwordValidator(
+                            value,
+                            context,
+                          ),
+                      onChanged: (value) => viewModel
+                          .validateResetPassBtn(),
                       style: AppStyles.regular16black,
-                      keyboardType: TextInputType.emailAddress,
+                      keyboardType:
+                          TextInputType.emailAddress,
                       decoration: InputDecoration(
-                        hintText: context.l10n.enter_your_password,
-                        hintStyle: AppStyles.regular14grey,
-                        labelText: context.l10n.new_password,
-                        labelStyle: AppStyles.regular14black,
+                        hintText: context
+                            .l10n
+                            .enter_your_password,
+                        hintStyle:
+                            AppStyles.regular14grey,
+                        labelText:
+                            context.l10n.new_password,
+                        labelStyle:
+                            AppStyles.regular14black,
                       ),
                     ),
                     24.heightBox,
                     TextFormField(
-                      controller: viewModel.confirmPassword,
+                      controller:
+                          viewModel.confirmPassword,
                       validator: (value) =>
                           AppValidators.confirmPasswordValidator(
                             value,
@@ -63,20 +80,29 @@ class ResetPasswordComponent extends StatelessWidget {
                             context,
                           ),
                       style: AppStyles.regular16black,
-                      keyboardType: TextInputType.emailAddress,
+                      keyboardType:
+                          TextInputType.emailAddress,
                       decoration: InputDecoration(
-                        hintText: context.l10n.confirmPassword,
-                        hintStyle: AppStyles.regular14grey,
-                        labelText: context.l10n.confirmPasswordHint,
-                        labelStyle: AppStyles.regular14black,
+                        hintText:
+                            context.l10n.confirmPassword,
+                        hintStyle:
+                            AppStyles.regular14grey,
+                        labelText: context
+                            .l10n
+                            .confirmPasswordHint,
+                        labelStyle:
+                            AppStyles.regular14black,
                       ),
                     ),
                     48.heightBox,
                     ElevatedButton(
-                      onPressed: viewModel.resetPassBtnEnabled
+                      onPressed:
+                          viewModel.resetPassBtnEnabled
                           ? () {
                               //todo: implement forget password api and go to otp body
-                              viewModel.newPassRequest(context);
+                              viewModel.newPassRequest(
+                                context,
+                              );
                             }
                           : null,
                       child: Text(

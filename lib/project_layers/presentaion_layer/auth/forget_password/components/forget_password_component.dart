@@ -6,12 +6,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../cubit/forget_password_states.dart';
-import '../cubit/forget_password_view_model.dart' show ForgetPasswordViewModel;
+import '../cubit/forget_password_view_model.dart'
+    show ForgetPasswordViewModel;
 
 class ForgetPasswordComponent extends StatelessWidget {
   final ForgetPasswordViewModel viewModel;
 
-  ForgetPasswordComponent({super.key, required this.viewModel});
+  const ForgetPasswordComponent({
+    super.key,
+    required this.viewModel,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,12 +24,15 @@ class ForgetPasswordComponent extends StatelessWidget {
       builder: (context, state) {
         return SafeArea(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: context.width * 0.05),
+            padding: EdgeInsets.symmetric(
+              horizontal: context.width * 0.05,
+            ),
             child: Form(
               key: viewModel.forgetPassFormKey,
               child: SingleChildScrollView(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  crossAxisAlignment:
+                      CrossAxisAlignment.stretch,
                   children: [
                     Text(
                       context.l10n.forget_password,
@@ -34,29 +41,43 @@ class ForgetPasswordComponent extends StatelessWidget {
                     ),
                     16.heightBox,
                     Text(
-                      context.l10n.enter_your_email_associated,
+                      context
+                          .l10n
+                          .enter_your_email_associated,
                       style: AppStyles.regular14grey,
                       textAlign: TextAlign.center,
                     ),
                     32.heightBox,
                     TextFormField(
                       validator: (value) =>
-                          AppValidators.emailValidator(value, context),
-                      onChanged: (value) => viewModel.validateForgetPassBtn(),
-                      controller: viewModel.emailController,
+                          AppValidators.emailValidator(
+                            value,
+                            context,
+                          ),
+                      onChanged: (value) => viewModel
+                          .validateForgetPassBtn(),
+                      controller:
+                          viewModel.emailController,
                       style: AppStyles.regular16black,
-                      keyboardType: TextInputType.emailAddress,
+                      keyboardType:
+                          TextInputType.emailAddress,
                       decoration: InputDecoration(
                         hintText: context.l10n.emailHint,
-                        hintStyle: AppStyles.regular14grey,
+                        hintStyle:
+                            AppStyles.regular14grey,
                         labelText: context.l10n.email,
-                        labelStyle: AppStyles.regular14black,
+                        labelStyle:
+                            AppStyles.regular14black,
                       ),
                     ),
                     48.heightBox,
                     ElevatedButton(
-                      onPressed: viewModel.forgetPassBtnEnabled
-                          ? () => viewModel.forgetPasswordRequest(context)
+                      onPressed:
+                          viewModel.forgetPassBtnEnabled
+                          ? () => viewModel
+                                .forgetPasswordRequest(
+                                  context,
+                                )
                           : null,
                       child: Text(
                         context.l10n.confirm,

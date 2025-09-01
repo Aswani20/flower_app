@@ -13,7 +13,9 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 2,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -27,25 +29,28 @@ class ProductCard extends StatelessWidget {
                 color: AppColors.grey,
                 image: product.imgCover != null
                     ? DecorationImage(
-                  image: NetworkImage(product.imgCover!),
-                  fit: BoxFit.cover,
-                )
+                        image: NetworkImage(
+                          product.imgCover!,
+                        ),
+                        fit: BoxFit.cover,
+                      )
                     : null,
               ),
               child: product.imgCover == null
                   ? const Center(
-                child: Icon(
-                  Icons.image_not_supported,
-                  color: Colors.grey,
-                ),
-              )
+                      child: Icon(
+                        Icons.image_not_supported,
+                        color: Colors.grey,
+                      ),
+                    )
                   : null,
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment:
+                  CrossAxisAlignment.start,
               children: [
                 Text(
                   product.title ?? 'Product Name',
@@ -57,7 +62,7 @@ class ProductCard extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      '\EGP ${product.sold?.toStringAsFixed(2) ?? '0.00'}',
+                      'EGP ${product.sold?.toStringAsFixed(2) ?? '0.00'}',
                       style: TextStyle(
                         color: AppColors.black,
                         fontWeight: FontWeight.w500,
@@ -70,7 +75,8 @@ class ProductCard extends StatelessWidget {
                         color: AppColors.grey,
                         fontWeight: FontWeight.w500,
                         fontSize: 11,
-                        decoration: TextDecoration.lineThrough,
+                        decoration:
+                            TextDecoration.lineThrough,
                       ),
                     ),
                     Text(
@@ -84,28 +90,33 @@ class ProductCard extends StatelessWidget {
                   ],
                 ),
                 if (product.price != null &&
-                    (product.price! > (product.price ?? 0)))
+                    (product.price! >
+                        (product.price ?? 0)))
                   Expanded(
                     child: Text(
                       '\$${product.sold?.toStringAsFixed(2) ?? '0.00'}',
                       style: const TextStyle(
                         color: Colors.grey,
                         fontSize: 12,
-                        decoration: TextDecoration.lineThrough,
+                        decoration:
+                            TextDecoration.lineThrough,
                       ),
                     ),
                   ),
                 const SizedBox(height: 4),
                 Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment:
+                      CrossAxisAlignment.center,
+                  mainAxisAlignment:
+                      MainAxisAlignment.center,
                   children: [
                     Expanded(
                       child: ElevatedButton.icon(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(22),
+                            borderRadius:
+                                BorderRadius.circular(22),
                           ),
                           elevation: 2,
                         ),
