@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: "flower_app",
+        title: "flitther appps",
         localizationsDelegates:
             AppLocalizations.localizationsDelegates,
         supportedLocales:
