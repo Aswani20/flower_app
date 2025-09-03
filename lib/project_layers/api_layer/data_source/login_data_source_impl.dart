@@ -1,3 +1,5 @@
+import 'package:flower_app/core/di/modules/shared_preferences_module.dart';
+import 'package:flower_app/core/keys/shared_key.dart';
 import 'package:flower_app/project_layers/api_layer/api_client/api_client.dart';
 import 'package:injectable/injectable.dart';
 import '../../../core/errors/failures.dart';
@@ -12,13 +14,27 @@ class LoginDataSourceImpl implements LoginDataSource {
   LoginDataSourceImpl(this.apiClient);
 
   @override
-  Future<LoginResponse> login({required LoginRequest request}) async {
+  Future<LoginResponse> login({
+    required LoginRequest request,
+  }) async {
     try {
       final response = await apiClient.login(
-        request: LoginRequest(email: request.email, password: request.password),
+        request: LoginRequest(
+          email: request.email,
+          password: request.password,
+        ),
       );
-      if (response.token == null || response.token!.isEmpty) {
-        throw ServerError(errorMessage: "Invalid credentials");
+      if (response.token != null) {
+        await SharedPrefHelper().setString(
+          key: SharedPrefKeys.tokenKey,
+          stringValue: response.token!,
+        );
+      }
+      if (response.token == null ||
+          response.token!.isEmpty) {
+        throw ServerError(
+          errorMessage: "Invalid credentials",
+        );
       }
       return response;
     } on NetworkError catch (e) {
@@ -26,7 +42,9 @@ class LoginDataSourceImpl implements LoginDataSource {
     } on ServerError catch (e) {
       throw ServerError(errorMessage: e.errorMessage);
     } catch (e) {
-      throw UserError(errorMessage: 'Unexpected error: $e');
+      throw UserError(
+        errorMessage: 'Unexpected error: $e',
+      );
     }
   }
 }

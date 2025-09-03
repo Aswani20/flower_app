@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flower_app/project_layers/api_layer/models/categories_response.dart';
 import 'package:flower_app/project_layers/api_layer/models/products_response.dart';
+import 'package:flower_app/project_layers/api_layer/models/request/change_password_request_body.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/forget_password_request_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/login_request.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/reset_password_request_dto.dart';
@@ -9,7 +10,9 @@ import 'package:flower_app/project_layers/api_layer/models/request/verify_reset_
 import 'package:flower_app/project_layers/api_layer/models/response/best_seller_response.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/best_seller_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/category_response_dto.dart';
+import 'package:flower_app/project_layers/api_layer/models/response/change_password_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/forget_password_response_dto.dart';
+import 'package:flower_app/project_layers/api_layer/models/response/get_logged_user_data_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/occasion_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/reset_password_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/sign_up_response.dart';
@@ -26,39 +29,55 @@ abstract class ApiClient {
   @factoryMethod
   factory ApiClient(Dio dio) = _ApiClient;
 
-
   @GET("/v1/categories")
-  Future<HttpResponse<CategoryResponseDto>> getCategories();
+  Future<HttpResponse<CategoryResponseDto>>
+  getCategories();
 
   @GET("/v1/best-seller")
-  Future<HttpResponse<BestSellerResponse>> getBestSellersProduct();
+  Future<HttpResponse<BestSellerResponse>>
+  getBestSellersProduct();
 
   @GET("/v1/best-seller")
-  Future<HttpResponse<BestSellerResponseDto>> getBestSellers();
+  Future<HttpResponse<BestSellerResponseDto>>
+  getBestSellers();
 
   @GET("/v1/occasions")
-  Future<HttpResponse<OccasionResponseDto>> getOccasions();
+  Future<HttpResponse<OccasionResponseDto>>
+  getOccasions();
 
   @POST('v1/auth/signup')
-  Future<SignUpResponse> signUp(@Body() SignUpRequestBody signUpRequest);
+  Future<SignUpResponse> signUp(
+    @Body() SignUpRequestBody signUpRequest,
+  );
 
   @POST('v1/auth/signin')
-  Future<LoginResponse> login({@Body() required LoginRequest request});
+  Future<LoginResponse> login({
+    @Body() required LoginRequest request,
+  });
 
   @POST('/v1/auth/forgotPassword')
-  Future<HttpResponse<ForgetPasswordResponseDto>> forgetPassword({
-    @Body() required ForgetPasswordRequestDto forgetPasswordRequestDto,
+  Future<HttpResponse<ForgetPasswordResponseDto>>
+  forgetPassword({
+    @Body()
+    required ForgetPasswordRequestDto
+    forgetPasswordRequestDto,
   });
 
   @POST('/v1/auth/verifyResetCode')
-  Future<HttpResponse<VerifyResetCodeResponseDto>> verifyResetCode({
-    @Body() required VerifyResetCodeRequestDto verifyResetCodeRequestDto,
+  Future<HttpResponse<VerifyResetCodeResponseDto>>
+  verifyResetCode({
+    @Body()
+    required VerifyResetCodeRequestDto
+    verifyResetCodeRequestDto,
   });
 
   @PUT('/v1/auth/resetPassword')
-  Future<HttpResponse<ResetPasswordResponseDto>> resetPassword({
-    @Body() required ResetPasswordRequestDto resetPasswordRequestDto,
-});
+  Future<HttpResponse<ResetPasswordResponseDto>>
+  resetPassword({
+    @Body()
+    required ResetPasswordRequestDto
+    resetPasswordRequestDto,
+  });
 
   @GET('/v1/categories')
   Future<CategoriesResponse> getAllCategories();
@@ -66,5 +85,12 @@ abstract class ApiClient {
   @GET('/v1/products')
   Future<ProductsResponse> getProductsById(
     @Query("category") String? categoryId,
+  );
+  @GET('v1/auth/profile-data')
+  Future<GetLoggedUserDataResponseDto>
+  getLoggedUserData();
+  @PATCH('v1/auth/change-password')
+  Future<ChangePasswordResponseDto> changePassword(
+    @Body() ChangePasswordRequestBody request,
   );
 }

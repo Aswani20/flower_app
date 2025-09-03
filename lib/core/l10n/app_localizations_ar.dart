@@ -25,6 +25,21 @@ class AppLocalizationsAr extends AppLocalizations {
   String get myOrders => 'طلباتي';
 
   @override
+  String get update => 'تحديث';
+
+  @override
+  String get change => 'تغيير';
+
+  @override
+  String get resetPassword => 'إعادة تعيين كلمة المرور';
+
+  @override
+  String get currentPassword => 'كلمة المرور الحالية';
+
+  @override
+  String get editProfile => 'تعديل الملف الشخصي';
+
+  @override
   String get savedAddresses => 'العناوين المحفوظة';
 
   @override

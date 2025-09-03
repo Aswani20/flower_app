@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class DotIndicator extends StatelessWidget {
   List<String> imagesList;
   CarouselSliderController controller;

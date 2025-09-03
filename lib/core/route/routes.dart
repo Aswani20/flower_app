@@ -4,6 +4,8 @@ import 'package:flower_app/gen/assets.gen.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/forget_password/forget_password_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/sign_in/login_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/sign_up/sign_up_view.dart';
+import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/edit_profile.dart';
+import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/reset_password.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
@@ -27,9 +29,18 @@ abstract class Routes {
         return MaterialPageRoute(
           builder: (context) => const SignInView(),
         );
+
+      case AppRoutes.editProfile:
+        return MaterialPageRoute(
+          builder: (context) => EditProfile(),
+        );
       case AppRoutes.homeScreen:
         return MaterialPageRoute(
           builder: (context) => const HomeScreen(),
+        );
+      case AppRoutes.resetPassword:
+        return MaterialPageRoute(
+          builder: (context) => const ResetPassword(),
         );
       case AppRoutes.bestSeller:
         return MaterialPageRoute(

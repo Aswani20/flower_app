@@ -3,6 +3,7 @@ import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flutter/material.dart';
 import '../cubit/login_cubit.dart';
 
+// ignore: must_be_immutable
 class LoginButtom extends StatelessWidget {
   LoginCubit signInViewModel = getIt<LoginCubit>();
 
@@ -14,7 +15,8 @@ class LoginButtom extends StatelessWidget {
       width: context.width,
       child: ElevatedButton(
         onPressed: () {
-          if (signInViewModel.formKey.currentState!.validate()) {
+          if (signInViewModel.formKey.currentState!
+              .validate()) {
             signInViewModel.login();
           }
         },
