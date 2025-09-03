@@ -25,6 +25,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get myOrders => 'My Orders';
 
   @override
+  String get update => 'Update';
+
+  @override
+  String get change => 'Change';
+
+  @override
+  String get resetPassword => 'Reset Password';
+
+  @override
+  String get currentPassword => 'Current Password';
+
+  @override
   String get editProfile => 'Edit Profile';
 
   @override

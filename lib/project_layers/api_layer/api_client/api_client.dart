@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:flower_app/core/utils/app_constants.dart';
 import 'package:flower_app/project_layers/api_layer/models/categories_response.dart';
 import 'package:flower_app/project_layers/api_layer/models/products_response.dart';
+import 'package:flower_app/project_layers/api_layer/models/request/change_password_request_body.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/forget_password_request_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/login_request.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/reset_password_request_dto.dart';
@@ -10,6 +10,7 @@ import 'package:flower_app/project_layers/api_layer/models/request/verify_reset_
 import 'package:flower_app/project_layers/api_layer/models/response/best_seller_response.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/best_seller_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/category_response_dto.dart';
+import 'package:flower_app/project_layers/api_layer/models/response/change_password_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/forget_password_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/get_logged_user_data_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/occasion_response_dto.dart';
@@ -88,4 +89,8 @@ abstract class ApiClient {
   @GET('v1/auth/profile-data')
   Future<GetLoggedUserDataResponseDto>
   getLoggedUserData();
+  @PATCH('v1/auth/change-password')
+  Future<ChangePasswordResponseDto> changePassword(
+    @Body() ChangePasswordRequestBody request,
+  );
 }
