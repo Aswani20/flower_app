@@ -6,7 +6,7 @@ import 'package:flower_app/core/l10n/app_localizations.dart';
 import 'package:flower_app/core/route/app_routes.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/gen/assets.gen.dart';
-import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/cubit/profile_cubit.dart';
+import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/cubits/profile/profile_cubit.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/widgets/list_tile_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -89,6 +89,10 @@ class ProfileTab extends StatelessWidget {
               ),
               SizedBox(height: 3.heightPercent(context)),
               BlocBuilder<ProfileCubit, ProfileState>(
+                buildWhen: (previous, current) =>
+                    current is GetLoggedUserDataSuccess ||
+                    current is GetLoggedUserDataError ||
+                    current is GetLoggedUserDataLoading,
                 builder: (context, state) {
                   switch (state) {
                     case GetLoggedUserDataLoading():

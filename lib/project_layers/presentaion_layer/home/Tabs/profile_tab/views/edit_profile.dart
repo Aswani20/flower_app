@@ -94,7 +94,7 @@ class EditProfile extends StatelessWidget {
                     AppRoutes.resetPassword,
                   );
                 },
-                child: Text('Change'),
+                child: Text(context.l10n.change),
               ),
               hintText: context.l10n.passwordHint,
               validator: (value) {},
@@ -103,7 +103,7 @@ class EditProfile extends StatelessWidget {
             CustomButton(
               size: Size(double.infinity, 48.h),
               borderRadius: 25.r,
-              child: Text('update'),
+              child: Text(context.l10n.update),
               onPressed: () {},
             ),
           ],
