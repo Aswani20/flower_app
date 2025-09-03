@@ -1,4 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:flower_app/core/di/modules/shared_preferences_module.dart';
+import 'package:flower_app/core/keys/shared_key.dart';
 import 'package:flower_app/core/utils/app_constants.dart';
 import 'package:injectable/injectable.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
@@ -6,29 +8,35 @@ import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 @module
 abstract class DioModule {
   @singleton
-  Dio provideDio() {
+  Dio provideDio(PrettyDioLogger logger) {
     Dio dio = Dio(
       BaseOptions(
         baseUrl: AppConstants.baseUrl,
         receiveDataWhenStatusError: true,
         connectTimeout: const Duration(seconds: 20),
         receiveTimeout: const Duration(seconds: 20),
-        validateStatus: (status) => status != null && status < 500,
+        validateStatus: (status) =>
+            status != null && status < 500,
       ),
     );
 
-    // ✅ هنا ضيف الـ token في الهيدر مره واحدة
-    dio.options.headers['token'] =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjhhNGRjMDJhOGJjYTMwN2Y5ZGYwODlhIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3NTY0Mjk2OTF9.N8SGLseqee5U1IKd3BXeihVUZLhrXu3B2MnK9XfS7z8";
+    dio.interceptors.add(
+      InterceptorsWrapper(
+        onRequest: (options, handler) async {
+          final token = SharedPrefHelper().getString(
+            key: SharedPrefKeys.tokenKey,
+          );
+          if (token != null && token.isNotEmpty) {
+            options.headers['Authorization'] =
+                'Bearer $token';
+          }
+          return handler.next(options);
+        },
+      ),
+    );
 
-    // Logger
-    dio.interceptors.add(PrettyDioLogger(
-      request: true,
-      requestBody: true,
-      responseBody: true,
-      requestHeader: true,
-      responseHeader: true,
-    ));
+    // إضافة الـ Logger
+    dio.interceptors.add(logger);
 
     return dio;
   }

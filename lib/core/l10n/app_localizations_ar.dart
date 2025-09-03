@@ -25,6 +25,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get myOrders => 'طلباتي';
 
   @override
+  String get editProfile => 'تعديل الملف الشخصي';
+
+  @override
   String get savedAddresses => 'العناوين المحفوظة';
 
   @override

@@ -134,6 +134,12 @@ abstract class AppLocalizations {
   /// **'My Orders'**
   String get myOrders;
 
+  /// No description provided for @editProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Profile'**
+  String get editProfile;
+
   /// No description provided for @savedAddresses.
   ///
   /// In en, this message translates to:
