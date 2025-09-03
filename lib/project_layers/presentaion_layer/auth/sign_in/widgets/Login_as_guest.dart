@@ -4,6 +4,7 @@ import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import '../cubit/login_cubit.dart';
 
+// ignore: must_be_immutable
 class LoginAsGuest extends StatelessWidget {
   LoginCubit signInViewModel = getIt<LoginCubit>();
 
@@ -19,7 +20,10 @@ class LoginAsGuest extends StatelessWidget {
         },
         child: const Text(
           "Login as Guest",
-          style: TextStyle(color: AppColors.black, fontWeight: FontWeight.bold),
+          style: TextStyle(
+            color: AppColors.black,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );

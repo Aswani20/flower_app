@@ -6,6 +6,7 @@ import 'package:flower_app/project_layers/domain_layer/entities/occasion_respons
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+// ignore: must_be_immutable
 class HomeCard extends StatelessWidget {
   HomeCard({
     this.onTap,

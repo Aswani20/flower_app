@@ -10,12 +10,15 @@ import 'components/otp_component.dart';
 import 'components/reset_password_component.dart';
 import 'cubit/forget_password_view_model.dart';
 
+// ignore: must_be_immutable
 class ForgetPasswordView extends StatelessWidget {
   ForgetPasswordView({super.key});
 
-  ForgetPasswordViewModel forgetPasswordViewModel = ForgetPasswordViewModel(
+  ForgetPasswordViewModel
+  forgetPasswordViewModel = ForgetPasswordViewModel(
     forgetPasswordUseCase: getIt<ForgetPasswordUseCase>(),
-    verifyResetCodeUseCase: getIt<VerifyResetCodeUseCase>(),
+    verifyResetCodeUseCase:
+        getIt<VerifyResetCodeUseCase>(),
     resetPasswordUseCase: getIt<ResetPasswordUseCase>(),
   );
 
@@ -25,7 +28,9 @@ class ForgetPasswordView extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         leading: Padding(
-          padding: EdgeInsets.only(left: context.width * 0.04),
+          padding: EdgeInsets.only(
+            left: context.width * 0.04,
+          ),
           child: IconButton(
             onPressed: () {
               Navigator.pop(context);
@@ -34,15 +39,25 @@ class ForgetPasswordView extends StatelessWidget {
           ),
         ),
         leadingWidth: context.width * 0.09,
-        title: Text(context.l10n.password, style: AppStyles.appBarTitleStyle),
+        title: Text(
+          context.l10n.password,
+          style: AppStyles.appBarTitleStyle,
+        ),
       ),
       body: PageView(
-        controller: forgetPasswordViewModel.pageController,
+        controller:
+            forgetPasswordViewModel.pageController,
         physics: NeverScrollableScrollPhysics(),
         children: [
-          ForgetPasswordComponent(viewModel:forgetPasswordViewModel ,),
-          OtpComponent(viewModel:forgetPasswordViewModel ,),
-          ResetPasswordComponent(viewModel:forgetPasswordViewModel ,),
+          ForgetPasswordComponent(
+            viewModel: forgetPasswordViewModel,
+          ),
+          OtpComponent(
+            viewModel: forgetPasswordViewModel,
+          ),
+          ResetPasswordComponent(
+            viewModel: forgetPasswordViewModel,
+          ),
         ],
       ),
     );
