@@ -9,6 +9,7 @@ import 'package:flower_app/core/l10n/app_localizations.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/screens/product_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'core/keys/shared_key.dart';
 import 'core/route/app_routes.dart';
 import 'core/route/routes.dart';
 import 'core/theme/app_theme.dart';
@@ -16,13 +17,16 @@ import 'core/theme/app_theme.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SharedPrefHelper().instantiatePreferences();
+  final token = SharedPrefHelper().getString(
+    key: SharedPrefKeys.tokenKey,
+  );
   await configureDependencies();
-  runApp(MyApp());
+  runApp(MyApp(token: token));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+  const MyApp({super.key, this.token});
+  final String? token;
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -39,7 +43,9 @@ class MyApp extends StatelessWidget {
         locale: Locale("en"),
         theme: AppTheme.lightTheme,
         onGenerateRoute: Routes.generateRoute,
-        initialRoute: AppRoutes.loginScreen,
+        initialRoute: (token != null && token!.isNotEmpty)
+            ? AppRoutes.homeScreen
+            : AppRoutes.loginScreen,
         routes: {
           AppRoutes.loginScreen: (context) =>
               SignInView(),

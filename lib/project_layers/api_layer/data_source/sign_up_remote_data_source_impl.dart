@@ -7,6 +7,10 @@ import 'package:flower_app/project_layers/data_layer/data_source/sign_up_remote_
 import 'package:flower_app/project_layers/domain_layer/entities/sign_up_entity.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../core/di/modules/shared_preferences_module.dart';
+import '../../../core/errors/failures.dart';
+import '../../../core/keys/shared_key.dart';
+
 @Injectable(as: SignUpRemoteDataSource)
 class SignUpRemoteDataSourceImpl
     implements SignUpRemoteDataSource {
@@ -15,11 +19,23 @@ class SignUpRemoteDataSourceImpl
   SignUpRemoteDataSourceImpl(this.apiClient);
   @override
   Future<ApiResult<SignUpEntity>> signUp(
-      SignUpRequestBody signUpRequest,
-      ) async {
+    SignUpRequestBody signUpRequest,
+  ) async {
     try {
       SignUpResponse signUpResponse = await apiClient
           .signUp(signUpRequest);
+      if (signUpResponse.token != null) {
+        await SharedPrefHelper().setString(
+          key: SharedPrefKeys.tokenKey,
+          stringValue: signUpResponse.token!,
+        );
+      }
+      if (signUpResponse.token!.isEmpty) {
+        throw ServerError(
+          errorMessage: "Invalid credentials",
+        );
+      }
+
       return ApiSuccessResult(
         signUpResponse.user!.toSignUpEntity(),
       );

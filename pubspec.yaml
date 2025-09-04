@@ -30,13 +30,13 @@ dependencies:
   fluttertoast: ^8.2.12
   connectivity_plus: ^6.1.4
   carousel_slider: ^5.1.1
-
-
   flutter_screenutil: ^5.9.3
   mockito:
   flutter_svg: ^2.2.0
   cached_network_image: ^3.4.1
   skeletonizer: ^2.1.0+1
+  image_picker: ^1.0.4
+  image: ^4.1.7
 
 dev_dependencies:
   flutter_test:
@@ -67,4 +67,3 @@ flutter:
   #       - asset: fonts/Schyler-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
-

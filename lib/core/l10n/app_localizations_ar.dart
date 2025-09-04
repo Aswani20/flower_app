@@ -279,4 +279,12 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get occasion => 'تخفيضات';
+
+  @override
+  String get profile_updated_successfully =>
+      'تم تحديث الملف الشخصي بنجاح';
+
+  @override
+  String get photo_updated_successfully =>
+      'تم تحديث الصورة بنجاح';
 }

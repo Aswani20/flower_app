@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flower_app/core/di/di.dart';
 import 'package:flower_app/core/extensions/navigator_extensions.dart';
 import 'package:flower_app/core/extensions/project_extensions.dart';
@@ -111,18 +112,37 @@ class ProfileTab extends StatelessWidget {
                         children: [
                           Column(
                             children: [
-                              CircleAvatar(
-                                radius: 44.r,
-                                backgroundColor:
-                                    AppColors.grey,
-                                backgroundImage:
-                                    NetworkImage(
-                                      state.user.photo ??
-                                          Assets
-                                              .icons
-                                              .profileIcon
-                                              .path,
+                              ClipRRect(
+                                borderRadius:
+                                    BorderRadius.circular(
+                                      100.r,
                                     ),
+                                child: CachedNetworkImage(
+                                  imageUrl:
+                                      state.user.photo!,
+                                  fit: BoxFit.fill,
+                                  width: 100.w,
+                                  height: 100.h,
+
+                                  placeholder:
+                                      (
+                                        context,
+                                        url,
+                                      ) => const Center(
+                                        child:
+                                            CircularProgressIndicator(),
+                                      ),
+                                  errorWidget:
+                                      (
+                                        context,
+                                        url,
+                                        error,
+                                      ) => const Center(
+                                        child: Icon(
+                                          Icons.error,
+                                        ),
+                                      ),
+                                ),
                               ),
                               SizedBox(height: 6.h),
                               Row(
@@ -145,6 +165,8 @@ class ProfileTab extends StatelessWidget {
                                       context.pushNamed(
                                         AppRoutes
                                             .editProfile,
+                                        arguments:
+                                            state.user,
                                       );
                                     },
                                     icon: Icon(
@@ -182,6 +204,24 @@ class ProfileTab extends StatelessWidget {
                         ],
                       );
                     case ProfileInitial():
+                      // TODO: Handle this case.
+                      throw UnimplementedError();
+                    case UpdateUserProfileLoading():
+                      // TODO: Handle this case.
+                      throw UnimplementedError();
+                    case UpdateUserProfileSuccess():
+                      // TODO: Handle this case.
+                      throw UnimplementedError();
+                    case UpdateUserProfileError():
+                      // TODO: Handle this case.
+                      throw UnimplementedError();
+                    case PhotoChangedLoadingState():
+                      // TODO: Handle this case.
+                      throw UnimplementedError();
+                    case PhotoChangedSuccess():
+                      // TODO: Handle this case.
+                      throw UnimplementedError();
+                    case PhotoChangedError():
                       // TODO: Handle this case.
                       throw UnimplementedError();
                   }

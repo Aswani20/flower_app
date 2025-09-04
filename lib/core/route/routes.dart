@@ -33,6 +33,7 @@ abstract class Routes {
       case AppRoutes.editProfile:
         return MaterialPageRoute(
           builder: (context) => EditProfile(),
+          settings: settings,
         );
       case AppRoutes.homeScreen:
         return MaterialPageRoute(

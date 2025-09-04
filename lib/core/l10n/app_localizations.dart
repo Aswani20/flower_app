@@ -608,6 +608,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Occasion'**
   String get occasion;
+
+  /// No description provided for @profile_updated_successfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile updated successfully'**
+  String get profile_updated_successfully;
+
+  /// No description provided for @photo_updated_successfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Photo updated successfully'**
+  String get photo_updated_successfully;
 }
 
 class _AppLocalizationsDelegate

@@ -4,7 +4,8 @@ import 'package:json_annotation/json_annotation.dart';
 part 'get_logged_user_data_response_dto.g.dart';
 
 @JsonSerializable()
-class GetLoggedUserDataResponseDto {
+class GetLoggedUserDataResponseDto
+    extends GetLoggedUserEntity {
   final String? message;
   final GetLoggedUserDataResponseDtoUser? user;
 
