@@ -2,10 +2,12 @@ import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/core/theme/app_styles.dart';
 import 'package:flower_app/gen/assets.gen.dart';
+import 'package:flower_app/project_layers/domain_layer/entities/cart_response_entity.dart';
 import 'package:flutter/material.dart';
 
 class CartItem extends StatelessWidget {
-  const CartItem({super.key});
+  CartItemsEntity cartItemsEntity;
+  CartItem({super.key, required this.cartItemsEntity});
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +29,7 @@ class CartItem extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(8),
-            child: Assets.images.noRoutes.image(
-              fit: BoxFit.fill,
-            ),
+            child: Image.asset(cartItemsEntity.product!.imgCover ?? Assets.images.noRoutes.path),
           ),
           Expanded(
             child: Padding(
@@ -44,16 +44,16 @@ class CartItem extends StatelessWidget {
                 spacing: 4,
                 children: [
                   Text(
-                    "Red Roses",
+                    cartItemsEntity.product!.title ?? '',
                     style: AppStyles.medium16black,
                   ),
                   Text(
-                    "15 Pink Rose Bouquet",
+                    'Available Quantity ${cartItemsEntity.product!.quantity}',
                     style: AppStyles.regular13grey,
                   ),
                   Spacer(),
                   Text(
-                    '${context.l10n.egp} 100',
+                    '${context.l10n.egp} ${cartItemsEntity.price}',
                     style: AppStyles.regular14black
                         .copyWith(
                           fontWeight: FontWeight.w600,

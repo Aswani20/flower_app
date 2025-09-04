@@ -12,6 +12,7 @@ part 'category_state.dart';
 class CategoryCubit extends Cubit<CategoryState> {
   CategoryUseCase categoryUseCase;
   ProductUseCase productUseCase;
+
   CategoryCubit(this.categoryUseCase, this.productUseCase)
     : super(CategoryInitial());
 

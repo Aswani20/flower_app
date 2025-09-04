@@ -27,6 +27,8 @@ import 'package:flower_app/project_layers/api_layer/models/response/best_seller_
     as _i12;
 import 'package:flower_app/project_layers/api_layer/models/response/best_seller_response_dto.dart'
     as _i13;
+import 'package:flower_app/project_layers/api_layer/models/response/cart_response_dto.dart'
+    as _i24;
 import 'package:flower_app/project_layers/api_layer/models/response/category_response_dto.dart'
     as _i11;
 import 'package:flower_app/project_layers/api_layer/models/response/change_password_response_dto.dart'
@@ -318,4 +320,81 @@ class MockApiClient extends _i1.Mock implements _i9.ApiClient {
             ),
           )
           as _i10.Future<_i8.ChangePasswordResponseDto>);
+
+  @override
+  _i10.Future<_i2.HttpResponse<_i24.CartResponseDto>> getCart() =>
+      (super.noSuchMethod(
+            Invocation.method(#getCart, []),
+            returnValue:
+                _i10.Future<_i2.HttpResponse<_i24.CartResponseDto>>.value(
+                  _FakeHttpResponse_0<_i24.CartResponseDto>(
+                    this,
+                    Invocation.method(#getCart, []),
+                  ),
+                ),
+          )
+          as _i10.Future<_i2.HttpResponse<_i24.CartResponseDto>>);
+
+  @override
+  _i10.Future<_i2.HttpResponse<_i24.CartResponseDto>> addToCart(
+    Map<String, dynamic>? body,
+  ) =>
+      (super.noSuchMethod(
+            Invocation.method(#addToCart, [body]),
+            returnValue:
+                _i10.Future<_i2.HttpResponse<_i24.CartResponseDto>>.value(
+                  _FakeHttpResponse_0<_i24.CartResponseDto>(
+                    this,
+                    Invocation.method(#addToCart, [body]),
+                  ),
+                ),
+          )
+          as _i10.Future<_i2.HttpResponse<_i24.CartResponseDto>>);
+
+  @override
+  _i10.Future<_i2.HttpResponse<_i24.CartResponseDto>> updateCart(
+    String? itemId,
+    Map<String, dynamic>? body,
+  ) =>
+      (super.noSuchMethod(
+            Invocation.method(#updateCart, [itemId, body]),
+            returnValue:
+                _i10.Future<_i2.HttpResponse<_i24.CartResponseDto>>.value(
+                  _FakeHttpResponse_0<_i24.CartResponseDto>(
+                    this,
+                    Invocation.method(#updateCart, [itemId, body]),
+                  ),
+                ),
+          )
+          as _i10.Future<_i2.HttpResponse<_i24.CartResponseDto>>);
+
+  @override
+  _i10.Future<_i2.HttpResponse<_i24.CartResponseDto>> removeItemFromCart(
+    String? itemId,
+  ) =>
+      (super.noSuchMethod(
+            Invocation.method(#removeItemFromCart, [itemId]),
+            returnValue:
+                _i10.Future<_i2.HttpResponse<_i24.CartResponseDto>>.value(
+                  _FakeHttpResponse_0<_i24.CartResponseDto>(
+                    this,
+                    Invocation.method(#removeItemFromCart, [itemId]),
+                  ),
+                ),
+          )
+          as _i10.Future<_i2.HttpResponse<_i24.CartResponseDto>>);
+
+  @override
+  _i10.Future<_i2.HttpResponse<_i24.CartResponseDto>> clearCart() =>
+      (super.noSuchMethod(
+            Invocation.method(#clearCart, []),
+            returnValue:
+                _i10.Future<_i2.HttpResponse<_i24.CartResponseDto>>.value(
+                  _FakeHttpResponse_0<_i24.CartResponseDto>(
+                    this,
+                    Invocation.method(#clearCart, []),
+                  ),
+                ),
+          )
+          as _i10.Future<_i2.HttpResponse<_i24.CartResponseDto>>);
 }

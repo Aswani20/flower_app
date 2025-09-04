@@ -4,9 +4,9 @@ import 'package:flower_app/core/theme/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class CardHeader extends StatelessWidget {
-  int itemNumbers = 0;
+  int itemNumbers;
 
-  CardHeader({super.key});
+  CardHeader({super.key, required this.itemNumbers});
 
   @override
   Widget build(BuildContext context) {

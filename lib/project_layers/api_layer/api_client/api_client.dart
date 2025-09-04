@@ -9,6 +9,7 @@ import 'package:flower_app/project_layers/api_layer/models/request/sign_up_reque
 import 'package:flower_app/project_layers/api_layer/models/request/verify_reset_code_request_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/best_seller_response.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/best_seller_response_dto.dart';
+import 'package:flower_app/project_layers/api_layer/models/response/cart_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/category_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/change_password_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/forget_password_response_dto.dart';
@@ -30,20 +31,16 @@ abstract class ApiClient {
   factory ApiClient(Dio dio) = _ApiClient;
 
   @GET("/v1/categories")
-  Future<HttpResponse<CategoryResponseDto>>
-  getCategories();
+  Future<HttpResponse<CategoryResponseDto>> getCategories();
 
   @GET("/v1/best-seller")
-  Future<HttpResponse<BestSellerResponse>>
-  getBestSellersProduct();
+  Future<HttpResponse<BestSellerResponse>> getBestSellersProduct();
 
   @GET("/v1/best-seller")
-  Future<HttpResponse<BestSellerResponseDto>>
-  getBestSellers();
+  Future<HttpResponse<BestSellerResponseDto>> getBestSellers();
 
   @GET("/v1/occasions")
-  Future<HttpResponse<OccasionResponseDto>>
-  getOccasions();
+  Future<HttpResponse<OccasionResponseDto>> getOccasions();
 
   @POST('v1/auth/signup')
   Future<SignUpResponse> signUp(
@@ -56,24 +53,21 @@ abstract class ApiClient {
   });
 
   @POST('/v1/auth/forgotPassword')
-  Future<HttpResponse<ForgetPasswordResponseDto>>
-  forgetPassword({
+  Future<HttpResponse<ForgetPasswordResponseDto>> forgetPassword({
     @Body()
     required ForgetPasswordRequestDto
     forgetPasswordRequestDto,
   });
 
   @POST('/v1/auth/verifyResetCode')
-  Future<HttpResponse<VerifyResetCodeResponseDto>>
-  verifyResetCode({
+  Future<HttpResponse<VerifyResetCodeResponseDto>> verifyResetCode({
     @Body()
     required VerifyResetCodeRequestDto
     verifyResetCodeRequestDto,
   });
 
   @PUT('/v1/auth/resetPassword')
-  Future<HttpResponse<ResetPasswordResponseDto>>
-  resetPassword({
+  Future<HttpResponse<ResetPasswordResponseDto>> resetPassword({
     @Body()
     required ResetPasswordRequestDto
     resetPasswordRequestDto,
@@ -86,11 +80,35 @@ abstract class ApiClient {
   Future<ProductsResponse> getProductsById(
     @Query("category") String? categoryId,
   );
+
   @GET('v1/auth/profile-data')
-  Future<GetLoggedUserDataResponseDto>
-  getLoggedUserData();
+  Future<GetLoggedUserDataResponseDto> getLoggedUserData();
+
   @PATCH('v1/auth/change-password')
   Future<ChangePasswordResponseDto> changePassword(
     @Body() ChangePasswordRequestBody request,
   );
+
+  /// Cart Api
+  @GET('v1/cart')
+  Future<HttpResponse<CartResponseDto>> getCart();
+
+  @POST('v1/cart')
+  Future<HttpResponse<CartResponseDto>> addToCart(
+    @Body() Map<String, dynamic> body,
+  );
+
+  @PUT('v1/cart/{itemId}')
+  Future<HttpResponse<CartResponseDto>> updateCart(
+      @Path('itemId') String itemId,
+      @Body() Map<String, dynamic> body,
+  );
+
+  @DELETE('v1/cart/{itemId}')
+  Future<HttpResponse<CartResponseDto>> removeItemFromCart(@Path('itemId') String itemId);
+
+  @DELETE('v1/cart')
+  Future<HttpResponse<CartResponseDto>> clearCart();
+
+
 }
