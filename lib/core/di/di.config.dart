@@ -33,6 +33,8 @@ import '../../project_layers/api_layer/data_source/product_remote_data_source_im
     as _i636;
 import '../../project_layers/api_layer/data_source/sign_up_remote_data_source_impl.dart'
     as _i477;
+import '../../project_layers/api_layer/data_source/update_user_profile_data_source_impl.dart'
+    as _i197;
 import '../../project_layers/data_layer/data_source/auth_remote_data_source.dart'
     as _i956;
 import '../../project_layers/data_layer/data_source/best_seller_data_source.dart'
@@ -49,6 +51,8 @@ import '../../project_layers/data_layer/data_source/login_data_source.dart'
     as _i196;
 import '../../project_layers/data_layer/data_source/product_remote_data_source.dart'
     as _i27;
+import '../../project_layers/data_layer/data_source/profile_repo_data_source.dart'
+    as _i464;
 import '../../project_layers/data_layer/data_source/sign_up_remote_data_source.dart'
     as _i772;
 import '../../project_layers/data_layer/repos_impl/auth_repo_impl.dart'
@@ -67,6 +71,8 @@ import '../../project_layers/data_layer/repos_impl/login_repo_impl.dart'
     as _i674;
 import '../../project_layers/data_layer/repos_impl/product_repo_impl.dart'
     as _i146;
+import '../../project_layers/data_layer/repos_impl/profile_repo_impl.dart'
+    as _i463;
 import '../../project_layers/data_layer/repos_impl/sign_up_repo_impl.dart'
     as _i631;
 import '../../project_layers/domain_layer/repos/auth_repo.dart' as _i326;
@@ -79,6 +85,7 @@ import '../../project_layers/domain_layer/repos/get_logged_user_data_repo.dart'
 import '../../project_layers/domain_layer/repos/home_repo.dart' as _i900;
 import '../../project_layers/domain_layer/repos/login_repo.dart' as _i974;
 import '../../project_layers/domain_layer/repos/product_repo.dart' as _i53;
+import '../../project_layers/domain_layer/repos/profile_repo.dart' as _i583;
 import '../../project_layers/domain_layer/repos/sign_up_repo.dart' as _i948;
 import '../../project_layers/domain_layer/use_cases/best_seller_use_case.dart'
     as _i124;
@@ -104,6 +111,10 @@ import '../../project_layers/domain_layer/use_cases/reset_password_use_case.dart
     as _i194;
 import '../../project_layers/domain_layer/use_cases/sign_up_use_case.dart'
     as _i123;
+import '../../project_layers/domain_layer/use_cases/update_user_photo_use_case.dart'
+    as _i797;
+import '../../project_layers/domain_layer/use_cases/update_user_profile_use_case.dart'
+    as _i621;
 import '../../project_layers/domain_layer/use_cases/verify_reset_code_use_case.dart'
     as _i649;
 import '../../project_layers/presentaion_layer/auth/forget_password/cubit/forget_password_view_model.dart'
@@ -148,8 +159,14 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i100.ChangePasswordRemoteDataSource>(
       () => _i658.ChangePasswordRemoteDataSourceImpl(gh<_i778.ApiClient>()),
     );
+    gh.factory<_i464.ProfileRepoDataSource>(
+      () => _i197.ProfileRepoDataSourceImpl(gh<_i778.ApiClient>()),
+    );
     gh.factory<_i27.ProductRemoteDataSource>(
       () => _i636.ProductRemoteDataSourceImpl(gh<_i778.ApiClient>()),
+    );
+    gh.factory<_i583.ProfileRepo>(
+      () => _i463.ProfileRepoImpl(gh<_i464.ProfileRepoDataSource>()),
     );
     gh.factory<_i772.SignUpRemoteDataSource>(
       () => _i477.SignUpRemoteDataSourceImpl(gh<_i778.ApiClient>()),
@@ -182,6 +199,12 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i900.HomeRepo>(
       () => _i157.HomeRepoImpl(gh<_i1054.HomeRemoteDataSource>()),
     );
+    gh.factory<_i621.UpdateUserProfileUseCase>(
+      () => _i621.UpdateUserProfileUseCase(gh<_i583.ProfileRepo>()),
+    );
+    gh.factory<_i797.UpdateUserPhotoUseCase>(
+      () => _i797.UpdateUserPhotoUseCase(gh<_i583.ProfileRepo>()),
+    );
     gh.factory<_i53.ProductRepo>(
       () => _i146.ProductRepoImpl(gh<_i27.ProductRemoteDataSource>()),
     );
@@ -207,14 +230,14 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i123.SignUpUseCase>(
       () => _i123.SignUpUseCase(gh<_i948.SignUpRepo>()),
     );
+    gh.factory<_i990.BestSellerUseCase>(
+      () => _i990.BestSellerUseCase(homeRepo: gh<_i900.HomeRepo>()),
+    );
     gh.factory<_i858.CategoryUseCase>(
       () => _i858.CategoryUseCase(homeRepo: gh<_i900.HomeRepo>()),
     );
     gh.factory<_i7.OccasionUseCase>(
       () => _i7.OccasionUseCase(homeRepo: gh<_i900.HomeRepo>()),
-    );
-    gh.factory<_i990.BestSellerUseCase>(
-      () => _i990.BestSellerUseCase(homeRepo: gh<_i900.HomeRepo>()),
     );
     gh.factory<_i125.BestSellerViewModel>(
       () => _i125.BestSellerViewModel(gh<_i124.BestSellerUseCase>()),
@@ -225,14 +248,14 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i503.ChangePasswordUseCase>(
       () => _i503.ChangePasswordUseCase(gh<_i64.ChangPasswordRepo>()),
     );
-    gh.factory<_i649.VerifyResetCodeUseCase>(
-      () => _i649.VerifyResetCodeUseCase(gh<_i326.AuthRepo>()),
-    );
     gh.factory<_i18.ForgetPasswordUseCase>(
       () => _i18.ForgetPasswordUseCase(gh<_i326.AuthRepo>()),
     );
     gh.factory<_i194.ResetPasswordUseCase>(
       () => _i194.ResetPasswordUseCase(gh<_i326.AuthRepo>()),
+    );
+    gh.factory<_i649.VerifyResetCodeUseCase>(
+      () => _i649.VerifyResetCodeUseCase(gh<_i326.AuthRepo>()),
     );
     gh.factory<_i878.CategoryUseCase>(
       () => _i878.CategoryUseCase(gh<_i144.CategoryRepo>()),
@@ -263,16 +286,18 @@ extension GetItInjectableX on _i174.GetIt {
         resetPasswordUseCase: gh<_i194.ResetPasswordUseCase>(),
       ),
     );
-    gh.factory<_i256.ProfileCubit>(
-      () => _i256.ProfileCubit(
-        gh<_i323.GetLoggedUserDataUseCase>(),
-        gh<_i503.ChangePasswordUseCase>(),
-      ),
-    );
     gh.factory<_i608.CategoryCubit>(
       () => _i608.CategoryCubit(
         gh<_i878.CategoryUseCase>(),
         gh<_i608.ProductUseCase>(),
+      ),
+    );
+    gh.factory<_i256.ProfileCubit>(
+      () => _i256.ProfileCubit(
+        gh<_i323.GetLoggedUserDataUseCase>(),
+        gh<_i503.ChangePasswordUseCase>(),
+        gh<_i621.UpdateUserProfileUseCase>(),
+        gh<_i797.UpdateUserPhotoUseCase>(),
       ),
     );
     return this;

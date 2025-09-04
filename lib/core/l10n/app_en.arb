@@ -82,7 +82,8 @@
   "flowery": "Flowery",
   "view_all": "View All" ,
   "best_seller": "Best Seller",
-  "occasion": "Occasion"
-
+  "occasion": "Occasion",
+  "profile_updated_successfully": "Profile updated successfully",
+  "photo_updated_successfully" : "Photo updated successfully"
 
 }

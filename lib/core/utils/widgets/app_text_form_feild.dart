@@ -12,7 +12,7 @@ class AppTextFormFeild extends StatelessWidget {
   final Widget? suffixIcon;
   final Color? backgroundColor;
   final TextEditingController? controller;
-  final Function(String?) validator;
+  final String? Function(String?)? validator;
 
   const AppTextFormFeild({
     super.key,
@@ -26,12 +26,13 @@ class AppTextFormFeild extends StatelessWidget {
     this.suffixIcon,
     this.backgroundColor,
     this.controller,
-    required this.validator,
+    this.validator,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      obscuringCharacter: "*",
       controller: controller,
       decoration: InputDecoration(
         isDense: true,
@@ -48,7 +49,7 @@ class AppTextFormFeild extends StatelessWidget {
                 // color: AppColors.mainBlue,
                 width: 1.3,
               ),
-              borderRadius: BorderRadius.circular(16.0),
+              borderRadius: BorderRadius.circular(10.0),
             ),
         enabledBorder:
             enabledBorder ??
@@ -57,21 +58,21 @@ class AppTextFormFeild extends StatelessWidget {
                 color: AppColors.grey,
                 width: 1.3,
               ),
-              borderRadius: BorderRadius.circular(16.0),
+              borderRadius: BorderRadius.circular(10.0),
             ),
         errorBorder: OutlineInputBorder(
           borderSide: const BorderSide(
             color: Colors.red,
             width: 1.3,
           ),
-          borderRadius: BorderRadius.circular(16.0),
+          borderRadius: BorderRadius.circular(10.0),
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderSide: const BorderSide(
             color: Colors.red,
             width: 1.3,
           ),
-          borderRadius: BorderRadius.circular(16.0),
+          borderRadius: BorderRadius.circular(10.0),
         ),
         hintStyle:
             hintStyle ??
@@ -83,9 +84,7 @@ class AppTextFormFeild extends StatelessWidget {
       ),
       obscureText: isObscureText ?? false,
       style: TextStyle(fontSize: 14),
-      validator: (value) {
-        return validator(value);
-      },
+      validator: validator,
     );
   }
 }

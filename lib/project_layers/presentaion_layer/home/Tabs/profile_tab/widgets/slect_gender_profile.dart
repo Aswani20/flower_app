@@ -3,18 +3,20 @@ import 'package:flower_app/project_layers/presentaion_layer/auth/sign_up/cubit/s
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ChoseGender extends StatelessWidget {
-  const ChoseGender({super.key});
+class ChoseGenderProfile extends StatelessWidget {
+  const ChoseGenderProfile({
+    required this.selectedGender,
+    super.key,
+  });
+  final String selectedGender;
 
   @override
   Widget build(BuildContext context) {
-    final cubit = context.watch<SignUpCubit>();
     return Row(
       children: [
         Text(
           'Gender',
-          style: Theme.of(context).textTheme.titleLarge
-              ?.copyWith(fontWeight: FontWeight.bold),
+          style: Theme.of(context).textTheme.titleLarge,
         ),
         SizedBox(width: 20),
         Flexible(
@@ -24,16 +26,12 @@ class ChoseGender extends StatelessWidget {
             title: Text(
               'Female',
               maxLines: 1,
-              style: Theme.of(context)
-                  .textTheme
-                  .titleMedium
-                  ?.copyWith(fontWeight: FontWeight.bold),
+              style: Theme.of(
+                context,
+              ).textTheme.titleMedium,
             ),
-            value: "female",
-            groupValue: cubit.selectedGender,
-            onChanged: (value) {
-              cubit.selectGender(value!);
-            },
+            value: 'female',
+            groupValue: selectedGender,
             activeColor: AppColors.pink,
           ),
         ),
@@ -45,16 +43,12 @@ class ChoseGender extends StatelessWidget {
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               'Male',
-              style: Theme.of(context)
-                  .textTheme
-                  .titleMedium
-                  ?.copyWith(fontWeight: FontWeight.bold),
+              style: Theme.of(
+                context,
+              ).textTheme.titleMedium,
             ),
-            value: "male",
-            groupValue: cubit.selectedGender,
-            onChanged: (value) {
-              cubit.selectGender(value!);
-            },
+            value: 'male',
+            groupValue: selectedGender,
             activeColor: AppColors.pink,
           ),
         ),

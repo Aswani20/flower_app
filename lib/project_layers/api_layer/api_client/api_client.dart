@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:flower_app/project_layers/api_layer/models/categories_response.dart';
 import 'package:flower_app/project_layers/api_layer/models/products_response.dart';
@@ -6,6 +8,7 @@ import 'package:flower_app/project_layers/api_layer/models/request/forget_passwo
 import 'package:flower_app/project_layers/api_layer/models/request/login_request.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/reset_password_request_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/sign_up_request.dart';
+import 'package:flower_app/project_layers/api_layer/models/request/update_profile_request_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/verify_reset_code_request_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/best_seller_response.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/best_seller_response_dto.dart';
@@ -16,6 +19,8 @@ import 'package:flower_app/project_layers/api_layer/models/response/get_logged_u
 import 'package:flower_app/project_layers/api_layer/models/response/occasion_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/reset_password_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/sign_up_response.dart';
+import 'package:flower_app/project_layers/api_layer/models/response/update_photo_response_dto.dart';
+import 'package:flower_app/project_layers/api_layer/models/response/update_profile_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/verify_reset_code_response.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
@@ -89,8 +94,20 @@ abstract class ApiClient {
   @GET('v1/auth/profile-data')
   Future<GetLoggedUserDataResponseDto>
   getLoggedUserData();
+
   @PATCH('v1/auth/change-password')
   Future<ChangePasswordResponseDto> changePassword(
     @Body() ChangePasswordRequestBody request,
+  );
+
+  @PUT('v1/auth/editProfile')
+  Future<UpdateProfileResponseDto> editProfile(
+    @Body() UpdateProfileRequestDto request,
+  );
+
+  @PUT('v1/auth/upload-photo')
+  @MultiPart()
+  Future<UpdatePhotoResponseDto> changePhoto(
+    @Part(name: "photo") File photo,
   );
 }

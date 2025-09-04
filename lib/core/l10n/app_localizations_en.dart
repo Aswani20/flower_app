@@ -277,4 +277,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get occasion => 'Occasion';
+
+  @override
+  String get profile_updated_successfully =>
+      'Profile updated successfully';
+
+  @override
+  String get photo_updated_successfully =>
+      'Photo updated successfully';
 }
