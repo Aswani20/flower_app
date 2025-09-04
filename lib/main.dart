@@ -40,19 +40,6 @@ class MyApp extends StatelessWidget {
         theme: AppTheme.lightTheme,
         onGenerateRoute: Routes.generateRoute,
         initialRoute: AppRoutes.loginScreen,
-        routes: {
-          AppRoutes.loginScreen: (context) =>
-              SignInView(),
-          AppRoutes.signUpScreen: (context) =>
-              SignUpView(),
-          AppRoutes.forgetPasswordScreen: (context) =>
-              ForgetPasswordView(),
-          AppRoutes.homeScreen: (context) => HomeScreen(),
-          AppRoutes.bestSeller: (context) =>
-              BestSellerScreen(),
-          AppRoutes.productDetailsScreen: (context) =>
-              ProductDetailsScreen(),
-        },
       ),
     );
   }

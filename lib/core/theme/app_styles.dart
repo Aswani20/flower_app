@@ -18,6 +18,11 @@ abstract class AppStyles {
     fontWeight: FontWeight.w500,
     color: AppColors.white,
   );
+  static TextStyle medium16grey = GoogleFonts.roboto(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    color: AppColors.grey,
+  );
   static TextStyle regular14grey = GoogleFonts.inter(
     fontSize: 14,
     fontWeight: FontWeight.w400,
@@ -31,6 +36,16 @@ abstract class AppStyles {
   static TextStyle regular16black = GoogleFonts.inter(
     fontSize: 16,
     fontWeight: FontWeight.w400,
+    color: AppColors.black,
+  );
+  static TextStyle regular16greyRoboto = GoogleFonts.roboto(
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+    color: AppColors.grey,
+  );
+  static TextStyle medium18blackRoboto = GoogleFonts.roboto(
+    fontSize: 18,
+    fontWeight: FontWeight.w500,
     color: AppColors.black,
   );
   static TextStyle font15BlackW500 = TextStyle(

@@ -277,4 +277,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get occasion => 'Occasion';
+
+  @override
+  String get deliver_to => 'Deliver to';
+
+  @override
+  String get items => 'items';
+
+  @override
+  String get sub_total => 'Sub Total';
+
+  @override
+  String get delivery_fee => 'Delivery Fee';
+
+  @override
+  String get total => 'Total';
+
+  @override
+  String get checkout => 'Checkout';
 }

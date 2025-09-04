@@ -608,6 +608,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Occasion'**
   String get occasion;
+
+  /// No description provided for @deliver_to.
+  ///
+  /// In en, this message translates to:
+  /// **'Deliver to'**
+  String get deliver_to;
+
+  /// No description provided for @items.
+  ///
+  /// In en, this message translates to:
+  /// **'items'**
+  String get items;
+
+  /// No description provided for @sub_total.
+  ///
+  /// In en, this message translates to:
+  /// **'Sub Total'**
+  String get sub_total;
+
+  /// No description provided for @delivery_fee.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery Fee'**
+  String get delivery_fee;
+
+  /// No description provided for @total.
+  ///
+  /// In en, this message translates to:
+  /// **'Total'**
+  String get total;
+
+  /// No description provided for @checkout.
+  ///
+  /// In en, this message translates to:
+  /// **'Checkout'**
+  String get checkout;
 }
 
 class _AppLocalizationsDelegate

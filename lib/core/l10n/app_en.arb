@@ -82,7 +82,11 @@
   "flowery": "Flowery",
   "view_all": "View All" ,
   "best_seller": "Best Seller",
-  "occasion": "Occasion"
-
-
+  "occasion": "Occasion",
+  "deliver_to": "Deliver to",
+  "items" : "items",
+  "sub_total" : "Sub Total",
+  "delivery_fee" : "Delivery Fee",
+  "total" : "Total",
+  "checkout" : "Checkout"
 }
