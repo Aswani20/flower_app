@@ -33,7 +33,6 @@ dependencies:
 
 
   flutter_screenutil: ^5.9.3
-  mockito:
   flutter_svg: ^2.2.0
   cached_network_image: ^3.4.1
   skeletonizer: ^2.1.0+1

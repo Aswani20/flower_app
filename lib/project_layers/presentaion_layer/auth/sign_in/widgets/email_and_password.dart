@@ -7,7 +7,7 @@ import '../cubit/login_cubit.dart';
 
 class EmailAndPassword extends StatefulWidget {
 
-  EmailAndPassword({super.key});
+ const EmailAndPassword({super.key});
 
   @override
   State<EmailAndPassword> createState() => _EmailAndPasswordState();

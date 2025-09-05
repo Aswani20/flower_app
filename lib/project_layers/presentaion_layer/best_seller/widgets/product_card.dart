@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flower_app/core/theme/app_styles.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/theme/app_colors.dart';
@@ -57,7 +56,7 @@ class ProductCard extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      '\EGP ${product.sold?.toStringAsFixed(2) ?? '0.00'}',
+                      'EGP ${product.sold?.toStringAsFixed(2) ?? '0.00'}',
                       style: TextStyle(
                         color: AppColors.black,
                         fontWeight: FontWeight.w500,

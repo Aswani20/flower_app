@@ -10,7 +10,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class ResetPasswordComponent extends StatelessWidget {
   final ForgetPasswordViewModel viewModel;
 
-  ResetPasswordComponent({super.key, required this.viewModel});
+ const ResetPasswordComponent({super.key, required this.viewModel});
 
   @override
   Widget build(BuildContext context) {

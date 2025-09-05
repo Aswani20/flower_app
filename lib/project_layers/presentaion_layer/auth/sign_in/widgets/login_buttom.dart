@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../cubit/login_cubit.dart';
 
 class LoginButtom extends StatelessWidget {
-  LoginCubit signInViewModel = getIt<LoginCubit>();
+  final LoginCubit signInViewModel = getIt<LoginCubit>();
 
   LoginButtom({super.key});
 
@@ -14,7 +14,8 @@ class LoginButtom extends StatelessWidget {
       width: context.width,
       child: ElevatedButton(
         onPressed: () {
-          if (signInViewModel.formKey.currentState!.validate()) {
+          if (signInViewModel.formKey.currentState!
+              .validate()) {
             signInViewModel.login();
           }
         },

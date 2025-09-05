@@ -32,4 +32,10 @@ class SignUpRequestBody {
   Map<String, dynamic> toJson() {
     return _$SignUpRequestBodyToJson(this);
   }
+
+  factory SignUpRequestBody.fromJson(
+    Map<String, dynamic> json,
+  ) {
+    return _$SignUpRequestBodyFromJson(json);
+  }
 }

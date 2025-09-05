@@ -11,7 +11,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class OtpComponent extends StatelessWidget {
   final ForgetPasswordViewModel viewModel;
-   OtpComponent({super.key, required this.viewModel});
+  const OtpComponent({super.key, required this.viewModel});
 
   @override
   Widget build(BuildContext context) {

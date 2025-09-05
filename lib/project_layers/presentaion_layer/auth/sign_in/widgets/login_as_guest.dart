@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import '../cubit/login_cubit.dart';
 
 class LoginAsGuest extends StatelessWidget {
-  LoginCubit signInViewModel = getIt<LoginCubit>();
+  final LoginCubit signInViewModel = getIt<LoginCubit>();
 
   LoginAsGuest({super.key});
 
@@ -19,7 +19,10 @@ class LoginAsGuest extends StatelessWidget {
         },
         child: const Text(
           "Login as Guest",
-          style: TextStyle(color: AppColors.black, fontWeight: FontWeight.bold),
+          style: TextStyle(
+            color: AppColors.black,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );

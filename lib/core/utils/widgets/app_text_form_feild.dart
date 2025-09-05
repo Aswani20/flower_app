@@ -78,7 +78,7 @@ class AppTextFormFeild extends StatelessWidget {
             const TextStyle(color: AppColors.grey),
         hintText: hintText,
         suffixIcon: suffixIcon,
-        fillColor: backgroundColor ?? null,
+        fillColor: backgroundColor,
         filled: true,
       ),
       obscureText: isObscureText ?? false,

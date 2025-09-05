@@ -15,10 +15,13 @@ final storage = FlutterSecureStorage();
 class LoginCubit extends Cubit<LoginState> {
   final LoginUseCase loginUseCase;
 
-  LoginCubit({required this.loginUseCase}) : super(LoginInitial());
+  LoginCubit({required this.loginUseCase})
+    : super(LoginInitial());
 
-  TextEditingController emailController = TextEditingController(text: "");
-  TextEditingController passwordController = TextEditingController(text: "");
+  TextEditingController emailController =
+      TextEditingController(text: "");
+  TextEditingController passwordController =
+      TextEditingController(text: "");
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   bool isEnable = false;
   bool isObscureText = true;
@@ -34,22 +37,30 @@ class LoginCubit extends Cubit<LoginState> {
           ),
         );
 
-        response.fold((error) => emit(LoginErrorState(error.errorMessage)), (
-          loginResponse,
-        ) async {
-          await storage.write(key: 'token', value: loginResponse.token);
-          if (isRememberMe) {
-            await storage.write(key: 'email', value: emailController.text);
+        response.fold(
+          (error) =>
+              emit(LoginErrorState(error.errorMessage)),
+          (loginResponse) async {
             await storage.write(
-              key: 'password',
-              value: passwordController.text,
+              key: 'token',
+              value: loginResponse.token,
             );
-          } else {
-            await storage.delete(key: 'email');
-            await storage.delete(key: 'password');
-          }
-          emit(LoginSuccessState(loginResponse));
-        });
+            if (isRememberMe) {
+              await storage.write(
+                key: 'email',
+                value: emailController.text,
+              );
+              await storage.write(
+                key: 'password',
+                value: passwordController.text,
+              );
+            } else {
+              await storage.delete(key: 'email');
+              await storage.delete(key: 'password');
+            }
+            emit(LoginSuccessState(loginResponse));
+          },
+        );
       } catch (e) {
         emit(LoginErrorState("Login failed: $e"));
       }
@@ -61,9 +72,17 @@ class LoginCubit extends Cubit<LoginState> {
     try {
       await storage.write(key: 'isGuest', value: 'true');
       emit(GuestLoginSuccessState());
-      Navigator.pushReplacementNamed(context, AppRoutes.homeScreen);
+
+      if (context.mounted) {
+        Navigator.pushReplacementNamed(
+          context,
+          AppRoutes.homeScreen,
+        );
+      }
     } catch (e) {
-      emit(LoginErrorState("Failed to login as guest: $e"));
+      emit(
+        LoginErrorState("Failed to login as guest: $e"),
+      );
     }
   }
 
@@ -75,12 +94,21 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
   void checkFormValidity() {
-    if (emailController.text.isNotEmpty && passwordController.text.isNotEmpty) {
+    if (emailController.text.isNotEmpty &&
+        passwordController.text.isNotEmpty) {
       isEnable = true;
-      emit(LoginFormInteractionState(isButtonEnabled: isEnable));
+      emit(
+        LoginFormInteractionState(
+          isButtonEnabled: isEnable,
+        ),
+      );
     } else {
       isEnable = false;
-      emit(LoginFormInteractionState(isButtonEnabled: isEnable));
+      emit(
+        LoginFormInteractionState(
+          isButtonEnabled: isEnable,
+        ),
+      );
     }
   }
 }

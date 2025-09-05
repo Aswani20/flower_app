@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 class ProductItem extends StatelessWidget {
   final ProductEntity product;
+
   const ProductItem({super.key, required this.product});
 
   @override
@@ -15,7 +16,7 @@ class ProductItem extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
         side: BorderSide(
-          color: AppColors.grey.withOpacity(.7),
+          color: AppColors.grey.withValues(alpha: .7),
         ),
       ),
       child: Padding(

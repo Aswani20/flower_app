@@ -11,7 +11,7 @@ import '../cubit/forget_password_view_model.dart' show ForgetPasswordViewModel;
 class ForgetPasswordComponent extends StatelessWidget {
   final ForgetPasswordViewModel viewModel;
 
-  ForgetPasswordComponent({super.key, required this.viewModel});
+ const ForgetPasswordComponent({super.key, required this.viewModel});
 
   @override
   Widget build(BuildContext context) {

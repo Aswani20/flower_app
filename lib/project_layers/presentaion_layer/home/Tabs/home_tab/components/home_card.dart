@@ -7,15 +7,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeCard extends StatelessWidget {
-  HomeCard({
+  const HomeCard({
     this.onTap,
     this.bestSeller,
     this.occasion,
     super.key,
   });
+
   final void Function()? onTap;
-  BestSellerEntity? bestSeller;
-  OccasionEntity? occasion;
+  final BestSellerEntity? bestSeller;
+  final OccasionEntity? occasion;
 
   @override
   Widget build(BuildContext context) {
