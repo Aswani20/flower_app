@@ -7,7 +7,6 @@ import 'package:flower_app/project_layers/presentaion_layer/auth/sign_up/sign_up
 import 'package:flower_app/project_layers/presentaion_layer/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../project_layers/presentaion_layer/best_seller/best_seller_screen.dart';
 import '../../project_layers/presentaion_layer/home/screens/product_details_screen.dart';
 import 'app_routes.dart';

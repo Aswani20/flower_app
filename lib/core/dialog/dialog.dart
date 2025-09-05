@@ -106,7 +106,7 @@ class DialogUtils {
           elevation: 0,
           title: title != null
               ? Text(
-                  title ?? "",
+                  title ,
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.titleSmall?.copyWith(
                     color: AppColors.black,
