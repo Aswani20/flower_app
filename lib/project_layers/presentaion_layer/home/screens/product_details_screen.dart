@@ -3,7 +3,6 @@ import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/core/theme/app_styles.dart';
 import 'package:flutter/material.dart';
-import '../../../domain_layer/entities/best_seller_response_entity.dart';
 import '../../../domain_layer/entities/product_entity.dart';
 import 'dot_indicator.dart';
 
