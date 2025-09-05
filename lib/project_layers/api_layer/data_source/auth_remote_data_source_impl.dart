@@ -12,20 +12,23 @@ import 'package:flower_app/project_layers/domain_layer/entities/verify_reset_cod
 import 'package:injectable/injectable.dart';
 
 @Injectable(as: AuthRemoteDataSource)
-class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
+class AuthRemoteDataSourceImpl
+    implements AuthRemoteDataSource {
   final ApiClient _apiClient;
 
   AuthRemoteDataSourceImpl(this._apiClient);
 
   @override
-  Future<Either<Failures, ForgetPasswordResponseEntity>> forgetPassword({
+  Future<Either<Failures, ForgetPasswordResponseEntity>>
+  forgetPassword({
     required String email,
     String? networkError,
     String? serverError,
   }) async {
     try {
       var response = await _apiClient.forgetPassword(
-        forgetPasswordRequestDto: ForgetPasswordRequestDto(email: email),
+        forgetPasswordRequestDto:
+            ForgetPasswordRequestDto(email: email),
       );
       var statusCode = response.response.statusCode;
       var forgetPasswordData = response.data;
@@ -33,13 +36,19 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         return right(forgetPasswordData.toEntity());
       } else {
         return left(
-          ServerError(errorMessage: forgetPasswordData.message ?? serverError!),
+          ServerError(
+            errorMessage:
+                forgetPasswordData.message ??
+                serverError!,
+          ),
         );
       }
     } on DioException catch (e) {
       return left(
         ServerError(
-          errorMessage: e.response?.data.toString() ?? "Unknown Dio error",
+          errorMessage:
+              e.response?.data.toString() ??
+              "Unknown Dio error",
         ),
       );
     } catch (e) {
@@ -48,16 +57,18 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   }
 
   @override
-  Future<Either<Failures, VerifyResetCodeResponseEntity>> verifyResetCode({
+  Future<Either<Failures, VerifyResetCodeResponseEntity>>
+  verifyResetCode({
     required String resetCode,
     String? networkError,
     String? serverError,
   }) async {
     try {
       var response = await _apiClient.verifyResetCode(
-        verifyResetCodeRequestDto: VerifyResetCodeRequestDto(
-          resetCode: resetCode,
-        ),
+        verifyResetCodeRequestDto:
+            VerifyResetCodeRequestDto(
+              resetCode: resetCode,
+            ),
       );
       var statusCode = response.response.statusCode;
       var verifyResetCodeData = response.data;
@@ -66,23 +77,28 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       } else {
         return left(
           ServerError(
-            errorMessage: "verifyResetCodeData.message" ?? serverError!,
+            errorMessage: "verifyResetCodeData.message",
           ),
         );
       }
     } on DioException catch (e) {
       return left(
         ServerError(
-          errorMessage: e.response?.data.toString() ?? "Unknown Dio error",
+          errorMessage:
+              e.response?.data.toString() ??
+              "Unknown Dio error",
         ),
       );
     } catch (e) {
-      return left(ServerError(errorMessage: "Unexpected error: $e"));
+      return left(
+        ServerError(errorMessage: "Unexpected error: $e"),
+      );
     }
   }
 
   @override
-  Future<Either<Failures, ResetPasswordResponseEntity>> resetPassword({
+  Future<Either<Failures, ResetPasswordResponseEntity>>
+  resetPassword({
     required String email,
     required String newPassword,
     String? networkError,
@@ -101,17 +117,24 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         return right(resetPasswordData.toEntity());
       } else {
         return left(
-          ServerError(errorMessage: resetPasswordData.message ?? serverError!),
+          ServerError(
+            errorMessage:
+                resetPasswordData.message ?? serverError!,
+          ),
         );
       }
     } on DioException catch (e) {
       return left(
         ServerError(
-          errorMessage: e.response?.data.toString() ?? "Unknown Dio error",
+          errorMessage:
+              e.response?.data.toString() ??
+              "Unknown Dio error",
         ),
       );
     } catch (e) {
-      return left(ServerError(errorMessage: "Unexpected error: $e"));
+      return left(
+        ServerError(errorMessage: "Unexpected error: $e"),
+      );
     }
   }
 }
