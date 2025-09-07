@@ -28,8 +28,10 @@ class CategoryTab extends StatelessWidget {
                     flex: 4,
                     child: InkWell(
                       // onTap: () => Navigator to search screen from here
-                      child: CustomSearch(
-                        onFieldSubmitted: (value) {},
+                      child: IgnorePointer(
+                        child: CustomSearch(
+                          onFieldSubmitted: (value) {},
+                        ),
                       ),
                     ),
                   ),
