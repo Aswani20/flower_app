@@ -2,9 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flower_app/core/extensions/navigator_extensions.dart';
 import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flower_app/core/extensions/spacer_media_quiey.dart';
-import 'package:flower_app/core/l10n/app_localizations.dart';
 import 'package:flower_app/core/route/app_routes.dart';
-import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/core/theme/app_theme.dart';
 import 'package:flower_app/core/utils/widgets/app_text_form_feild.dart';
 import 'package:flower_app/core/utils/widgets/custom_button.dart';
@@ -221,7 +219,9 @@ class EditProfileView extends StatelessWidget {
                           controller: context
                               .read<ProfileCubit>()
                               .firstNameController,
-                          validator: (value) {},
+                          validator: (value) {
+                            return null;
+                          },
                         ),
                       ),
                       SizedBox(
@@ -233,7 +233,9 @@ class EditProfileView extends StatelessWidget {
                           controller: context
                               .read<ProfileCubit>()
                               .lastNameController,
-                          validator: (value) {},
+                          validator: (value) {
+                            return null;
+                          },
                         ),
                       ),
                     ],

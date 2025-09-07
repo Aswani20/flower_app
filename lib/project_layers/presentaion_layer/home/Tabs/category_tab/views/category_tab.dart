@@ -34,9 +34,7 @@ class CategoryTab extends StatelessWidget {
               SizedBox(width: 10),
               Expanded(
                 child: InkWell(
-                  onTap: () async {
-                    // here we will open filter bottom sheet
-                  },
+                  onTap: () async {},
                   child: Container(
                     width: 64,
                     height: 45,
@@ -61,7 +59,7 @@ class CategoryTab extends StatelessWidget {
         ),
 
         body: CategoryBodyBuilder(),
-        floatingActionButton: FilterBottom(),
+        floatingActionButton: FloatingButton(),
         floatingActionButtonLocation:
             FloatingActionButtonLocation.centerFloat,
       ),

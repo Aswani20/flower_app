@@ -1,5 +1,7 @@
 import 'package:flower_app/core/extensions/spacer_media_quiey.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
+import 'package:flower_app/project_layers/domain_layer/entities/category_entity.dart';
+import 'package:flower_app/project_layers/domain_layer/entities/product_filter.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/category_tab/widgets/product_grid_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -26,6 +28,20 @@ class CategoryBodyBuilder extends StatelessWidget {
         } else if (state is CategoryError) {
           return Center(child: Text(state.message ?? ''));
         } else if (state is CategoryLoaded) {
+          // i want change the first element in the list to be 'All' and i if all already exist in the list i don't want to add it again
+
+          if (state.categories!.firstWhere(
+                (element) => element.name == 'All',
+                orElse: () =>
+                    CategoryEntity(id: '0', name: 'All'),
+              ) !=
+              state.categories!.first) {
+            state.categories!.insert(
+              0,
+              CategoryEntity(id: '0', name: 'All'),
+            );
+          }
+
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -42,9 +58,23 @@ class CategoryBodyBuilder extends StatelessWidget {
                   onTap: (index) {
                     final selectedCategory =
                         state.categories?[index].id;
-                    context
-                        .read<CategoryCubit>()
-                        .getProducts(selectedCategory);
+                    if (selectedCategory == '0') {
+                      // i want to get the prudacts with the filter how
+                      context
+                          .read<CategoryCubit>()
+                          .getProducts(
+                            ProductFilter(filter: 'New'),
+                          );
+                    } else {
+                      context
+                          .read<CategoryCubit>()
+                          .getProducts(
+                            ProductFilter(
+                              categoryId:
+                                  selectedCategory,
+                            ),
+                          );
+                    }
                   },
                   tabs: state.categories!.map((category) {
                     return Tab(text: category.name);
