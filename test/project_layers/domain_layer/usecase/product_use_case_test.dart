@@ -1,5 +1,6 @@
 import 'package:flower_app/core/api_result/api_result.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/product_entity.dart';
+import 'package:flower_app/project_layers/domain_layer/entities/product_filter.dart';
 import 'package:flower_app/project_layers/domain_layer/repos/product_repo.dart';
 import 'package:flower_app/project_layers/domain_layer/use_cases/product_use_case.dart';
 import 'package:mockito/annotations.dart';
@@ -42,17 +43,18 @@ void main() {
       () async {
         // arrange
         const categoryId = 'cat1';
+        final filter = ProductFilter(
+          categoryId: categoryId,
+        );
         when(
-          mockProductRepo.getProducts(categoryId),
+          mockProductRepo.getProducts(filter),
         ).thenAnswer(
           (_) async =>
               ApiSuccessResult(mockProductEntities),
         );
 
         // act
-        final result = await productUseCase.call(
-          categoryId,
-        );
+        final result = await productUseCase.call(filter);
 
         // assert
         expect(
@@ -69,7 +71,7 @@ void main() {
         expect(products[0].title, 'Red Rose');
         expect(products[1].title, 'White Tulip');
         verify(
-          mockProductRepo.getProducts(categoryId),
+          mockProductRepo.getProducts(filter),
         ).called(1);
       },
     );
@@ -86,15 +88,19 @@ void main() {
             price: 10.0,
           ),
         ];
+        const categoryId = 'cat1';
+        final filter = ProductFilter(
+          categoryId: categoryId,
+        );
         when(
-          mockProductRepo.getProducts(null),
+          mockProductRepo.getProducts(filter),
         ).thenAnswer(
           (_) async =>
               ApiSuccessResult(mockSingleProduct),
         );
 
         // act
-        final result = await productUseCase.call(null);
+        final result = await productUseCase.call(filter);
 
         // assert
         expect(
@@ -110,7 +116,7 @@ void main() {
         expect(products.length, 1);
         expect(products[0].title, 'Red Rose');
         verify(
-          mockProductRepo.getProducts(null),
+          mockProductRepo.getProducts(filter),
         ).called(1);
       },
     );
@@ -121,16 +127,17 @@ void main() {
         // arrange
         const mockError = 'Failed to fetch products';
         const categoryId = 'cat1';
+        final filter = ProductFilter(
+          categoryId: categoryId,
+        );
         when(
-          mockProductRepo.getProducts(categoryId),
+          mockProductRepo.getProducts(filter),
         ).thenAnswer(
           (_) async => ApiErrorResult(mockError),
         );
 
         // act
-        final result = await productUseCase.call(
-          categoryId,
-        );
+        final result = await productUseCase.call(filter);
 
         // assert
         expect(
@@ -141,7 +148,7 @@ void main() {
             result as ApiErrorResult<List<ProductEntity>>;
         expect(error.errorMessage, mockError);
         verify(
-          mockProductRepo.getProducts(categoryId),
+          mockProductRepo.getProducts(filter),
         ).called(1);
       },
     );

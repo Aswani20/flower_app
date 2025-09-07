@@ -4,6 +4,7 @@ import 'package:flower_app/project_layers/api_layer/data_source/product_remote_d
 import 'package:flower_app/project_layers/api_layer/models/products_response.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/product_entity.dart';
 import 'package:dio/dio.dart';
+import 'package:flower_app/project_layers/domain_layer/entities/product_filter.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
@@ -41,14 +42,16 @@ void main() {
             ),
           ],
         );
-        const categoryId = 'cat1';
+        Map<String, dynamic> categoryId = {
+          'category': '1',
+        };
         when(
           mockApiClient.getProductsById(categoryId),
         ).thenAnswer((_) async => mockResponse);
 
         // act
         final result = await dataSource.getProducts(
-          categoryId,
+          ProductFilter(categoryId: '1'),
         );
 
         // assert
@@ -89,7 +92,9 @@ void main() {
         ).thenAnswer((_) async => mockResponse);
 
         // act
-        final result = await dataSource.getProducts(null);
+        final result = await dataSource.getProducts(
+          ProductFilter(categoryId: null),
+        );
 
         // assert
         expect(
@@ -123,14 +128,17 @@ void main() {
             data: {'message': mockErrorMessage},
           ),
         );
-        const categoryId = 'cat1';
+        Map<String, dynamic> categoryId = {
+          'category': '1',
+        };
+
         when(
           mockApiClient.getProductsById(categoryId),
         ).thenThrow(dioException);
 
         // act
         final result = await dataSource.getProducts(
-          categoryId,
+          ProductFilter(categoryId: '1'),
         );
 
         // assert
@@ -155,14 +163,16 @@ void main() {
           requestOptions: RequestOptions(path: ''),
           message: 'Network error',
         );
-        const categoryId = 'cat1';
+        Map<String, dynamic> categoryId = {
+          'category': '1',
+        };
         when(
           mockApiClient.getProductsById(categoryId),
         ).thenThrow(dioException);
 
         // act
         final result = await dataSource.getProducts(
-          categoryId,
+          ProductFilter(categoryId: '1'),
         );
 
         // assert
