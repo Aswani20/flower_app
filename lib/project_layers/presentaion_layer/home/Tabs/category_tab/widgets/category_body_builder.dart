@@ -1,12 +1,10 @@
 import 'package:flower_app/core/extensions/spacer_media_quiey.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/category_entity.dart';
-import 'package:flower_app/project_layers/domain_layer/entities/product_filter.dart';
+import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/category_tab/cubit/category_cubit.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/category_tab/widgets/product_grid_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../cubit/category_cubit.dart';
 
 class CategoryBodyBuilder extends StatelessWidget {
   const CategoryBodyBuilder({super.key});
@@ -28,8 +26,6 @@ class CategoryBodyBuilder extends StatelessWidget {
         } else if (state is CategoryError) {
           return Center(child: Text(state.message ?? ''));
         } else if (state is CategoryLoaded) {
-          // i want change the first element in the list to be 'All' and i if all already exist in the list i don't want to add it again
-
           if (state.categories!.firstWhere(
                 (element) => element.name == 'All',
                 orElse: () =>
@@ -47,7 +43,6 @@ class CategoryBodyBuilder extends StatelessWidget {
             children: [
               DefaultTabController(
                 length: state.categories?.length ?? 0,
-                // state.categoryList?.length ?? 0,
                 child: TabBar(
                   isScrollable: true,
                   indicatorColor: AppColors.pink,
@@ -56,25 +51,10 @@ class CategoryBodyBuilder extends StatelessWidget {
                   unselectedLabelColor: AppColors.grey,
                   tabAlignment: TabAlignment.center,
                   onTap: (index) {
-                    final selectedCategory =
-                        state.categories?[index].id;
-                    if (selectedCategory == '0') {
-                      // i want to get the prudacts with the filter how
-                      context
-                          .read<CategoryCubit>()
-                          .getProducts(
-                            ProductFilter(filter: 'New'),
-                          );
-                    } else {
-                      context
-                          .read<CategoryCubit>()
-                          .getProducts(
-                            ProductFilter(
-                              categoryId:
-                                  selectedCategory,
-                            ),
-                          );
-                    }
+                    // استخدام الدالة الجديدة
+                    context
+                        .read<CategoryCubit>()
+                        .updateSelectedTab(index);
                   },
                   tabs: state.categories!.map((category) {
                     return Tab(text: category.name);

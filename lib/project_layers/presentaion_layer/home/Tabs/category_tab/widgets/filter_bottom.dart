@@ -1,16 +1,16 @@
-import 'package:flower_app/core/di/di.dart';
+import 'dart:ui';
+
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/core/utils/widgets/custom_button.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/product_filter.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/category_tab/cubit/category_cubit.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/category_tab/widgets/filter_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FloatingButton extends StatelessWidget {
   const FloatingButton({super.key});
-
-  static String? selectedFilter;
 
   @override
   Widget build(BuildContext context) {
@@ -47,9 +47,10 @@ class FloatingButton extends StatelessWidget {
   static Future<ProductFilter?> showModalBottomSheetList(
     BuildContext context,
   ) async {
-    ProductFilter? selectedFilter;
+    String? selectedFilterLocal;
+    final cubit = context.read<CategoryCubit>();
 
-    showModalBottomSheet(
+    return showModalBottomSheet<ProductFilter?>(
       context: context,
       isScrollControlled: true,
       shape: RoundedRectangleBorder(
@@ -89,29 +90,18 @@ class FloatingButton extends StatelessWidget {
                       color: AppColors.pink,
                     ),
                   ),
-
                   FilterList(
                     onSelected: (value) {
-                      selectedFilter?.filter = value;
+                      selectedFilterLocal = value;
                     },
                   ),
-
                   CustomButton(
                     size: Size(double.infinity, 50.h),
                     borderRadius: 12,
                     onPressed: () {
-                      final filter = ProductFilter(
-                        filter:
-                            // ignore: dead_code
-                            selectedFilter?.filter ??
-                            'price',
-                        categoryId:
-                            '673c46fd1159920171827c85', // بدّلها بالـ id المناسب حسب الحالة
-                        // أو:
-                        // occasionId: '673b351e1159920171827ae5',
-                      );
-                      getIt<CategoryCubit>().getProducts(
-                        filter,
+                      // تطبيق الـ filter باستخدام الدالة الجديدة
+                      cubit.updateFilter(
+                        selectedFilterLocal,
                       );
                       Navigator.pop(context);
                     },
@@ -124,6 +114,5 @@ class FloatingButton extends StatelessWidget {
         );
       },
     );
-    return null;
   }
 }

@@ -17,51 +17,66 @@ class CategoryTab extends StatelessWidget {
     return BlocProvider(
       create: (context) =>
           getIt<CategoryCubit>()..getCategories(),
-      child: Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          title: Row(
-            children: [
-              Expanded(
-                flex: 4,
-                child: InkWell(
-                  // onTap: () => Navigator to search screen from here
-                  child: CustomSearch(
-                    onFieldSubmitted: (value) {},
-                  ),
-                ),
-              ),
-              SizedBox(width: 10),
-              Expanded(
-                child: InkWell(
-                  onTap: () async {},
-                  child: Container(
-                    width: 64,
-                    height: 45,
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: AppColors.grey,
-                      ),
-                      borderRadius: BorderRadius.circular(
-                        10,
-                      ),
-                    ),
-                    child: Center(
-                      child: Image.asset(
-                        Assets.icons.sortIcon.path,
+      child: Builder(
+        builder: (context) {
+          return Scaffold(
+            appBar: AppBar(
+              automaticallyImplyLeading: false,
+              title: Row(
+                children: [
+                  Expanded(
+                    flex: 4,
+                    child: InkWell(
+                      // onTap: () => Navigator to search screen from here
+                      child: CustomSearch(
+                        onFieldSubmitted: (value) {},
                       ),
                     ),
                   ),
-                ),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: InkWell(
+                      onTap: () async {
+                        final selectedFilter =
+                            await FloatingButton.showModalBottomSheetList(
+                              context,
+                            );
+                        if (selectedFilter != null) {
+                          context
+                              .read<CategoryCubit>()
+                              .getProducts(
+                                selectedFilter,
+                              );
+                        }
+                      },
+                      child: Container(
+                        width: 64,
+                        height: 45,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: AppColors.grey,
+                          ),
+                          borderRadius:
+                              BorderRadius.circular(10),
+                        ),
+                        child: Center(
+                          child: Image.asset(
+                            Assets.icons.sortIcon.path,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
-        ),
+            ),
 
-        body: CategoryBodyBuilder(),
-        floatingActionButton: FloatingButton(),
-        floatingActionButtonLocation:
-            FloatingActionButtonLocation.centerFloat,
+            body: CategoryBodyBuilder(),
+            floatingActionButton: FloatingButton(),
+            floatingActionButtonLocation:
+                FloatingActionButtonLocation.centerFloat,
+          );
+        },
       ),
     );
   }

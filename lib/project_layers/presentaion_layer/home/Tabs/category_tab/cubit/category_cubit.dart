@@ -16,14 +16,50 @@ class CategoryCubit extends Cubit<CategoryState> {
   CategoryCubit(this.categoryUseCase, this.productUseCase)
     : super(CategoryInitial());
 
-  final List<String> filters = [
-    'Lowest Price',
-    'Highest Price',
-    'New',
-    'Old',
-    'Discount',
-  ];
-  // i want to get the prudacts with the filter how
+  String? selectedFilter = 'New';
+  int selectedTabIndex = 0;
+  List<CategoryEntity>? currentCategories;
+  void updateFilter(String? filter) {
+    selectedFilter = filter ?? 'New';
+    if (currentCategories != null &&
+        selectedTabIndex < currentCategories!.length) {
+      final selectedCategory =
+          currentCategories![selectedTabIndex];
+      if (selectedCategory.id == '0') {
+        getProducts(
+          ProductFilter(filter: selectedFilter),
+        );
+      } else {
+        getProducts(
+          ProductFilter(
+            categoryId: selectedCategory.id,
+            filter: selectedFilter,
+          ),
+        );
+      }
+    }
+  }
+
+  void updateSelectedTab(int index) {
+    selectedTabIndex = index;
+    if (currentCategories != null &&
+        index < currentCategories!.length) {
+      final selectedCategory = currentCategories![index];
+      if (selectedCategory.id == '0') {
+        getProducts(
+          ProductFilter(filter: selectedFilter),
+        );
+      } else {
+        getProducts(
+          ProductFilter(
+            categoryId: selectedCategory.id,
+            filter: selectedFilter,
+          ),
+        );
+      }
+    }
+  }
+
   void getCategories() async {
     emit(CategoryLoading());
 
@@ -32,11 +68,15 @@ class CategoryCubit extends Cubit<CategoryState> {
 
     switch (result) {
       case ApiSuccessResult<List<CategoryEntity>>():
+        currentCategories = result.data;
         emit(CategoryLoaded(categories: result.data));
 
         if (result.data.isNotEmpty) {
           getProducts(
-            ProductFilter(categoryId: result.data[0].id),
+            ProductFilter(
+              categoryId: result.data[0].id,
+              filter: selectedFilter,
+            ),
           );
         }
       case ApiErrorResult<List<CategoryEntity>>():

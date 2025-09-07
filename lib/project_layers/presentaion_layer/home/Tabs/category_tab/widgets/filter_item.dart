@@ -14,13 +14,13 @@ class FilterList extends StatefulWidget {
 class _FilterListState extends State<FilterList> {
   String? selectedValue;
 
-  final List<String> filters = [
-    'Lowest Price',
-    'Highest Price',
-    'New',
-    'Old',
-    'Discount',
-  ];
+  final Map<String, String> filters = {
+    'Lowest Price': 'price',
+    'Highest Price': 'price_desc',
+    'New': 'New',
+    'Old': 'Old',
+    'Discount': 'discount',
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,12 @@ class _FilterListState extends State<FilterList> {
       itemCount: filters.length,
       shrinkWrap: true,
       itemBuilder: (context, index) {
-        final filterName = filters[index];
+        final filterEntry = filters.entries.elementAt(
+          index,
+        );
+        final filterName = filterEntry.key;
+        final filterValue = filterEntry.value;
+
         return Container(
           padding: EdgeInsets.all(5.r),
           width: double.infinity,
@@ -44,7 +49,7 @@ class _FilterListState extends State<FilterList> {
             children: [
               Text(filterName),
               Radio<String>(
-                value: filterName,
+                value: filterValue,
                 groupValue: selectedValue,
                 activeColor: AppColors.pink,
                 onChanged: (value) {
