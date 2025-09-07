@@ -10,6 +10,8 @@ import 'package:flower_app/project_layers/domain_layer/entities/category_entity.
     as _i7;
 import 'package:flower_app/project_layers/domain_layer/entities/product_entity.dart'
     as _i10;
+import 'package:flower_app/project_layers/domain_layer/entities/product_filter.dart'
+    as _i11;
 import 'package:flower_app/project_layers/domain_layer/repos/category_repo.dart'
     as _i2;
 import 'package:flower_app/project_layers/domain_layer/repos/product_repo.dart'
@@ -112,15 +114,15 @@ class MockProductUseCase extends _i1.Mock implements _i9.ProductUseCase {
 
   @override
   _i5.Future<_i6.ApiResult<List<_i10.ProductEntity>>> call(
-    String? categoryId,
+    _i11.ProductFilter? filter,
   ) =>
       (super.noSuchMethod(
-            Invocation.method(#call, [categoryId]),
+            Invocation.method(#call, [filter]),
             returnValue:
                 _i5.Future<_i6.ApiResult<List<_i10.ProductEntity>>>.value(
                   _i8.dummyValue<_i6.ApiResult<List<_i10.ProductEntity>>>(
                     this,
-                    Invocation.method(#call, [categoryId]),
+                    Invocation.method(#call, [filter]),
                   ),
                 ),
           )

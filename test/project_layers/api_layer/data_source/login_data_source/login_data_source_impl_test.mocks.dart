@@ -298,13 +298,15 @@ class MockApiClient extends _i1.Mock implements _i11.ApiClient {
           as _i12.Future<_i5.CategoriesResponse>);
 
   @override
-  _i12.Future<_i6.ProductsResponse> getProductsById(String? categoryId) =>
+  _i12.Future<_i6.ProductsResponse> getProductsById(
+    Map<String, dynamic>? filters,
+  ) =>
       (super.noSuchMethod(
-            Invocation.method(#getProductsById, [categoryId]),
+            Invocation.method(#getProductsById, [filters]),
             returnValue: _i12.Future<_i6.ProductsResponse>.value(
               _FakeProductsResponse_4(
                 this,
-                Invocation.method(#getProductsById, [categoryId]),
+                Invocation.method(#getProductsById, [filters]),
               ),
             ),
           )

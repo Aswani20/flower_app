@@ -1,6 +1,7 @@
 import 'package:flower_app/core/api_result/api_result.dart';
 import 'package:flower_app/project_layers/data_layer/data_source/product_remote_data_source.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/product_entity.dart';
+import 'package:flower_app/project_layers/domain_layer/entities/product_filter.dart';
 import 'package:flower_app/project_layers/domain_layer/repos/product_repo.dart';
 import 'package:injectable/injectable.dart';
 
@@ -11,10 +12,10 @@ class ProductRepoImpl implements ProductRepo {
   ProductRepoImpl(this.productRemoteDataSource);
   @override
   Future<ApiResult<List<ProductEntity>>> getProducts(
-    String? categoryId,
+    ProductFilter filter,
   ) async {
     return await productRemoteDataSource.getProducts(
-      categoryId,
+      filter,
     );
   }
 }

@@ -1,7 +1,5 @@
 import 'package:flower_app/core/theme/app_colors.dart';
-import 'package:flower_app/project_layers/presentaion_layer/auth/sign_up/cubit/sign_up_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ChoseGenderProfile extends StatelessWidget {
   const ChoseGenderProfile({

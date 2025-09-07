@@ -10,8 +10,10 @@ import 'package:flower_app/project_layers/data_layer/data_source/product_remote_
     as _i2;
 import 'package:flower_app/project_layers/domain_layer/entities/product_entity.dart'
     as _i5;
+import 'package:flower_app/project_layers/domain_layer/entities/product_filter.dart'
+    as _i6;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:mockito/src/dummies.dart' as _i6;
+import 'package:mockito/src/dummies.dart' as _i7;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -38,15 +40,15 @@ class MockProductRemoteDataSource extends _i1.Mock
 
   @override
   _i3.Future<_i4.ApiResult<List<_i5.ProductEntity>>> getProducts(
-    String? categoryId,
+    _i6.ProductFilter? filter,
   ) =>
       (super.noSuchMethod(
-            Invocation.method(#getProducts, [categoryId]),
+            Invocation.method(#getProducts, [filter]),
             returnValue:
                 _i3.Future<_i4.ApiResult<List<_i5.ProductEntity>>>.value(
-                  _i6.dummyValue<_i4.ApiResult<List<_i5.ProductEntity>>>(
+                  _i7.dummyValue<_i4.ApiResult<List<_i5.ProductEntity>>>(
                     this,
-                    Invocation.method(#getProducts, [categoryId]),
+                    Invocation.method(#getProducts, [filter]),
                   ),
                 ),
           )

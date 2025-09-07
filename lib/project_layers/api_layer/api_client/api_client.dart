@@ -89,8 +89,9 @@ abstract class ApiClient {
 
   @GET('/v1/products')
   Future<ProductsResponse> getProductsById(
-    @Query("category") String? categoryId,
+    @Queries() Map<String, dynamic> filters,
   );
+
   @GET('v1/auth/profile-data')
   Future<GetLoggedUserDataResponseDto>
   getLoggedUserData();
