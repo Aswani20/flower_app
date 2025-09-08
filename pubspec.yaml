@@ -25,18 +25,10 @@ dependencies:
   animated_text_kit: ^4.2.3
   provider: ^6.1.5
   dartz: ^0.10.1
-  bloc: ^8.1.1
-  flutter_bloc:
+  bloc: ^9.0.0
+  flutter_bloc: ^9.1.1
   fluttertoast: ^8.2.12
   connectivity_plus: ^6.1.4
-  carousel_slider: ^5.1.1
-  flutter_screenutil: ^5.9.3
-  mockito:
-  flutter_svg: ^2.2.0
-  cached_network_image: ^3.4.1
-  skeletonizer: ^2.1.0+1
-  image_picker: ^1.0.4
-  image: ^4.1.7
 
 dev_dependencies:
   flutter_test:
@@ -47,11 +39,6 @@ dev_dependencies:
   json_serializable: ^6.9.5
   flutter_lints: ^5.0.0
   injectable_generator:
-  bloc_test: ^9.1.7
-  mockito: ^5.4.0
-
-  test: ^1.25.15
-
 
 flutter:
   generate: true
@@ -60,10 +47,11 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
-    - assets/svg/
+
   # fonts:
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
+
