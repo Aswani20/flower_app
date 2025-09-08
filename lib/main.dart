@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: "flower_app",
+        title: "flowe r_app",
         localizationsDelegates:
             AppLocalizations.localizationsDelegates,
         supportedLocales:
