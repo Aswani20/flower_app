@@ -7,6 +7,7 @@ import 'package:flower_app/project_layers/presentaion_layer/auth/sign_in/login_v
 import 'package:flower_app/project_layers/presentaion_layer/auth/sign_up/sign_up_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/edit_profile.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/reset_password.dart';
+import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/terms_and_conditions_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/home_screen.dart';
 import 'package:flower_app/project_layers/presentaion_layer/notifications_list/cubit/notifications_list_cubit.dart';
 import 'package:flower_app/project_layers/presentaion_layer/notifications_list/views/notifications_list_view.dart';
@@ -55,6 +56,11 @@ abstract class Routes {
                   ..getNotifications(),
             child: NotificationsView(),
           ),
+        );
+      case AppRoutes.termsAndConditions:
+        return MaterialPageRoute(
+          builder: (context) =>
+              const TermsAndConditionsView(),
         );
       case AppRoutes.bestSeller:
         return MaterialPageRoute(

@@ -15,4 +15,7 @@ abstract class AppRoutes {
 
   static const String notificationsList =
       "/notifications_list";
+
+  static const String termsAndConditions =
+      "/terms_and_conditions";
 }

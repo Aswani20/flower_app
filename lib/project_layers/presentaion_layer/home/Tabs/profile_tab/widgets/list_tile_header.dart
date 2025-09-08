@@ -1,4 +1,6 @@
+import 'package:flower_app/core/extensions/navigator_extensions.dart';
 import 'package:flower_app/core/extensions/project_extensions.dart';
+import 'package:flower_app/core/route/app_routes.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -100,7 +102,9 @@ class ListTileHeader extends StatelessWidget {
         ),
         ListTile(
           onTap: () {
-            //here go to terms and conditions
+            context.pushNamed(
+              AppRoutes.termsAndConditions,
+            );
           },
           trailing: Icon(
             Icons.arrow_forward_ios,
