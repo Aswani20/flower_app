@@ -3,11 +3,7 @@ import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class DialogUtils {
-  static showLoading({
-    required BuildContext context,
-    required String loadingMessage,
-    bool isDismissible = false,
-  }) {
+  static showLoading({required BuildContext context, required String loadingMessage, bool isDismissible = false,}) {
     showDialog(
       barrierDismissible: isDismissible,
       context: context,
@@ -15,29 +11,20 @@ class DialogUtils {
         return AlertDialog(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(40),
-            side: BorderSide(
-              color: AppColors.pink,
-              width: 2,
-            ),
+            side: BorderSide(color: AppColors.pink, width: 2),
           ),
           elevation: 0,
           content: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              CircularProgressIndicator(
-                color: AppColors.pink,
-                strokeWidth: 5,
-              ),
+              CircularProgressIndicator(color: AppColors.pink, strokeWidth: 5),
               10.widthBox,
               Text(
                 loadingMessage,
-                style: Theme.of(context)
-                    .textTheme
-                    .titleSmall
-                    ?.copyWith(
-                      color: AppColors.black,
-                      fontWeight: FontWeight.bold,
-                    ),
+                style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                  color: AppColors.black,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),
@@ -50,16 +37,7 @@ class DialogUtils {
     Navigator.pop(context);
   }
 
-  static showMessage({
-    required BuildContext context,
-    String? title,
-    bool isDismissible = true,
-    required String content,
-    String? posActions,
-    Function(BuildContext)? posFunction,
-    String? negActions,
-    Function(BuildContext)? negFunction,
-  }) {
+  static showMessage({required BuildContext context, String? title, bool isDismissible = true, required String content, String? posActions, Function(BuildContext)? posFunction, String? negActions, Function(BuildContext)? negFunction,}) {
     List<Widget> actions = [];
     if (posActions != null) {
       actions.add(
@@ -73,11 +51,10 @@ class DialogUtils {
           },
           child: Text(
             posActions,
-            style: Theme.of(context).textTheme.titleSmall
-                ?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.green,
-                ),
+            style: Theme.of(context).textTheme.titleSmall?.copyWith(
+              fontWeight: FontWeight.bold,
+              color: AppColors.green,
+            ),
           ),
         ),
       );
@@ -95,11 +72,10 @@ class DialogUtils {
           },
           child: Text(
             negActions,
-            style: Theme.of(context).textTheme.titleSmall
-                ?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.pink[800],
-                ),
+            style: Theme.of(context).textTheme.titleSmall?.copyWith(
+              fontWeight: FontWeight.bold,
+              color: AppColors.pink[800],
+            ),
           ),
         ),
       );
@@ -112,30 +88,26 @@ class DialogUtils {
         return AlertDialog(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(40),
-            side: BorderSide(
-              color: AppColors.pink,
-              width: 2,
-            ),
+            side: BorderSide(color: AppColors.pink, width: 2),
           ),
           elevation: 0,
-          title: title != null
+          title:
+          title != null
               ? Text(
-                  title,
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleSmall
-                      ?.copyWith(
-                        color: AppColors.black,
-                        fontWeight: FontWeight.bold,
-                      ),
-                )
+            title ?? "",
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.titleSmall?.copyWith(
+              color: AppColors.black,
+              fontWeight: FontWeight.bold,
+            ),
+          )
               : null,
           content: Text(
             content,
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.titleLarge
-                ?.copyWith(color: AppColors.black),
+            style: Theme.of(
+              context,
+            ).textTheme.titleLarge?.copyWith(color: AppColors.black),
           ),
           actions: actions.isEmpty ? null : actions,
         );
