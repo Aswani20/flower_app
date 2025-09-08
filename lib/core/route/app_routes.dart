@@ -12,4 +12,7 @@ abstract class AppRoutes {
       "/product_details_screen";
   static const String editProfile = "/edit_profile";
   static const String resetPassword = "/reset_password";
+
+  static const String notificationsList =
+      "/notifications_list";
 }

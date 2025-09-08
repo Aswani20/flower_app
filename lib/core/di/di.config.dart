@@ -23,6 +23,8 @@ import '../../project_layers/api_layer/data_source/category_remote_data_source_i
     as _i622;
 import '../../project_layers/api_layer/data_source/change_password_remote_data_source_impl.dart'
     as _i658;
+import '../../project_layers/api_layer/data_source/get_all_notification_remote_data_source_impl.dart'
+    as _i118;
 import '../../project_layers/api_layer/data_source/get_logged_user_data_source_impl.dart'
     as _i916;
 import '../../project_layers/api_layer/data_source/home_data_source_impl.dart'
@@ -43,6 +45,8 @@ import '../../project_layers/data_layer/data_source/category_remote_data_source.
     as _i956;
 import '../../project_layers/data_layer/data_source/change_password_remote_data_source.dart'
     as _i100;
+import '../../project_layers/data_layer/data_source/get_all_notification_remote_data_source.dart'
+    as _i680;
 import '../../project_layers/data_layer/data_source/get_logget_user_data_source.dart'
     as _i455;
 import '../../project_layers/data_layer/data_source/home_remote_data_spurce.dart'
@@ -63,6 +67,8 @@ import '../../project_layers/data_layer/repos_impl/category_repo_impl.dart'
     as _i425;
 import '../../project_layers/data_layer/repos_impl/chang_password_repo_impl.dart'
     as _i952;
+import '../../project_layers/data_layer/repos_impl/get_all_notification_repo_impl.dart'
+    as _i805;
 import '../../project_layers/data_layer/repos_impl/get_logged_user_data_repo_impl.dart'
     as _i340;
 import '../../project_layers/data_layer/repos_impl/home_repo_impl.dart'
@@ -80,6 +86,8 @@ import '../../project_layers/domain_layer/repos/best_seller_repo.dart' as _i408;
 import '../../project_layers/domain_layer/repos/category_repo.dart' as _i144;
 import '../../project_layers/domain_layer/repos/chang_password_repo.dart'
     as _i64;
+import '../../project_layers/domain_layer/repos/get_all_notification_repo.dart'
+    as _i570;
 import '../../project_layers/domain_layer/repos/get_logged_user_data_repo.dart'
     as _i105;
 import '../../project_layers/domain_layer/repos/home_repo.dart' as _i900;
@@ -95,6 +103,8 @@ import '../../project_layers/domain_layer/use_cases/change_password_use_case.dar
     as _i503;
 import '../../project_layers/domain_layer/use_cases/forget_password_use_case.dart'
     as _i18;
+import '../../project_layers/domain_layer/use_cases/get_all_notification_use_case.dart'
+    as _i982;
 import '../../project_layers/domain_layer/use_cases/get_logged_user_data_use_case.dart'
     as _i323;
 import '../../project_layers/domain_layer/use_cases/home/best_seller_use_case.dart'
@@ -133,6 +143,8 @@ import '../../project_layers/presentaion_layer/home/Tabs/profile_tab/cubits/prof
     as _i256;
 import '../../project_layers/presentaion_layer/home/Tabs/profile_tab/cubits/reset/cubit/reset_password_cubit.dart'
     as _i143;
+import '../../project_layers/presentaion_layer/notifications_list/cubit/notifications_list_cubit.dart'
+    as _i718;
 import 'modules/dio_module.dart' as _i983;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -158,6 +170,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i100.ChangePasswordRemoteDataSource>(
       () => _i658.ChangePasswordRemoteDataSourceImpl(gh<_i778.ApiClient>()),
+    );
+    gh.factory<_i680.GetAllNotificationRemoteDataSource>(
+      () => _i118.GetAllNotificationRemoteDataSourceImpl(gh<_i778.ApiClient>()),
     );
     gh.factory<_i464.ProfileRepoDataSource>(
       () => _i197.ProfileRepoDataSourceImpl(gh<_i778.ApiClient>()),
@@ -199,6 +214,11 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i900.HomeRepo>(
       () => _i157.HomeRepoImpl(gh<_i1054.HomeRemoteDataSource>()),
     );
+    gh.factory<_i570.GetAllNotificationRepo>(
+      () => _i805.GetAllNotificationRepoImpl(
+        gh<_i680.GetAllNotificationRemoteDataSource>(),
+      ),
+    );
     gh.factory<_i621.UpdateUserProfileUseCase>(
       () => _i621.UpdateUserProfileUseCase(gh<_i583.ProfileRepo>()),
     );
@@ -222,6 +242,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i124.BestSellerUseCase>(
       () => _i124.BestSellerUseCase(bestSellerRepo: gh<_i408.BestSellerRepo>()),
+    );
+    gh.factory<_i982.GetAllNotificationUseCase>(
+      () => _i982.GetAllNotificationUseCase(gh<_i570.GetAllNotificationRepo>()),
     );
     gh.factory<_i105.GetLoggedUserDataRepo>(
       () =>
@@ -269,6 +292,9 @@ extension GetItInjectableX on _i174.GetIt {
         bestSellerUseCase: gh<_i990.BestSellerUseCase>(),
         occasionUseCase: gh<_i7.OccasionUseCase>(),
       ),
+    );
+    gh.factory<_i718.NotificationsListCubit>(
+      () => _i718.NotificationsListCubit(gh<_i982.GetAllNotificationUseCase>()),
     );
     gh.factory<_i143.ResetPasswordCubit>(
       () => _i143.ResetPasswordCubit(gh<_i503.ChangePasswordUseCase>()),

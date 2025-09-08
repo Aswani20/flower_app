@@ -51,40 +51,49 @@ class ProfileTab extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Stack(
-                    children: [
-                      Icon(
-                        Icons.notifications_none_outlined,
-                        size: 29.w,
-                      ),
-                      Positioned(
-                        top: 0,
-                        right: 0,
-                        child: Container(
-                          width: 15.w,
-                          height: 15.h,
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: AppColors.red,
-                          ),
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: Text(
-                              '3',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodySmall!
-                                  .copyWith(
-                                    color:
-                                        AppColors.white,
-                                    fontWeight:
-                                        FontWeight.bold,
-                                  ),
+                  GestureDetector(
+                    onTap: () {
+                      context.pushNamed(
+                        AppRoutes.notificationsList,
+                      );
+                    },
+                    child: Stack(
+                      children: [
+                        Icon(
+                          Icons
+                              .notifications_none_outlined,
+                          size: 29.w,
+                        ),
+                        Positioned(
+                          top: 0,
+                          right: 0,
+                          child: Container(
+                            width: 15.w,
+                            height: 15.h,
+                            decoration:
+                                const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: AppColors.red,
+                                ),
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                '3',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodySmall!
+                                    .copyWith(
+                                      color:
+                                          AppColors.white,
+                                      fontWeight:
+                                          FontWeight.bold,
+                                    ),
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ],
               ),
