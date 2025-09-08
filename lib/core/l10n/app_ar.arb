@@ -1,5 +1,17 @@
 {
   "appName": "تطبيق الامتحانات ",
+  "appVersion":"1.0.0",
+  "termsAndConditions": "الشروط والاحكام",
+  "logOut": "خروج",
+  "myOrders": "طلباتي",
+  "update": "تحديث",
+  "change": "تغيير",
+  "currentPassword": "كلمة المرور الحالية",
+  "resetPassword": "إعادة تعيين كلمة المرور",
+  "editProfile": "تعديل الملف الشخصي",
+  "savedAddresses": "العناوين المحفوظة",
+  "notification": "الاشعارات",
+  "aboutUs": "عن التطبيق",
   "firstName": "الاسم الاول",
   "firstNameHint": "ادخل الاسم الاول",
   "lastName": "الاسم الاخير",
@@ -52,5 +64,12 @@
   "browse_by_subject": "البحث بالموضوع",
   "home": "الرئيسية",
   "categories": "الفئات",
-  "cart": "عربة التسوق"
+  "cart": "عربة التسوق",
+  "flowery": "زهري" ,
+  "view_all": "عرض الكل",
+  "best_seller": "الأكثر مبيعًا",
+  "occasion": "تخفيضات",
+  "egp": "جنيه مصري",
+  "profile_updated_successfully": "تم تحديث الملف الشخصي بنجاح",
+  "photo_updated_successfully" : "تم تحديث الصورة بنجاح"
 }
