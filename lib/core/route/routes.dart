@@ -1,3 +1,4 @@
+import 'package:flower_app/core/di/di.dart';
 import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/gen/assets.gen.dart';
@@ -7,9 +8,11 @@ import 'package:flower_app/project_layers/presentaion_layer/auth/sign_up/sign_up
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/edit_profile.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/reset_password.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/home_screen.dart';
+import 'package:flower_app/project_layers/presentaion_layer/notifications_list/cubit/notifications_list_cubit.dart';
 import 'package:flower_app/project_layers/presentaion_layer/notifications_list/views/notifications_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../project_layers/presentaion_layer/best_seller/best_seller_screen.dart';
 import '../../project_layers/presentaion_layer/home/screens/product_details_screen.dart';
 import 'app_routes.dart';
@@ -46,7 +49,12 @@ abstract class Routes {
         );
       case AppRoutes.notificationsList:
         return MaterialPageRoute(
-          builder: (context) => NotificationsView(),
+          builder: (context) => BlocProvider(
+            create: (context) =>
+                getIt<NotificationsListCubit>()
+                  ..getNotifications(),
+            child: NotificationsView(),
+          ),
         );
       case AppRoutes.bestSeller:
         return MaterialPageRoute(

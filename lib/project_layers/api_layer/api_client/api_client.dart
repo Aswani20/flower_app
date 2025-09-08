@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flower_app/project_layers/api_layer/models/categories_response.dart';
+import 'package:flower_app/project_layers/api_layer/models/get_all_notification_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/products_response.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/change_password_request_body.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/forget_password_request_dto.dart';
@@ -111,4 +112,7 @@ abstract class ApiClient {
   Future<UpdatePhotoResponseDto> changePhoto(
     @Part(name: "photo") File photo,
   );
+  @GET('/v1/notifications')
+  Future<GetAllNotificationResponseDto>
+  getNotifications();
 }
