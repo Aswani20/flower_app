@@ -18,4 +18,6 @@ abstract class AppRoutes {
 
   static const String termsAndConditions =
       "/terms_and_conditions";
+
+  static const String chackoutView = "/chackout_view";
 }
