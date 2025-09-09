@@ -1,0 +1,13 @@
+import '../../../core/api_result/api_result.dart';
+import '../entities/orders_entity.dart';
+import '../repos/orders_repo.dart';
+
+class GetOrdersUseCase {
+  final OrdersRepository ordersRepository;
+
+  GetOrdersUseCase(this.ordersRepository);
+
+  Future<ApiResult<List<OrdersEntity>>> call() async {
+    return await ordersRepository.orders();
+  }
+}
