@@ -11,6 +11,17 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsFilesGen {
+  const $AssetsFilesGen();
+
+  /// File path: assets/files/flowery_terms_and_conditions.json
+  String get floweryTermsAndConditions =>
+      'assets/files/flowery_terms_and_conditions.json';
+
+  /// List of all assets
+  List<String> get values => [floweryTermsAndConditions];
+}
+
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
@@ -356,6 +367,7 @@ class $AssetsSvgGen {
 class Assets {
   const Assets._();
 
+  static const $AssetsFilesGen files = $AssetsFilesGen();
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images =
       $AssetsImagesGen();

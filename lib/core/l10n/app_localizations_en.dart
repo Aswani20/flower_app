@@ -287,23 +287,22 @@ class AppLocalizationsEn extends AppLocalizations {
       'Photo updated successfully';
 
   @override
-  // TODO: implement remember_me
-  String get remember_me => 'Remember me';
-
   String get dont_have_account =>
       'Don\'t have an account?';
 
+  @override
   String get login_as_guest => 'Login as Guest';
 
   @override
-  // TODO: implement areYouSureYouWantToLogOut
-  String get areYouSureYouWantToLogOut => 'Are you sure you want to log out?';
+  String get are_you_sure_you_want_to_log_out =>
+      'Are you sure you want to log out?';
 
   @override
-  // TODO: implement cancel
   String get cancel => 'Cancel';
 
   @override
-  // TODO: implement confirmLogOut
-  String get confirmLogOut => 'Confirm Log Out';
+  String get confirm_log_out => 'Confirm Logout';
+
+  @override
+  String get remember_me => 'Remember me';
 }

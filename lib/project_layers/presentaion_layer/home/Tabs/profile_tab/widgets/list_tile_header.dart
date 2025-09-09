@@ -98,7 +98,8 @@ class ListTileHeader extends StatelessWidget {
                 .copyWith(color: AppColors.pink),
           ),
           title: Text(
-            context.l10n.localeName,
+            currentLang == "en" ? "Language" : "اللغة",
+
             style: Theme.of(context).textTheme.bodyMedium,
           ),
         ),
@@ -135,14 +136,19 @@ class ListTileHeader extends StatelessWidget {
           onTap: () {
             logoutUser(context);
           },
-          leading: Icon(Icons.logout_outlined, size: 24.w),
-          trailing: Icon(Icons.arrow_forward_ios, size: 23.w),
+          leading: Icon(
+            Icons.logout_outlined,
+            size: 24.w,
+          ),
+          trailing: Icon(
+            Icons.arrow_forward_ios,
+            size: 23.w,
+          ),
           title: Text(
             context.l10n.logOut,
             style: Theme.of(context).textTheme.bodyMedium,
           ),
         ),
-
       ],
     );
   }

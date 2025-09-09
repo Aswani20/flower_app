@@ -85,9 +85,10 @@
   "occasion": "Occasion",
   "profile_updated_successfully": "Profile updated successfully",
   "photo_updated_successfully" : "Photo updated successfully",
-  "Remember me": "Remember me",
-  "dontHaveAccount": "Don't have an account?",
+  "dont_have_account": "Don't have an account?",
   "login_as_guest": "Login as Guest",
-   "areYouSureYouWantToLogOut": "Are you sure you want to log out?",
-   "cancel": "Cancel",
-   "confirmLogout": "Confirm Logout",}
+  "are_you_sure_you_want_to_log_out": "Are you sure you want to log out?",
+  "cancel": "Cancel",
+  "confirm_log_out": "Confirm Logout",
+  "remember_me": "Remember me"
+}

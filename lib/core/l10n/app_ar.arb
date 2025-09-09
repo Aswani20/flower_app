@@ -72,11 +72,10 @@
   "egp": "جنيه مصري",
   "profile_updated_successfully": "تم تحديث الملف الشخصي بنجاح",
   "photo_updated_successfully" : "تم تحديث الصورة بنجاح",
-  "Remember me": "تذكرني",
-  "dontHaveAccount": "ليس لديك حساب؟",
+  "dont_have_account": "ليس لديك حساب؟",
   "login_as_guest": " الدخول كزائر",
-  "areYouSureYouWantToLogOut": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
-    "cancel": "إلغاء",
-    "confirmLogOut" : "تأكيد تسجيل الخروج",
-
+  "are_you_sure_you_want_to_log_out": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
+  "cancel": "إلغاء",
+  "confirm_log_out" : "تأكيد تسجيل الخروج",
+  "remember_me": "تذكرني"
 }
