@@ -75,5 +75,8 @@
   "Remember me": "تذكرني",
   "dontHaveAccount": "ليس لديك حساب؟",
   "login_as_guest": " الدخول كزائر",
+  "areYouSureYouWantToLogOut": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
+    "cancel": "إلغاء",
+    "confirmLogOut" : "تأكيد تسجيل الخروج",
 
 }

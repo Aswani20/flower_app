@@ -295,4 +295,17 @@ class AppLocalizationsAr extends AppLocalizations {
   String get dont_have_account => 'ليس لديك حساب؟';
 
   String get login_as_guest => ' الدخول كزائر';
+
+  @override
+  // TODO: implement areYouSureYouWantToLogOut
+  String get areYouSureYouWantToLogOut =>
+      'هل أنت متأكد أنك تريد تسجيل الخروج؟';
+
+  @override
+  // TODO: implement cancel
+  String get cancel => 'إلغاء';
+
+  @override
+  // TODO: implement confirmLogOut
+  String get confirmLogOut => 'تأكيد تسجيل الخروج';
 }

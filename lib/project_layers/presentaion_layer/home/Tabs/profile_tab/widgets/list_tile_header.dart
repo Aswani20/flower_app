@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../core/utils/language_cubit.dart';
+import '../../../../../../core/utils/logout_user.dart';
 
 class ListTileHeader extends StatelessWidget {
   const ListTileHeader({super.key});
@@ -132,22 +133,16 @@ class ListTileHeader extends StatelessWidget {
         Divider(thickness: 0.3, color: AppColors.grey),
         ListTile(
           onTap: () {
-            //here go to log out
+            logoutUser(context);
           },
-
-          leading: Icon(
-            Icons.logout_outlined,
-            size: 24.w,
-          ),
-          trailing: Icon(
-            Icons.arrow_forward_ios,
-            size: 23.w,
-          ),
+          leading: Icon(Icons.logout_outlined, size: 24.w),
+          trailing: Icon(Icons.arrow_forward_ios, size: 23.w),
           title: Text(
             context.l10n.logOut,
             style: Theme.of(context).textTheme.bodyMedium,
           ),
         ),
+
       ],
     );
   }

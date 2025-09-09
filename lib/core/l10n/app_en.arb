@@ -87,5 +87,7 @@
   "photo_updated_successfully" : "Photo updated successfully",
   "Remember me": "Remember me",
   "dontHaveAccount": "Don't have an account?",
-  "login_as_guest": "Login as Guest"
-}
+  "login_as_guest": "Login as Guest",
+   "areYouSureYouWantToLogOut": "Are you sure you want to log out?",
+   "cancel": "Cancel",
+   "confirmLogout": "Confirm Logout",}

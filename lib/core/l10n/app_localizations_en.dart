@@ -294,4 +294,16 @@ class AppLocalizationsEn extends AppLocalizations {
       'Don\'t have an account?';
 
   String get login_as_guest => 'Login as Guest';
+
+  @override
+  // TODO: implement areYouSureYouWantToLogOut
+  String get areYouSureYouWantToLogOut => 'Are you sure you want to log out?';
+
+  @override
+  // TODO: implement cancel
+  String get cancel => 'Cancel';
+
+  @override
+  // TODO: implement confirmLogOut
+  String get confirmLogOut => 'Confirm Log Out';
 }

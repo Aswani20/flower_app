@@ -626,6 +626,10 @@ abstract class AppLocalizations {
   String get dont_have_account;
 
   String get login_as_guest;
+  String get cancel;
+  String get areYouSureYouWantToLogOut;
+  String get confirmLogOut;
+
 }
 
 class _AppLocalizationsDelegate
