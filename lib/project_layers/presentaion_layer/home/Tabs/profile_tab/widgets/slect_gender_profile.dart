@@ -6,6 +6,7 @@ class ChoseGenderProfile extends StatelessWidget {
     required this.selectedGender,
     super.key,
   });
+
   final String selectedGender;
 
   @override
@@ -31,6 +32,7 @@ class ChoseGenderProfile extends StatelessWidget {
             value: 'female',
             groupValue: selectedGender,
             activeColor: AppColors.pink,
+            onChanged: (String? value) {},
           ),
         ),
         Flexible(
@@ -48,6 +50,7 @@ class ChoseGenderProfile extends StatelessWidget {
             value: 'male',
             groupValue: selectedGender,
             activeColor: AppColors.pink,
+            onChanged: (String? value) {},
           ),
         ),
       ],

@@ -287,4 +287,12 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get photo_updated_successfully =>
       'تم تحديث الصورة بنجاح';
+
+  @override
+  // TODO: implement remember_me
+  String get remember_me => 'تذكرني';
+
+  String get dont_have_account => 'ليس لديك حساب؟';
+
+  String get login_as_guest => ' الدخول كزائر';
 }

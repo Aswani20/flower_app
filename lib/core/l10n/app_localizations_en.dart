@@ -285,4 +285,13 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get photo_updated_successfully =>
       'Photo updated successfully';
+
+  @override
+  // TODO: implement remember_me
+  String get remember_me => 'Remember me';
+
+  String get dont_have_account =>
+      'Don\'t have an account?';
+
+  String get login_as_guest => 'Login as Guest';
 }

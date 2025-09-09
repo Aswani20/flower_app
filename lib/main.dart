@@ -8,11 +8,13 @@ import 'package:flower_app/project_layers/presentaion_layer/home/home_screen.dar
 import 'package:flower_app/core/l10n/app_localizations.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/screens/product_details_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'core/keys/shared_key.dart';
 import 'core/route/app_routes.dart';
 import 'core/route/routes.dart';
 import 'core/theme/app_theme.dart';
+import 'core/utils/language_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,39 +28,50 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key, this.token});
+
   final String? token;
+
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(375, 812),
+      designSize: const Size(375, 813),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder: (context, child) => MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: "flower_app",
-        localizationsDelegates:
-            AppLocalizations.localizationsDelegates,
-        supportedLocales:
-            AppLocalizations.supportedLocales,
-        locale: Locale("en"),
-        theme: AppTheme.lightTheme,
-        onGenerateRoute: Routes.generateRoute,
-        initialRoute: (token != null && token!.isNotEmpty)
-            ? AppRoutes.homeScreen
-            : AppRoutes.loginScreen,
-        routes: {
-          AppRoutes.loginScreen: (context) =>
-              SignInView(),
-          AppRoutes.signUpScreen: (context) =>
-              SignUpView(),
-          AppRoutes.forgetPasswordScreen: (context) =>
-              ForgetPasswordView(),
-          AppRoutes.homeScreen: (context) => HomeScreen(),
-          AppRoutes.bestSeller: (context) =>
-              BestSellerScreen(),
-          AppRoutes.productDetailsScreen: (context) =>
-              ProductDetailsScreen(),
-        },
+      builder: (context, child) => BlocProvider(
+        create: (_) => LocaleCubit(),
+        child: BlocBuilder<LocaleCubit, Locale>(
+          builder: (context, locale) {
+            return MaterialApp(
+              debugShowCheckedModeBanner: false,
+              title: "flower_app",
+              localizationsDelegates:
+                  AppLocalizations.localizationsDelegates,
+              supportedLocales:
+                  AppLocalizations.supportedLocales,
+              locale: locale,
+              theme: AppTheme.lightTheme,
+              onGenerateRoute: Routes.generateRoute,
+              initialRoute:
+                  (token != null && token!.isNotEmpty)
+                  ? AppRoutes.homeScreen
+                  : AppRoutes.loginScreen,
+              routes: {
+                AppRoutes.loginScreen: (context) =>
+                    SignInView(),
+                AppRoutes.signUpScreen: (context) =>
+                    SignUpView(),
+                AppRoutes.forgetPasswordScreen:
+                    (context) => ForgetPasswordView(),
+                AppRoutes.homeScreen: (context) =>
+                    HomeScreen(),
+                AppRoutes.bestSeller: (context) =>
+                    BestSellerScreen(),
+                AppRoutes.productDetailsScreen:
+                    (context) => ProductDetailsScreen(),
+              },
+            );
+          },
+        ),
       ),
     );
   }
