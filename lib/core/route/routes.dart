@@ -6,6 +6,7 @@ import 'package:flower_app/project_layers/presentaion_layer/auth/forget_password
 import 'package:flower_app/project_layers/presentaion_layer/auth/sign_in/login_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/sign_up/sign_up_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/checkout/views/chackout_view.dart';
+import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/about_us_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/edit_profile.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/reset_password.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/terms_and_conditions_view.dart';
@@ -66,6 +67,10 @@ abstract class Routes {
       case AppRoutes.chackoutView:
         return MaterialPageRoute(
           builder: (context) => ChackoutView(),
+        );
+      case AppRoutes.aboutUs:
+        return MaterialPageRoute(
+          builder: (context) => AboutPage(),
         );
       case AppRoutes.bestSeller:
         return MaterialPageRoute(

@@ -8,15 +8,15 @@ Future<void> logoutUser(BuildContext context) async {
   final shouldLogout = await showDialog<bool>(
     context: context,
     builder: (context) => AlertDialog(
-      title:  Text(context.l10n.confirmLogOut),
-      content:  Text(
+      title: Text(context.l10n.confirmLogout),
+      content: Text(
         context.l10n.areYouSureYouWantToLogOut,
       ),
       actions: [
         TextButton(
           onPressed: () =>
               Navigator.of(context).pop(false),
-          child:  Text(context.l10n.cancel),
+          child: Text(context.l10n.cancel),
         ),
         ElevatedButton(
           onPressed: () =>

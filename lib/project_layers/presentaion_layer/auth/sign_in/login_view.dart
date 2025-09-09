@@ -118,9 +118,7 @@ class _SignInViewState extends State<SignInView> {
                                   });
                                 },
                                 title: Text(
-                                  context
-                                      .l10n
-                                      .remember_me,
+                                  context.l10n.rememberMe,
                                 ),
                                 controlAffinity:
                                     ListTileControlAffinity
@@ -192,7 +190,9 @@ class _SignInViewState extends State<SignInView> {
                               MainAxisAlignment.center,
                           children: [
                             Text(
-                              context.l10n.dont_have_account,
+                              context
+                                  .l10n
+                                  .dontHaveAccount,
                               style: const TextStyle(
                                 color: AppColors.black,
                               ),

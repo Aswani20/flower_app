@@ -20,4 +20,5 @@ abstract class AppRoutes {
       "/terms_and_conditions";
 
   static const String chackoutView = "/chackout_view";
+  static const String aboutUs = "/about_us";
 }
