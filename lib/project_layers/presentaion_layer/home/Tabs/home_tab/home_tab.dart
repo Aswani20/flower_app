@@ -39,7 +39,8 @@ class _HomeTabBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeTabViewModel, HomeTabState>(
       builder: (context, state) {
-        final viewModel = context.read<HomeTabViewModel>();
+        final viewModel = context
+            .read<HomeTabViewModel>();
         return Column(
           children: [
             // Search Section
@@ -51,13 +52,20 @@ class _HomeTabBody extends StatelessWidget {
             SizedBox(height: 10.h),
             // Address section
             AddressSelector(
-              address: 'Deliver to 2XVP+XC - Sheikh Zayed',
+              address:
+                  'Deliver to 2XVP+XC - Sheikh Zayed',
               onTap: () {
                 //TODO: Handle address selection
               },
             ),
             // Main Content
-            Expanded(child: _buildContent(context, state, viewModel)),
+            Expanded(
+              child: _buildContent(
+                context,
+                state,
+                viewModel,
+              ),
+            ),
           ],
         );
       },
@@ -71,7 +79,11 @@ class _HomeTabBody extends StatelessWidget {
   ) {
     // Handle error states
     if (state is HomeTabErrorState) {
-      return _buildErrorContent(context, state, viewModel);
+      return _buildErrorContent(
+        context,
+        state,
+        viewModel,
+      );
     }
 
     return RefreshIndicator(
@@ -81,13 +93,25 @@ class _HomeTabBody extends StatelessWidget {
       child: ListView(
         children: [
           // Categories Section
-          _buildCategoriesSection(context, state, viewModel),
+          _buildCategoriesSection(
+            context,
+            state,
+            viewModel,
+          ),
 
           // Best Sellers Section
-          _buildBestSellersSection(context, state, viewModel),
+          _buildBestSellersSection(
+            context,
+            state,
+            viewModel,
+          ),
 
           // Occasions Section
-          _buildOccasionsSection(context, state, viewModel),
+          _buildOccasionsSection(
+            context,
+            state,
+            viewModel,
+          ),
         ],
       ),
     );
@@ -102,11 +126,17 @@ class _HomeTabBody extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.error_outline, size: 64.w, color: Colors.red),
+          Icon(
+            Icons.error_outline,
+            size: 64.w,
+            color: Colors.red,
+          ),
           SizedBox(height: 16.h),
           Text(
             'Something went wrong',
-            style: Theme.of(context).textTheme.headlineSmall,
+            style: Theme.of(
+              context,
+            ).textTheme.headlineSmall,
           ),
           SizedBox(height: 16.h),
           ElevatedButton(
@@ -126,7 +156,9 @@ class _HomeTabBody extends StatelessWidget {
     return Column(
       children: [
         HomeHeaderSection(
-          sectionTitle: AppLocalizations.of(context)!.categories,
+          sectionTitle: AppLocalizations.of(
+            context,
+          )!.categories,
           onPressed: () {
             //TODO: Handle view all categories
           },
@@ -141,7 +173,8 @@ class _HomeTabBody extends StatelessWidget {
                   ? 5
                   : viewModel.categories.length,
               scrollDirection: Axis.horizontal,
-              separatorBuilder: (context, index) => SizedBox(width: 10.w),
+              separatorBuilder: (context, index) =>
+                  SizedBox(width: 10.w),
               itemBuilder: (context, index) {
                 if (viewModel.isCategoriesLoading) {
                   // Show skeleton loading
@@ -150,7 +183,9 @@ class _HomeTabBody extends StatelessWidget {
                     height: 100.h,
                     decoration: BoxDecoration(
                       color: Colors.grey.shade300,
-                      borderRadius: BorderRadius.circular(8.r),
+                      borderRadius: BorderRadius.circular(
+                        8.r,
+                      ),
                     ),
                   );
                 }
@@ -176,9 +211,14 @@ class _HomeTabBody extends StatelessWidget {
     return Column(
       children: [
         HomeHeaderSection(
-          sectionTitle: AppLocalizations.of(context)!.best_seller,
+          sectionTitle: AppLocalizations.of(
+            context,
+          )!.best_seller,
           onPressed: () {
-            Navigator.pushNamed(context, AppRoutes.bestSeller);
+            Navigator.pushNamed(
+              context,
+              AppRoutes.bestSeller,
+            );
           },
         ),
         Skeletonizer(
@@ -191,7 +231,8 @@ class _HomeTabBody extends StatelessWidget {
                   ? 5
                   : viewModel.bestSellers.length,
               scrollDirection: Axis.horizontal,
-              separatorBuilder: (context, index) => SizedBox(width: 10.w),
+              separatorBuilder: (context, index) =>
+                  SizedBox(width: 10.w),
               itemBuilder: (context, index) {
                 if (viewModel.isBestSellersLoading) {
                   // Show skeleton loading
@@ -200,15 +241,23 @@ class _HomeTabBody extends StatelessWidget {
                     height: 190.h,
                     decoration: BoxDecoration(
                       color: Colors.grey.shade300,
-                      borderRadius: BorderRadius.circular(8.r),
+                      borderRadius: BorderRadius.circular(
+                        8.r,
+                      ),
                     ),
                   );
                 }
                 return HomeCard(
                   onTap: () {
-                    Navigator.pushNamed(context, AppRoutes.productDetailsScreen, arguments: viewModel.bestSellers[index]);
+                    Navigator.pushNamed(
+                      context,
+                      AppRoutes.productDetailsScreen,
+                      arguments:
+                          viewModel.bestSellers[index],
+                    );
                   },
-                  bestSeller: viewModel.bestSellers[index],
+                  bestSeller:
+                      viewModel.bestSellers[index],
                 );
               },
             ),
@@ -226,7 +275,9 @@ class _HomeTabBody extends StatelessWidget {
     return Column(
       children: [
         HomeHeaderSection(
-          sectionTitle: AppLocalizations.of(context)!.occasion,
+          sectionTitle: AppLocalizations.of(
+            context,
+          )!.occasion,
           onPressed: () {
             //TODO: Handle view all occasions
           },
@@ -241,7 +292,8 @@ class _HomeTabBody extends StatelessWidget {
                   ? 5
                   : viewModel.occasions.length,
               scrollDirection: Axis.horizontal,
-              separatorBuilder: (context, index) => SizedBox(width: 10.w),
+              separatorBuilder: (context, index) =>
+                  SizedBox(width: 10.w),
               itemBuilder: (context, index) {
                 if (viewModel.isOccasionsLoading) {
                   // Show skeleton loading
@@ -250,13 +302,20 @@ class _HomeTabBody extends StatelessWidget {
                     height: 170.h,
                     decoration: BoxDecoration(
                       color: Colors.grey.shade300,
-                      borderRadius: BorderRadius.circular(8.r),
+                      borderRadius: BorderRadius.circular(
+                        8.r,
+                      ),
                     ),
                   );
                 }
                 return HomeCard(
                   onTap: () {
-                    Navigator.pushNamed(context, AppRoutes.productDetailsScreen, arguments: viewModel.occasions[index]);
+                    Navigator.pushNamed(
+                      context,
+                      AppRoutes.productDetailsScreen,
+                      arguments:
+                          viewModel.occasions[index],
+                    );
                   },
                   occasion: viewModel.occasions[index],
                 );

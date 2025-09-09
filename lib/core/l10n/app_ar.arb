@@ -71,5 +71,12 @@
   "occasion": "تخفيضات",
   "egp": "جنيه مصري",
   "profile_updated_successfully": "تم تحديث الملف الشخصي بنجاح",
-  "photo_updated_successfully" : "تم تحديث الصورة بنجاح"
+  "photo_updated_successfully" : "تم تحديث الصورة بنجاح",
+  "Remember me": "تذكرني",
+  "dontHaveAccount": "ليس لديك حساب؟",
+  "login_as_guest": " الدخول كزائر",
+  "areYouSureYouWantToLogOut": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
+    "cancel": "إلغاء",
+    "confirmLogOut" : "تأكيد تسجيل الخروج",
+
 }

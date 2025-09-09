@@ -33,7 +33,10 @@ class _SignInViewState extends State<SignInView> {
             title: Text(context.l10n.login),
           ),
           body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 20),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16.0,
+              vertical: 20,
+            ),
             child: SingleChildScrollView(
               padding: EdgeInsets.zero,
               child: Column(
@@ -45,41 +48,58 @@ class _SignInViewState extends State<SignInView> {
                       children: [
                         TextFormField(
                           onChanged: (value) =>
-                              signInViewModel.checkFormValidity(),
+                              signInViewModel
+                                  .checkFormValidity(),
                           validator: (value) =>
-                              AppValidators.nonEmptyField(value, context),
-                          controller: signInViewModel.emailController,
+                              AppValidators.nonEmptyField(
+                                value,
+                                context,
+                              ),
+                          controller: signInViewModel
+                              .emailController,
                           decoration: InputDecoration(
                             labelText: context.l10n.email,
-                            hintText: context.l10n.emailHint,
+                            hintText:
+                                context.l10n.emailHint,
                           ),
                         ),
                         20.heightBox,
 
                         TextFormField(
                           onChanged: (value) =>
-                              signInViewModel.checkFormValidity(),
+                              signInViewModel
+                                  .checkFormValidity(),
                           validator: (value) =>
-                              AppValidators.passwordValidator(value, context),
-                          controller: signInViewModel.passwordController,
-                          obscureText: signInViewModel.isObscureText,
+                              AppValidators.passwordValidator(
+                                value,
+                                context,
+                              ),
+                          controller: signInViewModel
+                              .passwordController,
+                          obscureText: signInViewModel
+                              .isObscureText,
                           decoration: InputDecoration(
                             suffixIcon: IconButton(
                               onPressed: () {
                                 setState(() {
-                                  signInViewModel.isObscureText =
-                                      !signInViewModel.isObscureText;
+                                  signInViewModel
+                                          .isObscureText =
+                                      !signInViewModel
+                                          .isObscureText;
                                 });
                               },
                               icon: Icon(
                                 color: AppColors.black,
-                                signInViewModel.isObscureText
+                                signInViewModel
+                                        .isObscureText
                                     ? Icons.visibility_off
                                     : Icons.visibility,
                               ),
                             ),
-                            labelText: context.l10n.password,
-                            hintText: context.l10n.passwordHint,
+                            labelText:
+                                context.l10n.password,
+                            hintText:
+                                context.l10n.passwordHint,
                           ),
                         ),
                         25.heightBox,
@@ -87,32 +107,43 @@ class _SignInViewState extends State<SignInView> {
                           children: [
                             Expanded(
                               child: CheckboxListTile(
-                                value: signInViewModel.isRememberMe,
+                                value: signInViewModel
+                                    .isRememberMe,
                                 onChanged: (value) {
                                   setState(() {
-                                    signInViewModel.toggleRememberMe(
-                                      value ?? false,
-                                    );
+                                    signInViewModel
+                                        .toggleRememberMe(
+                                          value ?? false,
+                                        );
                                   });
                                 },
-                                title: const Text("Remember me"),
+                                title: Text(
+                                  context
+                                      .l10n
+                                      .remember_me,
+                                ),
                                 controlAffinity:
-                                    ListTileControlAffinity.leading,
-                                contentPadding: EdgeInsets.zero,
+                                    ListTileControlAffinity
+                                        .leading,
+                                contentPadding:
+                                    EdgeInsets.zero,
                               ),
                             ),
                             GestureDetector(
                               onTap: () {
                                 Navigator.pushNamed(
                                   context,
-                                  AppRoutes.forgetPasswordScreen,
+                                  AppRoutes
+                                      .forgetPasswordScreen,
                                 );
                               },
                               child: Text(
                                 "${context.l10n.forget_password}?",
                                 style: const TextStyle(
                                   color: AppColors.black,
-                                  decoration: TextDecoration.underline,
+                                  decoration:
+                                      TextDecoration
+                                          .underline,
                                 ),
                               ),
                             ),
@@ -121,10 +152,16 @@ class _SignInViewState extends State<SignInView> {
                         30.heightBox,
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            minimumSize: Size(context.width, 50),
+                            minimumSize: Size(
+                              context.width,
+                              50,
+                            ),
                           ),
                           onPressed: () {
-                            if (signInViewModel.formKey.currentState!.validate()) {
+                            if (signInViewModel
+                                .formKey
+                                .currentState!
+                                .validate()) {
                               signInViewModel.login();
                             }
                           },
@@ -135,13 +172,15 @@ class _SignInViewState extends State<SignInView> {
                           width: context.width,
                           child: OutlinedButton(
                             onPressed: () {
-                              signInViewModel.loginAsGuest(context);
+                              signInViewModel
+                                  .loginAsGuest(context);
                             },
-                            child: const Text(
-                              "Login as Guest",
+                            child: Text(
+                              context.l10n.login_as_guest,
                               style: TextStyle(
                                 color: AppColors.black,
-                                fontWeight: FontWeight.bold,
+                                fontWeight:
+                                    FontWeight.bold,
                               ),
                             ),
                           ),
@@ -149,11 +188,14 @@ class _SignInViewState extends State<SignInView> {
                         16.heightBox,
 
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment:
+                              MainAxisAlignment.center,
                           children: [
                             Text(
-                              context.l10n.notHaveAccount,
-                              style: const TextStyle(color: AppColors.black),
+                              context.l10n.dont_have_account,
+                              style: const TextStyle(
+                                color: AppColors.black,
+                              ),
                             ),
                             8.widthBox,
                             GestureDetector(
@@ -167,7 +209,9 @@ class _SignInViewState extends State<SignInView> {
                                 context.l10n.signUp,
                                 style: const TextStyle(
                                   color: AppColors.pink,
-                                  decoration: TextDecoration.underline,
+                                  decoration:
+                                      TextDecoration
+                                          .underline,
                                 ),
                               ),
                             ),
@@ -184,7 +228,10 @@ class _SignInViewState extends State<SignInView> {
       },
       listener: (context, state) {
         if (state is LoginLoading) {
-          DialogUtils.showLoading(context: context, loadingMessage: "loading");
+          DialogUtils.showLoading(
+            context: context,
+            loadingMessage: "loading",
+          );
         } else if (state is LoginSuccessState) {
           DialogUtils.hideLoading(context);
           DialogUtils.showMessage(
@@ -192,7 +239,10 @@ class _SignInViewState extends State<SignInView> {
             content: state.response.message ?? "Success",
             posActions: "OK",
             posFunction: (p0) {
-              Navigator.pushReplacementNamed(context, AppRoutes.homeScreen);
+              Navigator.pushReplacementNamed(
+                context,
+                AppRoutes.homeScreen,
+              );
             },
           );
         } else if (state is GuestLoginSuccessState) {

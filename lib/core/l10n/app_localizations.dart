@@ -620,6 +620,16 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Photo updated successfully'**
   String get photo_updated_successfully;
+
+  String get remember_me;
+
+  String get dont_have_account;
+
+  String get login_as_guest;
+  String get cancel;
+  String get areYouSureYouWantToLogOut;
+  String get confirmLogOut;
+
 }
 
 class _AppLocalizationsDelegate
