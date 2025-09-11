@@ -90,4 +90,17 @@
   "login_as_guest": "Login as Guest",
    "areYouSureYouWantToLogOut": "Are you sure you want to log out?",
    "cancel": "Cancel",
-   "confirmLogout": "Confirm Logout"}
+   "confirmLogout": "Confirm Logout",
+  "address" : "Address" ,
+  "enter_your_address" : "Enter The address" ,
+  "enter_the_phone_number" : "Enter the phone number" ,
+  "enter_the_recipient_name" : "Enter the recipient name",
+  "receipient_name" : "Recipient Name",
+  "city" : "City",
+  "area" : "Area" ,
+  "save_address" : "Save Address" ,
+  "add_new_address" : "Add New Address" ,
+  "please_choose" : "choose" ,
+  "address_added_successfully" : "Address added successfully"
+
+  }

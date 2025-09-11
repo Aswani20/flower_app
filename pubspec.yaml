@@ -37,7 +37,12 @@ dependencies:
   skeletonizer: ^2.1.0+1
   image_picker: ^1.0.4
   image: ^4.1.7
+  permission_handler: ^12.0.1
+  geolocator: ^14.0.2
+  geocoding: ^4.0.0
+  google_maps_flutter: ^2.13.1
 
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -50,6 +55,7 @@ dev_dependencies:
   bloc_test: ^9.1.7
   mockito: ^5.4.0
 
+
   test: ^1.25.15
 
 
@@ -61,6 +67,7 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/svg/
+    - assets/json/
     - assets/files/flowery_terms_and_conditions.json
     - assets/files/flowery_about_us.json
   # fonts:

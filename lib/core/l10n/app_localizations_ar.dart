@@ -306,4 +306,39 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get confirmLogout => 'Confirm Logout';
+
+  @override
+  String get address => 'العنوان';
+
+  @override
+  String get enter_your_address => 'ادخل العنوان';
+
+  @override
+  String get enter_the_phone_number => 'ادخل رقم الهاتف';
+
+  @override
+  String get enter_the_recipient_name =>
+      'ادخل اسم المستلم';
+
+  @override
+  String get receipient_name => 'اسم المستلم';
+
+  @override
+  String get city => 'المدينة';
+
+  @override
+  String get area => 'المنطقة';
+
+  @override
+  String get save_address => 'حفظ العنوان';
+
+  @override
+  String get add_new_address => 'إضافة عنوان جديد';
+
+  @override
+  String get please_choose => 'اختر';
+
+  @override
+  String get address_added_successfully =>
+      'تم إضافة العنوان بنجاح';
 }
