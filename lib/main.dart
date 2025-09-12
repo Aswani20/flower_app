@@ -64,7 +64,8 @@ class MyApp extends StatelessWidget {
                     (context) => ForgetPasswordView(),
                 AppRoutes.homeScreen: (context) =>
                     HomeScreen(),
-
+                AppRoutes.bestSeller: (context) =>
+                    BestSellerScreen(),
                 AppRoutes.productDetailsScreen:
                     (context) => ProductDetailsScreen( ),
               },
