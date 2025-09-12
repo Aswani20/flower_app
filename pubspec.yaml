@@ -62,6 +62,7 @@ flutter:
     - assets/icons/
     - assets/svg/
     - assets/files/flowery_terms_and_conditions.json
+    - assets/files/flowery_about_us.json
   # fonts:
   #   - family: Schyler
   #     fonts:

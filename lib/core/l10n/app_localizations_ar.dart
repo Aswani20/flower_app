@@ -289,21 +289,20 @@ class AppLocalizationsAr extends AppLocalizations {
       'تم تحديث الصورة بنجاح';
 
   @override
-  String get dont_have_account => 'ليس لديك حساب؟';
+  String get rememberMe => 'تذكرني';
 
+  @override
+  String get dontHaveAccount => 'ليس لديك حساب؟';
   @override
   String get login_as_guest => ' الدخول كزائر';
 
   @override
-  String get are_you_sure_you_want_to_log_out =>
+  String get areYouSureYouWantToLogOut =>
       'هل أنت متأكد أنك تريد تسجيل الخروج؟';
 
   @override
   String get cancel => 'إلغاء';
 
   @override
-  String get confirm_log_out => 'تأكيد تسجيل الخروج';
-
-  @override
-  String get remember_me => 'تذكرني';
+  String get confirmLogout => 'Confirm Logout';
 }

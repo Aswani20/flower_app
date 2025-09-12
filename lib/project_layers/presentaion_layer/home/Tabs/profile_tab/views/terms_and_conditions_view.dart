@@ -16,7 +16,6 @@ class TermsAndConditionsView extends StatefulWidget {
 class _TermsAndConditionsViewState
     extends State<TermsAndConditionsView> {
   TermsAndConditions? _termsData;
-  final String _currentLang = 'en';
 
   @override
   void initState() {
@@ -140,13 +139,15 @@ class _TermsAndConditionsViewState
           children: _termsData!.sections.map<Widget>((
             section,
           ) {
+            final currentLang = Localizations.localeOf(
+              context,
+            ).languageCode;
             final String contentLang =
-                section.content?[_currentLang]
+                section.content?[currentLang]
                     ?.toString() ??
                 '';
             final String titleLang =
-                section.title?[_currentLang]
-                    ?.toString() ??
+                section.title?[currentLang]?.toString() ??
                 '';
 
             Widget currentWidget;
@@ -156,7 +157,7 @@ class _TermsAndConditionsViewState
                 section.section == 'acknowledgment') {
               final style = CustomTextStyle.fromJson(
                 section.style!,
-                _currentLang,
+                currentLang,
               );
               currentWidget = _buildTextSection(
                 contentLang,
@@ -165,16 +166,16 @@ class _TermsAndConditionsViewState
             } else {
               final titleStyle = CustomTextStyle.fromJson(
                 section.style!['title'],
-                _currentLang,
+                currentLang,
               );
               final contentStyle =
                   CustomTextStyle.fromJson(
                     section.style!['content'],
-                    _currentLang,
+                    currentLang,
                   );
 
               final content =
-                  section.content?[_currentLang];
+                  section.content?[currentLang];
 
               if (content is List) {
                 currentWidget = Column(

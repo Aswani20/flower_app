@@ -620,12 +620,17 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Photo updated successfully'**
   String get photo_updated_successfully;
+  /// No description provided for @rememberMe.
+  ///
+  /// In en, this message translates to:
+  /// **'Remember me'**
+  String get rememberMe;
 
-  /// No description provided for @dont_have_account.
+  /// No description provided for @dontHaveAccount.
   ///
   /// In en, this message translates to:
   /// **'Don\'t have an account?'**
-  String get dont_have_account;
+  String get dontHaveAccount;
 
   /// No description provided for @login_as_guest.
   ///
@@ -633,11 +638,11 @@ abstract class AppLocalizations {
   /// **'Login as Guest'**
   String get login_as_guest;
 
-  /// No description provided for @are_you_sure_you_want_to_log_out.
+  /// No description provided for @areYouSureYouWantToLogOut.
   ///
   /// In en, this message translates to:
   /// **'Are you sure you want to log out?'**
-  String get are_you_sure_you_want_to_log_out;
+  String get areYouSureYouWantToLogOut;
 
   /// No description provided for @cancel.
   ///
@@ -645,17 +650,11 @@ abstract class AppLocalizations {
   /// **'Cancel'**
   String get cancel;
 
-  /// No description provided for @confirm_log_out.
+  /// No description provided for @confirmLogout.
   ///
   /// In en, this message translates to:
   /// **'Confirm Logout'**
-  String get confirm_log_out;
-
-  /// No description provided for @remember_me.
-  ///
-  /// In en, this message translates to:
-  /// **'Remember me'**
-  String get remember_me;
+  String get confirmLogout;
 }
 
 class _AppLocalizationsDelegate
