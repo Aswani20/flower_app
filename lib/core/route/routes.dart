@@ -1,10 +1,26 @@
+import 'package:flower_app/core/di/di.dart';
 import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/gen/assets.gen.dart';
-import 'package:flower_app/project_layers/presentation_layer/home/home_screen.dart';
+import 'package:flower_app/project_layers/presentaion_layer/addresses/add_address/add_address.dart';
+import 'package:flower_app/project_layers/presentaion_layer/addresses/saved_addresses/saved_addresses.dart';
+import 'package:flower_app/project_layers/presentaion_layer/auth/forget_password/forget_password_view.dart';
+import 'package:flower_app/project_layers/presentaion_layer/auth/sign_in/login_view.dart';
+import 'package:flower_app/project_layers/presentaion_layer/auth/sign_up/sign_up_view.dart';
+import 'package:flower_app/project_layers/presentaion_layer/checkout/views/chackout_view.dart';
+import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/about_us_view.dart';
+import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/edit_profile.dart';
+import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/reset_password.dart';
+import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/terms_and_conditions_view.dart';
+import 'package:flower_app/project_layers/presentaion_layer/home/home_screen.dart';
+import 'package:flower_app/project_layers/presentaion_layer/notifications_list/cubit/notifications_list_cubit.dart';
+import 'package:flower_app/project_layers/presentaion_layer/notifications_list/views/notifications_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import '../../project_layers/presentation_layer/occasion/view/occasion_screen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../project_layers/presentaion_layer/best_seller/best_seller_screen.dart';
+import '../../project_layers/presentaion_layer/home/screens/product_details_screen.dart';
 import 'app_routes.dart';
 
 abstract class Routes {
@@ -13,11 +29,76 @@ abstract class Routes {
     switch (url.path) {
       case AppRoutes.OccasionScreen:
         return MaterialPageRoute(builder: (_) => OccasionScreen());
+      case AppRoutes.forgetPasswordScreen:
+        return MaterialPageRoute(
+          builder: (context) => ForgetPasswordView(),
+        );
+      case AppRoutes.signUpScreen:
+        return MaterialPageRoute(
+          builder: (_) => SignUpView(),
+        );
+      case AppRoutes.loginScreen:
+        return MaterialPageRoute(
+          builder: (context) => const SignInView(),
+        );
+
+      case AppRoutes.editProfile:
+        return MaterialPageRoute(
+          builder: (context) => EditProfile(),
+          settings: settings,
+        );
+      case AppRoutes.homeScreen:
+        return MaterialPageRoute(
+          builder: (context) => const HomeScreen(),
+        );
+      case AppRoutes.resetPassword:
+        return MaterialPageRoute(
+          builder: (context) => const ResetPassword(),
+        );
+      case AppRoutes.notificationsList:
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider(
+            create: (context) =>
+                getIt<NotificationsListCubit>()
+                  ..getNotifications(),
+            child: NotificationsView(),
+          ),
+        );
+      case AppRoutes.termsAndConditions:
+        return MaterialPageRoute(
+          builder: (context) =>
+              const TermsAndConditionsView(),
+        );
+      case AppRoutes.chackoutView:
+        return MaterialPageRoute(
+          builder: (context) => ChackoutView(),
+        );
+      case AppRoutes.aboutUs:
+        return MaterialPageRoute(
+          builder: (context) => AboutPage(),
+        );
+      case AppRoutes.bestSeller:
+        return MaterialPageRoute(
+          builder: (context) => BestSellerScreen(),
+        );
+      case AppRoutes.productDetailsScreen:
+        return MaterialPageRoute(
+          builder: (_) => ProductDetailsScreen(),
+        );
+      case AppRoutes.addAddress:
+        return MaterialPageRoute(
+          builder: (_) => AddAddressScreen(),
+        );
+              case AppRoutes.savedAddresses:
+        return MaterialPageRoute(
+          builder: (_) => SavedAddressesScreen(),
+        );
       default:
-        return MaterialPageRoute(builder: (context) => NotFoundScreen());
+        return MaterialPageRoute(
+          builder: (context) => NotFoundScreen(),
+        );
     }
   }
-
 }
 
 class NotFoundScreen extends StatelessWidget {
@@ -64,7 +145,10 @@ class NotFoundScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10.0,
+                    vertical: 5,
+                  ),
                   child: Text(
                     "Oops! We couldn't find the page you're looking for.",
                     style: TextStyle(

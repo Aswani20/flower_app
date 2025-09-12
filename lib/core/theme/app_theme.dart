@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'app_colors.dart';
 
-abstract class AppTheme {static ThemeData getTheme({required ColorScheme colorScheme, required Color textFormFieldBorderColor,}) {
+abstract class AppTheme {
+  static ThemeData getTheme({
+    required ColorScheme colorScheme,
+    required Color textFormFieldBorderColor,
+  }) {
     return ThemeData(
       colorScheme: colorScheme,
       appBarTheme: AppBarTheme(
@@ -10,12 +16,12 @@ abstract class AppTheme {static ThemeData getTheme({required ColorScheme colorSc
         foregroundColor: AppColors.black,
         elevation: 0,
       ),
-
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        selectedItemColor: AppColors.pink,
-        unselectedItemColor: AppColors.grey,
-        elevation: 0,
-      ),
+    bottomNavigationBarTheme:
+          BottomNavigationBarThemeData(
+            selectedItemColor: AppColors.pink,
+            unselectedItemColor: AppColors.grey,
+            elevation: 0,
+          ),
 
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
@@ -31,25 +37,41 @@ abstract class AppTheme {static ThemeData getTheme({required ColorScheme colorSc
       ),
 
       inputDecorationTheme: InputDecorationTheme(
+        
         fillColor: AppColors.white,
         filled: true,
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(4)),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(4),
+        ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4),
-          borderSide: BorderSide(color: textFormFieldBorderColor, width: 1),
+          borderSide: BorderSide(
+            color: textFormFieldBorderColor,
+            width: 1,
+          ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4),
-          borderSide: BorderSide(color: textFormFieldBorderColor, width: 1),
+          borderSide: BorderSide(
+            color: textFormFieldBorderColor,
+            width: 1,
+          ),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4),
-          borderSide: BorderSide(color: colorScheme.error, width: 1),
+          borderSide: BorderSide(
+            color: colorScheme.error,
+            width: 1,
+          ),
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4),
-          borderSide: BorderSide(color: colorScheme.error, width: 1),
+          borderSide: BorderSide(
+            color: colorScheme.error,
+            width: 1,
+          ),
         ),
+        
       ),
 
       filledButtonTheme: FilledButtonThemeData(
@@ -62,6 +84,24 @@ abstract class AppTheme {static ThemeData getTheme({required ColorScheme colorSc
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50),
           ),
+        ),
+      ),
+      textTheme: TextTheme(
+        titleMedium: TextStyle(
+          fontSize: 16.sp,
+          fontWeight: FontWeight.w500,
+          fontFamily: GoogleFonts.imFellEnglish().fontFamily,
+        ),
+        bodyMedium: TextStyle(
+          fontSize: 14.sp,
+          fontWeight: FontWeight.w500,
+          fontFamily: GoogleFonts.inter().fontFamily,
+        ),
+        bodyLarge: TextStyle(
+          fontSize: 18.sp,
+          fontWeight: FontWeight.w500,
+          fontFamily: GoogleFonts.inter().fontFamily,
+          color: AppColors.black[500],
         ),
       ),
     );
@@ -77,7 +117,7 @@ abstract class AppTheme {static ThemeData getTheme({required ColorScheme colorSc
       error: AppColors.red,
       onError: AppColors.white,
       surface: AppColors.white,
-      onSurface: AppColors.pink,
+      onSurface: AppColors.black,
     ),
     textFormFieldBorderColor: AppColors.grey,
   );

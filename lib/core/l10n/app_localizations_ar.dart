@@ -6,10 +6,47 @@ import 'app_localizations.dart';
 
 /// The translations for Arabic (`ar`).
 class AppLocalizationsAr extends AppLocalizations {
-  AppLocalizationsAr([String locale = 'ar']) : super(locale);
+  AppLocalizationsAr([String locale = 'ar'])
+    : super(locale);
 
   @override
   String get appName => 'تطبيق الامتحانات ';
+
+  @override
+  String get appVersion => '1.0.0';
+
+  @override
+  String get termsAndConditions => 'الشروط والاحكام';
+
+  @override
+  String get logOut => 'خروج';
+
+  @override
+  String get myOrders => 'طلباتي';
+
+  @override
+  String get update => 'تحديث';
+
+  @override
+  String get change => 'تغيير';
+
+  @override
+  String get resetPassword => 'إعادة تعيين كلمة المرور';
+
+  @override
+  String get currentPassword => 'كلمة المرور الحالية';
+
+  @override
+  String get editProfile => 'تعديل الملف الشخصي';
+
+  @override
+  String get savedAddresses => 'العناوين المحفوظة';
+
+  @override
+  String get notification => 'الاشعارات';
+
+  @override
+  String get aboutUs => 'عن التطبيق';
 
   @override
   String get firstName => 'الاسم الاول';
@@ -39,7 +76,11 @@ class AppLocalizationsAr extends AppLocalizations {
   String get confirmPassword => 'تاكيد كلمة المرور';
 
   @override
-  String get confirmPasswordHint => 'ادخل كلمة المرور مره اخري';
+  String get confirm => 'Confirm';
+
+  @override
+  String get confirmPasswordHint =>
+      'ادخل كلمة المرور مره اخري';
 
   @override
   String get phoneNumber => 'رقم الهاتف';
@@ -70,24 +111,29 @@ class AppLocalizationsAr extends AppLocalizations {
       'الاسم يجب ان يكون اكبر من 3 حروف';
 
   @override
-  String get passwordMustContainUpperLowerAndSpecialCharacter =>
+  String
+  get passwordMustContainUpperLowerAndSpecialCharacter =>
       'يحب ان يحتوي علي حرف كبير و حرف صغير ورمز مميز';
 
   @override
-  String get passwordsDoNotMatch => 'كلمة المرور غير متطابقه';
+  String get passwordsDoNotMatch =>
+      'كلمة المرور غير متطابقه';
 
   @override
-  String get pleaseEnterYourPassword => 'ادخل كلمة المرور';
+  String get pleaseEnterYourPassword =>
+      'ادخل كلمة المرور';
 
   @override
-  String get pleaseEnterYourEmail => 'ادخل البريد الالكتروني';
+  String get pleaseEnterYourEmail =>
+      'ادخل البريد الالكتروني';
 
   @override
   String get emailMustBeLikeThisExampleGmailCom =>
       'البريد الالكتروني يجب ان يكون  \"example@gmail.com';
 
   @override
-  String get pleaseEnterYourPhoneNumber => 'ادخل رقم الهاتف ';
+  String get pleaseEnterYourPhoneNumber =>
+      'ادخل رقم الهاتف ';
 
   @override
   String get enterAValidEgyptianPhoneNumber =>
@@ -104,7 +150,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get continue_btn => 'استمرار';
 
   @override
-  String get email_verification => 'تحقق البريد الالكتروني';
+  String get email_verification =>
+      'تحقق البريد الالكتروني';
 
   @override
   String get enter_code_sent_to_email =>
@@ -130,7 +177,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get new_password => 'كلمة المرور الجديدة';
 
   @override
-  String get enter_your_password => 'أدخل كلمة المرور الخاصة بك';
+  String get enter_your_password =>
+      'أدخل كلمة المرور الخاصة بك';
 
   @override
   String get loading => 'جاري التحميل...';
@@ -148,7 +196,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get server_error => 'خطأ في الخادم';
 
   @override
-  String get reset_pass_success => 'تم تغيير كلمة المرور بنجاح';
+  String get reset_pass_success =>
+      'تم تغيير كلمة المرور بنجاح';
 
   @override
   String get otp_resend_to_mail =>
@@ -182,7 +231,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get cart => 'عربة التسوق';
 
   @override
-  String get occasion => 'مناسبة';
 
   @override
   String get descriptionAppBarBestSeller => 'ازدهر مع أفضل مبيعاتنا الرائعة';
@@ -193,4 +241,113 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   // TODO: implement addToCart
   String get addToCart => "أضافة الى السلة";
+  String get egp => 'جنيه مصري';
+
+  @override
+  String get all_prices_include_tax =>
+      'All prices include tax';
+
+  @override
+  String get product_title => 'product title';
+
+  @override
+  String get status => 'Status';
+
+  @override
+  String get in_stock => 'in stock';
+
+  @override
+  String get product_price => 'product price';
+
+  @override
+  String get description => 'Description';
+
+  @override
+  String get description_body =>
+      'Lorem ipsum dolor sit amet consectetur. Id sit morbi ornare morbi duis rhoncus orci massa.';
+
+  @override
+  String get bouquet_include => 'Bouquet include';
+
+  @override
+  String get add_to_cart => 'Add to cart';
+
+  @override
+  String get pink_roses => 'Pink roses:15';
+
+  @override
+  String get white_wrap => 'White wrap';
+
+  @override
+  String get flowery => 'زهري';
+
+  @override
+  String get view_all => 'عرض الكل';
+
+  @override
+  String get best_seller => 'الأكثر مبيعًا';
+
+  @override
+  String get occasion => 'تخفيضات';
+
+  @override
+  String get profile_updated_successfully =>
+      'تم تحديث الملف الشخصي بنجاح';
+
+  @override
+  String get photo_updated_successfully =>
+      'تم تحديث الصورة بنجاح';
+
+  @override
+  String get rememberMe => 'تذكرني';
+
+  @override
+  String get dontHaveAccount => 'ليس لديك حساب؟';
+  @override
+  String get login_as_guest => ' الدخول كزائر';
+
+  @override
+  String get areYouSureYouWantToLogOut =>
+      'هل أنت متأكد أنك تريد تسجيل الخروج؟';
+
+  @override
+  String get cancel => 'إلغاء';
+
+  @override
+  String get confirmLogout => 'Confirm Logout';
+
+  @override
+  String get address => 'العنوان';
+
+  @override
+  String get enter_your_address => 'ادخل العنوان';
+
+  @override
+  String get enter_the_phone_number => 'ادخل رقم الهاتف';
+
+  @override
+  String get enter_the_recipient_name =>
+      'ادخل اسم المستلم';
+
+  @override
+  String get receipient_name => 'اسم المستلم';
+
+  @override
+  String get city => 'المدينة';
+
+  @override
+  String get area => 'المنطقة';
+
+  @override
+  String get save_address => 'حفظ العنوان';
+
+  @override
+  String get add_new_address => 'إضافة عنوان جديد';
+
+  @override
+  String get please_choose => 'اختر';
+
+  @override
+  String get address_added_successfully =>
+      'تم إضافة العنوان بنجاح';
 }

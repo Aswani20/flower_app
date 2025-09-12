@@ -6,10 +6,47 @@ import 'app_localizations.dart';
 
 /// The translations for English (`en`).
 class AppLocalizationsEn extends AppLocalizations {
-  AppLocalizationsEn([String locale = 'en']) : super(locale);
+  AppLocalizationsEn([String locale = 'en'])
+    : super(locale);
 
   @override
   String get appName => 'Flower App';
+
+  @override
+  String get appVersion => '1.0.0';
+
+  @override
+  String get termsAndConditions => 'Terms and Conditions';
+
+  @override
+  String get logOut => 'Log Out';
+
+  @override
+  String get myOrders => 'My Orders';
+
+  @override
+  String get update => 'Update';
+
+  @override
+  String get change => 'Change';
+
+  @override
+  String get resetPassword => 'Reset Password';
+
+  @override
+  String get currentPassword => 'Current Password';
+
+  @override
+  String get editProfile => 'Edit Profile';
+
+  @override
+  String get savedAddresses => 'Saved Addresses';
+
+  @override
+  String get notification => 'Notifications';
+
+  @override
+  String get aboutUs => 'About Us';
 
   @override
   String get firstName => 'First Name';
@@ -37,6 +74,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get confirmPassword => 'Confirm Password';
+
+  @override
+  String get confirm => 'Confirm';
 
   @override
   String get confirmPasswordHint => 'Confirm password';
@@ -70,24 +110,29 @@ class AppLocalizationsEn extends AppLocalizations {
       'Name must be more than 3 characters';
 
   @override
-  String get passwordMustContainUpperLowerAndSpecialCharacter =>
+  String
+  get passwordMustContainUpperLowerAndSpecialCharacter =>
       'Password must contain upper, lower, and special character';
 
   @override
-  String get passwordsDoNotMatch => 'Passwords do not match';
+  String get passwordsDoNotMatch =>
+      'Passwords do not match';
 
   @override
-  String get pleaseEnterYourPassword => 'Please enter your password';
+  String get pleaseEnterYourPassword =>
+      'Please enter your password';
 
   @override
-  String get pleaseEnterYourEmail => 'Please enter your email';
+  String get pleaseEnterYourEmail =>
+      'Please enter your email';
 
   @override
   String get emailMustBeLikeThisExampleGmailCom =>
       'Email must be like this \"example@gmail.com';
 
   @override
-  String get pleaseEnterYourPhoneNumber => 'Please enter your phone number';
+  String get pleaseEnterYourPhoneNumber =>
+      'Please enter your phone number';
 
   @override
   String get enterAValidEgyptianPhoneNumber =>
@@ -111,7 +156,8 @@ class AppLocalizationsEn extends AppLocalizations {
       'Please enter your code that send to your email address ';
 
   @override
-  String get didnt_receive_code => 'Didn\'t receive the code?';
+  String get didnt_receive_code =>
+      'Didn\'t receive the code?';
 
   @override
   String get resend => 'Resend';
@@ -148,7 +194,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get server_error => 'Server error';
 
   @override
-  String get reset_pass_success => 'Password reset successfully';
+  String get reset_pass_success =>
+      'Password reset successfully';
 
   @override
   String get otp_resend_to_mail =>
@@ -181,9 +228,7 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get cart => 'Cart';
 
-  @override
-  String get occasion => 'Occasion';
-
+  
   @override
   String get descriptionAppBarBestSeller =>
       'Bloom with our exquisite best sellers';
@@ -194,4 +239,114 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   // TODO: implement addToCart
   String get addToCart => "Add To Cart";
+  String get egp => 'EGP';
+
+  @override
+  String get all_prices_include_tax =>
+      'All prices include tax';
+
+  @override
+  String get product_title => 'product title';
+
+  @override
+  String get status => 'Status';
+
+  @override
+  String get in_stock => 'in stock';
+
+  @override
+  String get product_price => 'product price';
+
+  @override
+  String get description => 'Description';
+
+  @override
+  String get description_body =>
+      'Lorem ipsum dolor sit amet consectetur. Id sit morbi ornare morbi duis rhoncus orci massa.';
+
+  @override
+  String get bouquet_include => 'Bouquet include';
+
+  @override
+  String get add_to_cart => 'Add to cart';
+
+  @override
+  String get pink_roses => 'Pink roses:15';
+
+  @override
+  String get white_wrap => 'White wrap';
+
+  @override
+  String get flowery => 'Flowery';
+
+  @override
+  String get view_all => 'View All';
+
+  @override
+  String get best_seller => 'Best Seller';
+
+  @override
+  String get occasion => 'Occasion';
+
+  @override
+  String get profile_updated_successfully =>
+      'Profile updated successfully';
+
+  @override
+  String get photo_updated_successfully =>
+      'Photo updated successfully';
+
+  @override
+  String get rememberMe => 'Remember me';
+
+  @override
+  String get dontHaveAccount => 'Don\'t have an account?';
+  @override
+  String get login_as_guest => 'Login as Guest';
+
+  @override
+  String get areYouSureYouWantToLogOut =>
+      'Are you sure you want to log out?';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get confirmLogout => 'Confirm Logout';
+
+  @override
+  String get address => 'Address';
+
+  @override
+  String get enter_your_address => 'Enter The address';
+
+  @override
+  String get enter_the_phone_number =>
+      'Enter the phone number';
+
+  @override
+  String get enter_the_recipient_name =>
+      'Enter the recipient name';
+
+  @override
+  String get receipient_name => 'Recipient Name';
+
+  @override
+  String get city => 'City';
+
+  @override
+  String get area => 'Area';
+
+  @override
+  String get save_address => 'Save Address';
+
+  @override
+  String get add_new_address => 'Add New Address';
+
+  @override
+  String get please_choose => 'choose';
+
+  @override
+  String get address_added_successfully =>
+      'Address added successfully';
 }

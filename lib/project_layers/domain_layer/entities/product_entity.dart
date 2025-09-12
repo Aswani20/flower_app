@@ -39,3 +39,4 @@ class ProductEntity {
     this.discount,
   });
 }
+

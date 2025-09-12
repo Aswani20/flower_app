@@ -2,6 +2,7 @@ class OccasionResponseEntity {
   OccasionResponseEntity({this.message, this.occasions});
 
   String? message;
+
   List<OccasionEntity>? occasions;
 }
 
@@ -16,7 +17,6 @@ class OccasionEntity {
     this.isSuperAdmin,
     this.productsCount,
   });
-
   String? id;
   String? name;
   String? slug;

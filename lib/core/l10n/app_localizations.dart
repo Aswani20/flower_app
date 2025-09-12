@@ -63,16 +63,21 @@ import 'app_localizations_en.dart';
 /// property.
 abstract class AppLocalizations {
   AppLocalizations(String locale)
-    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+    : localeName = intl.Intl.canonicalizedLocale(
+        locale.toString(),
+      );
 
   final String localeName;
 
   static AppLocalizations? of(BuildContext context) {
-    return Localizations.of<AppLocalizations>(context, AppLocalizations);
+    return Localizations.of<AppLocalizations>(
+      context,
+      AppLocalizations,
+    );
   }
 
-  static const LocalizationsDelegate<AppLocalizations> delegate =
-      _AppLocalizationsDelegate();
+  static const LocalizationsDelegate<AppLocalizations>
+  delegate = _AppLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -84,7 +89,8 @@ abstract class AppLocalizations {
   /// Additional delegates can be added by appending to this list in
   /// MaterialApp. This list does not have to be used at all if a custom list
   /// of delegates is preferred or required.
-  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
+  static const List<LocalizationsDelegate<dynamic>>
+  localizationsDelegates =
       <LocalizationsDelegate<dynamic>>[
         delegate,
         GlobalMaterialLocalizations.delegate,
@@ -103,6 +109,78 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Flower App'**
   String get appName;
+
+  /// No description provided for @appVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'1.0.0'**
+  String get appVersion;
+
+  /// No description provided for @termsAndConditions.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms and Conditions'**
+  String get termsAndConditions;
+
+  /// No description provided for @logOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Log Out'**
+  String get logOut;
+
+  /// No description provided for @myOrders.
+  ///
+  /// In en, this message translates to:
+  /// **'My Orders'**
+  String get myOrders;
+
+  /// No description provided for @update.
+  ///
+  /// In en, this message translates to:
+  /// **'Update'**
+  String get update;
+
+  /// No description provided for @change.
+  ///
+  /// In en, this message translates to:
+  /// **'Change'**
+  String get change;
+
+  /// No description provided for @resetPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset Password'**
+  String get resetPassword;
+
+  /// No description provided for @currentPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Current Password'**
+  String get currentPassword;
+
+  /// No description provided for @editProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Profile'**
+  String get editProfile;
+
+  /// No description provided for @savedAddresses.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved Addresses'**
+  String get savedAddresses;
+
+  /// No description provided for @notification.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get notification;
+
+  /// No description provided for @aboutUs.
+  ///
+  /// In en, this message translates to:
+  /// **'About Us'**
+  String get aboutUs;
 
   /// No description provided for @firstName.
   ///
@@ -157,6 +235,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Confirm Password'**
   String get confirmPassword;
+
+  /// No description provided for @confirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm'**
+  String get confirm;
 
   /// No description provided for @confirmPasswordHint.
   ///
@@ -222,7 +306,8 @@ abstract class AppLocalizations {
   ///
   /// In en, this message translates to:
   /// **'Password must contain upper, lower, and special character'**
-  String get passwordMustContainUpperLowerAndSpecialCharacter;
+  String
+  get passwordMustContainUpperLowerAndSpecialCharacter;
 
   /// No description provided for @passwordsDoNotMatch.
   ///
@@ -428,6 +513,96 @@ abstract class AppLocalizations {
   /// **'Cart'**
   String get cart;
 
+  /// No description provided for @egp.
+  ///
+  /// In en, this message translates to:
+  /// **'EGP'**
+  String get egp;
+
+  /// No description provided for @all_prices_include_tax.
+  ///
+  /// In en, this message translates to:
+  /// **'All prices include tax'**
+  String get all_prices_include_tax;
+
+  /// No description provided for @product_title.
+  ///
+  /// In en, this message translates to:
+  /// **'product title'**
+  String get product_title;
+
+  /// No description provided for @status.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get status;
+
+  /// No description provided for @in_stock.
+  ///
+  /// In en, this message translates to:
+  /// **'in stock'**
+  String get in_stock;
+
+  /// No description provided for @product_price.
+  ///
+  /// In en, this message translates to:
+  /// **'product price'**
+  String get product_price;
+
+  /// No description provided for @description.
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get description;
+
+  /// No description provided for @description_body.
+  ///
+  /// In en, this message translates to:
+  /// **'Lorem ipsum dolor sit amet consectetur. Id sit morbi ornare morbi duis rhoncus orci massa.'**
+  String get description_body;
+
+  /// No description provided for @bouquet_include.
+  ///
+  /// In en, this message translates to:
+  /// **'Bouquet include'**
+  String get bouquet_include;
+
+  /// No description provided for @add_to_cart.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to cart'**
+  String get add_to_cart;
+
+  /// No description provided for @pink_roses.
+  ///
+  /// In en, this message translates to:
+  /// **'Pink roses:15'**
+  String get pink_roses;
+
+  /// No description provided for @white_wrap.
+  ///
+  /// In en, this message translates to:
+  /// **'White wrap'**
+  String get white_wrap;
+
+  /// No description provided for @flowery.
+  ///
+  /// In en, this message translates to:
+  /// **'Flowery'**
+  String get flowery;
+
+  /// No description provided for @view_all.
+  ///
+  /// In en, this message translates to:
+  /// **'View All'**
+  String get view_all;
+
+  /// No description provided for @best_seller.
+  ///
+  /// In en, this message translates to:
+  /// **'Best Seller'**
+  String get best_seller;
+
   /// No description provided for @occasion.
   ///
   /// In en, this message translates to:
@@ -447,6 +622,118 @@ abstract class AppLocalizations {
   String get noProductsFound;
 
   String get addToCart;
+  /// No description provided for @profile_updated_successfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile updated successfully'**
+  String get profile_updated_successfully;
+
+  /// No description provided for @photo_updated_successfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Photo updated successfully'**
+  String get photo_updated_successfully;
+  /// No description provided for @rememberMe.
+  ///
+  /// In en, this message translates to:
+  /// **'Remember me'**
+  String get rememberMe;
+
+  /// No description provided for @dontHaveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t have an account?'**
+  String get dontHaveAccount;
+
+  /// No description provided for @login_as_guest.
+  ///
+  /// In en, this message translates to:
+  /// **'Login as Guest'**
+  String get login_as_guest;
+
+  /// No description provided for @areYouSureYouWantToLogOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to log out?'**
+  String get areYouSureYouWantToLogOut;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @confirmLogout.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Logout'**
+  String get confirmLogout;
+
+  /// No description provided for @address.
+  ///
+  /// In en, this message translates to:
+  /// **'Address'**
+  String get address;
+
+  /// No description provided for @enter_your_address.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter The address'**
+  String get enter_your_address;
+
+  /// No description provided for @enter_the_phone_number.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the phone number'**
+  String get enter_the_phone_number;
+
+  /// No description provided for @enter_the_recipient_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the recipient name'**
+  String get enter_the_recipient_name;
+
+  /// No description provided for @receipient_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Recipient Name'**
+  String get receipient_name;
+
+  /// No description provided for @city.
+  ///
+  /// In en, this message translates to:
+  /// **'City'**
+  String get city;
+
+  /// No description provided for @area.
+  ///
+  /// In en, this message translates to:
+  /// **'Area'**
+  String get area;
+
+  /// No description provided for @save_address.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Address'**
+  String get save_address;
+
+  /// No description provided for @add_new_address.
+  ///
+  /// In en, this message translates to:
+  /// **'Add New Address'**
+  String get add_new_address;
+
+  /// No description provided for @please_choose.
+  ///
+  /// In en, this message translates to:
+  /// **'choose'**
+  String get please_choose;
+
+  /// No description provided for @address_added_successfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Address added successfully'**
+  String get address_added_successfully;
 }
 
 class _AppLocalizationsDelegate
@@ -455,7 +742,9 @@ class _AppLocalizationsDelegate
 
   @override
   Future<AppLocalizations> load(Locale locale) {
-    return SynchronousFuture<AppLocalizations>(lookupAppLocalizations(locale));
+    return SynchronousFuture<AppLocalizations>(
+      lookupAppLocalizations(locale),
+    );
   }
 
   @override
@@ -463,7 +752,8 @@ class _AppLocalizationsDelegate
       <String>['ar', 'en'].contains(locale.languageCode);
 
   @override
-  bool shouldReload(_AppLocalizationsDelegate old) => false;
+  bool shouldReload(_AppLocalizationsDelegate old) =>
+      false;
 }
 
 AppLocalizations lookupAppLocalizations(Locale locale) {

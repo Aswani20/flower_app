@@ -1,7 +1,6 @@
 import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flutter/material.dart';
 
-
 class AppValidators {
   //Non_empty validator
   static String? nonEmptyField(value, BuildContext context) {
@@ -10,6 +9,16 @@ class AppValidators {
     }
     return null;
   }
+
+
+    //Non_empty validator for custom parameter
+  static String? emptyField(value, String customMessage, BuildContext context) {
+    if (value == null || value.isEmpty) {
+      return customMessage;
+    }
+    return null;
+  }
+
 
   //first-last name validator
   static String? nameValidator(value, BuildContext context) {
