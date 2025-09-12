@@ -609,6 +609,19 @@ abstract class AppLocalizations {
   /// **'Occasion'**
   String get occasion;
 
+  /// No description provided for @descriptionAppBarBestSeller.
+  ///
+  /// In en, this message translates to:
+  /// **'Bloom with our exquisite best sellers'**
+  String get descriptionAppBarBestSeller;
+
+  /// No description provided for @noProductsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No Products Found'**
+  String get noProductsFound;
+
+  String get addToCart;
   /// No description provided for @profile_updated_successfully.
   ///
   /// In en, this message translates to:

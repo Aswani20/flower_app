@@ -20,11 +20,13 @@ class _ApiClient implements ApiClient {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<HttpResponse<CategoryResponseDto>> getCategories() async {
+  Future<OccasionsResponse> getOccasions() async {
+
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
+
     final _options = _setStreamType<HttpResponse<CategoryResponseDto>>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
@@ -120,6 +122,7 @@ class _ApiClient implements ApiClient {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+
     late OccasionResponseDto _value;
     try {
       _value = OccasionResponseDto.fromJson(_result.data!);
@@ -308,6 +311,7 @@ class _ApiClient implements ApiClient {
   }
 
   @override
+
   Future<ProductsResponse> getProductsById(Map<String, dynamic> filters) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -334,6 +338,7 @@ class _ApiClient implements ApiClient {
     }
     return _value;
   }
+
 
   @override
   Future<GetLoggedUserDataResponseDto> getLoggedUserData() async {

@@ -231,6 +231,16 @@ class AppLocalizationsAr extends AppLocalizations {
   String get cart => 'عربة التسوق';
 
   @override
+
+  @override
+  String get descriptionAppBarBestSeller => 'ازدهر مع أفضل مبيعاتنا الرائعة';
+
+  @override
+  String get noProductsFound => 'لا يوجد منتحات';
+
+  @override
+  // TODO: implement addToCart
+  String get addToCart => "أضافة الى السلة";
   String get egp => 'جنيه مصري';
 
   @override

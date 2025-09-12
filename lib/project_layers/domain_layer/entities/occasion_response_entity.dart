@@ -1,9 +1,8 @@
-import 'package:flower_app/project_layers/domain_layer/entities/category_response_entity.dart';
-
 class OccasionResponseEntity {
-  OccasionResponseEntity({this.message, this.metadata, this.occasions});
+  OccasionResponseEntity({this.message, this.occasions});
+
   String? message;
-  MetadataEntity? metadata;
+
   List<OccasionEntity>? occasions;
 }
 

@@ -1,6 +1,10 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:flower_app/project_layers/data_layer/model/occasions_response.dart';
+import 'package:injectable/injectable.dart';
+import 'package:retrofit/retrofit.dart';
+import '../../data_layer/model/products_response.dart';
 import 'package:flower_app/project_layers/api_layer/models/categories_response.dart';
 import 'package:flower_app/project_layers/api_layer/models/get_all_notification_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/products_response.dart';
@@ -37,6 +41,13 @@ abstract class ApiClient {
   @factoryMethod
   factory ApiClient(Dio dio) = _ApiClient;
 
+  @GET("/v1/occasions")
+  Future<OccasionsResponse> getOccasions();
+
+  @GET("/v1/products")
+  Future<ProductsResponse> getProductsById(
+    @Query("occasion") String? occasionId,
+  );
   @GET("/v1/categories")
   Future<HttpResponse<CategoryResponseDto>>
   getCategories();

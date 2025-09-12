@@ -17,6 +17,7 @@ import 'package:flower_app/project_layers/presentaion_layer/notifications_list/c
 import 'package:flower_app/project_layers/presentaion_layer/notifications_list/views/notifications_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import '../../project_layers/presentation_layer/occasion/view/occasion_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../project_layers/presentaion_layer/best_seller/best_seller_screen.dart';
 import '../../project_layers/presentaion_layer/home/screens/product_details_screen.dart';
@@ -26,6 +27,8 @@ abstract class Routes {
   static Route generateRoute(RouteSettings settings) {
     final url = Uri.parse(settings.name ?? "/");
     switch (url.path) {
+      case AppRoutes.OccasionScreen:
+        return MaterialPageRoute(builder: (_) => OccasionScreen());
       case AppRoutes.forgetPasswordScreen:
         return MaterialPageRoute(
           builder: (context) => ForgetPasswordView(),
