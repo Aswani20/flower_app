@@ -67,7 +67,7 @@ class MyApp extends StatelessWidget {
                 AppRoutes.bestSeller: (context) =>
                     BestSellerScreen(),
                 AppRoutes.productDetailsScreen:
-                    (context) => ProductDetailsScreen(),
+                    (context) => ProductDetailsScreen( ),
               },
             );
           },

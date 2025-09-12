@@ -219,11 +219,11 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i680.GetAllNotificationRemoteDataSource>(),
       ),
     );
-    gh.factory<_i621.UpdateUserProfileUseCase>(
-      () => _i621.UpdateUserProfileUseCase(gh<_i583.ProfileRepo>()),
-    );
     gh.factory<_i797.UpdateUserPhotoUseCase>(
       () => _i797.UpdateUserPhotoUseCase(gh<_i583.ProfileRepo>()),
+    );
+    gh.factory<_i621.UpdateUserProfileUseCase>(
+      () => _i621.UpdateUserProfileUseCase(gh<_i583.ProfileRepo>()),
     );
     gh.factory<_i53.ProductRepo>(
       () => _i146.ProductRepoImpl(gh<_i27.ProductRemoteDataSource>()),
@@ -253,14 +253,14 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i123.SignUpUseCase>(
       () => _i123.SignUpUseCase(gh<_i948.SignUpRepo>()),
     );
+    gh.factory<_i990.BestSellerUseCase>(
+      () => _i990.BestSellerUseCase(homeRepo: gh<_i900.HomeRepo>()),
+    );
     gh.factory<_i858.CategoryUseCase>(
       () => _i858.CategoryUseCase(homeRepo: gh<_i900.HomeRepo>()),
     );
     gh.factory<_i7.OccasionUseCase>(
       () => _i7.OccasionUseCase(homeRepo: gh<_i900.HomeRepo>()),
-    );
-    gh.factory<_i990.BestSellerUseCase>(
-      () => _i990.BestSellerUseCase(homeRepo: gh<_i900.HomeRepo>()),
     );
     gh.factory<_i125.BestSellerViewModel>(
       () => _i125.BestSellerViewModel(gh<_i124.BestSellerUseCase>()),
@@ -271,14 +271,14 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i503.ChangePasswordUseCase>(
       () => _i503.ChangePasswordUseCase(gh<_i64.ChangPasswordRepo>()),
     );
-    gh.factory<_i649.VerifyResetCodeUseCase>(
-      () => _i649.VerifyResetCodeUseCase(gh<_i326.AuthRepo>()),
-    );
     gh.factory<_i18.ForgetPasswordUseCase>(
       () => _i18.ForgetPasswordUseCase(gh<_i326.AuthRepo>()),
     );
     gh.factory<_i194.ResetPasswordUseCase>(
       () => _i194.ResetPasswordUseCase(gh<_i326.AuthRepo>()),
+    );
+    gh.factory<_i649.VerifyResetCodeUseCase>(
+      () => _i649.VerifyResetCodeUseCase(gh<_i326.AuthRepo>()),
     );
     gh.factory<_i878.CategoryUseCase>(
       () => _i878.CategoryUseCase(gh<_i144.CategoryRepo>()),

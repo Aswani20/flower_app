@@ -293,7 +293,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get dontHaveAccount => 'ليس لديك حساب؟';
-
   @override
   String get login_as_guest => ' الدخول كزائر';
 

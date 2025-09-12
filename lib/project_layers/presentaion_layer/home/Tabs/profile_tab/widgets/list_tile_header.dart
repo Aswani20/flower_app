@@ -98,7 +98,8 @@ class ListTileHeader extends StatelessWidget {
                 .copyWith(color: AppColors.pink),
           ),
           title: Text(
-            context.l10n.localeName,
+            currentLang == "en" ? "Language" : "اللغة",
+
             style: Theme.of(context).textTheme.bodyMedium,
           ),
         ),

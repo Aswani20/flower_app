@@ -620,7 +620,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Photo updated successfully'**
   String get photo_updated_successfully;
-
   /// No description provided for @rememberMe.
   ///
   /// In en, this message translates to:
