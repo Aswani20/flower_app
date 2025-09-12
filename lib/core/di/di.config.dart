@@ -15,6 +15,8 @@ import 'package:injectable/injectable.dart' as _i526;
 import 'package:pretty_dio_logger/pretty_dio_logger.dart' as _i528;
 
 import '../../project_layers/api_layer/api_client/api_client.dart' as _i778;
+import '../../project_layers/api_layer/data_source/address_data_source_impl.dart'
+    as _i1063;
 import '../../project_layers/api_layer/data_source/auth_remote_data_source_impl.dart'
     as _i185;
 import '../../project_layers/api_layer/data_source/best_seller_data_source_impl.dart'
@@ -37,6 +39,8 @@ import '../../project_layers/api_layer/data_source/sign_up_remote_data_source_im
     as _i477;
 import '../../project_layers/api_layer/data_source/update_user_profile_data_source_impl.dart'
     as _i197;
+import '../../project_layers/data_layer/data_source/address_data_source.dart'
+    as _i29;
 import '../../project_layers/data_layer/data_source/auth_remote_data_source.dart'
     as _i956;
 import '../../project_layers/data_layer/data_source/best_seller_data_source.dart'
@@ -59,6 +63,8 @@ import '../../project_layers/data_layer/data_source/profile_repo_data_source.dar
     as _i464;
 import '../../project_layers/data_layer/data_source/sign_up_remote_data_source.dart'
     as _i772;
+import '../../project_layers/data_layer/repos_impl/address_repo_impl.dart'
+    as _i973;
 import '../../project_layers/data_layer/repos_impl/auth_repo_impl.dart'
     as _i253;
 import '../../project_layers/data_layer/repos_impl/best_seller_repo_impl.dart'
@@ -81,6 +87,7 @@ import '../../project_layers/data_layer/repos_impl/profile_repo_impl.dart'
     as _i463;
 import '../../project_layers/data_layer/repos_impl/sign_up_repo_impl.dart'
     as _i631;
+import '../../project_layers/domain_layer/repos/address_repo.dart' as _i1;
 import '../../project_layers/domain_layer/repos/auth_repo.dart' as _i326;
 import '../../project_layers/domain_layer/repos/best_seller_repo.dart' as _i408;
 import '../../project_layers/domain_layer/repos/category_repo.dart' as _i144;
@@ -95,6 +102,8 @@ import '../../project_layers/domain_layer/repos/login_repo.dart' as _i974;
 import '../../project_layers/domain_layer/repos/product_repo.dart' as _i53;
 import '../../project_layers/domain_layer/repos/profile_repo.dart' as _i583;
 import '../../project_layers/domain_layer/repos/sign_up_repo.dart' as _i948;
+import '../../project_layers/domain_layer/use_cases/add_address_use_case.dart'
+    as _i366;
 import '../../project_layers/domain_layer/use_cases/best_seller_use_case.dart'
     as _i124;
 import '../../project_layers/domain_layer/use_cases/category_use_case.dart'
@@ -103,6 +112,8 @@ import '../../project_layers/domain_layer/use_cases/change_password_use_case.dar
     as _i503;
 import '../../project_layers/domain_layer/use_cases/forget_password_use_case.dart'
     as _i18;
+import '../../project_layers/domain_layer/use_cases/get_address_use_case.dart'
+    as _i294;
 import '../../project_layers/domain_layer/use_cases/get_all_notification_use_case.dart'
     as _i982;
 import '../../project_layers/domain_layer/use_cases/get_logged_user_data_use_case.dart'
@@ -127,6 +138,10 @@ import '../../project_layers/domain_layer/use_cases/update_user_profile_use_case
     as _i621;
 import '../../project_layers/domain_layer/use_cases/verify_reset_code_use_case.dart'
     as _i649;
+import '../../project_layers/presentaion_layer/addresses/add_address/cubit/add_address_cubit.dart'
+    as _i860;
+import '../../project_layers/presentaion_layer/addresses/saved_addresses/cubit/saved_address_cubit.dart'
+    as _i122;
 import '../../project_layers/presentaion_layer/auth/forget_password/cubit/forget_password_view_model.dart'
     as _i469;
 import '../../project_layers/presentaion_layer/auth/sign_in/cubit/login_cubit.dart'
@@ -162,6 +177,7 @@ extension GetItInjectableX on _i174.GetIt {
       () => dioModule.provideDio(gh<_i528.PrettyDioLogger>()),
     );
     gh.singleton<_i778.ApiClient>(() => _i778.ApiClient(gh<_i361.Dio>()));
+
     gh.factory<_i1054.HomeRemoteDataSource>(
       () => _i329.HomeRemoteDataSourceImpl(gh<_i778.ApiClient>()),
     );
@@ -173,6 +189,12 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i680.GetAllNotificationRemoteDataSource>(
       () => _i118.GetAllNotificationRemoteDataSourceImpl(gh<_i778.ApiClient>()),
+    );
+    gh.factory<_i29.AddressDataSource>(
+      () => _i1063.AddAddressDataSourceImpl(gh<_i778.ApiClient>()),
+    );
+    gh.factory<_i1.AddressRepo>(
+      () => _i973.AddressRepoImpl(gh<_i29.AddressDataSource>()),
     );
     gh.factory<_i464.ProfileRepoDataSource>(
       () => _i197.ProfileRepoDataSourceImpl(gh<_i778.ApiClient>()),
@@ -195,6 +217,12 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i956.CategoryRemoteDataSource>(
       () => _i622.CategoryRemoteDataSourceImpl(gh<_i778.ApiClient>()),
     );
+    gh.factory<_i366.AddAddressUseCase>(
+      () => _i366.AddAddressUseCase(gh<_i1.AddressRepo>()),
+    );
+    gh.factory<_i294.GetAddressUseCase>(
+      () => _i294.GetAddressUseCase(gh<_i1.AddressRepo>()),
+    );
     gh.factory<_i408.BestSellerRepo>(
       () => _i673.BestSellerRepoImpl(
         bestSellerDataSource: gh<_i1012.BestSellerDataSource>(),
@@ -202,6 +230,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i956.AuthRemoteDataSource>(
       () => _i185.AuthRemoteDataSourceImpl(gh<_i778.ApiClient>()),
+    );
+    gh.factory<_i860.AddAddressCubit>(
+      () => _i860.AddAddressCubit(gh<_i366.AddAddressUseCase>()),
     );
     gh.factory<_i948.SignUpRepo>(
       () => _i631.SignUpRepoImpl(gh<_i772.SignUpRemoteDataSource>()),
@@ -239,6 +270,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i144.CategoryRepo>(
       () => _i425.CategoryRepoImpl(gh<_i956.CategoryRemoteDataSource>()),
+    );
+    gh.factory<_i122.SavedAddressCubit>(
+      () => _i122.SavedAddressCubit(gh<_i294.GetAddressUseCase>()),
     );
     gh.factory<_i124.BestSellerUseCase>(
       () => _i124.BestSellerUseCase(bestSellerRepo: gh<_i408.BestSellerRepo>()),

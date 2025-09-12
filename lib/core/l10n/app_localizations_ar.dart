@@ -231,6 +231,16 @@ class AppLocalizationsAr extends AppLocalizations {
   String get cart => 'عربة التسوق';
 
   @override
+
+  @override
+  String get descriptionAppBarBestSeller => 'ازدهر مع أفضل مبيعاتنا الرائعة';
+
+  @override
+  String get noProductsFound => 'لا يوجد منتحات';
+
+  @override
+  // TODO: implement addToCart
+  String get addToCart => "أضافة الى السلة";
   String get egp => 'جنيه مصري';
 
   @override
@@ -289,21 +299,55 @@ class AppLocalizationsAr extends AppLocalizations {
       'تم تحديث الصورة بنجاح';
 
   @override
-  String get dont_have_account => 'ليس لديك حساب؟';
+  String get rememberMe => 'تذكرني';
 
+  @override
+  String get dontHaveAccount => 'ليس لديك حساب؟';
   @override
   String get login_as_guest => ' الدخول كزائر';
 
   @override
-  String get are_you_sure_you_want_to_log_out =>
+  String get areYouSureYouWantToLogOut =>
       'هل أنت متأكد أنك تريد تسجيل الخروج؟';
 
   @override
   String get cancel => 'إلغاء';
 
   @override
-  String get confirm_log_out => 'تأكيد تسجيل الخروج';
+  String get confirmLogout => 'Confirm Logout';
 
   @override
-  String get remember_me => 'تذكرني';
+  String get address => 'العنوان';
+
+  @override
+  String get enter_your_address => 'ادخل العنوان';
+
+  @override
+  String get enter_the_phone_number => 'ادخل رقم الهاتف';
+
+  @override
+  String get enter_the_recipient_name =>
+      'ادخل اسم المستلم';
+
+  @override
+  String get receipient_name => 'اسم المستلم';
+
+  @override
+  String get city => 'المدينة';
+
+  @override
+  String get area => 'المنطقة';
+
+  @override
+  String get save_address => 'حفظ العنوان';
+
+  @override
+  String get add_new_address => 'إضافة عنوان جديد';
+
+  @override
+  String get please_choose => 'اختر';
+
+  @override
+  String get address_added_successfully =>
+      'تم إضافة العنوان بنجاح';
 }

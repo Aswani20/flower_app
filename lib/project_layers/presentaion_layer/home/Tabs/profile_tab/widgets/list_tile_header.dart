@@ -105,7 +105,8 @@ class ListTileHeader extends StatelessWidget {
         ),
         ListTile(
           onTap: () {
-            context.pushNamed(AppRoutes.chackoutView);
+            //chackoutView
+            context.pushNamed(AppRoutes.aboutUs);
           },
           trailing: Icon(
             Icons.arrow_forward_ios,

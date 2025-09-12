@@ -14,13 +14,18 @@ import 'package:flutter/widgets.dart';
 class $AssetsFilesGen {
   const $AssetsFilesGen();
 
+  /// File path: assets/files/flowery_about_us.json
+  String get floweryAboutUs =>
+      'assets/files/flowery_about_us.json';
   /// File path: assets/files/flowery_terms_and_conditions.json
   String get floweryTermsAndConditions =>
       'assets/files/flowery_terms_and_conditions.json';
 
   /// List of all assets
-  List<String> get values => [floweryTermsAndConditions];
-}
+  List<String> get values => [
+    floweryAboutUs,
+    floweryTermsAndConditions,
+  ];}
 
 class $AssetsIconsGen {
   const $AssetsIconsGen();
@@ -198,6 +203,10 @@ class $AssetsIconsGen {
     'assets/icons/profile_icon.png',
   );
 
+  /// File path: assets/icons/profile_icon.png
+  AssetGenImage get profileIcon =>
+      const AssetGenImage('assets/icons/profile_icon.png');
+
   /// File path: assets/icons/remove_icon.png
   AssetGenImage get removeIcon =>
       const AssetGenImage('assets/icons/remove_icon.png');
@@ -254,9 +263,11 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/visibility_off_icon.png
   AssetGenImage get visibilityOffIcon =>
+      const AssetGenImage('assets/icons/visibility_off_icon.png');
       const AssetGenImage(
         'assets/icons/visibility_off_icon.png',
       );
+
 
   /// List of all assets
   List<AssetGenImage> get values => [
@@ -315,12 +326,30 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/map.png
+  AssetGenImage get map =>
+      const AssetGenImage('assets/images/map.png');
+
   /// File path: assets/images/no_routes.png
   AssetGenImage get noRoutes =>
       const AssetGenImage('assets/images/no_routes.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [noRoutes];
+  List<AssetGenImage> get values => [map, noRoutes];
+}
+
+class $AssetsJsonGen {
+  const $AssetsJsonGen();
+
+  /// File path: assets/json/cities.json
+  String get cities => 'assets/json/cities.json';
+
+  /// File path: assets/json/governorates.json
+  String get governorates =>
+      'assets/json/governorates.json';
+
+  /// List of all assets
+  List<String> get values => [cities, governorates];
 }
 
 class $AssetsSvgGen {
@@ -336,8 +365,14 @@ class $AssetsSvgGen {
   String get circleFlower =>
       'assets/svg/circle_flower.svg';
 
+  /// File path: assets/svg/delete.svg
+  String get delete => 'assets/svg/delete.svg';
+
   /// File path: assets/svg/diamond.svg
   String get diamond => 'assets/svg/diamond.svg';
+
+  /// File path: assets/svg/edit.svg
+  String get edit => 'assets/svg/edit.svg';
 
   /// File path: assets/svg/gift-1.svg
   String get gift1 => 'assets/svg/gift-1.svg';
@@ -348,6 +383,9 @@ class $AssetsSvgGen {
   /// File path: assets/svg/location.svg
   String get location => 'assets/svg/location.svg';
 
+  /// File path: assets/svg/map.svg
+  String get map => 'assets/svg/map.svg';
+
   /// File path: assets/svg/tulip.svg
   String get tulip => 'assets/svg/tulip.svg';
 
@@ -356,10 +394,13 @@ class $AssetsSvgGen {
     camera,
     arrowDown,
     circleFlower,
+    delete,
     diamond,
+    edit,
     gift1,
     gift,
     location,
+    map,
     tulip,
   ];
 }
@@ -371,6 +412,7 @@ class Assets {
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images =
       $AssetsImagesGen();
+  static const $AssetsJsonGen json = $AssetsJsonGen();
   static const $AssetsSvgGen svg = $AssetsSvgGen();
 }
 

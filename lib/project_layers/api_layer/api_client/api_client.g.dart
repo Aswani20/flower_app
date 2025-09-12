@@ -20,11 +20,13 @@ class _ApiClient implements ApiClient {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<HttpResponse<CategoryResponseDto>> getCategories() async {
+  Future<OccasionsResponse> getOccasions() async {
+
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
+
     final _options = _setStreamType<HttpResponse<CategoryResponseDto>>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
@@ -120,6 +122,7 @@ class _ApiClient implements ApiClient {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+
     late OccasionResponseDto _value;
     try {
       _value = OccasionResponseDto.fromJson(_result.data!);
@@ -308,6 +311,7 @@ class _ApiClient implements ApiClient {
   }
 
   @override
+
   Future<ProductsResponse> getProductsById(Map<String, dynamic> filters) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -334,6 +338,7 @@ class _ApiClient implements ApiClient {
     }
     return _value;
   }
+
 
   @override
   Future<GetLoggedUserDataResponseDto> getLoggedUserData() async {
@@ -483,6 +488,61 @@ class _ApiClient implements ApiClient {
     late GetAllNotificationResponseDto _value;
     try {
       _value = GetAllNotificationResponseDto.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<AddressResponseDto> addAddresses(AddAddressRequestDto request) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(request.toJson());
+    final _options = _setStreamType<AddressResponseDto>(
+      Options(method: 'PATCH', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            '/v1/addresses',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late AddressResponseDto _value;
+    try {
+      _value = AddressResponseDto.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<AddressResponseDto> getAllAddresses() async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<AddressResponseDto>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            '/v1/addresses',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late AddressResponseDto _value;
+    try {
+      _value = AddressResponseDto.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

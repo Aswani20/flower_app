@@ -2,10 +2,13 @@ import 'package:flower_app/core/di/di.dart';
 import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/gen/assets.gen.dart';
+import 'package:flower_app/project_layers/presentaion_layer/addresses/add_address/add_address.dart';
+import 'package:flower_app/project_layers/presentaion_layer/addresses/saved_addresses/saved_addresses.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/forget_password/forget_password_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/sign_in/login_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/sign_up/sign_up_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/checkout/views/chackout_view.dart';
+import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/about_us_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/edit_profile.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/reset_password.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/terms_and_conditions_view.dart';
@@ -14,6 +17,7 @@ import 'package:flower_app/project_layers/presentaion_layer/notifications_list/c
 import 'package:flower_app/project_layers/presentaion_layer/notifications_list/views/notifications_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import '../../project_layers/presentation_layer/occasion/view/occasion_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../project_layers/presentaion_layer/best_seller/best_seller_screen.dart';
 import '../../project_layers/presentaion_layer/home/screens/product_details_screen.dart';
@@ -23,6 +27,8 @@ abstract class Routes {
   static Route generateRoute(RouteSettings settings) {
     final url = Uri.parse(settings.name ?? "/");
     switch (url.path) {
+      case AppRoutes.OccasionScreen:
+        return MaterialPageRoute(builder: (_) => OccasionScreen());
       case AppRoutes.forgetPasswordScreen:
         return MaterialPageRoute(
           builder: (context) => ForgetPasswordView(),
@@ -67,6 +73,10 @@ abstract class Routes {
         return MaterialPageRoute(
           builder: (context) => ChackoutView(),
         );
+      case AppRoutes.aboutUs:
+        return MaterialPageRoute(
+          builder: (context) => AboutPage(),
+        );
       case AppRoutes.bestSeller:
         return MaterialPageRoute(
           builder: (context) => BestSellerScreen(),
@@ -74,6 +84,14 @@ abstract class Routes {
       case AppRoutes.productDetailsScreen:
         return MaterialPageRoute(
           builder: (_) => ProductDetailsScreen(),
+        );
+      case AppRoutes.addAddress:
+        return MaterialPageRoute(
+          builder: (_) => AddAddressScreen(),
+        );
+              case AppRoutes.savedAddresses:
+        return MaterialPageRoute(
+          builder: (_) => SavedAddressesScreen(),
         );
       default:
         return MaterialPageRoute(

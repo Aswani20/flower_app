@@ -126,31 +126,11 @@ class ProfileTab extends StatelessWidget {
                                     BorderRadius.circular(
                                       100.r,
                                     ),
-                                child: CachedNetworkImage(
-                                  imageUrl:
-                                      state.user.photo!,
+                                child: Image.network(
+                                  state.user.photo!,
                                   fit: BoxFit.fill,
                                   width: 100.w,
                                   height: 100.h,
-
-                                  placeholder:
-                                      (
-                                        context,
-                                        url,
-                                      ) => const Center(
-                                        child:
-                                            CircularProgressIndicator(),
-                                      ),
-                                  errorWidget:
-                                      (
-                                        context,
-                                        url,
-                                        error,
-                                      ) => const Center(
-                                        child: Icon(
-                                          Icons.error,
-                                        ),
-                                      ),
                                 ),
                               ),
                               SizedBox(height: 6.h),
@@ -170,13 +150,27 @@ class ProfileTab extends StatelessWidget {
                                             .titleMedium,
                                   ),
                                   IconButton(
-                                    onPressed: () {
-                                      context.pushNamed(
-                                        AppRoutes
-                                            .editProfile,
-                                        arguments:
-                                            state.user,
-                                      );
+                                    onPressed: () async {
+                                      bool?
+                                      result = await context
+                                          .pushNamed(
+                                            AppRoutes
+                                                .editProfile,
+                                            arguments:
+                                                state
+                                                    .user,
+                                          );
+                                      if (context
+                                          .mounted) {
+                                        if (result ==
+                                            true) {
+                                          context
+                                              .read<
+                                                ProfileCubit
+                                              >()
+                                              .getLoggedUserData();
+                                        }
+                                      }
                                     },
                                     icon: Icon(
                                       Icons.edit,
