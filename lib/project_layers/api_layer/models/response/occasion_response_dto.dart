@@ -2,13 +2,11 @@ import 'package:flower_app/project_layers/api_layer/models/response/category_res
 import 'package:flower_app/project_layers/domain_layer/entities/occasion_response_entity.dart';
 
 class OccasionResponseDto extends OccasionResponseEntity {
-  OccasionResponseDto({super.message, super.metadata, super.occasions});
+  OccasionResponseDto({super.message, super.occasions});
 
   OccasionResponseDto.fromJson(dynamic json) {
     message = json['message'];
-    metadata = json['metadata'] != null
-        ? MetadataDto.fromJson(json['metadata'])
-        : null;
+
     if (json['occasions'] != null) {
       occasions = [];
       json['occasions'].forEach((v) {
@@ -19,11 +17,11 @@ class OccasionResponseDto extends OccasionResponseEntity {
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     map['message'] = message;
-    if (metadata != null) {
-      map['metadata'] = (metadata as MetadataDto).toJson();
-    }
+
     if (occasions != null) {
-      map['occasions'] = occasions?.map((v) => (v as OccasionDto).toJson()).toList();
+      map['occasions'] = occasions
+          ?.map((v) => (v as OccasionDto).toJson())
+          .toList();
     }
     return map;
   }

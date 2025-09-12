@@ -2,10 +2,11 @@ import 'package:dio/dio.dart';
 import 'package:flower_app/core/api_result/api_result.dart';
 import 'package:flower_app/project_layers/api_layer/api_client/api_client.dart';
 import 'package:flower_app/project_layers/api_layer/models/products_response.dart';
-import 'package:flower_app/project_layers/data_layer/data_source/product_remote_data_source.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/product_entity.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/product_filter.dart';
 import 'package:injectable/injectable.dart';
+
+import '../../data_layer/data_source/product_remote_data_source.dart';
 
 @Injectable(as: ProductRemoteDataSource)
 class ProductRemoteDataSourceImpl
@@ -31,8 +32,11 @@ class ProductRemoteDataSourceImpl
       if (filter.filter != null) {
         queryParameters['sort'] = filter.filter;
       }
-      ProductsResponse productsResponse = await apiClient
-          .getProductsById(queryParameters);
+      ProductsResponse productsResponse =
+          await apiClient.getProductsByIdF(
+                queryParameters,
+              )
+              as ProductsResponse;
       if (filter.occasionId != null ||
           filter.categoryId != null ||
           filter.filter != null) {

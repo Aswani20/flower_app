@@ -17,6 +17,7 @@ class $AssetsFilesGen {
   /// File path: assets/files/flowery_about_us.json
   String get floweryAboutUs =>
       'assets/files/flowery_about_us.json';
+
   /// File path: assets/files/flowery_terms_and_conditions.json
   String get floweryTermsAndConditions =>
       'assets/files/flowery_terms_and_conditions.json';
@@ -25,7 +26,8 @@ class $AssetsFilesGen {
   List<String> get values => [
     floweryAboutUs,
     floweryTermsAndConditions,
-  ];}
+  ];
+}
 
 class $AssetsIconsGen {
   const $AssetsIconsGen();
@@ -203,10 +205,6 @@ class $AssetsIconsGen {
     'assets/icons/profile_icon.png',
   );
 
-  /// File path: assets/icons/profile_icon.png
-  AssetGenImage get profileIcon =>
-      const AssetGenImage('assets/icons/profile_icon.png');
-
   /// File path: assets/icons/remove_icon.png
   AssetGenImage get removeIcon =>
       const AssetGenImage('assets/icons/remove_icon.png');
@@ -263,11 +261,9 @@ class $AssetsIconsGen {
 
   /// File path: assets/icons/visibility_off_icon.png
   AssetGenImage get visibilityOffIcon =>
-      const AssetGenImage('assets/icons/visibility_off_icon.png');
       const AssetGenImage(
         'assets/icons/visibility_off_icon.png',
       );
-
 
   /// List of all assets
   List<AssetGenImage> get values => [

@@ -46,7 +46,7 @@ void main() {
           'category': '1',
         };
         when(
-          mockApiClient.getProductsById(categoryId),
+          mockApiClient.getProductsByIdf(categoryId),
         ).thenAnswer((_) async => mockResponse);
 
         // act
@@ -69,7 +69,7 @@ void main() {
         expect(products[0].title, 'Red Rose');
         expect(products[1].title, 'White Tulip');
         verify(
-          mockApiClient.getProductsById(categoryId),
+          mockApiClient.getProductsByIdf(categoryId),
         ).called(1);
       },
     );
@@ -88,7 +88,7 @@ void main() {
           ],
         );
         when(
-          mockApiClient.getProductsById(null),
+          mockApiClient.getProductsByIdf(null),
         ).thenAnswer((_) async => mockResponse);
 
         // act
@@ -110,7 +110,7 @@ void main() {
         expect(products.length, 1);
         expect(products[0].title, 'Red Rose');
         verify(
-          mockApiClient.getProductsById(null),
+          mockApiClient.getProductsByIdf(null),
         ).called(1);
       },
     );
@@ -133,7 +133,7 @@ void main() {
         };
 
         when(
-          mockApiClient.getProductsById(categoryId),
+          mockApiClient.getProductsByIdf(categoryId),
         ).thenThrow(dioException);
 
         // act
@@ -150,7 +150,7 @@ void main() {
             result as ApiErrorResult<List<ProductEntity>>;
         expect(error.errorMessage, mockErrorMessage);
         verify(
-          mockApiClient.getProductsById(categoryId),
+          mockApiClient.getProductsByIdf(categoryId),
         ).called(1);
       },
     );
@@ -167,7 +167,7 @@ void main() {
           'category': '1',
         };
         when(
-          mockApiClient.getProductsById(categoryId),
+          mockApiClient.getProductsByIdf(categoryId),
         ).thenThrow(dioException);
 
         // act
@@ -184,7 +184,7 @@ void main() {
             result as ApiErrorResult<List<ProductEntity>>;
         expect(error.errorMessage, 'Network error');
         verify(
-          mockApiClient.getProductsById(categoryId),
+          mockApiClient.getProductsByIdf(categoryId),
         ).called(1);
       },
     );

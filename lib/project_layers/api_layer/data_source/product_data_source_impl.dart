@@ -14,24 +14,35 @@ class ProductDataSourceImpl implements ProductDataSource {
   ProductDataSourceImpl(this.apiClient);
 
   @override
-  Future<ApiResult<List<ProductEntity>>> getProducts(String? occasionId) async {
+  Future<ApiResult<List<ProductEntity>>> getProducts(
+    String? occasionId,
+  ) async {
     try {
-      ProductsResponse productsResponse = await apiClient.getProductsById(
-        occasionId,
-      );
+      ProductsResponse productsResponse = await apiClient
+          .getProductsById(occasionId);
       return ApiSuccessResult(
-        productsResponse.products!.map((e) => e.toProductEntity()).toList(),
+        productsResponse.products!
+            .map((e) => e.toProductEntity())
+            .toList(),
       );
     } catch (e) {
       if (e is DioException) {
         final responseData = e.response?.data;
-        if (responseData != null && responseData is Map<String, dynamic>) {
-          final message = responseData["message"] ?? "Unknown error";
-          return ApiErrorResult<List<ProductEntity>>(message.toString());
+        if (responseData != null &&
+            responseData is Map<String, dynamic>) {
+          final message =
+              responseData["message"] ?? "Unknown error";
+          return ApiErrorResult<List<ProductEntity>>(
+            message.toString(),
+          );
         }
-        return ApiErrorResult<List<ProductEntity>>(e.message ?? e.toString());
+        return ApiErrorResult<List<ProductEntity>>(
+          e.message ?? e.toString(),
+        );
       }
-      return ApiErrorResult<List<ProductEntity>>(e.toString());
+      return ApiErrorResult<List<ProductEntity>>(
+        e.toString(),
+      );
     }
   }
 }

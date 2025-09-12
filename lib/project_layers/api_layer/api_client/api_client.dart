@@ -7,7 +7,8 @@ import 'package:retrofit/retrofit.dart';
 import '../../data_layer/model/products_response.dart';
 import 'package:flower_app/project_layers/api_layer/models/categories_response.dart';
 import 'package:flower_app/project_layers/api_layer/models/get_all_notification_response_dto.dart';
-import 'package:flower_app/project_layers/api_layer/models/products_response.dart';
+import 'package:flower_app/project_layers/api_layer/models/products_response.dart'
+    hide ProductsResponse;
 import 'package:flower_app/project_layers/api_layer/models/request/add_address_request_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/change_password_request_body.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/forget_password_request_dto.dart';
@@ -62,7 +63,7 @@ abstract class ApiClient {
 
   @GET("/v1/occasions")
   Future<HttpResponse<OccasionResponseDto>>
-  getOccasions();
+  getOccasionss();
 
   @POST('v1/auth/signup')
   Future<SignUpResponse> signUp(
@@ -102,7 +103,7 @@ abstract class ApiClient {
   Future<CategoriesResponse> getAllCategories();
 
   @GET('/v1/products')
-  Future<ProductsResponse> getProductsById(
+  Future<ProductsResponse> getProductsByIdF(
     @Queries() Map<String, dynamic> filters,
   );
 
@@ -136,6 +137,5 @@ abstract class ApiClient {
   );
 
   @GET('/v1/addresses')
-  Future<AddressResponseDto>
-  getAllAddresses();
+  Future<AddressResponseDto> getAllAddresses();
 }

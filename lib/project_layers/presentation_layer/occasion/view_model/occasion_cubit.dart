@@ -8,19 +8,18 @@ import '../../../domain_layer/usecase/occasion_usecase.dart';
 import '../../../domain_layer/usecase/product_usecase.dart';
 import 'occasion_state.dart';
 
-
 @injectable
 class OccasionCubit extends Cubit<OccasionState> {
   OccasionUseCase occasionUseCase;
   ProductUseCase productUseCase;
   OccasionCubit(this.occasionUseCase, this.productUseCase)
-      : super(OccasionInitial());
+    : super(OccasionInitial());
 
   void getOccasions() async {
     emit(OccasionLoading());
 
     ApiResult<List<OccasionEntity>> result =
-    await occasionUseCase.call();
+        await occasionUseCase.call();
 
     switch (result) {
       case ApiSuccessResult<List<OccasionEntity>>():
@@ -30,20 +29,20 @@ class OccasionCubit extends Cubit<OccasionState> {
           getProducts(result.data.first.id);
         }
       case ApiErrorResult<List<OccasionEntity>>():
-        emit(OccasionError(message: result.error));
+        emit(OccasionError(message: result.errorMessage));
     }
   }
 
   Future<void> getProducts(String? categoryId) async {
     emit(ProductLoading());
     ApiResult<List<ProductEntity>> result =
-    await productUseCase.call(categoryId);
+        await productUseCase.call(categoryId);
     switch (result) {
       case ApiSuccessResult<List<ProductEntity>>():
         emit(ProductLoaded(products: result.data));
 
       case ApiErrorResult<List<ProductEntity>>():
-        emit(ProductError(message: result.error));
+        emit(ProductError(message: result.errorMessage));
     }
   }
 }

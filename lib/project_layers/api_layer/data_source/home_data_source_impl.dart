@@ -63,7 +63,7 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
   @override
   Future<Either<OccasionResponseEntity, Failures>> getOccasions() async {
     try {
-      var response = await _apiClient.getOccasions();
+      var response = await _apiClient.getOccasionss();
       var statusCode = response.response.statusCode;
       if (statusCode! >= 200 && statusCode < 300) {
         return Left(response.data);
