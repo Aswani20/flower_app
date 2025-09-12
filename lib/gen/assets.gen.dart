@@ -17,7 +17,6 @@ class $AssetsFilesGen {
   /// File path: assets/files/flowery_about_us.json
   String get floweryAboutUs =>
       'assets/files/flowery_about_us.json';
-
   /// File path: assets/files/flowery_terms_and_conditions.json
   String get floweryTermsAndConditions =>
       'assets/files/flowery_terms_and_conditions.json';
@@ -26,8 +25,7 @@ class $AssetsFilesGen {
   List<String> get values => [
     floweryAboutUs,
     floweryTermsAndConditions,
-  ];
-}
+  ];}
 
 class $AssetsIconsGen {
   const $AssetsIconsGen();

@@ -291,7 +291,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get dontHaveAccount => 'Don\'t have an account?';
-
   @override
   String get login_as_guest => 'Login as Guest';
 
