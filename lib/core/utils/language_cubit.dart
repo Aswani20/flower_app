@@ -4,7 +4,7 @@ import '../di/modules/shared_preferences_module.dart';
 import '../keys/shared_key.dart';
 
 class LocaleCubit extends Cubit<Locale> {
-  LocaleCubit() : super(const Locale("ar")) {
+  LocaleCubit() : super(const Locale("en")) {
     _loadSavedLang();
   }
 

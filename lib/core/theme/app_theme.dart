@@ -37,6 +37,7 @@ abstract class AppTheme {
       ),
 
       inputDecorationTheme: InputDecorationTheme(
+        
         fillColor: AppColors.white,
         filled: true,
         border: OutlineInputBorder(
@@ -70,6 +71,7 @@ abstract class AppTheme {
             width: 1,
           ),
         ),
+        
       ),
 
       filledButtonTheme: FilledButtonThemeData(

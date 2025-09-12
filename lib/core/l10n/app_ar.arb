@@ -77,4 +77,17 @@
   "login_as_guest": " الدخول كزائر",
   "areYouSureYouWantToLogOut": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
     "cancel": "إلغاء",
-    "confirmLogOut" : "تأكيد تسجيل الخروج"}
+    "confirmLogOut" : "تأكيد تسجيل الخروج" ,
+  
+      "address" : "العنوان",
+        "enter_your_address" : "ادخل العنوان",
+  "enter_the_phone_number" : "ادخل رقم الهاتف",
+  "enter_the_recipient_name" : "ادخل اسم المستلم",
+  "receipient_name" : "اسم المستلم",
+  "city" : "المدينة",
+  "area" : "المنطقة" ,
+  "save_address" : "حفظ العنوان" ,
+  "add_new_address" : "إضافة عنوان جديد",
+  "please_choose" : "اختر" ,
+  "address_added_successfully" : "تم إضافة العنوان بنجاح"
+  }

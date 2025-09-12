@@ -655,6 +655,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Confirm Logout'**
   String get confirmLogout;
+
+  /// No description provided for @address.
+  ///
+  /// In en, this message translates to:
+  /// **'Address'**
+  String get address;
+
+  /// No description provided for @enter_your_address.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter The address'**
+  String get enter_your_address;
+
+  /// No description provided for @enter_the_phone_number.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the phone number'**
+  String get enter_the_phone_number;
+
+  /// No description provided for @enter_the_recipient_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the recipient name'**
+  String get enter_the_recipient_name;
+
+  /// No description provided for @receipient_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Recipient Name'**
+  String get receipient_name;
+
+  /// No description provided for @city.
+  ///
+  /// In en, this message translates to:
+  /// **'City'**
+  String get city;
+
+  /// No description provided for @area.
+  ///
+  /// In en, this message translates to:
+  /// **'Area'**
+  String get area;
+
+  /// No description provided for @save_address.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Address'**
+  String get save_address;
+
+  /// No description provided for @add_new_address.
+  ///
+  /// In en, this message translates to:
+  /// **'Add New Address'**
+  String get add_new_address;
+
+  /// No description provided for @please_choose.
+  ///
+  /// In en, this message translates to:
+  /// **'choose'**
+  String get please_choose;
+
+  /// No description provided for @address_added_successfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Address added successfully'**
+  String get address_added_successfully;
 }
 
 class _AppLocalizationsDelegate

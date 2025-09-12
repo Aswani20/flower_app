@@ -2,6 +2,8 @@ import 'package:flower_app/core/di/di.dart';
 import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/gen/assets.gen.dart';
+import 'package:flower_app/project_layers/presentaion_layer/addresses/add_address/add_address.dart';
+import 'package:flower_app/project_layers/presentaion_layer/addresses/saved_addresses/saved_addresses.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/forget_password/forget_password_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/sign_in/login_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/sign_up/sign_up_view.dart';
@@ -79,6 +81,14 @@ abstract class Routes {
       case AppRoutes.productDetailsScreen:
         return MaterialPageRoute(
           builder: (_) => ProductDetailsScreen(),
+        );
+      case AppRoutes.addAddress:
+        return MaterialPageRoute(
+          builder: (_) => AddAddressScreen(),
+        );
+              case AppRoutes.savedAddresses:
+        return MaterialPageRoute(
+          builder: (_) => SavedAddressesScreen(),
         );
       default:
         return MaterialPageRoute(

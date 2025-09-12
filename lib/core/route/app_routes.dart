@@ -21,4 +21,7 @@ abstract class AppRoutes {
 
   static const String chackoutView = "/chackout_view";
   static const String aboutUs = "/about_us";
+  static const String addAddress = "/add_address";
+  static const String savedAddresses = "/saved_addresses";
+
 }

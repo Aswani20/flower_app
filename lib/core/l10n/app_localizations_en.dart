@@ -303,4 +303,40 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get confirmLogout => 'Confirm Logout';
+
+  @override
+  String get address => 'Address';
+
+  @override
+  String get enter_your_address => 'Enter The address';
+
+  @override
+  String get enter_the_phone_number =>
+      'Enter the phone number';
+
+  @override
+  String get enter_the_recipient_name =>
+      'Enter the recipient name';
+
+  @override
+  String get receipient_name => 'Recipient Name';
+
+  @override
+  String get city => 'City';
+
+  @override
+  String get area => 'Area';
+
+  @override
+  String get save_address => 'Save Address';
+
+  @override
+  String get add_new_address => 'Add New Address';
+
+  @override
+  String get please_choose => 'choose';
+
+  @override
+  String get address_added_successfully =>
+      'Address added successfully';
 }

@@ -4,6 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:flower_app/project_layers/api_layer/models/categories_response.dart';
 import 'package:flower_app/project_layers/api_layer/models/get_all_notification_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/products_response.dart';
+import 'package:flower_app/project_layers/api_layer/models/request/add_address_request_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/change_password_request_body.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/forget_password_request_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/login_request.dart';
@@ -11,6 +12,7 @@ import 'package:flower_app/project_layers/api_layer/models/request/reset_passwor
 import 'package:flower_app/project_layers/api_layer/models/request/sign_up_request.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/update_profile_request_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/verify_reset_code_request_dto.dart';
+import 'package:flower_app/project_layers/api_layer/models/response/address_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/best_seller_response.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/best_seller_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/category_response_dto.dart';
@@ -112,7 +114,17 @@ abstract class ApiClient {
   Future<UpdatePhotoResponseDto> changePhoto(
     @Part(name: "photo") File photo,
   );
+
   @GET('/v1/notifications')
   Future<GetAllNotificationResponseDto>
   getNotifications();
+
+  @PATCH('/v1/addresses')
+  Future<AddressResponseDto> addAddresses(
+    @Body() AddAddressRequestDto request,
+  );
+
+  @GET('/v1/addresses')
+  Future<AddressResponseDto>
+  getAllAddresses();
 }
