@@ -513,6 +513,30 @@ abstract class AppLocalizations {
   /// **'Cart'**
   String get cart;
 
+  /// No description provided for @occasion.
+  ///
+  /// In en, this message translates to:
+  /// **'Occasion'**
+  String get occasion;
+
+  /// No description provided for @descriptionAppBarBestSeller.
+  ///
+  /// In en, this message translates to:
+  /// **'Bloom with our exquisite best sellers'**
+  String get descriptionAppBarBestSeller;
+
+  /// No description provided for @noProductsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No Products Found'**
+  String get noProductsFound;
+
+  /// No description provided for @addToCart.
+  ///
+  /// In en, this message translates to:
+  /// **'Add To Cart'**
+  String get addToCart;
+
   /// No description provided for @egp.
   ///
   /// In en, this message translates to:
@@ -603,25 +627,6 @@ abstract class AppLocalizations {
   /// **'Best Seller'**
   String get best_seller;
 
-  /// No description provided for @occasion.
-  ///
-  /// In en, this message translates to:
-  /// **'Occasion'**
-  String get occasion;
-
-  /// No description provided for @descriptionAppBarBestSeller.
-  ///
-  /// In en, this message translates to:
-  /// **'Bloom with our exquisite best sellers'**
-  String get descriptionAppBarBestSeller;
-
-  /// No description provided for @noProductsFound.
-  ///
-  /// In en, this message translates to:
-  /// **'No Products Found'**
-  String get noProductsFound;
-
-  String get addToCart;
   /// No description provided for @profile_updated_successfully.
   ///
   /// In en, this message translates to:
@@ -633,6 +638,7 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Photo updated successfully'**
   String get photo_updated_successfully;
+
   /// No description provided for @rememberMe.
   ///
   /// In en, this message translates to:

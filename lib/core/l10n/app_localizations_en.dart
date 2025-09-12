@@ -228,7 +228,9 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get cart => 'Cart';
 
-  
+  @override
+  String get occasion => 'Occasion';
+
   @override
   String get descriptionAppBarBestSeller =>
       'Bloom with our exquisite best sellers';
@@ -237,8 +239,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get noProductsFound => 'No Products Found';
 
   @override
-  // TODO: implement addToCart
-  String get addToCart => "Add To Cart";
+  String get addToCart => 'Add To Cart';
+
+  @override
   String get egp => 'EGP';
 
   @override
@@ -286,9 +289,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get best_seller => 'Best Seller';
 
   @override
-  String get occasion => 'Occasion';
-
-  @override
   String get profile_updated_successfully =>
       'Profile updated successfully';
 
@@ -301,6 +301,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get dontHaveAccount => 'Don\'t have an account?';
+
   @override
   String get login_as_guest => 'Login as Guest';
 

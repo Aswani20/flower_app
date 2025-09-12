@@ -231,16 +231,19 @@ class AppLocalizationsAr extends AppLocalizations {
   String get cart => 'عربة التسوق';
 
   @override
+  String get occasion => 'تخفيضات';
 
   @override
-  String get descriptionAppBarBestSeller => 'ازدهر مع أفضل مبيعاتنا الرائعة';
+  String get descriptionAppBarBestSeller =>
+      'ازدهر مع أفضل مبيعاتنا الرائعة';
 
   @override
   String get noProductsFound => 'لا يوجد منتحات';
 
   @override
-  // TODO: implement addToCart
-  String get addToCart => "أضافة الى السلة";
+  String get addToCart => 'أضافة الى السلة';
+
+  @override
   String get egp => 'جنيه مصري';
 
   @override
@@ -288,9 +291,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get best_seller => 'الأكثر مبيعًا';
 
   @override
-  String get occasion => 'تخفيضات';
-
-  @override
   String get profile_updated_successfully =>
       'تم تحديث الملف الشخصي بنجاح';
 
@@ -303,6 +303,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get dontHaveAccount => 'ليس لديك حساب؟';
+
   @override
   String get login_as_guest => ' الدخول كزائر';
 

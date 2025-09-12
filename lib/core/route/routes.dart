@@ -17,6 +17,8 @@ import 'package:flower_app/project_layers/presentaion_layer/notifications_list/c
 import 'package:flower_app/project_layers/presentaion_layer/notifications_list/views/notifications_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import '../../project_layers/presentaion_layer/addresses/saved_addresses/saved_addresses.dart';
+import '../../project_layers/presentaion_layer/home/Tabs/category_tab/views/category_tab.dart';
 import '../../project_layers/presentation_layer/occasion/view/occasion_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../project_layers/presentaion_layer/best_seller/best_seller_screen.dart';
@@ -28,7 +30,9 @@ abstract class Routes {
     final url = Uri.parse(settings.name ?? "/");
     switch (url.path) {
       case AppRoutes.OccasionScreen:
-        return MaterialPageRoute(builder: (_) => OccasionScreen());
+        return MaterialPageRoute(
+          builder: (_) => OccasionScreen(),
+        );
       case AppRoutes.forgetPasswordScreen:
         return MaterialPageRoute(
           builder: (context) => ForgetPasswordView(),
@@ -89,9 +93,13 @@ abstract class Routes {
         return MaterialPageRoute(
           builder: (_) => AddAddressScreen(),
         );
-              case AppRoutes.savedAddresses:
+      case AppRoutes.savedAddresses:
         return MaterialPageRoute(
           builder: (_) => SavedAddressesScreen(),
+        );
+      case AppRoutes.CategoryTab:
+        return MaterialPageRoute(
+          builder: (_) => CategoryTab(),
         );
       default:
         return MaterialPageRoute(

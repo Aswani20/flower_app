@@ -25,5 +25,6 @@ abstract class AppRoutes {
   static const String aboutUs = "/about_us";
   static const String addAddress = "/add_address";
   static const String savedAddresses = "/saved_addresses";
+  static const String CategoryTab = "/Category_tab";
 
 }
