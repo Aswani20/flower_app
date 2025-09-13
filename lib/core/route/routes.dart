@@ -13,6 +13,8 @@ import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_ta
 import 'package:flower_app/project_layers/presentaion_layer/home/home_screen.dart';
 import 'package:flower_app/project_layers/presentaion_layer/notifications_list/cubit/notifications_list_cubit.dart';
 import 'package:flower_app/project_layers/presentaion_layer/notifications_list/views/notifications_list_view.dart';
+import 'package:flower_app/project_layers/presentaion_layer/search/cubit/search_cubit.dart';
+import 'package:flower_app/project_layers/presentaion_layer/search/views/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -71,6 +73,13 @@ abstract class Routes {
       case AppRoutes.aboutUs:
         return MaterialPageRoute(
           builder: (context) => AboutPage(),
+        );
+      case AppRoutes.searchView:
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider(
+            create: (context) => getIt<SearchCubit>(),
+            child: SearchScreen(),
+          ),
         );
       case AppRoutes.bestSeller:
         return MaterialPageRoute(

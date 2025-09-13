@@ -91,6 +91,7 @@ abstract class ApiClient {
   @GET('/v1/products')
   Future<ProductsResponse> getProductsById(
     @Queries() Map<String, dynamic> filters,
+    @Query("keyword") String? search,
   );
 
   @GET('v1/auth/profile-data')

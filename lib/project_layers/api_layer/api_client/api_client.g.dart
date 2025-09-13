@@ -308,10 +308,14 @@ class _ApiClient implements ApiClient {
   }
 
   @override
-  Future<ProductsResponse> getProductsById(Map<String, dynamic> filters) async {
+  Future<ProductsResponse> getProductsById(
+    Map<String, dynamic> filters,
+    String? search,
+  ) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'keyword': search};
     queryParameters.addAll(filters);
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<ProductsResponse>(

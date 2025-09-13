@@ -49,6 +49,36 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutUs => 'About Us';
 
   @override
+  String get searchForYourFavoriteProducts =>
+      'Search for your favorite products';
+
+  @override
+  String get searchInProduct => 'Search in product';
+
+  @override
+  String get searchHint =>
+      'Type in the search bar above to start searching for products';
+
+  @override
+  String get searching => 'Searching...';
+
+  @override
+  String get resultFor => 'Result For';
+
+  @override
+  String get noResultFound => 'No Result Found For';
+
+  @override
+  String get wasFound => 'Was Found';
+
+  @override
+  String get trySearchWithDeffrentKeys =>
+      'try search with deferent word';
+
+  @override
+  String get search_error => 'Search Error';
+
+  @override
   String get firstName => 'First Name';
 
   @override
