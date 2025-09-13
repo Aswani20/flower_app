@@ -7,6 +7,8 @@ abstract class AppRoutes {
       "/reset_password_view";
   static const String otpScreen = "/otp_view";
   static const String homeScreen = "/home_view";
+
+  static const String OccasionScreen = "/occasion";
   static const String bestSeller = "/best_seller_view";
   static const String productDetailsScreen =
       "/product_details_screen";
@@ -21,4 +23,9 @@ abstract class AppRoutes {
 
   static const String chackoutView = "/chackout_view";
   static const String OrdersPage = "/Orders_page";
+  static const String aboutUs = "/about_us";
+  static const String addAddress = "/add_address";
+  static const String savedAddresses = "/saved_addresses";
+  static const String CategoryTab = "/Category_tab";
+
 }

@@ -19,7 +19,7 @@ class LoginCubit extends Cubit<LoginState> {
     : super(LoginInitial());
 
   TextEditingController emailController =
-      TextEditingController(text: "aly.route@gmail.com");
+      TextEditingController(text: "adekheel@gmail.com");
   TextEditingController passwordController =
       TextEditingController(text: "Elevate@123");
   GlobalKey<FormState> formKey = GlobalKey<FormState>();

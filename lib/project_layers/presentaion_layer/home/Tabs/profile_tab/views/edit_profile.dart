@@ -89,17 +89,15 @@ class EditProfileView extends StatelessWidget {
                   ),
                 ),
               );
-              Navigator.pushReplacementNamed(
-                context,
-                AppRoutes.loginScreen,
-              );
+                            Navigator.of(context).pop(true);
+
             } else if (state is UpdateUserProfileError) {
-              Navigator.of(context).pop();
+              Navigator.of(context).pop(false);
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text(state.message)),
               );
             } else if (state is PhotoChangedError) {
-              Navigator.of(context).pop();
+              Navigator.of(context).pop(false);
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text(state.message)),
               );

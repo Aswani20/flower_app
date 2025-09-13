@@ -160,7 +160,10 @@ class _HomeTabBody extends StatelessWidget {
             context,
           )!.categories,
           onPressed: () {
-            //TODO: Handle view all categories
+            Navigator.pushNamed(
+              context,
+              AppRoutes.CategoryTab,
+            );
           },
         ),
         Skeletonizer(
@@ -279,7 +282,10 @@ class _HomeTabBody extends StatelessWidget {
             context,
           )!.occasion,
           onPressed: () {
-            //TODO: Handle view all occasions
+            Navigator.pushNamed(
+              context,
+              AppRoutes.OccasionScreen,
+            );
           },
         ),
         Skeletonizer(

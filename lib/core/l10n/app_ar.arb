@@ -65,6 +65,9 @@
   "home": "الرئيسية",
   "categories": "الفئات",
   "cart": "عربة التسوق",
+  "descriptionAppBarBestSeller": "ازدهر مع أفضل مبيعاتنا الرائعة",
+  "noProductsFound": "لا يوجد منتحات",
+  "addToCart": "أضافة الى السلة",
   "flowery": "زهري" ,
   "view_all": "عرض الكل",
   "best_seller": "الأكثر مبيعًا",
@@ -72,10 +75,22 @@
   "egp": "جنيه مصري",
   "profile_updated_successfully": "تم تحديث الملف الشخصي بنجاح",
   "photo_updated_successfully" : "تم تحديث الصورة بنجاح",
-  "dont_have_account": "ليس لديك حساب؟",
+  "rememberMe": "تذكرني",
+  "dontHaveAccount": "ليس لديك حساب؟",
   "login_as_guest": " الدخول كزائر",
-  "are_you_sure_you_want_to_log_out": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
-  "cancel": "إلغاء",
-  "confirm_log_out" : "تأكيد تسجيل الخروج",
-  "remember_me": "تذكرني"
-}
+  "areYouSureYouWantToLogOut": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
+    "cancel": "إلغاء",
+    "confirmLogOut" : "تأكيد تسجيل الخروج" ,
+  
+      "address" : "العنوان",
+        "enter_your_address" : "ادخل العنوان",
+  "enter_the_phone_number" : "ادخل رقم الهاتف",
+  "enter_the_recipient_name" : "ادخل اسم المستلم",
+  "receipient_name" : "اسم المستلم",
+  "city" : "المدينة",
+  "area" : "المنطقة" ,
+  "save_address" : "حفظ العنوان" ,
+  "add_new_address" : "إضافة عنوان جديد",
+  "please_choose" : "اختر" ,
+  "address_added_successfully" : "تم إضافة العنوان بنجاح"
+  }

@@ -43,7 +43,10 @@ class ListTileHeader extends StatelessWidget {
         ),
         ListTile(
           onTap: () {
-            //here go to saved address
+            Navigator.pushNamed(
+              context,
+              AppRoutes.savedAddresses,
+            );
           },
           leading: Icon(
             Icons.location_on_outlined,
@@ -108,7 +111,8 @@ class ListTileHeader extends StatelessWidget {
         ),
         ListTile(
           onTap: () {
-            context.pushNamed(AppRoutes.chackoutView);
+            //chackoutView
+            context.pushNamed(AppRoutes.aboutUs);
           },
           trailing: Icon(
             Icons.arrow_forward_ios,

@@ -1,9 +1,15 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:flower_app/project_layers/data_layer/model/occasions_response.dart';
+import 'package:injectable/injectable.dart';
+import 'package:retrofit/retrofit.dart';
+import '../../data_layer/model/products_response.dart';
 import 'package:flower_app/project_layers/api_layer/models/categories_response.dart';
 import 'package:flower_app/project_layers/api_layer/models/get_all_notification_response_dto.dart';
-import 'package:flower_app/project_layers/api_layer/models/products_response.dart';
+import 'package:flower_app/project_layers/api_layer/models/products_response.dart'
+    hide ProductsResponse;
+import 'package:flower_app/project_layers/api_layer/models/request/add_address_request_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/change_password_request_body.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/forget_password_request_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/login_request.dart';
@@ -11,6 +17,7 @@ import 'package:flower_app/project_layers/api_layer/models/request/reset_passwor
 import 'package:flower_app/project_layers/api_layer/models/request/sign_up_request.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/update_profile_request_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/verify_reset_code_request_dto.dart';
+import 'package:flower_app/project_layers/api_layer/models/response/address_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/best_seller_response.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/best_seller_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/category_response_dto.dart';
@@ -36,6 +43,13 @@ abstract class ApiClient {
   @factoryMethod
   factory ApiClient(Dio dio) = _ApiClient;
 
+  @GET("/v1/occasions")
+  Future<OccasionsResponse> getOccasions();
+
+  @GET("/v1/products")
+  Future<ProductsResponse> getProductsById(
+    @Query("occasion") String? occasionId,
+  );
   @GET("/v1/categories")
   Future<HttpResponse<CategoryResponseDto>>
   getCategories();
@@ -50,7 +64,7 @@ abstract class ApiClient {
 
   @GET("/v1/occasions")
   Future<HttpResponse<OccasionResponseDto>>
-  getOccasions();
+  getOccasionss();
 
   @POST('v1/auth/signup')
   Future<SignUpResponse> signUp(
@@ -90,7 +104,7 @@ abstract class ApiClient {
   Future<CategoriesResponse> getAllCategories();
 
   @GET('/v1/products')
-  Future<ProductsResponse> getProductsById(
+  Future<ProductsResponse> getProductsByIdF(
     @Queries() Map<String, dynamic> filters,
   );
 
@@ -120,4 +134,12 @@ abstract class ApiClient {
 
   @DELETE('/v1/orders')
   Future<OrderResponse> orders();
+  
+  @PATCH('/v1/addresses')
+  Future<AddressResponseDto> addAddresses(
+    @Body() AddAddressRequestDto request,
+  );
+
+  @GET('/v1/addresses')
+  Future<AddressResponseDto> getAllAddresses();
 }

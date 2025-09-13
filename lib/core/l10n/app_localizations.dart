@@ -513,6 +513,30 @@ abstract class AppLocalizations {
   /// **'Cart'**
   String get cart;
 
+  /// No description provided for @occasion.
+  ///
+  /// In en, this message translates to:
+  /// **'Occasion'**
+  String get occasion;
+
+  /// No description provided for @descriptionAppBarBestSeller.
+  ///
+  /// In en, this message translates to:
+  /// **'Bloom with our exquisite best sellers'**
+  String get descriptionAppBarBestSeller;
+
+  /// No description provided for @noProductsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No Products Found'**
+  String get noProductsFound;
+
+  /// No description provided for @addToCart.
+  ///
+  /// In en, this message translates to:
+  /// **'Add To Cart'**
+  String get addToCart;
+
   /// No description provided for @egp.
   ///
   /// In en, this message translates to:
@@ -603,12 +627,6 @@ abstract class AppLocalizations {
   /// **'Best Seller'**
   String get best_seller;
 
-  /// No description provided for @occasion.
-  ///
-  /// In en, this message translates to:
-  /// **'Occasion'**
-  String get occasion;
-
   /// No description provided for @profile_updated_successfully.
   ///
   /// In en, this message translates to:
@@ -621,11 +639,17 @@ abstract class AppLocalizations {
   /// **'Photo updated successfully'**
   String get photo_updated_successfully;
 
-  /// No description provided for @dont_have_account.
+  /// No description provided for @rememberMe.
+  ///
+  /// In en, this message translates to:
+  /// **'Remember me'**
+  String get rememberMe;
+
+  /// No description provided for @dontHaveAccount.
   ///
   /// In en, this message translates to:
   /// **'Don\'t have an account?'**
-  String get dont_have_account;
+  String get dontHaveAccount;
 
   /// No description provided for @login_as_guest.
   ///
@@ -633,11 +657,11 @@ abstract class AppLocalizations {
   /// **'Login as Guest'**
   String get login_as_guest;
 
-  /// No description provided for @are_you_sure_you_want_to_log_out.
+  /// No description provided for @areYouSureYouWantToLogOut.
   ///
   /// In en, this message translates to:
   /// **'Are you sure you want to log out?'**
-  String get are_you_sure_you_want_to_log_out;
+  String get areYouSureYouWantToLogOut;
 
   /// No description provided for @cancel.
   ///
@@ -645,17 +669,77 @@ abstract class AppLocalizations {
   /// **'Cancel'**
   String get cancel;
 
-  /// No description provided for @confirm_log_out.
+  /// No description provided for @confirmLogout.
   ///
   /// In en, this message translates to:
   /// **'Confirm Logout'**
-  String get confirm_log_out;
+  String get confirmLogout;
 
-  /// No description provided for @remember_me.
+  /// No description provided for @address.
   ///
   /// In en, this message translates to:
-  /// **'Remember me'**
-  String get remember_me;
+  /// **'Address'**
+  String get address;
+
+  /// No description provided for @enter_your_address.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter The address'**
+  String get enter_your_address;
+
+  /// No description provided for @enter_the_phone_number.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the phone number'**
+  String get enter_the_phone_number;
+
+  /// No description provided for @enter_the_recipient_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the recipient name'**
+  String get enter_the_recipient_name;
+
+  /// No description provided for @receipient_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Recipient Name'**
+  String get receipient_name;
+
+  /// No description provided for @city.
+  ///
+  /// In en, this message translates to:
+  /// **'City'**
+  String get city;
+
+  /// No description provided for @area.
+  ///
+  /// In en, this message translates to:
+  /// **'Area'**
+  String get area;
+
+  /// No description provided for @save_address.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Address'**
+  String get save_address;
+
+  /// No description provided for @add_new_address.
+  ///
+  /// In en, this message translates to:
+  /// **'Add New Address'**
+  String get add_new_address;
+
+  /// No description provided for @please_choose.
+  ///
+  /// In en, this message translates to:
+  /// **'choose'**
+  String get please_choose;
+
+  /// No description provided for @address_added_successfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Address added successfully'**
+  String get address_added_successfully;
 }
 
 class _AppLocalizationsDelegate
