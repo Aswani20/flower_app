@@ -740,6 +740,10 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Address added successfully'**
   String get address_added_successfully;
+
+  String get active;
+
+  String get completed;
 }
 
 class _AppLocalizationsDelegate

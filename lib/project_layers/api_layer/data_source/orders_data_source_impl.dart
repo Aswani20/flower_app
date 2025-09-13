@@ -2,10 +2,12 @@ import 'package:dio/dio.dart';
 import 'package:flower_app/core/api_result/api_result.dart';
 
 import 'package:flower_app/project_layers/api_layer/models/response/order_response.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../data_layer/data_source/orders_data_source.dart';
 import '../api_client/api_client.dart';
 
+@Injectable(as: OrdersDataSource)
 class OrdersDataSourceImpl implements OrdersDataSource {
   final ApiClient apiClient;
 

@@ -17,13 +17,12 @@ import 'package:flower_app/project_layers/presentaion_layer/notifications_list/c
 import 'package:flower_app/project_layers/presentaion_layer/notifications_list/views/notifications_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import '../../project_layers/presentaion_layer/addresses/saved_addresses/saved_addresses.dart';
 import '../../project_layers/presentaion_layer/home/Tabs/category_tab/views/category_tab.dart';
-import '../../project_layers/presentation_layer/occasion/view/occasion_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../project_layers/presentaion_layer/best_seller/best_seller_screen.dart';
 import '../../project_layers/presentaion_layer/home/screens/product_details_screen.dart';
 import '../../project_layers/presentaion_layer/orders/view/order_page.dart';
+import '../../project_layers/presentation_layer/occasion/view/occasion_screen.dart';
 import 'app_routes.dart';
 
 abstract class Routes {
@@ -89,7 +88,8 @@ abstract class Routes {
       case AppRoutes.productDetailsScreen:
         return MaterialPageRoute(
           builder: (_) => ProductDetailsScreen(),
-        );case AppRoutes.OrdersPage:
+        );
+      case AppRoutes.OrdersPage:
         return MaterialPageRoute(
           builder: (_) => OrdersPage(),
         );

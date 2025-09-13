@@ -92,5 +92,7 @@
   "save_address" : "حفظ العنوان" ,
   "add_new_address" : "إضافة عنوان جديد",
   "please_choose" : "اختر" ,
-  "address_added_successfully" : "تم إضافة العنوان بنجاح"
+  "address_added_successfully" : "تم إضافة العنوان بنجاح",
+  "active" : "نشط",
+  "completed" : "مكتمل",
   }

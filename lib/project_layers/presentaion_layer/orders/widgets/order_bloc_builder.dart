@@ -6,7 +6,10 @@ import '../cubit/state.dart';
 import 'order_list_view.dart';
 
 class OrdersBlocBuilder extends StatelessWidget {
-  const OrdersBlocBuilder({super.key, required this.selectedIndex});
+  const OrdersBlocBuilder({
+    super.key,
+    required this.selectedIndex,
+  });
 
   final int selectedIndex;
 
@@ -16,8 +19,11 @@ class OrdersBlocBuilder extends StatelessWidget {
       builder: (context, state) {
         if (state.isLoading) {
           return SizedBox(
-            height: MediaQuery.of(context).size.height * .8,
-            child: const Center(child: CircularProgressIndicator()),
+            height:
+                MediaQuery.of(context).size.height * .8,
+            child: const Center(
+              child: CircularProgressIndicator(),
+            ),
           );
         } else if (state.isSuccess) {
           return OrdersListView(
@@ -27,8 +33,11 @@ class OrdersBlocBuilder extends StatelessWidget {
           );
         } else if (state.errorMessage != '') {
           return SizedBox(
-            height: MediaQuery.of(context).size.height * .8,
-            child: Center(child: Text(state.errorMessage!)),
+            height:
+                MediaQuery.of(context).size.height * .8,
+            child: Center(
+              child: Text(state.errorMessage!),
+            ),
           );
         } else {
           return const Text("something went wrong");

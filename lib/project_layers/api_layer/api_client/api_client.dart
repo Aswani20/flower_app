@@ -132,7 +132,7 @@ abstract class ApiClient {
   Future<GetAllNotificationResponseDto>
   getNotifications();
 
-  @DELETE('/v1/orders')
+  @GET('/v1/orders')
   Future<OrderResponse> orders();
   
   @PATCH('/v1/addresses')

@@ -105,6 +105,8 @@
   "save_address" : "Save Address" ,
   "add_new_address" : "Add New Address" ,
   "please_choose" : "choose" ,
-  "address_added_successfully" : "Address added successfully"
+  "address_added_successfully" : "Address added successfully",
+  "active" : "Active",
+  "completed" : "Completed",
 
   }

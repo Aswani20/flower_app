@@ -13,10 +13,11 @@ class OrdersListView extends StatelessWidget {
     return ListView.builder(
       shrinkWrap: true,
       itemBuilder: (context, index) => Padding(
-        padding: const EdgeInsets.symmetric(vertical: 16 , horizontal: 28),
-        child: OrderCard(
-          orderItem:  orders[index],
+        padding: const EdgeInsets.symmetric(
+          vertical: 16,
+          horizontal: 28,
         ),
+        child: OrderCard(orderItem: orders[index]),
       ),
       itemCount: orders.length,
     );

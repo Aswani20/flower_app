@@ -351,4 +351,12 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get address_added_successfully =>
       'تم إضافة العنوان بنجاح';
+
+  @override
+  // TODO: implement active
+  String get active => "نشط";
+
+  @override
+  // TODO: implement completed
+  String get completed => "مكتمل";
 }

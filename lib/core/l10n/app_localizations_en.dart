@@ -350,4 +350,12 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get address_added_successfully =>
       'Address added successfully';
+
+  @override
+  // TODO: implement active
+  String get active => "Active";
+
+  @override
+  // TODO: implement completed
+  String get completed => "Completed";
 }

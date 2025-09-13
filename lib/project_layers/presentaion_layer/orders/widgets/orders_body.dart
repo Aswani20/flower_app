@@ -1,3 +1,4 @@
+import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -41,7 +42,7 @@ class _OrdersBodyState extends State<OrdersBody> {
                   },
                   child: OrdersFilter(
                     isSelected: selectedIndex == 0,
-                    text: "active",
+                    text: context.l10n.active,
                   ),
                 ),
               ),
@@ -55,7 +56,7 @@ class _OrdersBodyState extends State<OrdersBody> {
                   },
                   child: OrdersFilter(
                     isSelected: selectedIndex == 1,
-                    text: "completed",
+                    text: context.l10n.completed,
                   ),
                 ),
               ),

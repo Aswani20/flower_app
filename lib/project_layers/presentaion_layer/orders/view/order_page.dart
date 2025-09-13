@@ -1,9 +1,11 @@
+import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/di/di.dart';
 import '../../../../core/l10n/app_localizations.dart';
 import '../cubit/orders_cubit.dart';
+import '../widgets/app_bar_order_page.dart';
 import '../widgets/orders_body.dart';
 
 class OrdersPage extends StatelessWidget {
@@ -17,23 +19,7 @@ class OrdersPage extends StatelessWidget {
     return BlocProvider(
       create: (context) => viewModel,
       child: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            "Orders",
-            style: Theme.of(
-              context,
-            ).textTheme.headlineMedium,
-          ),
-
-          leading: IconButton(
-            icon: const Icon(
-              Icons.arrow_back_ios_new_outlined,
-            ),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
-        ),
+        appBar: AppBarOrderPage(),
         body: const OrdersBody(),
       ),
     );
