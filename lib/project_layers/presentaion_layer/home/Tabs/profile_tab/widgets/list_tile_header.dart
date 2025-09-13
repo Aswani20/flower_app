@@ -22,7 +22,10 @@ class ListTileHeader extends StatelessWidget {
       children: [
         ListTile(
           onTap: () {
-            //here go to my orders
+            Navigator.pushNamed(
+              context,
+              AppRoutes.OrdersPage,
+            );
           },
           leading: Icon(
             Icons.favorite_border_outlined,

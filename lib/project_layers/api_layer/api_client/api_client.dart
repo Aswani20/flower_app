@@ -33,6 +33,7 @@ import 'package:flower_app/project_layers/api_layer/models/response/verify_reset
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 import '../models/response/login_response.dart';
+import '../models/response/order_response.dart';
 
 part 'api_client.g.dart';
 
@@ -131,6 +132,9 @@ abstract class ApiClient {
   Future<GetAllNotificationResponseDto>
   getNotifications();
 
+  @DELETE('/v1/orders')
+  Future<OrderResponse> orders();
+  
   @PATCH('/v1/addresses')
   Future<AddressResponseDto> addAddresses(
     @Body() AddAddressRequestDto request,

@@ -3,6 +3,7 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+
 import 'dart:async' as _i15;
 import 'dart:io' as _i30;
 
@@ -15,6 +16,7 @@ import 'package:flower_app/project_layers/api_layer/models/get_all_notification_
 import 'package:flower_app/project_layers/api_layer/models/request/add_address_request_dto.dart'
     as _i31;
 import 'package:flower_app/project_layers/api_layer/models/request/change_password_request_body.dart'
+
     as _i28;
 import 'package:flower_app/project_layers/api_layer/models/request/forget_password_request_dto.dart'
     as _i23;
@@ -39,6 +41,7 @@ import 'package:flower_app/project_layers/api_layer/models/response/category_res
 import 'package:flower_app/project_layers/api_layer/models/response/change_password_response_dto.dart'
     as _i9;
 import 'package:flower_app/project_layers/api_layer/models/response/forget_password_response_dto.dart'
+
     as _i22;
 import 'package:flower_app/project_layers/api_layer/models/response/get_logged_user_data_response_dto.dart'
     as _i8;
@@ -55,6 +58,7 @@ import 'package:flower_app/project_layers/api_layer/models/response/update_photo
 import 'package:flower_app/project_layers/api_layer/models/response/update_profile_response_dto.dart'
     as _i10;
 import 'package:flower_app/project_layers/api_layer/models/response/verify_reset_code_response.dart'
+
     as _i24;
 import 'package:flower_app/project_layers/data_layer/model/occasions_response.dart'
     as _i2;
@@ -146,6 +150,7 @@ class _FakeGetAllNotificationResponseDto_10 extends _i1.SmartFake
   ) : super(parent, parentInvocation);
 }
 
+
 class _FakeAddressResponseDto_11 extends _i1.SmartFake
     implements _i13.AddressResponseDto {
   _FakeAddressResponseDto_11(Object parent, Invocation parentInvocation)
@@ -155,12 +160,13 @@ class _FakeAddressResponseDto_11 extends _i1.SmartFake
 /// A class which mocks [ApiClient].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockApiClient extends _i1.Mock implements _i14.ApiClient {
+
   MockApiClient() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
+
   _i15.Future<_i2.OccasionsResponse> getOccasions() =>
       (super.noSuchMethod(
             Invocation.method(#getOccasions, []),
@@ -198,6 +204,7 @@ class MockApiClient extends _i1.Mock implements _i14.ApiClient {
                   ),
                 ),
           )
+
           as _i15.Future<_i4.HttpResponse<_i16.CategoryResponseDto>>);
 
   @override
@@ -206,13 +213,14 @@ class MockApiClient extends _i1.Mock implements _i14.ApiClient {
       (super.noSuchMethod(
             Invocation.method(#getBestSellersProduct, []),
             returnValue:
+
                 _i15.Future<_i4.HttpResponse<_i17.BestSellerResponse>>.value(
                   _FakeHttpResponse_2<_i17.BestSellerResponse>(
                     this,
                     Invocation.method(#getBestSellersProduct, []),
                   ),
                 ),
-          )
+)
           as _i15.Future<_i4.HttpResponse<_i17.BestSellerResponse>>);
 
   @override
@@ -227,6 +235,7 @@ class MockApiClient extends _i1.Mock implements _i14.ApiClient {
                   ),
                 ),
           )
+
           as _i15.Future<_i4.HttpResponse<_i18.BestSellerResponseDto>>);
 
   @override
@@ -234,13 +243,12 @@ class MockApiClient extends _i1.Mock implements _i14.ApiClient {
       (super.noSuchMethod(
             Invocation.method(#getOccasionss, []),
             returnValue:
-                _i15.Future<_i4.HttpResponse<_i19.OccasionResponseDto>>.value(
-                  _FakeHttpResponse_2<_i19.OccasionResponseDto>(
-                    this,
+                 this,
                     Invocation.method(#getOccasionss, []),
                   ),
                 ),
           )
+
           as _i15.Future<_i4.HttpResponse<_i19.OccasionResponseDto>>);
 
   @override
@@ -256,6 +264,7 @@ class MockApiClient extends _i1.Mock implements _i14.ApiClient {
               ),
             ),
           )
+
           as _i15.Future<_i5.SignUpResponse>);
 
   @override
@@ -264,11 +273,13 @@ class MockApiClient extends _i1.Mock implements _i14.ApiClient {
             Invocation.method(#login, [], {#request: request}),
             returnValue: _i15.Future<_i6.LoginResponse>.value(
               _FakeLoginResponse_4(
+ 
                 this,
                 Invocation.method(#login, [], {#request: request}),
               ),
             ),
           )
+
           as _i15.Future<_i6.LoginResponse>);
 
   @override
@@ -280,6 +291,7 @@ class MockApiClient extends _i1.Mock implements _i14.ApiClient {
               #forgetPasswordRequestDto: forgetPasswordRequestDto,
             }),
             returnValue:
+
                 _i15.Future<
                   _i4.HttpResponse<_i22.ForgetPasswordResponseDto>
                 >.value(
@@ -290,7 +302,7 @@ class MockApiClient extends _i1.Mock implements _i14.ApiClient {
                     }),
                   ),
                 ),
-          )
+)
           as _i15.Future<_i4.HttpResponse<_i22.ForgetPasswordResponseDto>>);
 
   @override
@@ -303,6 +315,7 @@ class MockApiClient extends _i1.Mock implements _i14.ApiClient {
               #verifyResetCodeRequestDto: verifyResetCodeRequestDto,
             }),
             returnValue:
+
                 _i15.Future<
                   _i4.HttpResponse<_i24.VerifyResetCodeResponseDto>
                 >.value(
@@ -314,6 +327,7 @@ class MockApiClient extends _i1.Mock implements _i14.ApiClient {
                   ),
                 ),
           )
+
           as _i15.Future<_i4.HttpResponse<_i24.VerifyResetCodeResponseDto>>);
 
   @override
@@ -325,6 +339,7 @@ class MockApiClient extends _i1.Mock implements _i14.ApiClient {
               #resetPasswordRequestDto: resetPasswordRequestDto,
             }),
             returnValue:
+
                 _i15.Future<
                   _i4.HttpResponse<_i26.ResetPasswordResponseDto>
                 >.value(
@@ -336,6 +351,7 @@ class MockApiClient extends _i1.Mock implements _i14.ApiClient {
                   ),
                 ),
           )
+
           as _i15.Future<_i4.HttpResponse<_i26.ResetPasswordResponseDto>>);
 
   @override
@@ -349,6 +365,7 @@ class MockApiClient extends _i1.Mock implements _i14.ApiClient {
               ),
             ),
           )
+
           as _i15.Future<_i7.CategoriesResponse>);
 
   @override
@@ -364,6 +381,7 @@ class MockApiClient extends _i1.Mock implements _i14.ApiClient {
               ),
             ),
           )
+
           as _i15.Future<_i3.ProductsResponse>);
 
   @override
@@ -377,6 +395,7 @@ class MockApiClient extends _i1.Mock implements _i14.ApiClient {
               ),
             ),
           )
+
           as _i15.Future<_i8.GetLoggedUserDataResponseDto>);
 
   @override
@@ -392,6 +411,7 @@ class MockApiClient extends _i1.Mock implements _i14.ApiClient {
               ),
             ),
           )
+    _FakeUpdateProfileResponseDto_7(
           as _i15.Future<_i9.ChangePasswordResponseDto>);
 
   @override
@@ -407,6 +427,7 @@ class MockApiClient extends _i1.Mock implements _i14.ApiClient {
               ),
             ),
           )
+
           as _i15.Future<_i10.UpdateProfileResponseDto>);
 
   @override
@@ -420,6 +441,7 @@ class MockApiClient extends _i1.Mock implements _i14.ApiClient {
               ),
             ),
           )
+
           as _i15.Future<_i11.UpdatePhotoResponseDto>);
 
   @override
@@ -433,6 +455,7 @@ class MockApiClient extends _i1.Mock implements _i14.ApiClient {
               ),
             ),
           )
+
           as _i15.Future<_i12.GetAllNotificationResponseDto>);
 
   @override
