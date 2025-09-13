@@ -45,8 +45,9 @@ void main() {
         Map<String, dynamic> categoryId = {
           'category': '1',
         };
+
         when(
-          mockApiClient.getProductsById(categoryId),
+          mockApiClient.getProductsById(categoryId, null),
         ).thenAnswer((_) async => mockResponse);
 
         // act
@@ -69,7 +70,7 @@ void main() {
         expect(products[0].title, 'Red Rose');
         expect(products[1].title, 'White Tulip');
         verify(
-          mockApiClient.getProductsById(categoryId),
+          mockApiClient.getProductsById(categoryId, null),
         ).called(1);
       },
     );
@@ -88,7 +89,7 @@ void main() {
           ],
         );
         when(
-          mockApiClient.getProductsById(null),
+          mockApiClient.getProductsById(null, null),
         ).thenAnswer((_) async => mockResponse);
 
         // act
@@ -110,7 +111,7 @@ void main() {
         expect(products.length, 1);
         expect(products[0].title, 'Red Rose');
         verify(
-          mockApiClient.getProductsById(null),
+          mockApiClient.getProductsById(null, null),
         ).called(1);
       },
     );
@@ -133,7 +134,7 @@ void main() {
         };
 
         when(
-          mockApiClient.getProductsById(categoryId),
+          mockApiClient.getProductsById(categoryId, null),
         ).thenThrow(dioException);
 
         // act
@@ -150,7 +151,7 @@ void main() {
             result as ApiErrorResult<List<ProductEntity>>;
         expect(error.errorMessage, mockErrorMessage);
         verify(
-          mockApiClient.getProductsById(categoryId),
+          mockApiClient.getProductsById(categoryId, null),
         ).called(1);
       },
     );
@@ -167,7 +168,7 @@ void main() {
           'category': '1',
         };
         when(
-          mockApiClient.getProductsById(categoryId),
+          mockApiClient.getProductsById(categoryId, null),
         ).thenThrow(dioException);
 
         // act
@@ -184,7 +185,7 @@ void main() {
             result as ApiErrorResult<List<ProductEntity>>;
         expect(error.errorMessage, 'Network error');
         verify(
-          mockApiClient.getProductsById(categoryId),
+          mockApiClient.getProductsById(categoryId, null),
         ).called(1);
       },
     );

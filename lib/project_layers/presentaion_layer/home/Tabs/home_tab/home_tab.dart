@@ -44,10 +44,20 @@ class _HomeTabBody extends StatelessWidget {
         return Column(
           children: [
             // Search Section
-            HomeSearchSection(
-              onChanged: (value) {
-                //TODO: Handle search input changes
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  AppRoutes.searchView,
+                );
               },
+              child: IgnorePointer(
+                child: HomeSearchSection(
+                  onChanged: (value) {
+                    //TODO: Handle search input changes
+                  },
+                ),
+              ),
             ),
             SizedBox(height: 10.h),
             // Address section

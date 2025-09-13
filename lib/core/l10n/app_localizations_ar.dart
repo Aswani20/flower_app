@@ -49,6 +49,36 @@ class AppLocalizationsAr extends AppLocalizations {
   String get aboutUs => 'عن التطبيق';
 
   @override
+  String get searchForYourFavoriteProducts =>
+      'ابحث عن المنتجات المفضلة لديك';
+
+  @override
+  String get searchInProduct => 'ابحث عن المنتجات...';
+
+  @override
+  String get searchHint =>
+      'اكتب في شريط البحث أعلاه للبدء';
+
+  @override
+  String get searching => 'جاري البحث...';
+
+  @override
+  String get resultFor => 'نتيجة لـ';
+
+  @override
+  String get noResultFound => 'لا توجد نتائج لـ';
+
+  @override
+  String get wasFound => 'تم العثور على ';
+
+  @override
+  String get trySearchWithDeffrentKeys =>
+      'حاول البحث بكلمات مختلفة';
+
+  @override
+  String get search_error => 'حدث خطأ أثناء البحث';
+
+  @override
   String get firstName => 'الاسم الاول';
 
   @override

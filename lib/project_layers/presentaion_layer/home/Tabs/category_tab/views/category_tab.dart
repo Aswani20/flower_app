@@ -1,4 +1,5 @@
 import 'package:flower_app/core/di/di.dart';
+import 'package:flower_app/core/route/app_routes.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,12 @@ class CategoryTab extends StatelessWidget {
                   Expanded(
                     flex: 4,
                     child: InkWell(
-                      // onTap: () => Navigator to search screen from here
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          AppRoutes.searchView,
+                        );
+                      },
                       child: IgnorePointer(
                         child: CustomSearch(
                           onFieldSubmitted: (value) {},

@@ -62,7 +62,7 @@ class CategoryBodyBuilder extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 2.heightPercent(context)),
-              ProductsGridBuilder(),
+              ProductsBuilder(),
             ],
           );
         }

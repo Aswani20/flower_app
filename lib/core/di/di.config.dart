@@ -145,6 +145,8 @@ import '../../project_layers/presentaion_layer/home/Tabs/profile_tab/cubits/rese
     as _i143;
 import '../../project_layers/presentaion_layer/notifications_list/cubit/notifications_list_cubit.dart'
     as _i718;
+import '../../project_layers/presentaion_layer/search/cubit/search_cubit.dart'
+    as _i211;
 import 'modules/dio_module.dart' as _i983;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -270,6 +272,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i503.ChangePasswordUseCase>(
       () => _i503.ChangePasswordUseCase(gh<_i64.ChangPasswordRepo>()),
+    );
+    gh.factory<_i211.SearchCubit>(
+      () => _i211.SearchCubit(gh<_i608.ProductUseCase>()),
     );
     gh.factory<_i649.VerifyResetCodeUseCase>(
       () => _i649.VerifyResetCodeUseCase(gh<_i326.AuthRepo>()),
