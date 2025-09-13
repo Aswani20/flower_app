@@ -17,6 +17,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../project_layers/presentaion_layer/best_seller/best_seller_screen.dart';
 import '../../project_layers/presentaion_layer/home/screens/product_details_screen.dart';
+import '../../project_layers/presentaion_layer/orders/view/order_page.dart';
 import 'app_routes.dart';
 
 abstract class Routes {
@@ -74,6 +75,9 @@ abstract class Routes {
       case AppRoutes.productDetailsScreen:
         return MaterialPageRoute(
           builder: (_) => ProductDetailsScreen(),
+        );case AppRoutes.OrdersPage:
+        return MaterialPageRoute(
+          builder: (_) => OrdersPage(),
         );
       default:
         return MaterialPageRoute(
