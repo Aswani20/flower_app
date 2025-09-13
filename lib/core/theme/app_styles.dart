@@ -63,6 +63,21 @@ abstract class AppStyles {
     fontWeight: FontWeight.w400,
     color: AppColors.grey,
   );
+  static TextStyle regular16greyRoboto = GoogleFonts.roboto(
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+    color: AppColors.grey,
+  );
+  static TextStyle medium18blackRoboto = GoogleFonts.roboto(
+    fontSize: 18,
+    fontWeight: FontWeight.w500,
+    color: AppColors.black,
+  );
+  static TextStyle medium16grey = GoogleFonts.roboto(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    color: AppColors.grey,
+  );
 
 }
 

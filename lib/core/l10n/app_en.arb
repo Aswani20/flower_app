@@ -99,4 +99,11 @@
   "login_as_guest": "Login as Guest",
    "areYouSureYouWantToLogOut": "Are you sure you want to log out?",
    "cancel": "Cancel",
-   "confirmLogout": "Confirm Logout"}
+   "confirmLogout": "Confirm Logout",
+  "deliver_to": "Deliver to",
+  "items" : "items",
+  "sub_total" : "Sub Total",
+  "delivery_fee" : "Delivery Fee",
+  "total" : "Total",
+  "checkout" : "Checkout"
+}
