@@ -46,6 +46,10 @@ class $AssetsIconsGen {
     'assets/icons/address_icon.png',
   );
 
+  /// File path: assets/icons/arrow-drop.png
+  AssetGenImage get arrowDrop =>
+      const AssetGenImage('assets/icons/arrow-drop.png');
+
   /// File path: assets/icons/arrow_back_icon.png
   AssetGenImage get arrowBackIcon => const AssetGenImage(
     'assets/icons/arrow_back_icon.png',
@@ -270,6 +274,7 @@ class $AssetsIconsGen {
     alarmClockIcon,
     addIcon,
     addressIcon,
+    arrowDrop,
     arrowBackIcon,
     britainFlagIcon,
     callIcon,

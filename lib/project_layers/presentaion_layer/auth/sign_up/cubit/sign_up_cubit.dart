@@ -43,7 +43,7 @@ class SignUpCubit extends Cubit<SignUpState> {
         rePassword: confirmPasswordController.text,
         firstName: firstNameController.text,
         lastName: lastNameController.text,
-        phone: phoneNumberController.text,
+        phone: "+2${phoneNumberController.text}",
         gender: selectedGender,
       ),
     );
