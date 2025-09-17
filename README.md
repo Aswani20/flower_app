@@ -4,6 +4,7 @@ A modern **Flutter e-commerce application** built with Clean Architecture.
 The app allows users to browse products, add them to cart, and manage orders efficiently.
 
 
+
 ## 📱 Features
 - 🔑 User authentication (Signup / Login with JWT)
 - 🛒 Add, update, and remove items from the cart
@@ -11,12 +12,14 @@ The app allows users to browse products, add them to cart, and manage orders eff
 - 📦 Product listing and details
 - 🎨 Responsive UI with Material Design
 - 🧱 Clean Architecture (API, Data, Domain, Presentation layers)
+
   
 
 ## 📡 API Documentation
 
 This app communicates with a custom backend to manage products, carts, and orders.  
 The base URL for all requests is: https://flower.elevateegy.com/api/v1
+
 
 
 ## 🚀 Getting Started
@@ -46,5 +49,12 @@ The base URL for all requests is: https://flower.elevateegy.com/api/v1
 4. Run the app:
     ```bash
     flutter run
+    ```
+
+### Testing
+
+Run the app:
+    ```bash
+    flutter test
     ```
 
