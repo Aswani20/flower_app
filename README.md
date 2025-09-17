@@ -101,7 +101,7 @@ Distributed under the MIT License. See LICENSE for more information.
 4. Lbar Sidati
 
 
-#### Folder Structure
+## Folder Structure
 
 ```text
 lib/
