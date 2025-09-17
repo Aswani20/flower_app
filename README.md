@@ -84,6 +84,9 @@ Distributed under the MIT License. See LICENSE for more information.
 
 # Badges
 [![Flutter](https://img.shields.io/badge/Flutter-3.24-blue?logo=flutter)](https://flutter.dev)
-[![Stars](https://img.shields.io/github/stars/Aswani20/flower_app?style=social)](https://github.com/your-username/flower_app/stargazers)
-[![Issues](https://img.shields.io/github/issues/Aswani20/flower_app)](https://github.com/your-username/flower_app/issues)
+[![Stars](https://img.shields.io/github/stars/Aswani20/flower_app?style=social)](https://github.com/Aswani20/flower_app/stargazers)
+[![Issues](https://img.shields.io/github/issues/Aswani20/flower_app)](https://github.com/Aswani20/flower_app/issues)
 [![License](https://img.shields.io/github/license/Aswani20/flower_app)](LICENSE)
+[![Forks](https://img.shields.io/github/forks/Aswani20/flower_app?style=social)](https://github.com/Aswani20/flower_app/network/members)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Aswani20/flower_app/pulls)
+[![Made with Love](https://img.shields.io/badge/Made%20with-%F0%9F%92%9F-pink)](https://github.com/Aswani20/flower_app)
