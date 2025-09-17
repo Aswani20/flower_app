@@ -43,12 +43,17 @@ The app allows users to browse products, add them to cart, and manage orders eff
     ```bash
     flutter run
     ```
-#### Folder Structure
 
-lib/
-│
-├── api_layer/          # Retrofit/Dio API setup
-├── data_layer/         # Data sources & repositories
-├── domain_layer/       # Use cases & entities
-├── presentation_layer/ # UI & state management (Cubit/Bloc)
-└── main.dart
+###📡 API
+
+This project uses a custom backend:
+
+Base URL: https://flower.elevateegy.com/api/v1
+
+Endpoints:
+
+POST /cart → Add item
+
+DELETE /cart/{id} → Remove item
+
+GET /cart → Get user’s cart
