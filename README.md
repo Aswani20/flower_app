@@ -1,16 +1,54 @@
-# flower_app
+# 🌸 Flower App
 
-A new Flutter project.
+A modern **Flutter e-commerce application** built with Clean Architecture.  
+The app allows users to browse products, add them to cart, and manage orders efficiently.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 📱 Features
+- 🔑 User authentication (Signup / Login with JWT)
+- 🛒 Add, update, and remove items from the cart
+- 💳 Checkout process
+- 📦 Product listing and details
+- 🎨 Responsive UI with Material Design
+- 🧱 Clean Architecture (API, Data, Domain, Presentation layers)
+- 
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 🚀 Getting Started
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Prerequisites
+- [Flutter SDK](https://docs.flutter.dev/get-started/install) (>= 3.x)
+- Android Studio / VSCode
+- Emulator or physical device
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Installation
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/Aswani20/flower_app.git
+    ```
+
+2. Navigate to the project directory:
+    ```bash
+    cd flower_app
+    ```
+
+3. Install dependencies:
+    ```bash
+    flutter pub get
+    ```
+
+4. Run the app:
+    ```bash
+    flutter run
+    ```
+#### Folder Structure
+
+lib/
+│
+├── api_layer/          # Retrofit/Dio API setup
+├── data_layer/         # Data sources & repositories
+├── domain_layer/       # Use cases & entities
+├── presentation_layer/ # UI & state management (Cubit/Bloc)
+└── main.dart
