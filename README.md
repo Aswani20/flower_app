@@ -81,3 +81,9 @@ Distributed under the MIT License. See LICENSE for more information.
 2. Ali Mohamed
 3. Marwan Elsokary
 4. Lbar Sidati
+
+
+[![Flutter](https://img.shields.io/badge/Flutter-3.24-blue?logo=flutter)](https://flutter.dev)
+[![Stars](https://img.shields.io/github/stars/your-username/flower_app?style=social)](https://github.com/your-username/flower_app/stargazers)
+[![Issues](https://img.shields.io/github/issues/your-username/flower_app)](https://github.com/your-username/flower_app/issues)
+[![License](https://img.shields.io/github/license/your-username/flower_app)](LICENSE)
