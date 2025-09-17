@@ -59,7 +59,7 @@ The base URL for all requests is: https://flower.elevateegy.com/api/v1
     flutter test
     ```
 
-### 🤝 Contributing
+## 🤝 Contributing
 
 - Fork the repo
 
@@ -71,3 +71,6 @@ The base URL for all requests is: https://flower.elevateegy.com/api/v1
 
 - Open a Pull Request
 
+## 📜 License
+
+Distributed under the MIT License. See LICENSE for more information.
