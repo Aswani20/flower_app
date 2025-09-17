@@ -74,3 +74,10 @@ The base URL for all requests is: https://flower.elevateegy.com/api/v1
 ## 📜 License
 
 Distributed under the MIT License. See LICENSE for more information.
+
+## 👨‍💻 Author
+
+1. Abdelrahman Youssef
+2. Ali Mohamed
+3. Marwan Elsokary
+4. Lbar Sidati
