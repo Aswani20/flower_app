@@ -59,3 +59,15 @@ The base URL for all requests is: https://flower.elevateegy.com/api/v1
     flutter test
     ```
 
+### 🤝 Contributing
+
+- Fork the repo
+
+- Create your feature branch (git checkout -b feature/YourFeature)
+
+- Commit changes (git commit -m 'Add some feature')
+
+- Push to branch (git push origin feature/YourFeature)
+
+- Open a Pull Request
+
