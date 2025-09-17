@@ -20,6 +20,7 @@ The app allows users to browse products, add them to cart, and manage orders eff
 This app communicates with a custom backend to manage products, carts, and orders.  
 The base URL for all requests is: https://flower.elevateegy.com/api/v1
 
+
 ## 🚀 Getting Started
 
 ### Prerequisites
