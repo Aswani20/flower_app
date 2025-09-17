@@ -2,6 +2,7 @@
 
 A modern **Flutter e-commerce application** built with Clean Architecture.  
 The app allows users to browse products, add them to cart, and manage orders efficiently.
+
 [![Flutter](https://img.shields.io/badge/Flutter-3.24-blue?logo=flutter)](https://flutter.dev)
 [![Stars](https://img.shields.io/github/stars/Aswani20/flower_app?style=social)](https://github.com/Aswani20/flower_app/stargazers)
 [![Issues](https://img.shields.io/github/issues/Aswani20/flower_app)](https://github.com/Aswani20/flower_app/issues)
