@@ -12,6 +12,7 @@ The app allows users to browse products, add them to cart, and manage orders eff
 [![Made with Love](https://img.shields.io/badge/Made%20with-%F0%9F%92%9F-pink)](https://github.com/Aswani20/flower_app)
 
 
+
 ## 📱 Features
 - 🔑 User authentication (Signup / Login with JWT)
 - 🛒 Add, update, and remove items from the cart
@@ -20,12 +21,15 @@ The app allows users to browse products, add them to cart, and manage orders eff
 - 🎨 Responsive UI with Material Design
 - 🧱 Clean Architecture (API, Data, Domain, Presentation layers)
 
+
   
 
 ## 📡 API Documentation
 
 This app communicates with a custom backend to manage products, carts, and orders.  
 The base URL for all requests is: https://flower.elevateegy.com/api/v1
+
+
 
 ## Screenshots
 
@@ -37,6 +41,7 @@ Here are some screenshots of the app in action:
   <img src="assets/screenshots/home_screen.png" alt="Home screen" width="20%" />
   <img src="assets/screenshots/setting_screen.png" alt="Setting Screen" width="20%" />
 </p>
+
 
 
 ## 🚀 Getting Started
@@ -76,6 +81,7 @@ Here are some screenshots of the app in action:
     flutter test
     ```
 
+
 ## 🤝 Contributing
 
 - Fork the repo
@@ -92,12 +98,14 @@ Here are some screenshots of the app in action:
 
 Distributed under the MIT License. See LICENSE for more information.
 
+
 ## 👨‍💻 Author
 
 1. Abdelrahman Youssef
 2. Ali Mohamed
 3. Marwan Elsokary
 4. Lbar Sidati
+
 
 #### Folder Structure
 
