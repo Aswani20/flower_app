@@ -15,6 +15,11 @@ The app allows users to browse products, add them to cart, and manage orders eff
 - 
 ---
 
+## 📡 API Documentation
+
+This app communicates with a custom backend to manage products, carts, and orders.  
+The base URL for all requests is: https://flower.elevateegy.com/api/v1
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -44,16 +49,3 @@ The app allows users to browse products, add them to cart, and manage orders eff
     flutter run
     ```
 
-###📡 API
-
-This project uses a custom backend:
-
-Base URL: https://flower.elevateegy.com/api/v1
-
-Endpoints:
-
-POST /cart → Add item
-
-DELETE /cart/{id} → Remove item
-
-GET /cart → Get user’s cart
