@@ -120,13 +120,21 @@ abstract class ApiClient {
 
 
   /// Cart Api
-  @GET('v1/cart')
-  Future<HttpResponse<CartResponseDto>> getCart();
-
   @POST('v1/cart')
   Future<HttpResponse<CartResponseDto>> addToCart(
       @Body() Map<String, dynamic> body,
+      @Header('Authorization') String token,
       );
+
+  @GET('v1/cart')
+  Future<HttpResponse<CartResponseDto>> getCart(@Header('Authorization') String token,);
+
+
+  @DELETE('v1/cart/{itemId}')
+  Future<HttpResponse<CartResponseDto>> deleteItemFromCart(@Path('itemId') String itemId, @Header('Authorization') String token,);
+
+
+
 
   @PUT('v1/cart/{itemId}')
   Future<HttpResponse<CartResponseDto>> updateCart(
@@ -134,8 +142,6 @@ abstract class ApiClient {
       @Body() Map<String, dynamic> body,
       );
 
-  @DELETE('v1/cart/{itemId}')
-  Future<HttpResponse<CartResponseDto>> removeItemFromCart(@Path('itemId') String itemId);
 
   @DELETE('v1/cart')
   Future<HttpResponse<CartResponseDto>> clearCart();

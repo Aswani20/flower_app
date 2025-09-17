@@ -395,30 +395,48 @@ class MockApiClient extends _i1.Mock implements _i12.ApiClient {
           as _i13.Future<_i11.GetAllNotificationResponseDto>);
 
   @override
-  _i13.Future<_i2.HttpResponse<_i29.CartResponseDto>> getCart() =>
+  _i13.Future<_i2.HttpResponse<_i29.CartResponseDto>> addToCart(
+    Map<String, dynamic>? body,
+    String? token,
+  ) =>
       (super.noSuchMethod(
-            Invocation.method(#getCart, []),
+            Invocation.method(#addToCart, [body, token]),
             returnValue:
                 _i13.Future<_i2.HttpResponse<_i29.CartResponseDto>>.value(
                   _FakeHttpResponse_0<_i29.CartResponseDto>(
                     this,
-                    Invocation.method(#getCart, []),
+                    Invocation.method(#addToCart, [body, token]),
                   ),
                 ),
           )
           as _i13.Future<_i2.HttpResponse<_i29.CartResponseDto>>);
 
   @override
-  _i13.Future<_i2.HttpResponse<_i29.CartResponseDto>> addToCart(
-    Map<String, dynamic>? body,
-  ) =>
+  _i13.Future<_i2.HttpResponse<_i29.CartResponseDto>> getCart(String? token) =>
       (super.noSuchMethod(
-            Invocation.method(#addToCart, [body]),
+            Invocation.method(#getCart, [token]),
             returnValue:
                 _i13.Future<_i2.HttpResponse<_i29.CartResponseDto>>.value(
                   _FakeHttpResponse_0<_i29.CartResponseDto>(
                     this,
-                    Invocation.method(#addToCart, [body]),
+                    Invocation.method(#getCart, [token]),
+                  ),
+                ),
+          )
+          as _i13.Future<_i2.HttpResponse<_i29.CartResponseDto>>);
+
+  @override
+  _i13.Future<_i2.HttpResponse<_i29.CartResponseDto>> deleteItemFromCart(
+    String? itemId,
+    String? token,
+  ) =>
+      (super.noSuchMethod(
+            Invocation.method(#deleteItemFromCart, [itemId, token]),
+            returnValue:
+                _i13.Future<_i2.HttpResponse<_i29.CartResponseDto>>.value(
+                  _FakeHttpResponse_0<_i29.CartResponseDto>(
+                    this,
+                    Invocation.method(#deleteItemFromCart, [itemId, token]),
                   ),
                 ),
           )
@@ -436,22 +454,6 @@ class MockApiClient extends _i1.Mock implements _i12.ApiClient {
                   _FakeHttpResponse_0<_i29.CartResponseDto>(
                     this,
                     Invocation.method(#updateCart, [itemId, body]),
-                  ),
-                ),
-          )
-          as _i13.Future<_i2.HttpResponse<_i29.CartResponseDto>>);
-
-  @override
-  _i13.Future<_i2.HttpResponse<_i29.CartResponseDto>> removeItemFromCart(
-    String? itemId,
-  ) =>
-      (super.noSuchMethod(
-            Invocation.method(#removeItemFromCart, [itemId]),
-            returnValue:
-                _i13.Future<_i2.HttpResponse<_i29.CartResponseDto>>.value(
-                  _FakeHttpResponse_0<_i29.CartResponseDto>(
-                    this,
-                    Invocation.method(#removeItemFromCart, [itemId]),
                   ),
                 ),
           )

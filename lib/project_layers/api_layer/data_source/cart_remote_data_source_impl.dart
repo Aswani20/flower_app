@@ -4,37 +4,25 @@ import 'package:flower_app/project_layers/data_layer/data_source/cart_remote_dat
 import 'package:flower_app/project_layers/domain_layer/entities/cart_response_entity.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../core/di/modules/shared_preferences_module.dart';
+import '../../../core/keys/shared_key.dart';
+
 
 @Injectable(as: CartRemoteDataSource)
 class CartRemoteDataSourceImpl extends CartRemoteDataSource{
   final ApiClient _apiClient;
   CartRemoteDataSourceImpl(this._apiClient);
 
-  @override
-  Future<CartResponseEntity> getCart() async{
-    try{
-      var response = await _apiClient.getCart();
-      var statusCode = response.response.statusCode ?? 500;
-      var cartData = response.data;
-      if (statusCode >= 200 && statusCode < 300) {
-        return cartData.toEntity();
-      }
-      else{
-        throw ServerError(errorMessage: cartData.message ?? "Server Error");
-      }
-    } catch (e) {
-      throw Exception("Unexpected error: $e");
-    }
-
-  }
 
   @override
   Future<CartResponseEntity> addToCart(String productId, {int quantity = 1}) async{
     try{
-      var response = await _apiClient.addToCart({"productId" : productId, "quantity" : quantity});
+      final token = SharedPrefHelper().getString(key: SharedPrefKeys.tokenKey,);
+      var response = await _apiClient.addToCart({"product" : productId, "quantity" : quantity}, "Bearer $token");
       var statusCode = response.response.statusCode ?? 500;
       var cartData = response.data;
       if (statusCode >= 200 && statusCode < 300) {
+        print("cartData: ${cartData.numOfCartItems}");
         return cartData.toEntity();
       }else{
         throw ServerError(errorMessage: cartData.message ?? "Server Error");
@@ -46,39 +34,39 @@ class CartRemoteDataSourceImpl extends CartRemoteDataSource{
   }
 
   @override
-  Future<CartResponseEntity> updateCartItem(String itemId, int qty) async{
+  Future<CartResponseEntity> getCart() async {
     try{
-      var response = await _apiClient.updateCart(itemId, {"quantity" : qty});
+      final token = SharedPrefHelper().getString(key: SharedPrefKeys.tokenKey,);
+      var response = await _apiClient.getCart("Bearer $token");
       var statusCode = response.response.statusCode ?? 500;
       var cartData = response.data;
       if (statusCode >= 200 && statusCode < 300) {
+        print("cartData: ${cartData.numOfCartItems}");
         return cartData.toEntity();
       }else{
         throw ServerError(errorMessage: cartData.message ?? "Server Error");
       }
+    } catch (e) {
+      throw Exception("Unexpected error: $e");
     }
-    catch (e) {
-    throw Exception("Unexpected error: $e");
-    }
+
   }
 
   @override
-  Future<void> clearCart() async{
-    final res = await _apiClient.clearCart();
-    final code = res.response.statusCode ?? 500;
-    if (code >= 200 && code < 300) return;
-    throw ServerError(errorMessage: 'Server Error');
-  }
-
-  @override
-  Future<CartResponseEntity> removeItemFromCart(String itemId) async{
-    var response =await _apiClient.removeItemFromCart(itemId);
-    var statusCode = response.response.statusCode ?? 500;
-    var cartData = response.data;
-    if (statusCode >= 200 && statusCode < 300) {
-      return cartData.toEntity();
-    }else{
-      throw ServerError(errorMessage: cartData.message ?? "Server Error");
+  Future<CartResponseEntity> deleteItemFromCart(String itemId) async{
+    try{
+      final token = SharedPrefHelper().getString(key: SharedPrefKeys.tokenKey,);
+      var response = await _apiClient.deleteItemFromCart(itemId, "Bearer $token");
+      var statusCode = response.response.statusCode ?? 500;
+      var cartData = response.data;
+      if (statusCode >= 200 && statusCode < 300) {
+        print("cartData: ${cartData.numOfCartItems}");
+        return cartData.toEntity();
+      }else{
+        throw ServerError(errorMessage: cartData.message ?? "Server Error");
+      }
+    } catch (e) {
+      throw Exception("Unexpected error: $e");
     }
   }
 }

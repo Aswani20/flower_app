@@ -37,6 +37,7 @@ dependencies:
   skeletonizer: ^2.1.0+1
   image_picker: ^1.0.4
   image: ^4.1.7
+  auto_size_text: ^3.0.0
 
 dev_dependencies:
   flutter_test:

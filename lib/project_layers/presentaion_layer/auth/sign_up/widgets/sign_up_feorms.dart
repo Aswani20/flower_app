@@ -154,8 +154,8 @@ class _SignUpFieldsState extends State<SignUpFields> {
                 .phoneNumberController,
             hintText: context.l10n.phoneNumberHint,
             validator: (value) {
-              if (value == null || value.isEmpty
-              //!AppRegex.isPhoneNumberValid(value)
+              if (value == null || value.isEmpty ||
+              !AppRegex.isPhoneNumberValid(value)
               ) {
                 return 'Please enter a valid phone number';
               }

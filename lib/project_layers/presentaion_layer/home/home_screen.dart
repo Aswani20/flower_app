@@ -1,5 +1,8 @@
 import 'package:flower_app/gen/assets.gen.dart';
+import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/cart_tab/cubit/cart_states.dart';
+import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/cart_tab/cubit/cart_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:flower_app/core/l10n/app_localizations.dart';
@@ -18,19 +21,36 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class _HomeScreenBody extends StatelessWidget {
+class _HomeScreenBody extends StatefulWidget {
   const _HomeScreenBody();
 
+
+  @override
+  State<_HomeScreenBody> createState() => _HomeScreenBodyState();
+}
+
+class _HomeScreenBodyState extends State<_HomeScreenBody> {
+
+  @override
+  void initState() {
+    CartViewModel.get(context).getCart();
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
-    final AppLocalizations locale = AppLocalizations.of(context)!;
+    final AppLocalizations locale = AppLocalizations.of(
+      context,
+    )!;
     return Consumer<HomeViewModel>(
       builder: (context, viewModel, child) {
         return Scaffold(
           // indexed stack for save tab state across navigation
           body: SafeArea(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+              padding: EdgeInsets.symmetric(
+                horizontal: 16.w,
+                vertical: 16.h,
+              ),
               child: IndexedStack(
                 index: viewModel.currentIndex,
                 children: viewModel.pages,
@@ -42,23 +62,56 @@ class _HomeScreenBody extends StatelessWidget {
             currentIndex: viewModel.currentIndex,
             onTap: viewModel.setCurrentIndex,
             elevation: 0,
-            selectedItemColor: Theme.of(context).primaryColor,
+            selectedItemColor: Theme.of(
+              context,
+            ).primaryColor,
             unselectedItemColor: Colors.grey,
             items: [
               BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage(Assets.icons.homeIcon.path)),
+                icon: ImageIcon(
+                  AssetImage(Assets.icons.homeIcon.path),
+                ),
                 label: locale.home,
               ),
               BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage(Assets.icons.categoryIcon.path)),
+                icon: ImageIcon(
+                  AssetImage(
+                    Assets.icons.categoryIcon.path,
+                  ),
+                ),
                 label: locale.categories,
               ),
               BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage(Assets.icons.cartIcon.path)),
+                icon: Stack(
+                  alignment: Alignment.topRight,
+                  children: [
+                    BlocBuilder<CartViewModel, CartStates>(
+                      builder: (context, state) {
+                        if (state
+                            is GetCartSuccessStates) {
+                          if (state.cartData.numOfCartItems != 0) {
+                            return Badge();
+                          }
+                        }
+                        return const SizedBox();
+                      },
+                    ),
+                    ImageIcon(
+                      AssetImage(
+                        Assets.icons.cartIcon.path,
+                      ),
+                    ),
+                  ],
+                ),
+
                 label: locale.cart,
               ),
               BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage(Assets.icons.personIcon.path)),
+                icon: ImageIcon(
+                  AssetImage(
+                    Assets.icons.personIcon.path,
+                  ),
+                ),
                 label: locale.profile,
               ),
             ],

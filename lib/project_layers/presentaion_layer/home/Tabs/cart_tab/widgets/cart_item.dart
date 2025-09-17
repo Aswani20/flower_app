@@ -1,14 +1,24 @@
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flower_app/core/dialog/dialog.dart';
 import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/core/theme/app_styles.dart';
 import 'package:flower_app/gen/assets.gen.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/cart_response_entity.dart';
+import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/cart_tab/cubit/cart_view_model.dart';
 import 'package:flutter/material.dart';
 
-class CartItem extends StatelessWidget {
+
+class CartItem extends StatefulWidget {
   CartItemsEntity cartItemsEntity;
+
   CartItem({super.key, required this.cartItemsEntity});
 
+  @override
+  State<CartItem> createState() => _CartItemState();
+}
+
+class _CartItemState extends State<CartItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,7 +39,10 @@ class CartItem extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(8),
-            child: Image.asset(cartItemsEntity.product!.imgCover ?? Assets.images.noRoutes.path),
+            child: Image.network(
+              widget.cartItemsEntity.product!.imgCover ??
+                  Assets.images.noRoutes.path,
+            ),
           ),
           Expanded(
             child: Padding(
@@ -43,17 +56,31 @@ class CartItem extends StatelessWidget {
                     MainAxisAlignment.spaceBetween,
                 spacing: 4,
                 children: [
-                  Text(
-                    cartItemsEntity.product!.title ?? '',
+                  AutoSizeText(
+                    widget.cartItemsEntity.product!.title ?? '',
                     style: AppStyles.medium16black,
+                    overflow: TextOverflow.ellipsis,
+                    softWrap: true,
+                    maxLines: 2,
+                    wrapWords: true,
+                    minFontSize: 12,
+                    maxFontSize: 14,
                   ),
-                  Text(
-                    'Available Quantity ${cartItemsEntity.product!.quantity}',
+                  AutoSizeText(
+                    'Available Quantity ${widget.cartItemsEntity.product!.quantity}',
                     style: AppStyles.regular13grey,
+                    overflow: TextOverflow.ellipsis,
+                    softWrap: true,
+                    maxLines: 2,
+                    wrapWords: true,
+                    minFontSize: 10,
+                    maxFontSize: 12,
                   ),
                   Spacer(),
-                  Text(
-                    '${context.l10n.egp} ${cartItemsEntity.price}',
+                  AutoSizeText(
+                    minFontSize: 10,
+                    maxFontSize: 12,
+                    '${context.l10n.egp} ${widget.cartItemsEntity.price}',
                     style: AppStyles.regular14black
                         .copyWith(
                           fontWeight: FontWeight.w600,
@@ -69,24 +96,36 @@ class CartItem extends StatelessWidget {
                 MainAxisAlignment.spaceBetween,
             children: [
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  DialogUtils.showMessage(
+                    context: context,
+                    content:
+                        "Are you sure to delete this item?",
+                    posActions: "Yes",
+                    negActions: "No",
+                    posFunction: (ctx) => CartViewModel.get(ctx).deleteItemFromCart(widget.cartItemsEntity.id)
+                  );
+                },
                 icon: Assets.icons.deleteIcon.image(
                   color: AppColors.red,
+                  height: 22,
                 ),
               ),
               Row(
                 children: [
                   IconButton(
                     onPressed: () {},
-                    icon: Icon(Icons.remove),
+                    icon: Icon(Icons.remove, size: 15),
                   ),
-                  Text(
-                    '1',
+                  AutoSizeText(
+                    '${widget.cartItemsEntity.quantity}',
                     style: AppStyles.medium16black,
+                    maxFontSize: 14,
+                    minFontSize: 12,
                   ),
                   IconButton(
                     onPressed: () {},
-                    icon: Icon(Icons.add),
+                    icon: Icon(Icons.add, size: 15),
                   ),
                 ],
               ),

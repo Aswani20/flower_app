@@ -10,30 +10,22 @@ class CartRepoImpl extends CartRepo {
   CartRepoImpl(this.cartRemoteDataSource);
 
   @override
-  Future<CartResponseEntity> getCart() =>
-      cartRemoteDataSource.getCart();
-
-  @override
-  Future<CartResponseEntity> updateCartItem(
-    String itemId,
-    int qty,
-  ) => cartRemoteDataSource.updateCartItem(itemId, qty);
-
-  @override
-  Future<CartResponseEntity> addToCart(
-    String productId, {
+  Future<CartResponseEntity> addToCart(String productId, {
     int quantity = 1,
-  }) => cartRemoteDataSource.addToCart(
-    productId,
-    quantity: quantity,
-  );
+  }) =>
+      cartRemoteDataSource.addToCart(
+        productId,
+        quantity: quantity,
+      );
 
   @override
-  Future<CartResponseEntity> removeItemFromCart(
-    String itemId,
-  ) => cartRemoteDataSource.removeItemFromCart(itemId);
+  Future<CartResponseEntity> getCart() {
+    return cartRemoteDataSource.getCart();
+  }
 
   @override
-  Future<void> clearCart() =>
-      cartRemoteDataSource.clearCart();
+  Future<CartResponseEntity> deleteItemFromCart(String itemId) {
+    return cartRemoteDataSource.deleteItemFromCart(itemId);
+  }
+
 }

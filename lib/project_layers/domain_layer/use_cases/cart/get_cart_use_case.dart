@@ -4,11 +4,12 @@ import 'package:injectable/injectable.dart';
 
 @injectable
 class GetCartUseCase{
-  CartRepo cartRepo;
-  GetCartUseCase(this.cartRepo);
+  final CartRepo _cartRepo;
+  GetCartUseCase(this._cartRepo);
 
-  Future<CartResponseEntity> invoke() async {
-    final result = await cartRepo.getCart();
+  Future<CartResponseEntity> invoke() async{
+    final result = await _cartRepo.getCart();
     return result;
   }
+
 }

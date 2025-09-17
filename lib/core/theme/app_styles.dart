@@ -62,6 +62,7 @@ abstract class AppStyles {
     fontSize: 13,
     fontWeight: FontWeight.w400,
     color: AppColors.grey,
+
   );
   static TextStyle regular16greyRoboto = GoogleFonts.roboto(
     fontSize: 16,

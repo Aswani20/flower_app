@@ -4,7 +4,8 @@ import 'package:flower_app/core/theme/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class CartFooter extends StatelessWidget {
-  const CartFooter({super.key});
+  int totalPrice;
+  CartFooter({super.key, required this.totalPrice});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class CartFooter extends StatelessWidget {
               style: AppStyles.regular16greyRoboto,
             ),
             Text(
-              "100\$",
+              "$totalPrice EGP",
               style: AppStyles.regular16greyRoboto,
             ),
           ],
@@ -36,7 +37,7 @@ class CartFooter extends StatelessWidget {
               style: AppStyles.regular16greyRoboto,
             ),
             Text(
-              "10\$",
+              "10 EGP",
               style: AppStyles.regular16greyRoboto,
             ),
           ],
@@ -56,7 +57,7 @@ class CartFooter extends StatelessWidget {
               style: AppStyles.medium18blackRoboto,
             ),
             Text(
-              "110\$",
+              "${totalPrice + 10} EGP",
               style: AppStyles.medium18blackRoboto,
             ),
           ],
