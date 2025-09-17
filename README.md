@@ -32,8 +32,6 @@ The base URL for all requests is: https://flower.elevateegy.com/api/v1
 
 Here are some screenshots of the app in action:
 
-**1-Light Mode**
-
 <p align="center">
   <img src="assets/screenshots/login.png" alt="Login Screen" width="20%" />
   <img src="assets/screenshots/register.png" alt="Register Screen" width="20%" />
@@ -41,16 +39,6 @@ Here are some screenshots of the app in action:
   <img src="assets/screenshots/setting_screen.png" alt="Setting Screen" width="20%" />
 </p>
 
-
-
-**2-Dark Mode** 
-
-<p align="center">
-  <img src="assets/screenshots/login_dark.png" alt="Login Screen" width="20%" />
-  <img src="assets/screenshots/register_dark.png" alt="Register Screen" width="20%" />
-  <img src="assets/screenshots/home_dark.png" alt="Home screen" width="20%" />
-  <img src="assets/screenshots/setting_dark.png" alt="Setting Screen" width="20%" />
-</p>
 
 ## 🚀 Getting Started
 
