@@ -3,7 +3,6 @@
 A modern **Flutter e-commerce application** built with Clean Architecture.  
 The app allows users to browse products, add them to cart, and manage orders efficiently.
 
----
 
 ## 📱 Features
 - 🔑 User authentication (Signup / Login with JWT)
@@ -12,8 +11,7 @@ The app allows users to browse products, add them to cart, and manage orders eff
 - 📦 Product listing and details
 - 🎨 Responsive UI with Material Design
 - 🧱 Clean Architecture (API, Data, Domain, Presentation layers)
-- 
----
+  
 
 ## 📡 API Documentation
 
