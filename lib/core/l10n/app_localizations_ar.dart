@@ -383,12 +383,10 @@ class AppLocalizationsAr extends AppLocalizations {
       'تم إضافة العنوان بنجاح';
 
   @override
-  // TODO: implement active
-  String get active => "نشط";
+  String get active => 'نشط';
 
   @override
-  // TODO: implement completed
-  String get completed => "مكتمل";
+  String get completed => 'مكتمل';
 
   @override
   String get deliver_to => 'Deliver to';

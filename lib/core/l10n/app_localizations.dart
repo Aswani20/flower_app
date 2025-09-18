@@ -795,8 +795,16 @@ abstract class AppLocalizations {
   /// **'Address added successfully'**
   String get address_added_successfully;
 
+  /// No description provided for @active.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
   String get active;
 
+  /// No description provided for @completed.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
   String get completed;
 
   /// No description provided for @deliver_to.

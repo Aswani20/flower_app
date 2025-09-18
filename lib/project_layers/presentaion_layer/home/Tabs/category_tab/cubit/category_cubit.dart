@@ -13,12 +13,14 @@ part 'category_state.dart';
 class CategoryCubit extends Cubit<CategoryState> {
   CategoryUseCase categoryUseCase;
   ProductUseCase productUseCase;
+
   CategoryCubit(this.categoryUseCase, this.productUseCase)
     : super(CategoryInitial());
 
   String? selectedFilter = 'New';
   int selectedTabIndex = 0;
   List<CategoryEntity>? currentCategories;
+
   void updateFilter(String? filter) {
     selectedFilter = filter ?? 'New';
     if (currentCategories != null &&
