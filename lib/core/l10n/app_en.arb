@@ -117,5 +117,11 @@
   "address_added_successfully" : "Address added successfully",
   "active" : "Active",
   "completed" : "Completed",
-
-  }
+   "confirmLogout": "Confirm Logout",
+  "deliver_to": "Deliver to",
+  "items" : "items",
+  "sub_total" : "Sub Total",
+  "delivery_fee" : "Delivery Fee",
+  "total" : "Total",
+  "checkout" : "Checkout"
+}

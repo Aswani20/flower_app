@@ -32,6 +32,7 @@ import 'package:flower_app/project_layers/api_layer/models/response/update_profi
 import 'package:flower_app/project_layers/api_layer/models/response/verify_reset_code_response.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
+import '../models/response/cart_response_dto.dart';
 import '../models/response/login_response.dart';
 import '../models/response/order_response.dart';
 
@@ -135,7 +136,7 @@ abstract class ApiClient {
 
   @GET('/v1/orders')
   Future<OrderResponse> orders();
-  
+
   @PATCH('/v1/addresses')
   Future<AddressResponseDto> addAddresses(
     @Body() AddAddressRequestDto request,
@@ -143,4 +144,26 @@ abstract class ApiClient {
 
   @GET('/v1/addresses')
   Future<AddressResponseDto> getAllAddresses();
+
+
+  /// Cart Api
+  @GET('v1/cart')
+  Future<HttpResponse<CartResponseDto>> getCart();
+
+  @POST('v1/cart')
+  Future<HttpResponse<CartResponseDto>> addToCart(
+      @Body() Map<String, dynamic> body,
+      );
+
+  @PUT('v1/cart/{itemId}')
+  Future<HttpResponse<CartResponseDto>> updateCart(
+      @Path('itemId') String itemId,
+      @Body() Map<String, dynamic> body,
+      );
+
+  @DELETE('v1/cart/{itemId}')
+  Future<HttpResponse<CartResponseDto>> removeItemFromCart(@Path('itemId') String itemId);
+
+  @DELETE('v1/cart')
+  Future<HttpResponse<CartResponseDto>> clearCart();
 }
