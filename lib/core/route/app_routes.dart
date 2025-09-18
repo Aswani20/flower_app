@@ -28,4 +28,5 @@ abstract class AppRoutes {
   static const String savedAddresses = "/saved_addresses";
   static const String CategoryTab = "/Category_tab";
 
+  static const String searchView = "/search_view";
 }

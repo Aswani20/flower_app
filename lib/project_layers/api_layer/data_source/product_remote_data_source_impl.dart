@@ -37,9 +37,15 @@ class ProductRemoteDataSourceImpl
           await apiClient.getProductsByIdF(
                 queryParameters,
               );
+      ProductsResponse productsResponse = await apiClient
+          .getProductsById(
+            queryParameters,
+            filter.keyword,
+          );
       if (filter.occasionId != null ||
           filter.categoryId != null ||
-          filter.filter != null) {
+          filter.filter != null ||
+          filter.keyword != null) {
         return ApiSuccessResult(
           productsResponse.products!
               .map((e) => e.toProductEntity())

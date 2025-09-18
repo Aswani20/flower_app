@@ -182,6 +182,60 @@ abstract class AppLocalizations {
   /// **'About Us'**
   String get aboutUs;
 
+  /// No description provided for @searchForYourFavoriteProducts.
+  ///
+  /// In en, this message translates to:
+  /// **'Search for your favorite products'**
+  String get searchForYourFavoriteProducts;
+
+  /// No description provided for @searchInProduct.
+  ///
+  /// In en, this message translates to:
+  /// **'Search in product'**
+  String get searchInProduct;
+
+  /// No description provided for @searchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Type in the search bar above to start searching for products'**
+  String get searchHint;
+
+  /// No description provided for @searching.
+  ///
+  /// In en, this message translates to:
+  /// **'Searching...'**
+  String get searching;
+
+  /// No description provided for @resultFor.
+  ///
+  /// In en, this message translates to:
+  /// **'Result For'**
+  String get resultFor;
+
+  /// No description provided for @noResultFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No Result Found For'**
+  String get noResultFound;
+
+  /// No description provided for @wasFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Was Found'**
+  String get wasFound;
+
+  /// No description provided for @trySearchWithDeffrentKeys.
+  ///
+  /// In en, this message translates to:
+  /// **'try search with deferent word'**
+  String get trySearchWithDeffrentKeys;
+
+  /// No description provided for @search_error.
+  ///
+  /// In en, this message translates to:
+  /// **'Search Error'**
+  String get search_error;
+
   /// No description provided for @firstName.
   ///
   /// In en, this message translates to:
