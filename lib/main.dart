@@ -67,20 +67,20 @@ class MyApp extends StatelessWidget {
                   (token != null && token!.isNotEmpty)
                   ? AppRoutes.homeScreen
                   : AppRoutes.loginScreen,
-              routes: {
-                AppRoutes.loginScreen: (context) =>
-                    SignInView(),
-                AppRoutes.signUpScreen: (context) =>
-                    SignUpView(),
-                AppRoutes.forgetPasswordScreen:
-                    (context) => ForgetPasswordView(),
-                AppRoutes.homeScreen: (context) =>
-                    HomeScreen(),
-                AppRoutes.bestSeller: (context) =>
-                    BestSellerScreen(),
-                AppRoutes.productDetailsScreen:
-                    (context) => ProductDetailsScreen(),
-              },
+              // routes: {
+              //   AppRoutes.loginScreen: (context) =>
+              //       SignInView(),
+              //   AppRoutes.signUpScreen: (context) =>
+              //       SignUpView(),
+              //   AppRoutes.forgetPasswordScreen:
+              //       (context) => ForgetPasswordView(),
+              //   AppRoutes.homeScreen: (context) =>
+              //       HomeScreen(),
+              //   AppRoutes.bestSeller: (context) =>
+              //       BestSellerScreen(),
+              //   AppRoutes.productDetailsScreen:
+              //       (context) => ProductDetailsScreen(),
+              // },
             );
           },
         ),

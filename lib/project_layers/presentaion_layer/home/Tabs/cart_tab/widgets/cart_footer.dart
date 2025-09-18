@@ -1,4 +1,6 @@
+import 'package:flower_app/core/extensions/navigator_extensions.dart';
 import 'package:flower_app/core/extensions/project_extensions.dart';
+import 'package:flower_app/core/route/app_routes.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/core/theme/app_styles.dart';
 import 'package:flutter/material.dart';
@@ -64,7 +66,12 @@ class CartFooter extends StatelessWidget {
         ),
         20.heightBox,
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            context.pushNamed(
+              AppRoutes.chackoutView,
+              arguments: totalPrice,
+            );
+          },
           style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(100),

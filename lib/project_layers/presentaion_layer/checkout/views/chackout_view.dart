@@ -8,7 +8,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ChackoutView extends StatelessWidget {
-  const ChackoutView({super.key});
+  final int totalPrice;
+  const ChackoutView({
+    super.key,
+    required this.totalPrice,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -74,8 +78,8 @@ class ChackoutView extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 20),
-                const Padding(
-                  padding: EdgeInsets.symmetric(
+                Padding(
+                  padding: const EdgeInsets.symmetric(
                     horizontal: 15,
                   ),
                   child: Column(
@@ -94,8 +98,8 @@ class ChackoutView extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            '\$200',
-                            style: TextStyle(
+                            '$totalPrice  EGP',
+                            style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                               color: AppColors.grey,
@@ -103,7 +107,7 @@ class ChackoutView extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Row(
+                      const Row(
                         mainAxisAlignment:
                             MainAxisAlignment
                                 .spaceBetween,
@@ -117,7 +121,7 @@ class ChackoutView extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            '\$10',
+                            '10 EGP',
                             style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
@@ -127,7 +131,9 @@ class ChackoutView extends StatelessWidget {
                         ],
                       ),
 
-                      Divider(color: AppColors.grey),
+                      const Divider(
+                        color: AppColors.grey,
+                      ),
                       Row(
                         mainAxisAlignment:
                             MainAxisAlignment
@@ -141,7 +147,7 @@ class ChackoutView extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            '\$110',
+                            "${totalPrice + 10} EGP",
                             style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,

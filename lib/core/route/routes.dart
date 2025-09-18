@@ -67,8 +67,10 @@ abstract class Routes {
               const TermsAndConditionsView(),
         );
       case AppRoutes.chackoutView:
+        var totalPrice = settings.arguments as int;
         return MaterialPageRoute(
-          builder: (context) => ChackoutView(),
+          builder: (context) =>
+              ChackoutView(totalPrice: totalPrice),
         );
       case AppRoutes.aboutUs:
         return MaterialPageRoute(
