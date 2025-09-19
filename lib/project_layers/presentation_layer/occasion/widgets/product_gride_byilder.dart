@@ -6,6 +6,8 @@ import 'package:flower_app/project_layers/presentation_layer/occasion/widgets/pr
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/route/app_routes.dart';
+
 class ProductsGridBuilder extends StatelessWidget {
   const ProductsGridBuilder({super.key});
 
@@ -40,8 +42,11 @@ class ProductsGridBuilder extends StatelessWidget {
                         final product = state.products![index];
                         return GestureDetector(
                           onTap: () {
-                            // Navigator to product details screen and give the product[index]
-                          },
+                            Navigator.pushNamed(
+                              context,
+                              AppRoutes.productDetailsScreen,
+                              arguments: product,
+                            );                          },
                           child: ProductItem(product: product),
                         );
                       },

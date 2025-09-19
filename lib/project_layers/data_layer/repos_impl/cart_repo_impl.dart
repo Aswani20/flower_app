@@ -13,11 +13,11 @@ class CartRepoImpl extends CartRepo {
   Future<CartResponseEntity> getCart() =>
       cartRemoteDataSource.getCart();
 
-  @override
-  Future<CartResponseEntity> updateCartItem(
-    String itemId,
-    int qty,
-  ) => cartRemoteDataSource.updateCartItem(itemId, qty);
+  // @override
+  // Future<CartResponseEntity> updateCartItem(
+  //   String itemId,
+  //   int qty,
+  // ) => cartRemoteDataSource.updateCartItem(itemId, qty);
 
   @override
   Future<CartResponseEntity> addToCart(
@@ -29,11 +29,11 @@ class CartRepoImpl extends CartRepo {
   );
 
   @override
-  Future<CartResponseEntity> removeItemFromCart(
+  Future<CartResponseEntity> deleteItemFromCart(
     String itemId,
   ) => cartRemoteDataSource.removeItemFromCart(itemId);
 
-  @override
-  Future<void> clearCart() =>
-      cartRemoteDataSource.clearCart();
+  // @override
+  // Future<void> clearCart() =>
+  //     cartRemoteDataSource.clearCart();
 }

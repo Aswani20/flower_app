@@ -6,6 +6,7 @@ import 'package:flutter/widgets.dart';
 
 class GridSliverProduct extends StatelessWidget {
   final List<ProductEntity> products;
+
   const GridSliverProduct({
     required this.products,
     super.key,

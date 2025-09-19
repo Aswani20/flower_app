@@ -1,3 +1,4 @@
+
 import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/core/theme/app_styles.dart';
@@ -22,7 +23,7 @@ class CardHeader extends StatelessWidget {
               ),
               TextSpan(
                 text:
-                    ' ($itemNumbers ${context.l10n.items})',
+                ' ($itemNumbers ${context.l10n.items})',
                 style: AppStyles.appBarTitleStyle
                     .copyWith(color: AppColors.grey),
               ),

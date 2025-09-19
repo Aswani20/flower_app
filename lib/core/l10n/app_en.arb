@@ -116,8 +116,7 @@
   "please_choose" : "choose" ,
   "address_added_successfully" : "Address added successfully",
   "active" : "Active",
-  "completed" : "Completed"
-   "confirmLogout": "Confirm Logout",
+  "completed" : "Completed",
   "deliver_to": "Deliver to",
   "items" : "items",
   "sub_total" : "Sub Total",

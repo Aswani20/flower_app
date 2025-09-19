@@ -7,8 +7,6 @@ import 'package:retrofit/retrofit.dart';
 import '../../data_layer/model/products_response.dart';
 import 'package:flower_app/project_layers/api_layer/models/categories_response.dart';
 import 'package:flower_app/project_layers/api_layer/models/get_all_notification_response_dto.dart';
-import 'package:flower_app/project_layers/api_layer/models/products_response.dart'
-    hide ProductsResponse;
 import 'package:flower_app/project_layers/api_layer/models/request/add_address_request_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/change_password_request_body.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/forget_password_request_dto.dart';
@@ -30,8 +28,6 @@ import 'package:flower_app/project_layers/api_layer/models/response/sign_up_resp
 import 'package:flower_app/project_layers/api_layer/models/response/update_photo_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/update_profile_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/verify_reset_code_response.dart';
-import 'package:injectable/injectable.dart';
-import 'package:retrofit/retrofit.dart';
 import '../models/response/cart_response_dto.dart';
 import '../models/response/login_response.dart';
 import '../models/response/order_response.dart';

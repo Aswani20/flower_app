@@ -1,10 +1,13 @@
+import 'package:flower_app/core/extensions/navigator_extensions.dart';
 import 'package:flower_app/core/extensions/project_extensions.dart';
+import 'package:flower_app/core/route/app_routes.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/core/theme/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class CartFooter extends StatelessWidget {
-  const CartFooter({super.key});
+  int totalPrice;
+  CartFooter({super.key, required this.totalPrice});
 
   @override
   Widget build(BuildContext context) {
@@ -14,14 +17,14 @@ class CartFooter extends StatelessWidget {
         8.heightBox,
         Row(
           mainAxisAlignment:
-              MainAxisAlignment.spaceBetween,
+          MainAxisAlignment.spaceBetween,
           children: [
             Text(
               context.l10n.sub_total,
               style: AppStyles.regular16greyRoboto,
             ),
             Text(
-              "100\$",
+              "$totalPrice EGP",
               style: AppStyles.regular16greyRoboto,
             ),
           ],
@@ -29,14 +32,14 @@ class CartFooter extends StatelessWidget {
         8.heightBox,
         Row(
           mainAxisAlignment:
-              MainAxisAlignment.spaceBetween,
+          MainAxisAlignment.spaceBetween,
           children: [
             Text(
               context.l10n.delivery_fee,
               style: AppStyles.regular16greyRoboto,
             ),
             Text(
-              "10\$",
+              "10 EGP",
               style: AppStyles.regular16greyRoboto,
             ),
           ],
@@ -49,21 +52,26 @@ class CartFooter extends StatelessWidget {
         8.heightBox,
         Row(
           mainAxisAlignment:
-              MainAxisAlignment.spaceBetween,
+          MainAxisAlignment.spaceBetween,
           children: [
             Text(
               context.l10n.total,
               style: AppStyles.medium18blackRoboto,
             ),
             Text(
-              "110\$",
+              "${totalPrice + 10} EGP",
               style: AppStyles.medium18blackRoboto,
             ),
           ],
         ),
         20.heightBox,
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            context.pushNamed(
+              AppRoutes.chackoutView,
+              arguments: totalPrice,
+            );
+          },
           style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(100),
