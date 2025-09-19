@@ -108,5 +108,10 @@
   "address_added_successfully" : "Address added successfully",
   "active" : "Active",
   "completed" : "Completed",
-
+  "items" : "Items",
+  "deliver_to" : "Deliver to",
+  "total" : "Total",
+  "checkout" : "Checkout",
+  "sub_total" : "Sub Total",
+  "delivery_fee" : "Delivery Fee"
   }

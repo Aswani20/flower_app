@@ -34,6 +34,8 @@ import 'package:flower_app/project_layers/api_layer/models/response/best_seller_
     as _i18;
 import 'package:flower_app/project_layers/api_layer/models/response/best_seller_response_dto.dart'
     as _i19;
+import 'package:flower_app/project_layers/api_layer/models/response/cart_response_dto.dart'
+    as _i33;
 import 'package:flower_app/project_layers/api_layer/models/response/category_response_dto.dart'
     as _i17;
 import 'package:flower_app/project_layers/api_layer/models/response/change_password_response_dto.dart'
@@ -480,4 +482,52 @@ class MockApiClient extends _i1.Mock implements _i15.ApiClient {
             ),
           )
           as _i16.Future<_i14.AddressResponseDto>);
+
+  @override
+  _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>> addToCart(
+    Map<String, dynamic>? body,
+    String? token,
+  ) =>
+      (super.noSuchMethod(
+            Invocation.method(#addToCart, [body, token]),
+            returnValue:
+                _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>>.value(
+                  _FakeHttpResponse_2<_i33.CartResponseDto>(
+                    this,
+                    Invocation.method(#addToCart, [body, token]),
+                  ),
+                ),
+          )
+          as _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>>);
+
+  @override
+  _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>> getCart(String? token) =>
+      (super.noSuchMethod(
+            Invocation.method(#getCart, [token]),
+            returnValue:
+                _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>>.value(
+                  _FakeHttpResponse_2<_i33.CartResponseDto>(
+                    this,
+                    Invocation.method(#getCart, [token]),
+                  ),
+                ),
+          )
+          as _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>>);
+
+  @override
+  _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>> deleteItemFromCart(
+    String? itemId,
+    String? token,
+  ) =>
+      (super.noSuchMethod(
+            Invocation.method(#deleteItemFromCart, [itemId, token]),
+            returnValue:
+                _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>>.value(
+                  _FakeHttpResponse_2<_i33.CartResponseDto>(
+                    this,
+                    Invocation.method(#deleteItemFromCart, [itemId, token]),
+                  ),
+                ),
+          )
+          as _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>>);
 }

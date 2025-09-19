@@ -352,10 +352,26 @@ class AppLocalizationsEn extends AppLocalizations {
       'Address added successfully';
 
   @override
-  // TODO: implement active
-  String get active => "Active";
+  String get active => 'Active';
 
   @override
-  // TODO: implement completed
-  String get completed => "Completed";
+  String get completed => 'Completed';
+
+  @override
+  String get items => 'Items';
+
+  @override
+  String get deliver_to => 'Deliver to';
+
+  @override
+  String get total => 'Total';
+
+  @override
+  String get checkout => 'Checkout';
+
+  @override
+  String get sub_total => 'Sub Total';
+
+  @override
+  String get delivery_fee => 'Delivery Fee';
 }

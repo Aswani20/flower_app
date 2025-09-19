@@ -21,6 +21,8 @@ import '../../project_layers/api_layer/data_source/auth_remote_data_source_impl.
     as _i185;
 import '../../project_layers/api_layer/data_source/best_seller_data_source_impl.dart'
     as _i561;
+import '../../project_layers/api_layer/data_source/cart_remote_data_source_impl.dart'
+    as _i316;
 import '../../project_layers/api_layer/data_source/category_remote_data_source_impl.dart'
     as _i622;
 import '../../project_layers/api_layer/data_source/change_password_remote_data_source_impl.dart'
@@ -51,6 +53,8 @@ import '../../project_layers/data_layer/data_source/auth_remote_data_source.dart
     as _i956;
 import '../../project_layers/data_layer/data_source/best_seller_data_source.dart'
     as _i1012;
+import '../../project_layers/data_layer/data_source/cart_remote_data_source.dart'
+    as _i533;
 import '../../project_layers/data_layer/data_source/category_remote_data_source.dart'
     as _i956;
 import '../../project_layers/data_layer/data_source/change_password_remote_data_source.dart'
@@ -83,6 +87,8 @@ import '../../project_layers/data_layer/repos_impl/auth_repo_impl.dart'
     as _i253;
 import '../../project_layers/data_layer/repos_impl/best_seller_repo_impl.dart'
     as _i673;
+import '../../project_layers/data_layer/repos_impl/cart_repo_impl.dart'
+    as _i928;
 import '../../project_layers/data_layer/repos_impl/category_repo_impl.dart'
     as _i425;
 import '../../project_layers/data_layer/repos_impl/chang_password_repo_impl.dart'
@@ -108,6 +114,7 @@ import '../../project_layers/domain_layer/repo/product_repo.dart' as _i249;
 import '../../project_layers/domain_layer/repos/address_repo.dart' as _i1;
 import '../../project_layers/domain_layer/repos/auth_repo.dart' as _i326;
 import '../../project_layers/domain_layer/repos/best_seller_repo.dart' as _i408;
+import '../../project_layers/domain_layer/repos/cart_repo.dart' as _i218;
 import '../../project_layers/domain_layer/repos/category_repo.dart' as _i144;
 import '../../project_layers/domain_layer/repos/chang_password_repo.dart'
     as _i64;
@@ -159,6 +166,12 @@ import '../../project_layers/domain_layer/use_cases/update_user_profile_use_case
     as _i621;
 import '../../project_layers/domain_layer/use_cases/verify_reset_code_use_case.dart'
     as _i649;
+import '../../project_layers/domain_layer/usecase/cart/add_to_cart_use_case.dart'
+    as _i270;
+import '../../project_layers/domain_layer/usecase/cart/delete_item_from_cart_use_case.dart'
+    as _i368;
+import '../../project_layers/domain_layer/usecase/cart/get_cart_use_case.dart'
+    as _i755;
 import '../../project_layers/domain_layer/usecase/occasion_usecase.dart'
     as _i268;
 import '../../project_layers/domain_layer/usecase/product_usecase.dart' as _i14;
@@ -174,6 +187,8 @@ import '../../project_layers/presentaion_layer/auth/sign_up/cubit/sign_up_cubit.
     as _i785;
 import '../../project_layers/presentaion_layer/best_seller/cubit/best_seller_cubit.dart'
     as _i125;
+import '../../project_layers/presentaion_layer/home/Tabs/cart_tab/cubit/cart_view_model.dart'
+    as _i988;
 import '../../project_layers/presentaion_layer/home/Tabs/category_tab/cubit/category_cubit.dart'
     as _i608;
 import '../../project_layers/presentaion_layer/home/Tabs/home_tab/cubit/home_tab_view_model.dart'
@@ -208,6 +223,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i1054.HomeRemoteDataSource>(
       () => _i329.HomeRemoteDataSourceImpl(gh<_i778.ApiClient>()),
     );
+    gh.factory<_i533.CartRemoteDataSource>(
+      () => _i316.CartRemoteDataSourceImpl(gh<_i778.ApiClient>()),
+    );
     gh.factory<_i1012.BestSellerDataSource>(
       () => _i561.BestSellerDataSourceImpl(apiClient: gh<_i778.ApiClient>()),
     );
@@ -220,6 +238,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i29.AddressDataSource>(
       () => _i1063.AddAddressDataSourceImpl(gh<_i778.ApiClient>()),
     );
+    gh.factory<_i218.CartRepo>(
+      () => _i928.CartRepoImpl(gh<_i533.CartRemoteDataSource>()),
+    );
     gh.factory<_i1.AddressRepo>(
       () => _i973.AddressRepoImpl(gh<_i29.AddressDataSource>()),
     );
@@ -228,6 +249,15 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i27.ProductRemoteDataSource>(
       () => _i636.ProductRemoteDataSourceImpl(gh<_i778.ApiClient>()),
+    );
+    gh.factory<_i270.AddToCartUseCase>(
+      () => _i270.AddToCartUseCase(gh<_i218.CartRepo>()),
+    );
+    gh.factory<_i755.GetCartUseCase>(
+      () => _i755.GetCartUseCase(gh<_i218.CartRepo>()),
+    );
+    gh.factory<_i368.DeleteItemFromCartUseCase>(
+      () => _i368.DeleteItemFromCartUseCase(gh<_i218.CartRepo>()),
     );
     gh.factory<_i1029.ProductDataSource>(
       () => _i342.ProductDataSourceImpl(gh<_i778.ApiClient>()),
@@ -256,11 +286,11 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i956.CategoryRemoteDataSource>(
       () => _i622.CategoryRemoteDataSourceImpl(gh<_i778.ApiClient>()),
     );
-    gh.factory<_i366.AddAddressUseCase>(
-      () => _i366.AddAddressUseCase(gh<_i1.AddressRepo>()),
-    );
     gh.factory<_i294.GetAddressUseCase>(
       () => _i294.GetAddressUseCase(gh<_i1.AddressRepo>()),
+    );
+    gh.factory<_i366.AddAddressUseCase>(
+      () => _i366.AddAddressUseCase(gh<_i1.AddressRepo>()),
     );
     gh.factory<_i408.BestSellerRepo>(
       () => _i673.BestSellerRepoImpl(
@@ -299,11 +329,11 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i680.GetAllNotificationRemoteDataSource>(),
       ),
     );
-    gh.factory<_i797.UpdateUserPhotoUseCase>(
-      () => _i797.UpdateUserPhotoUseCase(gh<_i583.ProfileRepo>()),
-    );
     gh.factory<_i621.UpdateUserProfileUseCase>(
       () => _i621.UpdateUserProfileUseCase(gh<_i583.ProfileRepo>()),
+    );
+    gh.factory<_i797.UpdateUserPhotoUseCase>(
+      () => _i797.UpdateUserPhotoUseCase(gh<_i583.ProfileRepo>()),
     );
     gh.factory<_i53.ProductRepo>(
       () => _i146.ProductRepoImpl(gh<_i27.ProductRemoteDataSource>()),
@@ -332,6 +362,13 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i14.ProductUseCase>(
       () => _i14.ProductUseCase(gh<_i249.ProductRepo>()),
     );
+    gh.factory<_i988.CartViewModel>(
+      () => _i988.CartViewModel(
+        addToCartUseCase: gh<_i270.AddToCartUseCase>(),
+        getCartUseCase: gh<_i755.GetCartUseCase>(),
+        deleteItemFromCartUseCase: gh<_i368.DeleteItemFromCartUseCase>(),
+      ),
+    );
     gh.factory<_i105.GetLoggedUserDataRepo>(
       () =>
           _i340.GetLoggedUserDataRepoImpl(gh<_i455.GetLoggetUserDataSource>()),
@@ -339,14 +376,14 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i123.SignUpUseCase>(
       () => _i123.SignUpUseCase(gh<_i948.SignUpRepo>()),
     );
-    gh.factory<_i990.BestSellerUseCase>(
-      () => _i990.BestSellerUseCase(homeRepo: gh<_i900.HomeRepo>()),
+    gh.factory<_i7.OccasionUseCase>(
+      () => _i7.OccasionUseCase(homeRepo: gh<_i900.HomeRepo>()),
     );
     gh.factory<_i858.CategoryUseCase>(
       () => _i858.CategoryUseCase(homeRepo: gh<_i900.HomeRepo>()),
     );
-    gh.factory<_i7.OccasionUseCase>(
-      () => _i7.OccasionUseCase(homeRepo: gh<_i900.HomeRepo>()),
+    gh.factory<_i990.BestSellerUseCase>(
+      () => _i990.BestSellerUseCase(homeRepo: gh<_i900.HomeRepo>()),
     );
     gh.factory<_i389.GetOrdersUseCase>(
       () => _i389.GetOrdersUseCase(gh<_i395.OrdersRepository>()),
@@ -369,14 +406,14 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i14.ProductUseCase>(),
       ),
     );
-    gh.factory<_i18.ForgetPasswordUseCase>(
-      () => _i18.ForgetPasswordUseCase(gh<_i326.AuthRepo>()),
-    );
     gh.factory<_i194.ResetPasswordUseCase>(
       () => _i194.ResetPasswordUseCase(gh<_i326.AuthRepo>()),
     );
     gh.factory<_i649.VerifyResetCodeUseCase>(
       () => _i649.VerifyResetCodeUseCase(gh<_i326.AuthRepo>()),
+    );
+    gh.factory<_i18.ForgetPasswordUseCase>(
+      () => _i18.ForgetPasswordUseCase(gh<_i326.AuthRepo>()),
     );
     gh.factory<_i878.CategoryUseCase>(
       () => _i878.CategoryUseCase(gh<_i144.CategoryRepo>()),
