@@ -134,10 +134,10 @@ import '../../project_layers/domain_layer/use_cases/best_seller_use_case.dart'
     as _i124;
 import '../../project_layers/domain_layer/use_cases/cart/add_to_cart_use_case.dart'
     as _i1003;
+import '../../project_layers/domain_layer/use_cases/cart/delete_item_from_cart_use_case.dart'
+    as _i856;
 import '../../project_layers/domain_layer/use_cases/cart/get_cart_use_case.dart'
     as _i233;
-import '../../project_layers/domain_layer/use_cases/cart/remove_item_from_cart_use_case.dart'
-    as _i1057;
 import '../../project_layers/domain_layer/use_cases/category_use_case.dart'
     as _i878;
 import '../../project_layers/domain_layer/use_cases/change_password_use_case.dart'
@@ -172,6 +172,12 @@ import '../../project_layers/domain_layer/use_cases/update_user_profile_use_case
     as _i621;
 import '../../project_layers/domain_layer/use_cases/verify_reset_code_use_case.dart'
     as _i649;
+import '../../project_layers/domain_layer/usecase/cart/add_to_cart_use_case.dart'
+    as _i270;
+import '../../project_layers/domain_layer/usecase/cart/delete_item_from_cart_use_case.dart'
+    as _i368;
+import '../../project_layers/domain_layer/usecase/cart/get_cart_use_case.dart'
+    as _i755;
 import '../../project_layers/domain_layer/usecase/occasion_usecase.dart'
     as _i268;
 import '../../project_layers/domain_layer/usecase/product_usecase.dart' as _i14;
@@ -243,9 +249,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i218.CartRepo>(
       () => _i928.CartRepoImpl(gh<_i533.CartRemoteDataSource>()),
     );
-    gh.factory<_i233.GetCartUseCase>(
-      () => _i233.GetCartUseCase(gh<_i218.CartRepo>()),
-    );
     gh.factory<_i1.AddressRepo>(
       () => _i973.AddressRepoImpl(gh<_i29.AddressDataSource>()),
     );
@@ -255,11 +258,23 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i27.ProductRemoteDataSource>(
       () => _i636.ProductRemoteDataSourceImpl(gh<_i778.ApiClient>()),
     );
+    gh.factory<_i270.AddToCartUseCase>(
+      () => _i270.AddToCartUseCase(gh<_i218.CartRepo>()),
+    );
+    gh.factory<_i755.GetCartUseCase>(
+      () => _i755.GetCartUseCase(gh<_i218.CartRepo>()),
+    );
+    gh.factory<_i368.DeleteItemFromCartUseCase>(
+      () => _i368.DeleteItemFromCartUseCase(gh<_i218.CartRepo>()),
+    );
     gh.factory<_i1003.AddToCartUseCase>(
       () => _i1003.AddToCartUseCase(gh<_i218.CartRepo>()),
     );
-    gh.factory<_i1057.DeleteItemFromCartUseCase>(
-      () => _i1057.DeleteItemFromCartUseCase(gh<_i218.CartRepo>()),
+    gh.factory<_i233.GetCartUseCase>(
+      () => _i233.GetCartUseCase(gh<_i218.CartRepo>()),
+    );
+    gh.factory<_i856.DeleteItemFromCartUseCase>(
+      () => _i856.DeleteItemFromCartUseCase(gh<_i218.CartRepo>()),
     );
     gh.factory<_i1029.ProductDataSource>(
       () => _i342.ProductDataSourceImpl(gh<_i778.ApiClient>()),
@@ -288,11 +303,18 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i956.CategoryRemoteDataSource>(
       () => _i622.CategoryRemoteDataSourceImpl(gh<_i778.ApiClient>()),
     );
-    gh.factory<_i366.AddAddressUseCase>(
-      () => _i366.AddAddressUseCase(gh<_i1.AddressRepo>()),
+    gh.factory<_i988.CartViewModel>(
+      () => _i988.CartViewModel(
+        addToCartUseCase: gh<_i1003.AddToCartUseCase>(),
+        getCartUseCase: gh<_i233.GetCartUseCase>(),
+        deleteItemFromCartUseCase: gh<_i856.DeleteItemFromCartUseCase>(),
+      ),
     );
     gh.factory<_i294.GetAddressUseCase>(
       () => _i294.GetAddressUseCase(gh<_i1.AddressRepo>()),
+    );
+    gh.factory<_i366.AddAddressUseCase>(
+      () => _i366.AddAddressUseCase(gh<_i1.AddressRepo>()),
     );
     gh.factory<_i408.BestSellerRepo>(
       () => _i673.BestSellerRepoImpl(
@@ -331,11 +353,11 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i680.GetAllNotificationRemoteDataSource>(),
       ),
     );
-    gh.factory<_i797.UpdateUserPhotoUseCase>(
-      () => _i797.UpdateUserPhotoUseCase(gh<_i583.ProfileRepo>()),
-    );
     gh.factory<_i621.UpdateUserProfileUseCase>(
       () => _i621.UpdateUserProfileUseCase(gh<_i583.ProfileRepo>()),
+    );
+    gh.factory<_i797.UpdateUserPhotoUseCase>(
+      () => _i797.UpdateUserPhotoUseCase(gh<_i583.ProfileRepo>()),
     );
     gh.factory<_i53.ProductRepo>(
       () => _i146.ProductRepoImpl(gh<_i27.ProductRemoteDataSource>()),
@@ -358,13 +380,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i124.BestSellerUseCase>(
       () => _i124.BestSellerUseCase(bestSellerRepo: gh<_i408.BestSellerRepo>()),
     );
-    gh.factory<_i988.CartViewModel>(
-      () => _i988.CartViewModel(
-        addToCartUseCase: gh<_i1003.AddToCartUseCase>(),
-        getCartUseCase: gh<_i233.GetCartUseCase>(),
-        deleteItemFromCartUseCase: gh<_i1057.DeleteItemFromCartUseCase>(),
-      ),
-    );
     gh.factory<_i982.GetAllNotificationUseCase>(
       () => _i982.GetAllNotificationUseCase(gh<_i570.GetAllNotificationRepo>()),
     );
@@ -378,14 +393,14 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i123.SignUpUseCase>(
       () => _i123.SignUpUseCase(gh<_i948.SignUpRepo>()),
     );
-    gh.factory<_i990.BestSellerUseCase>(
-      () => _i990.BestSellerUseCase(homeRepo: gh<_i900.HomeRepo>()),
+    gh.factory<_i7.OccasionUseCase>(
+      () => _i7.OccasionUseCase(homeRepo: gh<_i900.HomeRepo>()),
     );
     gh.factory<_i858.CategoryUseCase>(
       () => _i858.CategoryUseCase(homeRepo: gh<_i900.HomeRepo>()),
     );
-    gh.factory<_i7.OccasionUseCase>(
-      () => _i7.OccasionUseCase(homeRepo: gh<_i900.HomeRepo>()),
+    gh.factory<_i990.BestSellerUseCase>(
+      () => _i990.BestSellerUseCase(homeRepo: gh<_i900.HomeRepo>()),
     );
     gh.factory<_i389.GetOrdersUseCase>(
       () => _i389.GetOrdersUseCase(gh<_i395.OrdersRepository>()),
@@ -411,14 +426,14 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i14.ProductUseCase>(),
       ),
     );
-    gh.factory<_i18.ForgetPasswordUseCase>(
-      () => _i18.ForgetPasswordUseCase(gh<_i326.AuthRepo>()),
-    );
     gh.factory<_i194.ResetPasswordUseCase>(
       () => _i194.ResetPasswordUseCase(gh<_i326.AuthRepo>()),
     );
     gh.factory<_i649.VerifyResetCodeUseCase>(
       () => _i649.VerifyResetCodeUseCase(gh<_i326.AuthRepo>()),
+    );
+    gh.factory<_i18.ForgetPasswordUseCase>(
+      () => _i18.ForgetPasswordUseCase(gh<_i326.AuthRepo>()),
     );
     gh.factory<_i878.CategoryUseCase>(
       () => _i878.CategoryUseCase(gh<_i144.CategoryRepo>()),

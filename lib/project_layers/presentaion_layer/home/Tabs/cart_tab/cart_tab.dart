@@ -1,3 +1,4 @@
+import 'package:flower_app/core/dialog/dialog.dart';
 import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/cart_tab/cubit/cart_states.dart';
@@ -8,26 +9,45 @@ import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/cart_tab/w
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/cart_tab/widgets/cart_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../../../../core/di/di.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class CartTab extends StatefulWidget {
-  const CartTab({super.key});
+  CartTab({super.key});
 
   @override
   State<CartTab> createState() => _CartTabState();
 }
 
 class _CartTabState extends State<CartTab> {
+
+  @override
+  void initState() {
+    CartViewModel.get(context).getCart();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CartViewModel, CartStates>(
+    return BlocConsumer<CartViewModel, CartStates>(
+      listener: (context, state) {
+        if (state is DeleteSuccessStates) {
+          Fluttertoast.showToast(msg: "Item deleted successfully", backgroundColor: AppColors.green);
+        }
+        else if (state is DeleteErrorStates) {
+          Fluttertoast.showToast(msg: "Error: ${state.message}", backgroundColor: AppColors.red);
+        }
+        else if(state is DeleteLoadingStates){
+          Fluttertoast.showToast(msg: "Loading....", backgroundColor: AppColors.grey);
+        }
+      },
       builder: (context, state) {
         if (state is GetCartErrorStates) {
           return Center(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(state.message),
+                16.heightBox,
                 ElevatedButton(
                   onPressed: () {
                     CartViewModel.get(context).getCart();
@@ -37,13 +57,38 @@ class _CartTabState extends State<CartTab> {
               ],
             ),
           );
-        } else if (state is GetCartSuccessStates) {
+        }
+        else if (state is GetCartSuccessStates || state is DeleteSuccessStates) {
+          final cartData = state is GetCartSuccessStates ? state.cartData : (state as DeleteSuccessStates).cartData;
+
+          if (cartData.cart?.cartItems?.isEmpty ?? true) {
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.shopping_cart_outlined,
+                    size: 100,
+                    color: AppColors.grey,
+                  ),
+                  16.heightBox,
+                  Text(
+                    "Your cart is empty",
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: AppColors.grey,
+                    ),
+                  ),
+                ],
+              ),
+            );
+          }
+
           return SafeArea(
             child: Column(
               children: [
                 CardHeader(
-                  itemNumbers:
-                      state.cartData.numOfCartItems!,
+                  itemNumbers: cartData.numOfCartItems ?? 0,
                 ),
                 8.heightBox,
                 CartDeliverToAddress(),
@@ -52,34 +97,76 @@ class _CartTabState extends State<CartTab> {
                   child: ListView.builder(
                     itemBuilder: (context, index) {
                       return CartItem(
-                        cartItemsEntity: state
-                            .cartData
-                            .cart!
-                            .cartItems![index],
+                        cartItemsEntity: cartData.cart!.cartItems![index],
                       );
                     },
-                    itemCount: state
-                        .cartData
-                        .cart!
-                        .cartItems!
-                        .length,
+                    itemCount: cartData.cart!.cartItems!.length,
                   ),
                 ),
                 CartFooter(
-                  totalPrice:
-                      state.cartData.cart!.totalPrice!,
+                  totalPrice: cartData.cart!.totalPrice ?? 0,
                 ),
               ],
             ),
           );
-        } else {
+        }
+        else if(state is GetCartLoadingStates){
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(
+                child: Text("Loading..."),
+              ),
+              8.heightBox,
+              Container(
+                color: Colors.pink[40],
+                child: Center(
+                  child: CircularProgressIndicator(
+                    color: AppColors.pink,
+                  ),
+                ),
+              ),
+            ],
+          );
+        }
+        else if (state is DeleteLoadingStates) {
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(
+                child: Text("Loading..."),
+              ),
+              8.heightBox,
+              Container(
+                color: Colors.pink[40],
+                child: Center(
+                  child: CircularProgressIndicator(
+                    color: AppColors.pink,
+                  ),
+                ),
+              ),
+            ],
+          );
+        }
+        else {
           return Center(
-            child: CircularProgressIndicator(
-              color: AppColors.pink,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                16.heightBox,
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(padding: EdgeInsets.symmetric(horizontal: context.width * 0.2)),
+                  onPressed: () {
+                    CartViewModel.get(context).getCart();
+                  },
+                  child: Text("Get My Cart"),
+                ),
+              ],
             ),
           );
         }
       },
     );
   }
+
 }

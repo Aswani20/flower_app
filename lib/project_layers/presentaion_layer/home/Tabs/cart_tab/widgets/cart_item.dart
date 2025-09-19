@@ -97,12 +97,11 @@ class _CartItemState extends State<CartItem> {
                         "Are you sure to delete this item?",
                     posActions: "Yes",
                     negActions: "No",
-                    posFunction: (ctx) =>
-                        CartViewModel.get(
-                          ctx,
-                        ).deleteItemFromCart(
-                          widget.cartItemsEntity.id,
-                        ),
+                    posFunction: (ctx) {
+                      Navigator.of(ctx).pop();
+                      CartViewModel.get(ctx,).deleteItemFromCart(widget.cartItemsEntity.id,);
+                    }
+
                   );
                 },
                 icon: Assets.icons.deleteIcon.image(

@@ -3,15 +3,12 @@ import 'package:flower_app/project_layers/domain_layer/repos/cart_repo.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable
-class DeleteItemFromCartUseCase {
+class DeleteItemFromCartUseCase{
   final CartRepo _cartRepo;
-
   DeleteItemFromCartUseCase(this._cartRepo);
 
-  Future<CartResponseEntity> invoke(itemId) async {
-    final result = await _cartRepo.deleteItemFromCart(
-      itemId,
-    );
-    return result;
+  Future<CartResponseEntity> invoke(itemId) async{
+     return await _cartRepo.deleteItemFromCart(itemId);
   }
+
 }

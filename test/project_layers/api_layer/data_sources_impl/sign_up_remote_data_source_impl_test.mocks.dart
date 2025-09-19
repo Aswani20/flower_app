@@ -485,77 +485,48 @@ class MockApiClient extends _i1.Mock implements _i15.ApiClient {
           as _i16.Future<_i14.AddressResponseDto>);
 
   @override
-  _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>> getCart() =>
-      (super.noSuchMethod(
-            Invocation.method(#getCart, []),
-            returnValue:
-                _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>>.value(
-                  _FakeHttpResponse_2<_i33.CartResponseDto>(
-                    this,
-                    Invocation.method(#getCart, []),
-                  ),
-                ),
-          )
-          as _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>>);
-
-  @override
   _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>> addToCart(
     Map<String, dynamic>? body,
+    String? token,
   ) =>
       (super.noSuchMethod(
-            Invocation.method(#addToCart, [body]),
+            Invocation.method(#addToCart, [body, token]),
             returnValue:
                 _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>>.value(
                   _FakeHttpResponse_2<_i33.CartResponseDto>(
                     this,
-                    Invocation.method(#addToCart, [body]),
+                    Invocation.method(#addToCart, [body, token]),
                   ),
                 ),
           )
           as _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>>);
 
   @override
-  _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>> updateCart(
+  _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>> getCart(String? token) =>
+      (super.noSuchMethod(
+            Invocation.method(#getCart, [token]),
+            returnValue:
+                _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>>.value(
+                  _FakeHttpResponse_2<_i33.CartResponseDto>(
+                    this,
+                    Invocation.method(#getCart, [token]),
+                  ),
+                ),
+          )
+          as _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>>);
+
+  @override
+  _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>> deleteItemFromCart(
     String? itemId,
-    Map<String, dynamic>? body,
+    String? token,
   ) =>
       (super.noSuchMethod(
-            Invocation.method(#updateCart, [itemId, body]),
+            Invocation.method(#deleteItemFromCart, [itemId, token]),
             returnValue:
                 _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>>.value(
                   _FakeHttpResponse_2<_i33.CartResponseDto>(
                     this,
-                    Invocation.method(#updateCart, [itemId, body]),
-                  ),
-                ),
-          )
-          as _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>>);
-
-  @override
-  _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>> removeItemFromCart(
-    String? itemId,
-  ) =>
-      (super.noSuchMethod(
-            Invocation.method(#removeItemFromCart, [itemId]),
-            returnValue:
-                _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>>.value(
-                  _FakeHttpResponse_2<_i33.CartResponseDto>(
-                    this,
-                    Invocation.method(#removeItemFromCart, [itemId]),
-                  ),
-                ),
-          )
-          as _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>>);
-
-  @override
-  _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>> clearCart() =>
-      (super.noSuchMethod(
-            Invocation.method(#clearCart, []),
-            returnValue:
-                _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>>.value(
-                  _FakeHttpResponse_2<_i33.CartResponseDto>(
-                    this,
-                    Invocation.method(#clearCart, []),
+                    Invocation.method(#deleteItemFromCart, [itemId, token]),
                   ),
                 ),
           )

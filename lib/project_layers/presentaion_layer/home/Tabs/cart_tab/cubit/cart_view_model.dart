@@ -4,7 +4,7 @@ import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/cart_tab/c
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../../../../domain_layer/use_cases/cart/remove_item_from_cart_use_case.dart';
+import '../../../../../domain_layer/use_cases/cart/delete_item_from_cart_use_case.dart';
 
 @injectable
 class CartViewModel extends Cubit<CartStates> {
@@ -21,10 +21,7 @@ class CartViewModel extends Cubit<CartStates> {
   static CartViewModel get(context) =>
       BlocProvider.of<CartViewModel>(context);
 
-  Future<void> addToCart(
-    String productId, {
-    int quantity = 1,
-  }) async {
+  Future<void> addToCart(String productId, {int quantity = 1,}) async {
     try {
       emit(AddCartLoadingStates());
       final data = await addToCartUseCase.invoke(
