@@ -1,7 +1,6 @@
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/cart_tab/cubit/cart_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
-
 import '../../../../../domain_layer/usecase/cart/add_to_cart_use_case.dart';
 import '../../../../../domain_layer/usecase/cart/delete_item_from_cart_use_case.dart';
 import '../../../../../domain_layer/usecase/cart/get_cart_use_case.dart';

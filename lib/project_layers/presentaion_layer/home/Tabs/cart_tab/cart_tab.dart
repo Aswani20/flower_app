@@ -30,10 +30,12 @@ class _CartTabState extends State<CartTab> {
     return BlocConsumer<CartViewModel, CartStates>(
       listener: (context, state) {
         if (state is DeleteSuccessStates) {
-          Fluttertoast.showToast(msg: "Item deleted successfully");
+          Fluttertoast.showToast(msg: "Item deleted successfully", backgroundColor: AppColors.green);
+        }else if (state is DeleteLoadingStates) {
+          Fluttertoast.showToast(msg: "Loading...", backgroundColor: AppColors.grey);
         }
         else if (state is DeleteErrorStates) {
-          Fluttertoast.showToast(msg: "Error: ${state.message}");
+          Fluttertoast.showToast(msg: "Error: ${state.message}", backgroundColor: AppColors.red);
         }
       },
       builder: (context, state) {
@@ -58,7 +60,6 @@ class _CartTabState extends State<CartTab> {
           final cartData = state is GetCartSuccessStates
               ? state.cartData
               : (state as DeleteSuccessStates).cartData;
-
           if (cartData.cart?.cartItems?.isEmpty ?? true) {
             return Center(
               child: Column(
@@ -81,7 +82,6 @@ class _CartTabState extends State<CartTab> {
               ),
             );
           }
-
           return SafeArea(
             child: Column(
               children: [
@@ -113,7 +113,7 @@ class _CartTabState extends State<CartTab> {
             children: [
               _buildCartContent(context),
               Container(
-                color: Colors.black26,
+                color: AppColors.pink[20],
                 child: Center(
                   child: CircularProgressIndicator(
                     color: AppColors.pink,
