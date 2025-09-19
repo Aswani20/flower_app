@@ -65,7 +65,9 @@ class ListTileHeader extends StatelessWidget {
         Divider(thickness: 0.3, color: AppColors.grey),
         ListTile(
           onTap: () {
-            //here settings of notification
+            context.pushNamed(
+              AppRoutes.notificationsList,
+            );
           },
           leading: Switch(
             value: true,
