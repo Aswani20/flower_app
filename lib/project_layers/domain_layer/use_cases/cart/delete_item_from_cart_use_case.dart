@@ -8,8 +8,7 @@ class DeleteItemFromCartUseCase{
   DeleteItemFromCartUseCase(this._cartRepo);
 
   Future<CartResponseEntity> invoke(itemId) async{
-    final result = await _cartRepo.deleteItemFromCart(itemId);
-    return result;
+     return await _cartRepo.deleteItemFromCart(itemId);
   }
 
 }

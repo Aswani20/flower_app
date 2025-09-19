@@ -32,4 +32,5 @@ class DeleteErrorStates extends CartStates{
 class DeleteSuccessStates extends CartStates{
   CartResponseEntity cartData;
   DeleteSuccessStates({required this.cartData});
+
 }

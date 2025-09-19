@@ -27,13 +27,23 @@ class _CartTabState extends State<CartTab> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CartViewModel, CartStates>(
+    return BlocConsumer<CartViewModel, CartStates>(
+      listener: (context, state) {
+        if (state is DeleteSuccessStates) {
+          Fluttertoast.showToast(msg: "Item deleted successfully");
+        }
+        else if (state is DeleteErrorStates) {
+          Fluttertoast.showToast(msg: "Error: ${state.message}");
+        }
+      },
       builder: (context, state) {
         if (state is GetCartErrorStates) {
           return Center(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(state.message),
+                16.heightBox,
                 ElevatedButton(
                   onPressed: () {
                     CartViewModel.get(context).getCart();
@@ -44,13 +54,39 @@ class _CartTabState extends State<CartTab> {
             ),
           );
         }
-        else if (state is GetCartSuccessStates){
+        else if (state is GetCartSuccessStates || state is DeleteSuccessStates) {
+          final cartData = state is GetCartSuccessStates
+              ? state.cartData
+              : (state as DeleteSuccessStates).cartData;
+
+          if (cartData.cart?.cartItems?.isEmpty ?? true) {
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.shopping_cart_outlined,
+                    size: 100,
+                    color: AppColors.grey,
+                  ),
+                  16.heightBox,
+                  Text(
+                    "Your cart is empty",
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: AppColors.grey,
+                    ),
+                  ),
+                ],
+              ),
+            );
+          }
+
           return SafeArea(
             child: Column(
               children: [
                 CardHeader(
-                  itemNumbers:
-                      state.cartData.numOfCartItems!,
+                  itemNumbers: cartData.numOfCartItems ?? 0,
                 ),
                 8.heightBox,
                 CartDeliverToAddress(),
@@ -59,25 +95,32 @@ class _CartTabState extends State<CartTab> {
                   child: ListView.builder(
                     itemBuilder: (context, index) {
                       return CartItem(
-                        cartItemsEntity: state
-                            .cartData
-                            .cart!
-                            .cartItems![index],
+                        cartItemsEntity: cartData.cart!.cartItems![index],
                       );
                     },
-                    itemCount: state
-                        .cartData
-                        .cart!
-                        .cartItems!
-                        .length,
+                    itemCount: cartData.cart!.cartItems!.length,
                   ),
                 ),
                 CartFooter(
-                  totalPrice:
-                      state.cartData.cart!.totalPrice!,
+                  totalPrice: cartData.cart!.totalPrice ?? 0,
                 ),
               ],
             ),
+          );
+        }
+        else if (state is DeleteLoadingStates) {
+          return Stack(
+            children: [
+              _buildCartContent(context),
+              Container(
+                color: Colors.black26,
+                child: Center(
+                  child: CircularProgressIndicator(
+                    color: AppColors.pink,
+                  ),
+                ),
+              ),
+            ],
           );
         }
         else {
@@ -88,6 +131,12 @@ class _CartTabState extends State<CartTab> {
           );
         }
       },
+    );
+  }
+
+  Widget _buildCartContent(BuildContext context) {
+    return Center(
+      child: Text("Loading..."),
     );
   }
 }

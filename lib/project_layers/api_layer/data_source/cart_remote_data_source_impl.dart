@@ -60,8 +60,9 @@ class CartRemoteDataSourceImpl extends CartRemoteDataSource{
       var statusCode = response.response.statusCode ?? 500;
       var cartData = response.data;
       if (statusCode >= 200 && statusCode < 300) {
-        print("cartData: ${cartData.numOfCartItems}");
+        print("Item Deleted Successfully");
         return cartData.toEntity();
+
       }else{
         throw ServerError(errorMessage: cartData.message ?? "Server Error");
       }

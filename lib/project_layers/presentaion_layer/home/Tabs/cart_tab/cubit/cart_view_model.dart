@@ -12,16 +12,20 @@ class CartViewModel extends Cubit<CartStates> {
   GetCartUseCase getCartUseCase;
   DeleteItemFromCartUseCase deleteItemFromCartUseCase;
 
-  CartViewModel({required this.addToCartUseCase,required this.getCartUseCase, required this.deleteItemFromCartUseCase}) : super(CartInitialStates());
+  CartViewModel({
+    required this.addToCartUseCase,
+    required this.getCartUseCase,
+    required this.deleteItemFromCartUseCase
+  }) : super(CartInitialStates());
 
   static CartViewModel get(context) => BlocProvider.of<CartViewModel>(context);
 
-  Future<void> addToCart(String productId, {int quantity = 1,}) async {
+  Future<void> addToCart(String productId, {int quantity = 1}) async {
     try {
       emit(AddCartLoadingStates());
-      final data = await addToCartUseCase.invoke(productId, quantity: quantity,);
+      final data = await addToCartUseCase.invoke(productId, quantity: quantity);
       emit(AddCartSuccessStates(cartData: data));
-    }catch (e) {
+    } catch (e) {
       emit(AddCartErrorStates(message: e.toString()));
     }
   }
@@ -31,17 +35,18 @@ class CartViewModel extends Cubit<CartStates> {
       emit(GetCartLoadingStates());
       final data = await getCartUseCase.invoke();
       emit(GetCartSuccessStates(cartData: data));
-    }catch (e) {
+    } catch (e) {
       emit(GetCartErrorStates(message: e.toString()));
     }
   }
 
-  Future<void> deleteItemFromCart(itemId) async {
+  Future<void> deleteItemFromCart(String itemId) async {
     try {
       emit(DeleteLoadingStates());
       final data = await deleteItemFromCartUseCase.invoke(itemId);
       emit(DeleteSuccessStates(cartData: data));
-    }catch (e) {
+
+    } catch (e) {
       emit(DeleteErrorStates(message: e.toString()));
     }
   }

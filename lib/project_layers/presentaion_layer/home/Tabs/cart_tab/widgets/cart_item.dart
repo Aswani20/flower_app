@@ -97,14 +97,7 @@ class _CartItemState extends State<CartItem> {
             children: [
               IconButton(
                 onPressed: () {
-                  DialogUtils.showMessage(
-                    context: context,
-                    content:
-                        "Are you sure to delete this item?",
-                    posActions: "Yes",
-                    negActions: "No",
-                    posFunction: (ctx) => CartViewModel.get(ctx).deleteItemFromCart(widget.cartItemsEntity.id)
-                  );
+                  CartViewModel.get(context).deleteItemFromCart(widget.cartItemsEntity.id ?? "");
                 },
                 icon: Assets.icons.deleteIcon.image(
                   color: AppColors.red,
