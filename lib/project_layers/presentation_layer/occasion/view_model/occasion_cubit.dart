@@ -8,7 +8,6 @@ import '../../../domain_layer/usecase/occasion_usecase.dart';
 import '../../../domain_layer/usecase/product_usecase.dart';
 import 'occasion_state.dart';
 
-
 @injectable
 class OccasionCubit extends Cubit<OccasionState> {
   OccasionUseCase occasionUseCase;
@@ -30,7 +29,7 @@ class OccasionCubit extends Cubit<OccasionState> {
           getProducts(result.data.first.id);
         }
       case ApiErrorResult<List<OccasionEntity>>():
-        emit(OccasionError(message: result.error));
+        emit(OccasionError(message: result.errorMessage));
     }
   }
 
@@ -43,7 +42,7 @@ class OccasionCubit extends Cubit<OccasionState> {
         emit(ProductLoaded(products: result.data));
 
       case ApiErrorResult<List<ProductEntity>>():
-        emit(ProductError(message: result.error));
+        emit(ProductError(message: result.errorMessage));
     }
   }
 }

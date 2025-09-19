@@ -1,3 +1,4 @@
+
 import 'package:flower_app/core/di/di.dart';
 import 'package:flower_app/core/dialog/dialog.dart';
 import 'package:flower_app/core/extensions/project_extensions.dart';
@@ -18,7 +19,7 @@ class AddAddressScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-          getIt<AddAddressCubit>()..askForLocation(),
+      getIt<AddAddressCubit>()..askForLocation(),
       child: const _AddAddressBody(),
     );
   }
@@ -36,7 +37,7 @@ class _AddAddressBody extends StatelessWidget {
           DialogUtils.showMessage(
             context: context,
             content:
-                context.l10n.address_added_successfully,
+            context.l10n.address_added_successfully,
             posActions: context.l10n.ok,
             posFunction: (p0) {
               Navigator.of(context).pop();
@@ -81,30 +82,30 @@ class _AddAddressBody extends StatelessWidget {
                     .formKey,
                 child: Column(
                   crossAxisAlignment:
-                      CrossAxisAlignment.stretch,
+                  CrossAxisAlignment.stretch,
                   spacing: 15.h,
                   children: [
                     SizedBox(
                       height: 200.h,
                       width: double.infinity,
                       child:
-                          context
-                                  .read<AddAddressCubit>()
-                                  .currentPosition ==
-                              null
+                      context
+                          .read<AddAddressCubit>()
+                          .currentPosition ==
+                          null
                           ? InkWell(
-                              onTap: () {
-                                context
-                                    .read<
-                                      AddAddressCubit
-                                    >()
-                                    .loadLocationData();
-                              },
-                              child: Image.asset(
-                                Assets.images.map.path,
-                                fit: BoxFit.cover,
-                              ),
-                            )
+                        onTap: () {
+                          context
+                              .read<
+                              AddAddressCubit
+                          >()
+                              .loadLocationData();
+                        },
+                        child: Image.asset(
+                          Assets.images.map.path,
+                          fit: BoxFit.cover,
+                        ),
+                      )
                           : _googleMap(context),
                     ),
                     TextFormField(
@@ -136,7 +137,7 @@ class _AddAddressBody extends StatelessWidget {
                       decoration: _inputDecoration(
                         context,
                         labelText:
-                            context.l10n.phoneNumber,
+                        context.l10n.phoneNumber,
                         hintText: context
                             .l10n
                             .enter_the_phone_number,
@@ -157,7 +158,7 @@ class _AddAddressBody extends StatelessWidget {
                       decoration: _inputDecoration(
                         context,
                         labelText:
-                            context.l10n.receipient_name,
+                        context.l10n.receipient_name,
                         hintText: context
                             .l10n
                             .enter_the_recipient_name,
@@ -179,21 +180,21 @@ class _AddAddressBody extends StatelessWidget {
                         Expanded(
                           child: DropdownButtonFormField(
                             style: _formStyle(context),
-                            initialValue: context
+                            value: context
                                 .read<AddAddressCubit>()
                                 .selectedCity,
                             onChanged: (city) {
                               context
-                                      .read<
-                                        AddAddressCubit
-                                      >()
-                                      .selectedCity =
+                                  .read<
+                                  AddAddressCubit
+                              >()
+                                  .selectedCity =
                                   city;
                               context
                                   .read<AddAddressCubit>()
                                   .changeSelectedCity(
-                                    city,
-                                  );
+                                city,
+                              );
                             },
                             validator: (value) {
                               return AppValidators.emptyField(
@@ -206,29 +207,29 @@ class _AddAddressBody extends StatelessWidget {
                                 .read<AddAddressCubit>()
                                 .cityList
                                 .map((e) {
-                                  return DropdownMenuItem(
-                                    value: e,
-                                    child: Text(
-                                      e.governorateNameEn,
-                                      maxLines: 1,
-                                      overflow:
-                                          TextOverflow
-                                              .ellipsis,
-                                      style: context
-                                          .textTheme
-                                          .bodySmall
-                                          ?.copyWith(
-                                            color: AppColors
-                                                .black[600],
-                                          ),
-                                    ),
-                                  );
-                                })
+                              return DropdownMenuItem(
+                                value: e,
+                                child: Text(
+                                  e.governorateNameEn,
+                                  maxLines: 1,
+                                  overflow:
+                                  TextOverflow
+                                      .ellipsis,
+                                  style: context
+                                      .textTheme
+                                      .bodySmall
+                                      ?.copyWith(
+                                    color: AppColors
+                                        .black[600],
+                                  ),
+                                ),
+                              );
+                            })
                                 .toList(),
                             decoration: _inputDecoration(
                               context,
                               labelText:
-                                  context.l10n.city,
+                              context.l10n.city,
                               hintText: context.l10n.city,
                             ),
                           ),
@@ -237,15 +238,16 @@ class _AddAddressBody extends StatelessWidget {
                         Expanded(
                           child: DropdownButtonFormField(
                             style: _formStyle(context),
-                            initialValue: context
+
+                            value: context
                                 .read<AddAddressCubit>()
                                 .selectedArea,
                             onChanged: (area) {
                               context
-                                      .read<
-                                        AddAddressCubit
-                                      >()
-                                      .selectedArea =
+                                  .read<
+                                  AddAddressCubit
+                              >()
+                                  .selectedArea =
                                   area;
                             },
                             validator: (value) {
@@ -260,36 +262,36 @@ class _AddAddressBody extends StatelessWidget {
                                 .read<AddAddressCubit>()
                                 .areaList
                                 .map((e) {
-                                  return DropdownMenuItem(
-                                    value: e,
-                                    child: Text(
-                                      e.cityNameEn.length >
-                                              15
-                                          ? e.cityNameEn
-                                                .substring(
-                                                  0,
-                                                  15,
-                                                )
-                                          : e.cityNameEn,
-                                      maxLines: 1,
-                                      overflow:
-                                          TextOverflow
-                                              .ellipsis,
-                                      style: context
-                                          .textTheme
-                                          .bodySmall
-                                          ?.copyWith(
-                                            color: AppColors
-                                                .black[600],
-                                          ),
-                                    ),
-                                  );
-                                })
+                              return DropdownMenuItem(
+                                value: e,
+                                child: Text(
+                                  e.cityNameEn.length >
+                                      15
+                                      ? e.cityNameEn
+                                      .substring(
+                                    0,
+                                    15,
+                                  )
+                                      : e.cityNameEn,
+                                  maxLines: 1,
+                                  overflow:
+                                  TextOverflow
+                                      .ellipsis,
+                                  style: context
+                                      .textTheme
+                                      .bodySmall
+                                      ?.copyWith(
+                                    color: AppColors
+                                        .black[600],
+                                  ),
+                                ),
+                              );
+                            })
                                 .toList(),
                             decoration: _inputDecoration(
                               context,
                               labelText:
-                                  context.l10n.area,
+                              context.l10n.area,
                               hintText: context.l10n.area,
                             ),
                           ),
@@ -305,15 +307,15 @@ class _AddAddressBody extends StatelessWidget {
 
                       style: ElevatedButton.styleFrom(
                         backgroundColor:
-                            AppColors.black[200],
+                        AppColors.black[200],
                       ),
                       child: Text(
                         context.l10n.save_address,
                         style: context.textTheme.bodySmall
                             ?.copyWith(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ],
@@ -372,10 +374,10 @@ class _AddAddressBody extends StatelessWidget {
   }
 
   InputDecoration? _inputDecoration(
-    BuildContext context, {
-    required String hintText,
-    required String labelText,
-  }) {
+      BuildContext context, {
+        required String hintText,
+        required String labelText,
+      }) {
     return InputDecoration(
       hintText: hintText,
       hintStyle: context.textTheme.bodySmall?.copyWith(

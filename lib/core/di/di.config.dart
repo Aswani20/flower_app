@@ -33,6 +33,10 @@ import '../../project_layers/api_layer/data_source/home_data_source_impl.dart'
     as _i329;
 import '../../project_layers/api_layer/data_source/login_data_source_impl.dart'
     as _i576;
+import '../../project_layers/api_layer/data_source/occasions_data_source_impl.dart'
+    as _i246;
+import '../../project_layers/api_layer/data_source/product_data_source_impl.dart'
+    as _i342;
 import '../../project_layers/api_layer/data_source/product_remote_data_source_impl.dart'
     as _i636;
 import '../../project_layers/api_layer/data_source/sign_up_remote_data_source_impl.dart'
@@ -57,12 +61,18 @@ import '../../project_layers/data_layer/data_source/home_remote_data_spurce.dart
     as _i1054;
 import '../../project_layers/data_layer/data_source/login_data_source.dart'
     as _i196;
+import '../../project_layers/data_layer/data_source/occasions_data_source.dart'
+    as _i585;
+import '../../project_layers/data_layer/data_source/product_data_source.dart'
+    as _i1029;
 import '../../project_layers/data_layer/data_source/product_remote_data_source.dart'
     as _i27;
 import '../../project_layers/data_layer/data_source/profile_repo_data_source.dart'
     as _i464;
 import '../../project_layers/data_layer/data_source/sign_up_remote_data_source.dart'
     as _i772;
+import '../../project_layers/data_layer/repo/occasions_repo_impl.dart' as _i285;
+import '../../project_layers/data_layer/repo/product_repo_impl.dart' as _i683;
 import '../../project_layers/data_layer/repos_impl/address_repo_impl.dart'
     as _i973;
 import '../../project_layers/data_layer/repos_impl/auth_repo_impl.dart'
@@ -87,6 +97,8 @@ import '../../project_layers/data_layer/repos_impl/profile_repo_impl.dart'
     as _i463;
 import '../../project_layers/data_layer/repos_impl/sign_up_repo_impl.dart'
     as _i631;
+import '../../project_layers/domain_layer/repo/occasion_repo.dart' as _i628;
+import '../../project_layers/domain_layer/repo/product_repo.dart' as _i249;
 import '../../project_layers/domain_layer/repos/address_repo.dart' as _i1;
 import '../../project_layers/domain_layer/repos/auth_repo.dart' as _i326;
 import '../../project_layers/domain_layer/repos/best_seller_repo.dart' as _i408;
@@ -138,6 +150,9 @@ import '../../project_layers/domain_layer/use_cases/update_user_profile_use_case
     as _i621;
 import '../../project_layers/domain_layer/use_cases/verify_reset_code_use_case.dart'
     as _i649;
+import '../../project_layers/domain_layer/usecase/occasion_usecase.dart'
+    as _i268;
+import '../../project_layers/domain_layer/usecase/product_usecase.dart' as _i14;
 import '../../project_layers/presentaion_layer/addresses/add_address/cubit/add_address_cubit.dart'
     as _i860;
 import '../../project_layers/presentaion_layer/addresses/saved_addresses/cubit/saved_address_cubit.dart'
@@ -160,6 +175,8 @@ import '../../project_layers/presentaion_layer/home/Tabs/profile_tab/cubits/rese
     as _i143;
 import '../../project_layers/presentaion_layer/notifications_list/cubit/notifications_list_cubit.dart'
     as _i718;
+import '../../project_layers/presentation_layer/occasion/view_model/occasion_cubit.dart'
+    as _i1000;
 import 'modules/dio_module.dart' as _i983;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -177,7 +194,6 @@ extension GetItInjectableX on _i174.GetIt {
       () => dioModule.provideDio(gh<_i528.PrettyDioLogger>()),
     );
     gh.singleton<_i778.ApiClient>(() => _i778.ApiClient(gh<_i361.Dio>()));
-
     gh.factory<_i1054.HomeRemoteDataSource>(
       () => _i329.HomeRemoteDataSourceImpl(gh<_i778.ApiClient>()),
     );
@@ -202,14 +218,23 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i27.ProductRemoteDataSource>(
       () => _i636.ProductRemoteDataSourceImpl(gh<_i778.ApiClient>()),
     );
+    gh.factory<_i1029.ProductDataSource>(
+      () => _i342.ProductDataSourceImpl(gh<_i778.ApiClient>()),
+    );
     gh.factory<_i583.ProfileRepo>(
       () => _i463.ProfileRepoImpl(gh<_i464.ProfileRepoDataSource>()),
     );
     gh.factory<_i772.SignUpRemoteDataSource>(
       () => _i477.SignUpRemoteDataSourceImpl(gh<_i778.ApiClient>()),
     );
+    gh.factory<_i585.OccasionsDataSource>(
+      () => _i246.OccasionsDataSourceImpl(gh<_i778.ApiClient>()),
+    );
     gh.factory<_i455.GetLoggetUserDataSource>(
       () => _i916.GetLoggedUserDataSourceImpl(gh<_i778.ApiClient>()),
+    );
+    gh.factory<_i628.OccasionRepo>(
+      () => _i285.OccasionsRepoImpl(gh<_i585.OccasionsDataSource>()),
     );
     gh.factory<_i196.LoginDataSource>(
       () => _i576.LoginDataSourceImpl(gh<_i778.ApiClient>()),
@@ -234,6 +259,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i860.AddAddressCubit>(
       () => _i860.AddAddressCubit(gh<_i366.AddAddressUseCase>()),
     );
+    gh.factory<_i268.OccasionUseCase>(
+      () => _i268.OccasionUseCase(gh<_i628.OccasionRepo>()),
+    );
     gh.factory<_i948.SignUpRepo>(
       () => _i631.SignUpRepoImpl(gh<_i772.SignUpRemoteDataSource>()),
     );
@@ -244,6 +272,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i900.HomeRepo>(
       () => _i157.HomeRepoImpl(gh<_i1054.HomeRemoteDataSource>()),
+    );
+    gh.factory<_i249.ProductRepo>(
+      () => _i683.ProductRepoImpl(gh<_i1029.ProductDataSource>()),
     );
     gh.factory<_i570.GetAllNotificationRepo>(
       () => _i805.GetAllNotificationRepoImpl(
@@ -280,6 +311,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i982.GetAllNotificationUseCase>(
       () => _i982.GetAllNotificationUseCase(gh<_i570.GetAllNotificationRepo>()),
     );
+    gh.factory<_i14.ProductUseCase>(
+      () => _i14.ProductUseCase(gh<_i249.ProductRepo>()),
+    );
     gh.factory<_i105.GetLoggedUserDataRepo>(
       () =>
           _i340.GetLoggedUserDataRepoImpl(gh<_i455.GetLoggetUserDataSource>()),
@@ -304,6 +338,12 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i503.ChangePasswordUseCase>(
       () => _i503.ChangePasswordUseCase(gh<_i64.ChangPasswordRepo>()),
+    );
+    gh.factory<_i1000.OccasionCubit>(
+      () => _i1000.OccasionCubit(
+        gh<_i268.OccasionUseCase>(),
+        gh<_i14.ProductUseCase>(),
+      ),
     );
     gh.factory<_i18.ForgetPasswordUseCase>(
       () => _i18.ForgetPasswordUseCase(gh<_i326.AuthRepo>()),
