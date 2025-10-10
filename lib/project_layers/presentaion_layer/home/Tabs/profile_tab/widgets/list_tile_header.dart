@@ -2,6 +2,7 @@ import 'package:flower_app/core/extensions/navigator_extensions.dart';
 import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flower_app/core/route/app_routes.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
+import 'package:flower_app/core/theme/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -38,7 +39,7 @@ class ListTileHeader extends StatelessWidget {
           ),
           title: Text(
             context.l10n.myOrders,
-            style: Theme.of(context).textTheme.bodyMedium,
+            style:AppStyles.font14BlackW500
           ),
         ),
         ListTile(
@@ -59,7 +60,7 @@ class ListTileHeader extends StatelessWidget {
           ),
           title: Text(
             context.l10n.savedAddresses,
-            style: Theme.of(context).textTheme.bodyMedium,
+            style:AppStyles.font14BlackW500
           ),
         ),
         Divider(thickness: 0.3, color: AppColors.grey),
@@ -80,7 +81,7 @@ class ListTileHeader extends StatelessWidget {
           ),
           title: Text(
             context.l10n.notification,
-            style: Theme.of(context).textTheme.bodyMedium,
+            style: AppStyles.font14BlackW500,
           ),
         ),
         Divider(thickness: 0.3, color: AppColors.grey),
@@ -102,13 +103,14 @@ class ListTileHeader extends StatelessWidget {
           ),
           trailing: Text(
             currentLang == "en" ? "English" : "العربية",
-            style: Theme.of(context).textTheme.bodyMedium!
-                .copyWith(color: AppColors.pink),
+            style: AppStyles.font14BlackW500.copyWith(
+              color: AppColors.pink,
+            ),
           ),
           title: Text(
             currentLang == "en" ? "Language" : "اللغة",
 
-            style: Theme.of(context).textTheme.bodyMedium,
+            style: AppStyles.font14BlackW500,
           ),
         ),
         ListTile(
@@ -122,7 +124,7 @@ class ListTileHeader extends StatelessWidget {
           ),
           title: Text(
             context.l10n.aboutUs,
-            style: Theme.of(context).textTheme.bodyMedium,
+            style: AppStyles.font14BlackW500,
           ),
         ),
         ListTile(
@@ -137,7 +139,7 @@ class ListTileHeader extends StatelessWidget {
           ),
           title: Text(
             context.l10n.termsAndConditions,
-            style: Theme.of(context).textTheme.bodyMedium,
+            style: AppStyles.font14BlackW500,
           ),
         ),
         Divider(thickness: 0.3, color: AppColors.grey),
@@ -155,7 +157,7 @@ class ListTileHeader extends StatelessWidget {
           ),
           title: Text(
             context.l10n.logOut,
-            style: Theme.of(context).textTheme.bodyMedium,
+            style: AppStyles.font14BlackW500
           ),
         ),
       ],
