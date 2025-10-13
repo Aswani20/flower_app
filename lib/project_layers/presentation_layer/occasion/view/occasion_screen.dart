@@ -6,17 +6,19 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../widgets/app_bar_occasion.dart';
 import '../widgets/occation_body_builder.dart';
 
-class OccasionScreen extends StatelessWidget {
-  const OccasionScreen({super.key});
+class occasionScreen extends StatelessWidget {
+  const occasionScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => getIt<OccasionCubit>()..getOccasions(),
+      create: (context) =>
+          getIt<OccasionCubit>()..getOccasions(),
       child: Scaffold(
         appBar: AppBarOccasion(),
         body: OccasionBodyBuilder(),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        floatingActionButtonLocation:
+            FloatingActionButtonLocation.centerFloat,
       ),
     );
   }

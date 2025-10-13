@@ -9,7 +9,7 @@ import '../../../../core/theme/app_validator.dart';
 import 'cubit/login_cubit.dart';
 
 class SignInView extends StatefulWidget {
-  const SignInView({super.key});
+  SignInView({super.key});
 
   @override
   State<SignInView> createState() => _SignInViewState();
@@ -241,7 +241,7 @@ class _SignInViewState extends State<SignInView> {
             posFunction: (p0) {
               Navigator.pushReplacementNamed(
                 context,
-                AppRoutes.savedAddresses,
+                AppRoutes.homeScreen,
               );
             },
           );

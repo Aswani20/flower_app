@@ -42,6 +42,9 @@ dependencies:
   geolocator: ^14.0.2
   geocoding: ^4.0.0
   google_maps_flutter: ^2.13.1
+  url_launcher: ^6.1.10
+  cloud_firestore: ^6.0.2
+  flutter_dotenv: ^6.0.0
 
   
 dev_dependencies:

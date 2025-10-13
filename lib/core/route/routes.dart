@@ -13,11 +13,13 @@ import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_ta
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/reset_password.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/terms_and_conditions_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/home_screen.dart';
+import 'package:flower_app/project_layers/presentaion_layer/map/view/map_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/notifications_list/cubit/notifications_list_cubit.dart';
 import 'package:flower_app/project_layers/presentaion_layer/notifications_list/views/notifications_list_view.dart';
+import 'package:flower_app/project_layers/presentaion_layer/success/success_view.dart';
+import 'package:flower_app/project_layers/presentaion_layer/track_order/view/track_order_view.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import '../../project_layers/presentaion_layer/addresses/saved_addresses/saved_addresses.dart';
 import '../../project_layers/presentaion_layer/home/Tabs/category_tab/views/category_tab.dart';
 import '../../project_layers/presentation_layer/occasion/view/occasion_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,9 +31,9 @@ abstract class Routes {
   static Route generateRoute(RouteSettings settings) {
     final url = Uri.parse(settings.name ?? "/");
     switch (url.path) {
-      case AppRoutes.OccasionScreen:
+      case AppRoutes.occasionScreen:
         return MaterialPageRoute(
-          builder: (_) => OccasionScreen(),
+          builder: (_) => occasionScreen(),
         );
       case AppRoutes.forgetPasswordScreen:
         return MaterialPageRoute(
@@ -43,7 +45,7 @@ abstract class Routes {
         );
       case AppRoutes.loginScreen:
         return MaterialPageRoute(
-          builder: (context) => const SignInView(),
+          builder: (context) => SignInView(),
         );
 
       case AppRoutes.editProfile:
@@ -97,10 +99,25 @@ abstract class Routes {
         return MaterialPageRoute(
           builder: (_) => SavedAddressesScreen(),
         );
-      case AppRoutes.CategoryTab:
+      case AppRoutes.categoryTab:
         return MaterialPageRoute(
-          builder: (_) => CategoryTab(),
+          builder: (_) => categoryTab(),
         );
+      case AppRoutes.trackOrderMap:
+        return MaterialPageRoute(
+          builder: (_) => TrackOrderMap(),
+        );
+
+      case AppRoutes.trackOrderView:
+        return MaterialPageRoute(
+          builder: (_) => TrackOrderView(),
+        );
+
+              case AppRoutes.successView:
+        return MaterialPageRoute(
+          builder: (_) => SuccessView(),
+        );
+
       default:
         return MaterialPageRoute(
           builder: (context) => NotFoundScreen(),

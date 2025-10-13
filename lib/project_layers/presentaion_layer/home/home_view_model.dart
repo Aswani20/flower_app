@@ -9,7 +9,7 @@ class HomeViewModel extends ChangeNotifier {
   int currentIndex = 0;
   List<Widget> pages = [
     HomeTab(),
-    CategoryTab(),
+    categoryTab(),
     CartTab(),
     ProfileTab(),
   ];

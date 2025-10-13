@@ -322,6 +322,17 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/Motorcycle_Delivery.png
+  AssetGenImage get motorcycleDelivery =>
+      const AssetGenImage(
+        'assets/images/Motorcycle_Delivery.png',
+      );
+
+  /// File path: assets/images/delivery_car.png
+  AssetGenImage get deliveryCar => const AssetGenImage(
+    'assets/images/delivery_car.png',
+  );
+
   /// File path: assets/images/map.png
   AssetGenImage get map =>
       const AssetGenImage('assets/images/map.png');
@@ -330,8 +341,25 @@ class $AssetsImagesGen {
   AssetGenImage get noRoutes =>
       const AssetGenImage('assets/images/no_routes.png');
 
+  /// File path: assets/images/store_icon_map.png
+  AssetGenImage get storeIconMap => const AssetGenImage(
+    'assets/images/store_icon_map.png',
+  );
+
+  /// File path: assets/images/user_icon_map.png
+  AssetGenImage get userIconMap => const AssetGenImage(
+    'assets/images/user_icon_map.png',
+  );
+
   /// List of all assets
-  List<AssetGenImage> get values => [map, noRoutes];
+  List<AssetGenImage> get values => [
+    motorcycleDelivery,
+    deliveryCar,
+    map,
+    noRoutes,
+    storeIconMap,
+    userIconMap,
+  ];
 }
 
 class $AssetsJsonGen {
@@ -354,8 +382,18 @@ class $AssetsSvgGen {
   /// File path: assets/svg/Camera.svg
   String get camera => 'assets/svg/Camera.svg';
 
+  /// File path: assets/svg/Delivery_Boy.svg
+  String get deliveryBoy => 'assets/svg/Delivery_Boy.svg';
+
+  /// File path: assets/svg/Motorcycle_Delivery.svg
+  String get motorcycleDelivery =>
+      'assets/svg/Motorcycle_Delivery.svg';
+
   /// File path: assets/svg/arrow_down.svg
   String get arrowDown => 'assets/svg/arrow_down.svg';
+
+  /// File path: assets/svg/call.svg
+  String get call => 'assets/svg/call.svg';
 
   /// File path: assets/svg/circle_flower.svg
   String get circleFlower =>
@@ -382,13 +420,22 @@ class $AssetsSvgGen {
   /// File path: assets/svg/map.svg
   String get map => 'assets/svg/map.svg';
 
+  /// File path: assets/svg/success.svg
+  String get success => 'assets/svg/success.svg';
+
   /// File path: assets/svg/tulip.svg
   String get tulip => 'assets/svg/tulip.svg';
+
+  /// File path: assets/svg/whatsapp.svg
+  String get whatsapp => 'assets/svg/whatsapp.svg';
 
   /// List of all assets
   List<String> get values => [
     camera,
+    deliveryBoy,
+    motorcycleDelivery,
     arrowDown,
+    call,
     circleFlower,
     delete,
     diamond,
@@ -397,7 +444,9 @@ class $AssetsSvgGen {
     gift,
     location,
     map,
+    success,
     tulip,
+    whatsapp,
   ];
 }
 

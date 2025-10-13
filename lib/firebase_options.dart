@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -33,10 +30,7 @@ class DefaultFirebaseOptions {
           'you can reconfigure this by running the FlutterFire CLI again.',
         );
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -50,19 +44,38 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyC05bdO59dXrjLwetqzx0xxqXaQO9uCfgY',
-    appId: '1:576777649694:android:6de84dd531c32d691e380f',
-    messagingSenderId: '576777649694',
-    projectId: 'flower-app-63e36',
-    storageBucket: 'flower-app-63e36.firebasestorage.app',
+    apiKey: 'AIzaSyDzx8MWW-WsH85_C3mD0dvpVTWK-iaYWTw',
+    appId: '1:833128608721:android:eaf8249c5c59d1d316a6f0',
+    messagingSenderId: '833128608721',
+    projectId: 'tracking-app-bf231',
+    storageBucket: 'tracking-app-bf231.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCoD6sM7D2NSdhSpuXAiALrHqthDyCSYqQ',
-    appId: '1:576777649694:ios:8a35f6f170f00d4c1e380f',
-    messagingSenderId: '576777649694',
-    projectId: 'flower-app-63e36',
-    storageBucket: 'flower-app-63e36.firebasestorage.app',
+    apiKey: 'AIzaSyAg32jkIOo9URzxwh4O8hulxmhjkPSX6yI',
+    appId: '1:833128608721:ios:0845eb3689b60fef16a6f0',
+    messagingSenderId: '833128608721',
+    projectId: 'tracking-app-bf231',
+    storageBucket: 'tracking-app-bf231.firebasestorage.app',
     iosBundleId: 'com.example.flowerApp',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyBWMBmkrza9f9V2A5SQzZAj7ELdqottges',
+    appId: '1:833128608721:web:280734e3bf508a5e16a6f0',
+    messagingSenderId: '833128608721',
+    projectId: 'tracking-app-bf231',
+    authDomain: 'tracking-app-bf231.firebaseapp.com',
+    storageBucket: 'tracking-app-bf231.firebasestorage.app',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyBWMBmkrza9f9V2A5SQzZAj7ELdqottges',
+    appId: '1:833128608721:web:f2e98bb04e54376f16a6f0',
+    messagingSenderId: '833128608721',
+    projectId: 'tracking-app-bf231',
+    authDomain: 'tracking-app-bf231.firebaseapp.com',
+    storageBucket: 'tracking-app-bf231.firebasestorage.app',
+  );
+
 }
