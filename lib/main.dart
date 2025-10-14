@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flower_app/core/di/di.dart';
 import 'package:flower_app/core/di/modules/shared_preferences_module.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/forget_password/forget_password_view.dart';
@@ -6,6 +7,7 @@ import 'package:flower_app/project_layers/presentaion_layer/auth/sign_up/sign_up
 import 'package:flower_app/project_layers/presentaion_layer/best_seller/best_seller_screen.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/cart_tab/cubit/cart_view_model.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/home_screen.dart';
+import 'package:flower_app/project_layers/presentaion_layer/map/view/map_view.dart';
 import 'package:flower_app/core/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/screens/product_details_screen.dart';
@@ -20,6 +22,7 @@ import 'core/utils/language_cubit.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SharedPrefHelper().instantiatePreferences();
+  await Firebase.initializeApp();
   final token = SharedPrefHelper().getString(
     key: SharedPrefKeys.tokenKey,
   );
@@ -61,10 +64,11 @@ class MyApp extends StatelessWidget {
               locale: locale,
               theme: AppTheme.lightTheme,
               onGenerateRoute: Routes.generateRoute,
-              initialRoute:
-                  (token != null && token!.isNotEmpty)
-                  ? AppRoutes.homeScreen
-                  : AppRoutes.loginScreen,
+              initialRoute: 
+              //AppRoutes.successView,
+              (token != null && token!.isNotEmpty)
+              ? AppRoutes.homeScreen
+              : AppRoutes.loginScreen,
               routes: {
                 AppRoutes.loginScreen: (context) =>
                     SignInView(),
@@ -78,6 +82,8 @@ class MyApp extends StatelessWidget {
                     BestSellerScreen(),
                 AppRoutes.productDetailsScreen:
                     (context) => ProductDetailsScreen(),
+                AppRoutes.trackOrderMap: (context) =>
+                    TrackOrderMap(),
               },
             );
           },

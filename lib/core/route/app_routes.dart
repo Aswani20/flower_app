@@ -8,7 +8,7 @@ abstract class AppRoutes {
   static const String otpScreen = "/otp_view";
   static const String homeScreen = "/home_view";
 
-  static const String OccasionScreen = "/occasion";
+  static const String occasionScreen = "/occasion";
   static const String bestSeller = "/best_seller_view";
   static const String productDetailsScreen =
       "/product_details_screen";
@@ -26,6 +26,12 @@ abstract class AppRoutes {
   static const String aboutUs = "/about_us";
   static const String addAddress = "/add_address";
   static const String savedAddresses = "/saved_addresses";
+  static const String trackOrderMap = "/map_view";
+  static const String testMapNavigation =
+      "/test_map_navigation";
+  static const String trackOrderView =
+      "/track_order_view";
+  static const String successView = "/success_view";
   static const String CategoryTab = "/Category_tab";
 
   static const String searchView = "/search_view";

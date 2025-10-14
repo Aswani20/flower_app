@@ -11,8 +11,8 @@ import '../widgets/category_body_builder.dart';
 import '../widgets/custtom_search.dart';
 import '../widgets/filter_bottom.dart';
 
-class CategoryTab extends StatelessWidget {
-  const CategoryTab({super.key});
+class categoryTab extends StatelessWidget {
+  const categoryTab({super.key});
 
   @override
   Widget build(BuildContext context) {

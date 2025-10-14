@@ -17,6 +17,8 @@ import 'package:internet_connection_checker/internet_connection_checker.dart'
 import 'package:pretty_dio_logger/pretty_dio_logger.dart' as _i528;
 
 import '../../project_layers/api_layer/api_client/api_client.dart' as _i778;
+import '../../project_layers/api_layer/api_client/google_maps_api_client.dart'
+    as _i67;
 import '../../project_layers/api_layer/data_source/address_data_source_impl.dart'
     as _i1063;
 import '../../project_layers/api_layer/data_source/auth_remote_data_source_impl.dart'
@@ -217,6 +219,8 @@ import '../../project_layers/presentaion_layer/home/Tabs/profile_tab/cubits/prof
     as _i256;
 import '../../project_layers/presentaion_layer/home/Tabs/profile_tab/cubits/reset/cubit/reset_password_cubit.dart'
     as _i143;
+import '../../project_layers/presentaion_layer/map/cubit/map_view_model.dart'
+    as _i934;
 import '../../project_layers/presentaion_layer/notifications_list/cubit/notifications_list_cubit.dart'
     as _i718;
 import '../../project_layers/presentaion_layer/orders/cubit/orders_cubit.dart'
@@ -261,6 +265,9 @@ extension GetItInjectableX on _i174.GetIt {
       () => dioModule.provideDio(gh<_i528.PrettyDioLogger>()),
     );
     gh.singleton<_i778.ApiClient>(() => _i778.ApiClient(gh<_i361.Dio>()));
+    gh.singleton<_i67.GoogleMapsApiClient>(
+      () => _i67.GoogleMapsApiClient(gh<_i361.Dio>()),
+    );
     gh.factory<_i1054.HomeRemoteDataSource>(
       () => _i329.HomeRemoteDataSourceImpl(gh<_i778.ApiClient>()),
     );
@@ -339,12 +346,21 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i196.LoginDataSource>(
       () => _i576.LoginDataSourceImpl(gh<_i778.ApiClient>()),
     );
+<<<<<<< HEAD
+    gh.factory<_i934.MapViewModel>(
+      () => _i934.MapViewModel(
+        googleMapsApiClient: gh<_i67.GoogleMapsApiClient>(),
+      ),
+=======
     gh.factory<_i916.OrdersDataSource>(
       () => _i364.OrdersDataSourceImpl(apiClient: gh<_i778.ApiClient>()),
+>>>>>>> dev
     );
     gh.factory<_i956.CategoryRemoteDataSource>(
       () => _i622.CategoryRemoteDataSourceImpl(gh<_i778.ApiClient>()),
     );
+<<<<<<< HEAD
+=======
     gh.factory<_i988.CartViewModel>(
       () => _i988.CartViewModel(
         addToCartUseCase: gh<_i1003.AddToCartUseCase>(),
@@ -355,6 +371,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i771.PaymentDataSource>(
       () => _i553.PaymentDataSourceImp(gh<_i778.ApiClient>()),
     );
+>>>>>>> dev
     gh.factory<_i366.AddAddressUseCase>(
       () => _i366.AddAddressUseCase(gh<_i1.AddressRepo>()),
     );
@@ -453,9 +470,12 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i7.OccasionUseCase>(
       () => _i7.OccasionUseCase(homeRepo: gh<_i900.HomeRepo>()),
     );
+<<<<<<< HEAD
+=======
     gh.factory<_i389.GetOrdersUseCase>(
       () => _i389.GetOrdersUseCase(gh<_i395.OrdersRepository>()),
     );
+>>>>>>> dev
     gh.factory<_i125.BestSellerViewModel>(
       () => _i125.BestSellerViewModel(gh<_i124.BestSellerUseCase>()),
     );

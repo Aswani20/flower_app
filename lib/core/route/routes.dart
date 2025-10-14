@@ -14,8 +14,11 @@ import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_ta
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/reset_password.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/terms_and_conditions_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/home_screen.dart';
+import 'package:flower_app/project_layers/presentaion_layer/map/view/map_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/notifications_list/cubit/notifications_list_cubit.dart';
 import 'package:flower_app/project_layers/presentaion_layer/notifications_list/views/notifications_list_view.dart';
+import 'package:flower_app/project_layers/presentaion_layer/success/success_view.dart';
+import 'package:flower_app/project_layers/presentaion_layer/track_order/view/track_order_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/payment/presentaion/page/success_screen.dart';
 import 'package:flower_app/project_layers/presentaion_layer/payment/presentaion/page/webvieww_screen.dart';
 import 'package:flower_app/project_layers/presentaion_layer/search/cubit/search_cubit.dart';
@@ -34,9 +37,9 @@ abstract class Routes {
   static Route generateRoute(RouteSettings settings) {
     final url = Uri.parse(settings.name ?? "/");
     switch (url.path) {
-      case AppRoutes.OccasionScreen:
+      case AppRoutes.occasionScreen:
         return MaterialPageRoute(
-          builder: (_) => OccasionScreen(),
+          builder: (_) => occasionScreen(),
         );
       case AppRoutes.forgetPasswordScreen:
         return MaterialPageRoute(
@@ -48,7 +51,7 @@ abstract class Routes {
         );
       case AppRoutes.loginScreen:
         return MaterialPageRoute(
-          builder: (context) => const SignInView(),
+          builder: (context) => SignInView(),
         );
 
       case AppRoutes.editProfile:
@@ -114,7 +117,21 @@ abstract class Routes {
         );
       case AppRoutes.CategoryTab:
         return MaterialPageRoute(
-          builder: (_) => CategoryTab(),
+          builder: (_) => categoryTab(),
+        );
+      case AppRoutes.trackOrderMap:
+        return MaterialPageRoute(
+          builder: (_) => TrackOrderMap(),
+        );
+
+      case AppRoutes.trackOrderView:
+        return MaterialPageRoute(
+          builder: (_) => TrackOrderView(),
+        );
+
+              case AppRoutes.successView:
+        return MaterialPageRoute(
+          builder: (_) => SuccessView(),
         );
               case AppRoutes.successPayment:
         return MaterialPageRoute(builder: (_) => const PaymentSuccessScreen());
