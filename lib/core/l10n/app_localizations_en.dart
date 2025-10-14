@@ -49,6 +49,36 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutUs => 'About Us';
 
   @override
+  String get searchForYourFavoriteProducts =>
+      'Search for your favorite products';
+
+  @override
+  String get searchInProduct => 'Search in product';
+
+  @override
+  String get searchHint =>
+      'Type in the search bar above to start searching for products';
+
+  @override
+  String get searching => 'Searching...';
+
+  @override
+  String get resultFor => 'Result For';
+
+  @override
+  String get noResultFound => 'No Result Found For';
+
+  @override
+  String get wasFound => 'Was Found';
+
+  @override
+  String get trySearchWithDeffrentKeys =>
+      'try search with deferent word';
+
+  @override
+  String get search_error => 'Search Error';
+
+  @override
   String get firstName => 'First Name';
 
   @override
@@ -350,4 +380,88 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get address_added_successfully =>
       'Address added successfully';
+
+  @override
+  String get active => 'Active';
+
+  @override
+  String get completed => 'Completed';
+
+  @override
+  String get deliver_to => 'Deliver to';
+
+  @override
+  String get items => 'items';
+
+  @override
+  String get sub_total => 'Sub Total';
+
+  @override
+  String get delivery_fee => 'Delivery Fee';
+
+  @override
+  String get total => 'Total';
+
+  @override
+  String get checkout => 'Checkout';
+
+  @override
+  String get delivery_address => 'Delivery Address';
+
+  @override
+  String get no_addresses_found => 'No addresses found';
+
+  @override
+  String get add_new => 'Add New';
+
+  @override
+  String get its_a_gift => 'It\'s a gift';
+
+  @override
+  String get street => 'Street';
+
+  @override
+  String get enter_your_street => 'Enter your street';
+
+  @override
+  String get enter_your_city => 'Enter your city';
+
+  @override
+  String get phone => 'Phone';
+
+  @override
+  String get enter_your_phone => 'Enter your phone';
+
+  @override
+  String get subtotal => 'Subtotal';
+
+  @override
+  String get place_order => 'Place Order';
+
+  @override
+  String get payment_method => 'Payment Method';
+
+  @override
+  String get payment_cancled => 'Payment Cancelled';
+
+  @override
+  String get cash_on_delivery => 'Cash on Delivery';
+
+  @override
+  String get credit_card => 'Credit Card';
+
+  @override
+  String get delevery_time => 'Delivery Time';
+
+  @override
+  String get schedule => 'Schedule';
+
+  @override
+  String get your_order_placed => 'Your Order Placed';
+
+  @override
+  String get successfully => 'Successfully';
+
+  @override
+  String get addressDetails => 'Address Details';
 }

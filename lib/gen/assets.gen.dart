@@ -46,6 +46,10 @@ class $AssetsIconsGen {
     'assets/icons/address_icon.png',
   );
 
+  /// File path: assets/icons/arrow-drop.png
+  AssetGenImage get arrowDrop =>
+      const AssetGenImage('assets/icons/arrow-drop.png');
+
   /// File path: assets/icons/arrow_back_icon.png
   AssetGenImage get arrowBackIcon => const AssetGenImage(
     'assets/icons/arrow_back_icon.png',
@@ -270,6 +274,7 @@ class $AssetsIconsGen {
     alarmClockIcon,
     addIcon,
     addressIcon,
+    arrowDrop,
     arrowBackIcon,
     britainFlagIcon,
     callIcon,
@@ -382,12 +387,17 @@ class $AssetsSvgGen {
   /// File path: assets/svg/Camera.svg
   String get camera => 'assets/svg/Camera.svg';
 
+<<<<<<< HEAD
   /// File path: assets/svg/Delivery_Boy.svg
   String get deliveryBoy => 'assets/svg/Delivery_Boy.svg';
 
   /// File path: assets/svg/Motorcycle_Delivery.svg
   String get motorcycleDelivery =>
       'assets/svg/Motorcycle_Delivery.svg';
+=======
+  /// File path: assets/svg/EIeNuVRaYz.json
+  String get eIeNuVRaYz => 'assets/svg/EIeNuVRaYz.json';
+>>>>>>> dev
 
   /// File path: assets/svg/arrow_down.svg
   String get arrowDown => 'assets/svg/arrow_down.svg';
@@ -432,8 +442,12 @@ class $AssetsSvgGen {
   /// List of all assets
   List<String> get values => [
     camera,
+<<<<<<< HEAD
     deliveryBoy,
     motorcycleDelivery,
+=======
+    eIeNuVRaYz,
+>>>>>>> dev
     arrowDown,
     call,
     circleFlower,

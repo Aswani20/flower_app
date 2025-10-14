@@ -5,6 +5,7 @@ import 'package:flower_app/project_layers/presentaion_layer/auth/forget_password
 import 'package:flower_app/project_layers/presentaion_layer/auth/sign_in/login_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/sign_up/sign_up_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/best_seller/best_seller_screen.dart';
+import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/cart_tab/cubit/cart_view_model.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/home_screen.dart';
 import 'package:flower_app/project_layers/presentaion_layer/map/view/map_view.dart';
 import 'package:flower_app/core/l10n/app_localizations.dart';
@@ -26,7 +27,16 @@ void main() async {
     key: SharedPrefKeys.tokenKey,
   );
   await configureDependencies();
-  runApp(MyApp(token: token));
+  runApp(
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => getIt<CartViewModel>(),
+        ),
+      ],
+      child: MyApp(token: token),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

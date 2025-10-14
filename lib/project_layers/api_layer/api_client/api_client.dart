@@ -2,13 +2,15 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flower_app/project_layers/data_layer/model/occasions_response.dart';
+import 'package:flower_app/project_layers/presentaion_layer/checkout/data/model/get_user_addreses_respone/get_user_addreses_respone.dart';
+import 'package:flower_app/project_layers/presentaion_layer/payment/data/model/request/payment_request_model_dto.dart';
+import 'package:flower_app/project_layers/presentaion_layer/payment/data/model/responce/card_pay_responce/card_pay_responce_model_dto.dart';
+import 'package:flower_app/project_layers/presentaion_layer/payment/data/model/responce/cash_pay_responce/cash_pay_responce_model_dto.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 import '../../data_layer/model/products_response.dart';
 import 'package:flower_app/project_layers/api_layer/models/categories_response.dart';
 import 'package:flower_app/project_layers/api_layer/models/get_all_notification_response_dto.dart';
-import 'package:flower_app/project_layers/api_layer/models/products_response.dart'
-    hide ProductsResponse;
 import 'package:flower_app/project_layers/api_layer/models/request/add_address_request_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/change_password_request_body.dart';
 import 'package:flower_app/project_layers/api_layer/models/request/forget_password_request_dto.dart';
@@ -30,9 +32,9 @@ import 'package:flower_app/project_layers/api_layer/models/response/sign_up_resp
 import 'package:flower_app/project_layers/api_layer/models/response/update_photo_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/update_profile_response_dto.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/verify_reset_code_response.dart';
-import 'package:injectable/injectable.dart';
-import 'package:retrofit/retrofit.dart';
+import '../models/response/cart_response_dto.dart';
 import '../models/response/login_response.dart';
+import '../models/response/order_response.dart';
 
 part 'api_client.g.dart';
 
@@ -105,6 +107,7 @@ abstract class ApiClient {
   @GET('/v1/products')
   Future<ProductsResponse> getProductsByIdF(
     @Queries() Map<String, dynamic> filters,
+    @Query("keyword") String? search,
   );
 
   @GET('v1/auth/profile-data')
@@ -131,6 +134,9 @@ abstract class ApiClient {
   Future<GetAllNotificationResponseDto>
   getNotifications();
 
+  @GET('/v1/orders')
+  Future<OrderResponse> orders();
+
   @PATCH('/v1/addresses')
   Future<AddressResponseDto> addAddresses(
     @Body() AddAddressRequestDto request,
@@ -138,4 +144,34 @@ abstract class ApiClient {
 
   @GET('/v1/addresses')
   Future<AddressResponseDto> getAllAddresses();
+
+
+  /// Cart Api
+  @POST('v1/cart')
+  Future<HttpResponse<CartResponseDto>> addToCart(
+      @Body() Map<String, dynamic> body,
+      @Header('Authorization') String token,
+      );
+
+  @GET('v1/cart')
+  Future<HttpResponse<CartResponseDto>> getCart(@Header('Authorization') String token,);
+
+
+  @DELETE('v1/cart/{id}')
+  Future<HttpResponse<CartResponseDto>> deleteItemFromCart(@Path('id') String itemId, @Header('Authorization') String token,);
+
+    @GET('v1/addresses')
+  Future<GetUserAddresesRespone> getLoggedUserAddresses();
+
+
+    @POST('v1/orders/checkout?url=http://localhost:3000')
+  Future<CardPayResponceModelDto> paymentCard(
+    @Body() PaymentRequestModelDto paymentRequestModelDto,
+  );
+  @POST('v1/orders')
+  Future<CashPayResponceModelDto> paymentCash(
+    @Body() PaymentRequestModelDto paymentRequestModelDto,
+  );
+
+
 }

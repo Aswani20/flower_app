@@ -12,6 +12,8 @@
 import 'package:dio/dio.dart' as _i361;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
+import 'package:internet_connection_checker/internet_connection_checker.dart'
+    as _i973;
 import 'package:pretty_dio_logger/pretty_dio_logger.dart' as _i528;
 
 import '../../project_layers/api_layer/api_client/api_client.dart' as _i778;
@@ -23,6 +25,8 @@ import '../../project_layers/api_layer/data_source/auth_remote_data_source_impl.
     as _i185;
 import '../../project_layers/api_layer/data_source/best_seller_data_source_impl.dart'
     as _i561;
+import '../../project_layers/api_layer/data_source/cart_remote_data_source_impl.dart'
+    as _i316;
 import '../../project_layers/api_layer/data_source/category_remote_data_source_impl.dart'
     as _i622;
 import '../../project_layers/api_layer/data_source/change_password_remote_data_source_impl.dart'
@@ -37,6 +41,8 @@ import '../../project_layers/api_layer/data_source/login_data_source_impl.dart'
     as _i576;
 import '../../project_layers/api_layer/data_source/occasions_data_source_impl.dart'
     as _i246;
+import '../../project_layers/api_layer/data_source/orders_data_source_impl.dart'
+    as _i364;
 import '../../project_layers/api_layer/data_source/product_data_source_impl.dart'
     as _i342;
 import '../../project_layers/api_layer/data_source/product_remote_data_source_impl.dart'
@@ -51,6 +57,8 @@ import '../../project_layers/data_layer/data_source/auth_remote_data_source.dart
     as _i956;
 import '../../project_layers/data_layer/data_source/best_seller_data_source.dart'
     as _i1012;
+import '../../project_layers/data_layer/data_source/cart_remote_data_source.dart'
+    as _i533;
 import '../../project_layers/data_layer/data_source/category_remote_data_source.dart'
     as _i956;
 import '../../project_layers/data_layer/data_source/change_password_remote_data_source.dart'
@@ -65,6 +73,8 @@ import '../../project_layers/data_layer/data_source/login_data_source.dart'
     as _i196;
 import '../../project_layers/data_layer/data_source/occasions_data_source.dart'
     as _i585;
+import '../../project_layers/data_layer/data_source/orders_data_source.dart'
+    as _i916;
 import '../../project_layers/data_layer/data_source/product_data_source.dart'
     as _i1029;
 import '../../project_layers/data_layer/data_source/product_remote_data_source.dart'
@@ -81,6 +91,8 @@ import '../../project_layers/data_layer/repos_impl/auth_repo_impl.dart'
     as _i253;
 import '../../project_layers/data_layer/repos_impl/best_seller_repo_impl.dart'
     as _i673;
+import '../../project_layers/data_layer/repos_impl/cart_repo_impl.dart'
+    as _i928;
 import '../../project_layers/data_layer/repos_impl/category_repo_impl.dart'
     as _i425;
 import '../../project_layers/data_layer/repos_impl/chang_password_repo_impl.dart'
@@ -93,6 +105,8 @@ import '../../project_layers/data_layer/repos_impl/home_repo_impl.dart'
     as _i157;
 import '../../project_layers/data_layer/repos_impl/login_repo_impl.dart'
     as _i674;
+import '../../project_layers/data_layer/repos_impl/orders_repo_impl.dart'
+    as _i811;
 import '../../project_layers/data_layer/repos_impl/product_repo_impl.dart'
     as _i146;
 import '../../project_layers/data_layer/repos_impl/profile_repo_impl.dart'
@@ -104,6 +118,7 @@ import '../../project_layers/domain_layer/repo/product_repo.dart' as _i249;
 import '../../project_layers/domain_layer/repos/address_repo.dart' as _i1;
 import '../../project_layers/domain_layer/repos/auth_repo.dart' as _i326;
 import '../../project_layers/domain_layer/repos/best_seller_repo.dart' as _i408;
+import '../../project_layers/domain_layer/repos/cart_repo.dart' as _i218;
 import '../../project_layers/domain_layer/repos/category_repo.dart' as _i144;
 import '../../project_layers/domain_layer/repos/chang_password_repo.dart'
     as _i64;
@@ -113,6 +128,7 @@ import '../../project_layers/domain_layer/repos/get_logged_user_data_repo.dart'
     as _i105;
 import '../../project_layers/domain_layer/repos/home_repo.dart' as _i900;
 import '../../project_layers/domain_layer/repos/login_repo.dart' as _i974;
+import '../../project_layers/domain_layer/repos/orders_repo.dart' as _i395;
 import '../../project_layers/domain_layer/repos/product_repo.dart' as _i53;
 import '../../project_layers/domain_layer/repos/profile_repo.dart' as _i583;
 import '../../project_layers/domain_layer/repos/sign_up_repo.dart' as _i948;
@@ -120,6 +136,12 @@ import '../../project_layers/domain_layer/use_cases/add_address_use_case.dart'
     as _i366;
 import '../../project_layers/domain_layer/use_cases/best_seller_use_case.dart'
     as _i124;
+import '../../project_layers/domain_layer/use_cases/cart/add_to_cart_use_case.dart'
+    as _i1003;
+import '../../project_layers/domain_layer/use_cases/cart/delete_item_from_cart_use_case.dart'
+    as _i856;
+import '../../project_layers/domain_layer/use_cases/cart/get_cart_use_case.dart'
+    as _i233;
 import '../../project_layers/domain_layer/use_cases/category_use_case.dart'
     as _i878;
 import '../../project_layers/domain_layer/use_cases/change_password_use_case.dart'
@@ -140,6 +162,8 @@ import '../../project_layers/domain_layer/use_cases/home/occaison_use_case.dart'
     as _i7;
 import '../../project_layers/domain_layer/use_cases/login_usecase.dart'
     as _i1027;
+import '../../project_layers/domain_layer/use_cases/orders_use_case.dart'
+    as _i389;
 import '../../project_layers/domain_layer/use_cases/product_use_case.dart'
     as _i608;
 import '../../project_layers/domain_layer/use_cases/reset_password_use_case.dart'
@@ -152,6 +176,12 @@ import '../../project_layers/domain_layer/use_cases/update_user_profile_use_case
     as _i621;
 import '../../project_layers/domain_layer/use_cases/verify_reset_code_use_case.dart'
     as _i649;
+import '../../project_layers/domain_layer/usecase/cart/add_to_cart_use_case.dart'
+    as _i270;
+import '../../project_layers/domain_layer/usecase/cart/delete_item_from_cart_use_case.dart'
+    as _i368;
+import '../../project_layers/domain_layer/usecase/cart/get_cart_use_case.dart'
+    as _i755;
 import '../../project_layers/domain_layer/usecase/occasion_usecase.dart'
     as _i268;
 import '../../project_layers/domain_layer/usecase/product_usecase.dart' as _i14;
@@ -167,6 +197,20 @@ import '../../project_layers/presentaion_layer/auth/sign_up/cubit/sign_up_cubit.
     as _i785;
 import '../../project_layers/presentaion_layer/best_seller/cubit/best_seller_cubit.dart'
     as _i125;
+import '../../project_layers/presentaion_layer/checkout/data/repo/checkout_repo_impl.dart'
+    as _i1016;
+import '../../project_layers/presentaion_layer/checkout/data/sources/checkout_remote_ds.dart'
+    as _i393;
+import '../../project_layers/presentaion_layer/checkout/data/sources/checkout_remote_ds_impl.dart'
+    as _i807;
+import '../../project_layers/presentaion_layer/checkout/domin/repo/checkout_repo.dart'
+    as _i648;
+import '../../project_layers/presentaion_layer/checkout/domin/usecase/get_logged_user_addresses_usecase.dart'
+    as _i226;
+import '../../project_layers/presentaion_layer/checkout/presentation/view_model/cubit/checkout/checkout_cubit.dart'
+    as _i236;
+import '../../project_layers/presentaion_layer/home/Tabs/cart_tab/cubit/cart_view_model.dart'
+    as _i988;
 import '../../project_layers/presentaion_layer/home/Tabs/category_tab/cubit/category_cubit.dart'
     as _i608;
 import '../../project_layers/presentaion_layer/home/Tabs/home_tab/cubit/home_tab_view_model.dart'
@@ -179,9 +223,28 @@ import '../../project_layers/presentaion_layer/map/cubit/map_view_model.dart'
     as _i934;
 import '../../project_layers/presentaion_layer/notifications_list/cubit/notifications_list_cubit.dart'
     as _i718;
+import '../../project_layers/presentaion_layer/orders/cubit/orders_cubit.dart'
+    as _i665;
+import '../../project_layers/presentaion_layer/payment/data/data_source/payment_ds.dart'
+    as _i771;
+import '../../project_layers/presentaion_layer/payment/data/data_source/payment_ds_imp.dart'
+    as _i553;
+import '../../project_layers/presentaion_layer/payment/data/repo/payment_repo_imp.dart'
+    as _i761;
+import '../../project_layers/presentaion_layer/payment/domain/repo/payment_repo.dart'
+    as _i409;
+import '../../project_layers/presentaion_layer/payment/domain/use_case/payment_card_use_case.dart'
+    as _i509;
+import '../../project_layers/presentaion_layer/payment/domain/use_case/payment_cash_use_case.dart'
+    as _i152;
+import '../../project_layers/presentaion_layer/payment/presentaion/view_model/payment_cubit.dart'
+    as _i658;
+import '../../project_layers/presentaion_layer/search/cubit/search_cubit.dart'
+    as _i211;
 import '../../project_layers/presentation_layer/occasion/view_model/occasion_cubit.dart'
     as _i1000;
 import 'modules/dio_module.dart' as _i983;
+import 'modules/internet_connection_module.dart' as _i559;
 
 extension GetItInjectableX on _i174.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
@@ -191,8 +254,12 @@ extension GetItInjectableX on _i174.GetIt {
   }) {
     final gh = _i526.GetItHelper(this, environment, environmentFilter);
     final dioModule = _$DioModule();
+    final internetConnectionModule = _$InternetConnectionModule();
     gh.singleton<_i528.PrettyDioLogger>(
       () => dioModule.providePrettyDioLogger(),
+    );
+    gh.lazySingleton<_i973.InternetConnectionChecker>(
+      () => internetConnectionModule.internetConnectionChecker,
     );
     gh.singleton<_i361.Dio>(
       () => dioModule.provideDio(gh<_i528.PrettyDioLogger>()),
@@ -203,6 +270,12 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i1054.HomeRemoteDataSource>(
       () => _i329.HomeRemoteDataSourceImpl(gh<_i778.ApiClient>()),
+    );
+    gh.factory<_i533.CartRemoteDataSource>(
+      () => _i316.CartRemoteDataSourceImpl(gh<_i778.ApiClient>()),
+    );
+    gh.factory<_i393.CheckoutRemoteDS>(
+      () => _i807.CheckoutRemoteDsImpl(gh<_i778.ApiClient>()),
     );
     gh.factory<_i1012.BestSellerDataSource>(
       () => _i561.BestSellerDataSourceImpl(apiClient: gh<_i778.ApiClient>()),
@@ -216,6 +289,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i29.AddressDataSource>(
       () => _i1063.AddAddressDataSourceImpl(gh<_i778.ApiClient>()),
     );
+    gh.factory<_i218.CartRepo>(
+      () => _i928.CartRepoImpl(gh<_i533.CartRemoteDataSource>()),
+    );
     gh.factory<_i1.AddressRepo>(
       () => _i973.AddressRepoImpl(gh<_i29.AddressDataSource>()),
     );
@@ -224,6 +300,24 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i27.ProductRemoteDataSource>(
       () => _i636.ProductRemoteDataSourceImpl(gh<_i778.ApiClient>()),
+    );
+    gh.factory<_i270.AddToCartUseCase>(
+      () => _i270.AddToCartUseCase(gh<_i218.CartRepo>()),
+    );
+    gh.factory<_i368.DeleteItemFromCartUseCase>(
+      () => _i368.DeleteItemFromCartUseCase(gh<_i218.CartRepo>()),
+    );
+    gh.factory<_i755.GetCartUseCase>(
+      () => _i755.GetCartUseCase(gh<_i218.CartRepo>()),
+    );
+    gh.factory<_i1003.AddToCartUseCase>(
+      () => _i1003.AddToCartUseCase(gh<_i218.CartRepo>()),
+    );
+    gh.factory<_i856.DeleteItemFromCartUseCase>(
+      () => _i856.DeleteItemFromCartUseCase(gh<_i218.CartRepo>()),
+    );
+    gh.factory<_i233.GetCartUseCase>(
+      () => _i233.GetCartUseCase(gh<_i218.CartRepo>()),
     );
     gh.factory<_i1029.ProductDataSource>(
       () => _i342.ProductDataSourceImpl(gh<_i778.ApiClient>()),
@@ -237,6 +331,12 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i585.OccasionsDataSource>(
       () => _i246.OccasionsDataSourceImpl(gh<_i778.ApiClient>()),
     );
+    gh.factory<_i648.CheckoutRepo>(
+      () => _i1016.CheckoutRepoImpl(
+        gh<_i393.CheckoutRemoteDS>(),
+        gh<_i973.InternetConnectionChecker>(),
+      ),
+    );
     gh.factory<_i455.GetLoggetUserDataSource>(
       () => _i916.GetLoggedUserDataSourceImpl(gh<_i778.ApiClient>()),
     );
@@ -246,14 +346,32 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i196.LoginDataSource>(
       () => _i576.LoginDataSourceImpl(gh<_i778.ApiClient>()),
     );
+<<<<<<< HEAD
     gh.factory<_i934.MapViewModel>(
       () => _i934.MapViewModel(
         googleMapsApiClient: gh<_i67.GoogleMapsApiClient>(),
       ),
+=======
+    gh.factory<_i916.OrdersDataSource>(
+      () => _i364.OrdersDataSourceImpl(apiClient: gh<_i778.ApiClient>()),
+>>>>>>> dev
     );
     gh.factory<_i956.CategoryRemoteDataSource>(
       () => _i622.CategoryRemoteDataSourceImpl(gh<_i778.ApiClient>()),
     );
+<<<<<<< HEAD
+=======
+    gh.factory<_i988.CartViewModel>(
+      () => _i988.CartViewModel(
+        addToCartUseCase: gh<_i1003.AddToCartUseCase>(),
+        getCartUseCase: gh<_i233.GetCartUseCase>(),
+        deleteItemFromCartUseCase: gh<_i856.DeleteItemFromCartUseCase>(),
+      ),
+    );
+    gh.factory<_i771.PaymentDataSource>(
+      () => _i553.PaymentDataSourceImp(gh<_i778.ApiClient>()),
+    );
+>>>>>>> dev
     gh.factory<_i366.AddAddressUseCase>(
       () => _i366.AddAddressUseCase(gh<_i1.AddressRepo>()),
     );
@@ -265,6 +383,10 @@ extension GetItInjectableX on _i174.GetIt {
         bestSellerDataSource: gh<_i1012.BestSellerDataSource>(),
       ),
     );
+    gh.factory<_i395.OrdersRepository>(
+      () =>
+          _i811.OrdersRepoImpl(ordersDataSource: gh<_i916.OrdersDataSource>()),
+    );
     gh.factory<_i956.AuthRemoteDataSource>(
       () => _i185.AuthRemoteDataSourceImpl(gh<_i778.ApiClient>()),
     );
@@ -273,6 +395,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i268.OccasionUseCase>(
       () => _i268.OccasionUseCase(gh<_i628.OccasionRepo>()),
+    );
+    gh.factory<_i409.PaymentRepo>(
+      () => _i761.PaymentRepoImp(gh<_i771.PaymentDataSource>()),
     );
     gh.factory<_i948.SignUpRepo>(
       () => _i631.SignUpRepoImpl(gh<_i772.SignUpRemoteDataSource>()),
@@ -301,6 +426,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i53.ProductRepo>(
       () => _i146.ProductRepoImpl(gh<_i27.ProductRemoteDataSource>()),
+    );
+    gh.factory<_i226.GetLoggedUserAddressesUsecase>(
+      () => _i226.GetLoggedUserAddressesUsecase(gh<_i648.CheckoutRepo>()),
     );
     gh.factory<_i608.ProductUseCase>(
       () => _i608.ProductUseCase(gh<_i53.ProductRepo>()),
@@ -342,6 +470,12 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i7.OccasionUseCase>(
       () => _i7.OccasionUseCase(homeRepo: gh<_i900.HomeRepo>()),
     );
+<<<<<<< HEAD
+=======
+    gh.factory<_i389.GetOrdersUseCase>(
+      () => _i389.GetOrdersUseCase(gh<_i395.OrdersRepository>()),
+    );
+>>>>>>> dev
     gh.factory<_i125.BestSellerViewModel>(
       () => _i125.BestSellerViewModel(gh<_i124.BestSellerUseCase>()),
     );
@@ -350,6 +484,24 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i503.ChangePasswordUseCase>(
       () => _i503.ChangePasswordUseCase(gh<_i64.ChangPasswordRepo>()),
+    );
+    gh.factory<_i509.PaymentCardUseCase>(
+      () => _i509.PaymentCardUseCase(gh<_i409.PaymentRepo>()),
+    );
+    gh.factory<_i152.PaymentCashUseCase>(
+      () => _i152.PaymentCashUseCase(gh<_i409.PaymentRepo>()),
+    );
+    gh.factory<_i658.PaymentCubit>(
+      () => _i658.PaymentCubit(
+        gh<_i509.PaymentCardUseCase>(),
+        gh<_i152.PaymentCashUseCase>(),
+      ),
+    );
+    gh.factory<_i211.SearchCubit>(
+      () => _i211.SearchCubit(gh<_i608.ProductUseCase>()),
+    );
+    gh.factory<_i665.OrdersCubit>(
+      () => _i665.OrdersCubit(gh<_i389.GetOrdersUseCase>()),
     );
     gh.factory<_i1000.OccasionCubit>(
       () => _i1000.OccasionCubit(
@@ -391,6 +543,13 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i498.LoginCubit>(
       () => _i498.LoginCubit(loginUseCase: gh<_i1027.LoginUseCase>()),
     );
+    gh.factory<_i236.CheckoutCubit>(
+      () => _i236.CheckoutCubit(
+        gh<_i226.GetLoggedUserAddressesUsecase>(),
+        gh<_i509.PaymentCardUseCase>(),
+        gh<_i152.PaymentCashUseCase>(),
+      ),
+    );
     gh.factory<_i469.ForgetPasswordViewModel>(
       () => _i469.ForgetPasswordViewModel(
         forgetPasswordUseCase: gh<_i18.ForgetPasswordUseCase>(),
@@ -417,3 +576,5 @@ extension GetItInjectableX on _i174.GetIt {
 }
 
 class _$DioModule extends _i983.DioModule {}
+
+class _$InternetConnectionModule extends _i559.InternetConnectionModule {}

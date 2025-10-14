@@ -2,12 +2,13 @@ import 'package:flower_app/core/di/di.dart';
 import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/gen/assets.gen.dart';
+import 'package:flower_app/project_layers/domain_layer/entities/user_cart.dart';
 import 'package:flower_app/project_layers/presentaion_layer/addresses/add_address/add_address.dart';
 import 'package:flower_app/project_layers/presentaion_layer/addresses/saved_addresses/saved_addresses.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/forget_password/forget_password_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/sign_in/login_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/sign_up/sign_up_view.dart';
-import 'package:flower_app/project_layers/presentaion_layer/checkout/views/chackout_view.dart';
+import 'package:flower_app/project_layers/presentaion_layer/checkout/presentation/pages/checkout_page.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/about_us_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/edit_profile.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/reset_password.dart';
@@ -18,13 +19,18 @@ import 'package:flower_app/project_layers/presentaion_layer/notifications_list/c
 import 'package:flower_app/project_layers/presentaion_layer/notifications_list/views/notifications_list_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/success/success_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/track_order/view/track_order_view.dart';
+import 'package:flower_app/project_layers/presentaion_layer/payment/presentaion/page/success_screen.dart';
+import 'package:flower_app/project_layers/presentaion_layer/payment/presentaion/page/webvieww_screen.dart';
+import 'package:flower_app/project_layers/presentaion_layer/search/cubit/search_cubit.dart';
+import 'package:flower_app/project_layers/presentaion_layer/search/views/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import '../../project_layers/presentaion_layer/home/Tabs/category_tab/views/category_tab.dart';
-import '../../project_layers/presentation_layer/occasion/view/occasion_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../project_layers/presentaion_layer/best_seller/best_seller_screen.dart';
 import '../../project_layers/presentaion_layer/home/screens/product_details_screen.dart';
+import '../../project_layers/presentaion_layer/orders/view/order_page.dart';
+import '../../project_layers/presentation_layer/occasion/view/occasion_screen.dart';
 import 'app_routes.dart';
 
 abstract class Routes {
@@ -76,12 +82,18 @@ abstract class Routes {
               const TermsAndConditionsView(),
         );
       case AppRoutes.chackoutView:
-        return MaterialPageRoute(
-          builder: (context) => ChackoutView(),
-        );
+        final args = settings.arguments as UserCart;
+        return MaterialPageRoute(builder: (_) => CheckoutPage(userCart: args));
       case AppRoutes.aboutUs:
         return MaterialPageRoute(
           builder: (context) => AboutPage(),
+        );
+      case AppRoutes.searchView:
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider(
+            create: (context) => getIt<SearchCubit>(),
+            child: SearchScreen(),
+          ),
         );
       case AppRoutes.bestSeller:
         return MaterialPageRoute(
@@ -91,6 +103,10 @@ abstract class Routes {
         return MaterialPageRoute(
           builder: (_) => ProductDetailsScreen(),
         );
+      case AppRoutes.OrdersPage:
+        return MaterialPageRoute(
+          builder: (_) => OrdersPage(),
+        );
       case AppRoutes.addAddress:
         return MaterialPageRoute(
           builder: (_) => AddAddressScreen(),
@@ -99,7 +115,7 @@ abstract class Routes {
         return MaterialPageRoute(
           builder: (_) => SavedAddressesScreen(),
         );
-      case AppRoutes.categoryTab:
+      case AppRoutes.CategoryTab:
         return MaterialPageRoute(
           builder: (_) => categoryTab(),
         );
@@ -117,6 +133,11 @@ abstract class Routes {
         return MaterialPageRoute(
           builder: (_) => SuccessView(),
         );
+              case AppRoutes.successPayment:
+        return MaterialPageRoute(builder: (_) => const PaymentSuccessScreen());
+      case AppRoutes.webView:
+        final url = settings.arguments as String;
+        return MaterialPageRoute(builder: (_) => WebviewScreen(url: url));
 
       default:
         return MaterialPageRoute(

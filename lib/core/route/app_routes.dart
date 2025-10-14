@@ -22,14 +22,19 @@ abstract class AppRoutes {
       "/terms_and_conditions";
 
   static const String chackoutView = "/chackout_view";
+  static const String OrdersPage = "/Orders_page";
   static const String aboutUs = "/about_us";
   static const String addAddress = "/add_address";
   static const String savedAddresses = "/saved_addresses";
-  static const String categoryTab = "/Category_tab";
   static const String trackOrderMap = "/map_view";
   static const String testMapNavigation =
       "/test_map_navigation";
   static const String trackOrderView =
       "/track_order_view";
   static const String successView = "/success_view";
+  static const String CategoryTab = "/Category_tab";
+
+  static const String searchView = "/search_view";
+  static const String successPayment = "/success_payment";
+  static const String webView = "/web_view";
 }

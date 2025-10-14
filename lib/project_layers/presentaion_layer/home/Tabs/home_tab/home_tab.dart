@@ -44,10 +44,20 @@ class _HomeTabBody extends StatelessWidget {
         return Column(
           children: [
             // Search Section
-            HomeSearchSection(
-              onChanged: (value) {
-                //TODO: Handle search input changes
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  AppRoutes.searchView,
+                );
               },
+              child: IgnorePointer(
+                child: HomeSearchSection(
+                  onChanged: (value) {
+                    //TODO: Handle search input changes
+                  },
+                ),
+              ),
             ),
             SizedBox(height: 10.h),
             // Address section
@@ -195,7 +205,10 @@ class _HomeTabBody extends StatelessWidget {
                 return HomeCategory(
                   category: viewModel.categories[index],
                   onTap: () {
-                    //TODO: Handle category tap
+                    Navigator.pushNamed(
+                      context,
+                      AppRoutes.CategoryTab,
+                    );
                   },
                 );
               },
@@ -252,11 +265,10 @@ class _HomeTabBody extends StatelessWidget {
                 }
                 return HomeCard(
                   onTap: () {
+                    // Navigator to product details screen and give the product[index]
                     Navigator.pushNamed(
                       context,
-                      AppRoutes.productDetailsScreen,
-                      arguments:
-                          viewModel.bestSellers[index],
+                      AppRoutes.bestSeller,
                     );
                   },
                   bestSeller:
@@ -318,9 +330,7 @@ class _HomeTabBody extends StatelessWidget {
                   onTap: () {
                     Navigator.pushNamed(
                       context,
-                      AppRoutes.productDetailsScreen,
-                      arguments:
-                          viewModel.occasions[index],
+                      AppRoutes.OccasionScreen,
                     );
                   },
                   occasion: viewModel.occasions[index],

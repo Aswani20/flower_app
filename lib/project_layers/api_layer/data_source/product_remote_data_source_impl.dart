@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flower_app/core/api_result/api_result.dart';
 import 'package:flower_app/project_layers/api_layer/api_client/api_client.dart';
-import 'package:flower_app/project_layers/api_layer/models/products_response.dart' hide ProductsResponse;
 import 'package:flower_app/project_layers/data_layer/model/products_response.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/product_entity.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/product_filter.dart';
@@ -13,7 +12,9 @@ import '../../data_layer/data_source/product_remote_data_source.dart';
 class ProductRemoteDataSourceImpl
     implements ProductRemoteDataSource {
   ApiClient apiClient;
+
   ProductRemoteDataSourceImpl(this.apiClient);
+
   @override
   Future<ApiResult<List<ProductEntity>>> getProducts(
     ProductFilter filter,
@@ -33,13 +34,16 @@ class ProductRemoteDataSourceImpl
       if (filter.filter != null) {
         queryParameters['sort'] = filter.filter;
       }
-      ProductsResponse productsResponse =
-          await apiClient.getProductsByIdF(
-                queryParameters,
-              );
+      ProductsResponse productsResponse = await apiClient
+          .getProductsByIdF(
+            queryParameters,
+            filter.keyword,
+          );
+
       if (filter.occasionId != null ||
           filter.categoryId != null ||
-          filter.filter != null) {
+          filter.filter != null ||
+          filter.keyword != null) {
         return ApiSuccessResult(
           productsResponse.products!
               .map((e) => e.toProductEntity())

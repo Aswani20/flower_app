@@ -57,27 +57,33 @@ class HomeTabViewModel extends Cubit<HomeTabState> {
   // Check if individual sections are loading
   bool get isCategoriesLoading {
     if (state is HomeTabLoadingState) {
-      return (state as HomeTabLoadingState).isCategoriesLoading;
+      return (state as HomeTabLoadingState)
+          .isCategoriesLoading;
     } else if (state is HomeTabLoadedState) {
-      return (state as HomeTabLoadedState).isCategoriesLoading;
+      return (state as HomeTabLoadedState)
+          .isCategoriesLoading;
     }
     return false;
   }
 
   bool get isBestSellersLoading {
     if (state is HomeTabLoadingState) {
-      return (state as HomeTabLoadingState).isBestSellersLoading;
+      return (state as HomeTabLoadingState)
+          .isBestSellersLoading;
     } else if (state is HomeTabLoadedState) {
-      return (state as HomeTabLoadedState).isBestSellersLoading;
+      return (state as HomeTabLoadedState)
+          .isBestSellersLoading;
     }
     return false;
   }
 
   bool get isOccasionsLoading {
     if (state is HomeTabLoadingState) {
-      return (state as HomeTabLoadingState).isOccasionsLoading;
+      return (state as HomeTabLoadingState)
+          .isOccasionsLoading;
     } else if (state is HomeTabLoadedState) {
-      return (state as HomeTabLoadedState).isOccasionsLoading;
+      return (state as HomeTabLoadedState)
+          .isOccasionsLoading;
     }
     return false;
   }
@@ -102,7 +108,8 @@ class HomeTabViewModel extends Cubit<HomeTabState> {
       either.fold(
         (categoryResponse) {
           // Success - extract categories list from response and set loading to false
-          final categoryList = categoryResponse.categories ?? [];
+          final categoryList =
+              categoryResponse.categories ?? [];
           final currentState = state;
           if (currentState is HomeTabLoadingState) {
             emit(
@@ -125,7 +132,8 @@ class HomeTabViewModel extends Cubit<HomeTabState> {
                 bestSellers: bestSellers,
                 occasions: occasions,
                 isCategoriesLoading: false,
-                isBestSellersLoading: isBestSellersLoading,
+                isBestSellersLoading:
+                    isBestSellersLoading,
                 isOccasionsLoading: isOccasionsLoading,
               ),
             );
@@ -165,7 +173,8 @@ class HomeTabViewModel extends Cubit<HomeTabState> {
       either.fold(
         (bestSellerResponse) {
           // Success - extract best sellers list from response and set loading to false
-          final bestSellerList = bestSellerResponse.bestSeller ?? [];
+          final bestSellerList =
+              bestSellerResponse.bestSeller ?? [];
           final currentState = state;
           if (currentState is HomeTabLoadingState) {
             emit(
@@ -228,7 +237,8 @@ class HomeTabViewModel extends Cubit<HomeTabState> {
       either.fold(
         (occasionResponse) {
           // Success - extract occasions list from response and set loading to false
-          final occasionList = occasionResponse.occasions ?? [];
+          final occasionList =
+              occasionResponse.occasions ?? [];
           final currentState = state;
           if (currentState is HomeTabLoadingState) {
             emit(
@@ -251,7 +261,8 @@ class HomeTabViewModel extends Cubit<HomeTabState> {
                 bestSellers: bestSellers,
                 occasions: occasionList,
                 isCategoriesLoading: isCategoriesLoading,
-                isBestSellersLoading: isBestSellersLoading,
+                isBestSellersLoading:
+                    isBestSellersLoading,
                 isOccasionsLoading: false,
               ),
             );
@@ -310,8 +321,10 @@ class HomeTabViewModel extends Cubit<HomeTabState> {
           categories: categories,
           bestSellers: bestSellers,
           occasions: occasions,
-          isCategoriesLoading: isCategoriesLoading ?? false,
-          isBestSellersLoading: isBestSellersLoading ?? false,
+          isCategoriesLoading:
+              isCategoriesLoading ?? false,
+          isBestSellersLoading:
+              isBestSellersLoading ?? false,
           isOccasionsLoading: isOccasionsLoading ?? false,
         ),
       );

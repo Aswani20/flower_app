@@ -1,5 +1,6 @@
 import 'package:flower_app/core/theme/app_styles.dart';
 import 'package:flutter/material.dart';
+import '../../../../core/route/app_routes.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../domain_layer/entities/best_seller_response_entity.dart';
 
@@ -111,7 +112,15 @@ class ProductCard extends StatelessWidget {
                   children: [
                     Expanded(
                       child: ElevatedButton.icon(
-                        onPressed: () {},
+                        onPressed: () {
+                          // Navigator to product details screen and give the product[index]
+                          Navigator.pushNamed(
+                            context,
+                            AppRoutes
+                                .productDetailsScreen,
+                            arguments: product,
+                          );
+                        },
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                             borderRadius:

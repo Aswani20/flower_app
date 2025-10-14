@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flower_app/core/di/di.dart';
 import 'package:flower_app/core/extensions/navigator_extensions.dart';
 import 'package:flower_app/core/extensions/project_extensions.dart';
@@ -6,6 +5,7 @@ import 'package:flower_app/core/extensions/spacer_media_quiey.dart';
 import 'package:flower_app/core/l10n/app_localizations.dart';
 import 'package:flower_app/core/route/app_routes.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
+import 'package:flower_app/core/theme/app_styles.dart';
 import 'package:flower_app/gen/assets.gen.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/cubits/profile/profile_cubit.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/widgets/list_tile_header.dart';
@@ -144,10 +144,8 @@ class ProfileTab extends StatelessWidget {
                                             .user
                                             .firstName ??
                                         '',
-                                    style:
-                                        Theme.of(context)
-                                            .textTheme
-                                            .titleMedium,
+                                    style: AppStyles
+                                        .regular16black,
                                   ),
                                   IconButton(
                                     onPressed: () async {
@@ -180,9 +178,8 @@ class ProfileTab extends StatelessWidget {
                               ),
                               Text(
                                 state.user.email ?? '',
-                                style: Theme.of(
-                                  context,
-                                ).textTheme.titleMedium,
+                                style: AppStyles
+                                    .font14BlackW500,
                               ),
                             ],
                           ),
@@ -200,9 +197,10 @@ class ProfileTab extends StatelessWidget {
                           ),
                           Text(
                             context.l10n.appVersion,
-                            style: Theme.of(
-                              context,
-                            ).textTheme.bodyMedium,
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium
+                                ?.copyWith(),
                           ),
                         ],
                       );

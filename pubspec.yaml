@@ -45,6 +45,11 @@ dependencies:
   url_launcher: ^6.1.10
   cloud_firestore: ^6.0.2
   flutter_dotenv: ^6.0.0
+  auto_size_text: ^3.0.0
+  internet_connection_checker: ^3.0.1
+  equatable: ^2.0.5
+  lottie: ^3.3.2
+  webview_flutter: ^4.13.0
 
   
 dev_dependencies:

@@ -49,6 +49,36 @@ class AppLocalizationsAr extends AppLocalizations {
   String get aboutUs => 'عن التطبيق';
 
   @override
+  String get searchForYourFavoriteProducts =>
+      'ابحث عن المنتجات المفضلة لديك';
+
+  @override
+  String get searchInProduct => 'ابحث عن المنتجات...';
+
+  @override
+  String get searchHint =>
+      'اكتب في شريط البحث أعلاه للبدء';
+
+  @override
+  String get searching => 'جاري البحث...';
+
+  @override
+  String get resultFor => 'نتيجة لـ';
+
+  @override
+  String get noResultFound => 'لا توجد نتائج لـ';
+
+  @override
+  String get wasFound => 'تم العثور على ';
+
+  @override
+  String get trySearchWithDeffrentKeys =>
+      'حاول البحث بكلمات مختلفة';
+
+  @override
+  String get search_error => 'حدث خطأ أثناء البحث';
+
+  @override
   String get firstName => 'الاسم الاول';
 
   @override
@@ -76,7 +106,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get confirmPassword => 'تاكيد كلمة المرور';
 
   @override
-  String get confirm => 'Confirm';
+  String get confirm => 'تأكيد';
 
   @override
   String get confirmPasswordHint =>
@@ -95,7 +125,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get haveAccount => 'هل لديك حساب بالفعل؟';
 
   @override
-  String get notHaveAccount => 'don\'t have an account?';
+  String get notHaveAccount => 'ليس لديك حساب؟';
 
   @override
   String get login => 'تسجيل الدخول';
@@ -248,38 +278,37 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get all_prices_include_tax =>
-      'All prices include tax';
+      'جميع الأسعار تشمل الضريبة';
 
   @override
-  String get product_title => 'product title';
+  String get product_title => 'عنوان المنتج';
 
   @override
-  String get status => 'Status';
+  String get status => 'الحالة';
 
   @override
-  String get in_stock => 'in stock';
+  String get in_stock => 'متوفر';
 
   @override
-  String get product_price => 'product price';
+  String get product_price => 'سعر المنتج';
 
   @override
-  String get description => 'Description';
+  String get description => 'الوصف';
 
   @override
-  String get description_body =>
-      'Lorem ipsum dolor sit amet consectetur. Id sit morbi ornare morbi duis rhoncus orci massa.';
+  String get description_body => 'وصف تفصيلي للمنتج';
 
   @override
-  String get bouquet_include => 'Bouquet include';
+  String get bouquet_include => 'تحتوي الباقة على';
 
   @override
-  String get add_to_cart => 'Add to cart';
+  String get add_to_cart => 'أضف إلى السلة';
 
   @override
-  String get pink_roses => 'Pink roses:15';
+  String get pink_roses => 'ورود وردية: 15';
 
   @override
-  String get white_wrap => 'White wrap';
+  String get white_wrap => 'غلاف أبيض';
 
   @override
   String get flowery => 'زهري';
@@ -315,7 +344,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get cancel => 'إلغاء';
 
   @override
-  String get confirmLogout => 'Confirm Logout';
+  String get confirmLogout => 'تأكيد تسجيل الخروج';
 
   @override
   String get address => 'العنوان';
@@ -351,4 +380,89 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get address_added_successfully =>
       'تم إضافة العنوان بنجاح';
+
+  @override
+  String get active => 'نشط';
+
+  @override
+  String get completed => 'مكتمل';
+
+  @override
+  String get deliver_to => 'التوصيل إلى';
+
+  @override
+  String get items => 'منتجات';
+
+  @override
+  String get sub_total => 'المجموع الفرعي';
+
+  @override
+  String get delivery_fee => 'رسوم التوصيل';
+
+  @override
+  String get total => 'الإجمالي';
+
+  @override
+  String get checkout => 'إتمام الطلب';
+
+  @override
+  String get delivery_address => 'عنوان التوصيل';
+
+  @override
+  String get no_addresses_found =>
+      'لا توجد عناوين محفوظة';
+
+  @override
+  String get add_new => 'إضافة جديد';
+
+  @override
+  String get its_a_gift => 'هذا هدية';
+
+  @override
+  String get street => 'الشارع';
+
+  @override
+  String get enter_your_street => 'أدخل الشارع';
+
+  @override
+  String get enter_your_city => 'أدخل المدينة';
+
+  @override
+  String get phone => 'الهاتف';
+
+  @override
+  String get enter_your_phone => 'أدخل رقم الهاتف';
+
+  @override
+  String get subtotal => 'المجموع الفرعي';
+
+  @override
+  String get place_order => 'تأكيد الطلب';
+
+  @override
+  String get payment_method => 'طريقة الدفع';
+
+  @override
+  String get payment_cancled => 'تم إلغاء الدفع';
+
+  @override
+  String get cash_on_delivery => 'الدفع عند الاستلام';
+
+  @override
+  String get credit_card => 'بطاقة ائتمان';
+
+  @override
+  String get delevery_time => 'وقت التوصيل';
+
+  @override
+  String get schedule => 'جدولة';
+
+  @override
+  String get your_order_placed => 'Your Order Placed';
+
+  @override
+  String get successfully => 'بنجاح';
+
+  @override
+  String get addressDetails => 'تفاصيل العنوان';
 }
