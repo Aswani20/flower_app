@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/l10n/app_localizations.dart';
+import '../../../../core/route/app_routes.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../domain_layer/entities/orders_entity.dart';
 
@@ -92,7 +93,17 @@ class OrderCard extends StatelessWidget {
                     width: double.infinity,
                     height: 30.h,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        if (orderItem.state ==
+                            "pending") {
+                          // Navigate to map view with order ID
+                          Navigator.pushNamed(
+                            context,
+                            AppRoutes.trackOrderMap,
+                            arguments: orderItem.id,
+                          );
+                        } 
+                      },
                       child: Text(
                         orderItem.state == "pending"
                             ? "track_order"
