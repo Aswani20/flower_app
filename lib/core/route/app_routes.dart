@@ -29,4 +29,6 @@ abstract class AppRoutes {
   static const String CategoryTab = "/Category_tab";
 
   static const String searchView = "/search_view";
+  static const String successPayment = "/success_payment";
+  static const String webView = "/web_view";
 }

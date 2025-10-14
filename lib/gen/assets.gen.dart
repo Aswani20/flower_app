@@ -359,6 +359,9 @@ class $AssetsSvgGen {
   /// File path: assets/svg/Camera.svg
   String get camera => 'assets/svg/Camera.svg';
 
+  /// File path: assets/svg/EIeNuVRaYz.json
+  String get eIeNuVRaYz => 'assets/svg/EIeNuVRaYz.json';
+
   /// File path: assets/svg/arrow_down.svg
   String get arrowDown => 'assets/svg/arrow_down.svg';
 
@@ -393,6 +396,7 @@ class $AssetsSvgGen {
   /// List of all assets
   List<String> get values => [
     camera,
+    eIeNuVRaYz,
     arrowDown,
     circleFlower,
     delete,

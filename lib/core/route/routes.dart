@@ -2,12 +2,13 @@ import 'package:flower_app/core/di/di.dart';
 import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/gen/assets.gen.dart';
+import 'package:flower_app/project_layers/domain_layer/entities/user_cart.dart';
 import 'package:flower_app/project_layers/presentaion_layer/addresses/add_address/add_address.dart';
 import 'package:flower_app/project_layers/presentaion_layer/addresses/saved_addresses/saved_addresses.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/forget_password/forget_password_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/sign_in/login_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/auth/sign_up/sign_up_view.dart';
-import 'package:flower_app/project_layers/presentaion_layer/checkout/views/chackout_view.dart';
+import 'package:flower_app/project_layers/presentaion_layer/checkout/presentation/pages/checkout_page.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/about_us_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/edit_profile.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_tab/views/reset_password.dart';
@@ -15,6 +16,8 @@ import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/profile_ta
 import 'package:flower_app/project_layers/presentaion_layer/home/home_screen.dart';
 import 'package:flower_app/project_layers/presentaion_layer/notifications_list/cubit/notifications_list_cubit.dart';
 import 'package:flower_app/project_layers/presentaion_layer/notifications_list/views/notifications_list_view.dart';
+import 'package:flower_app/project_layers/presentaion_layer/payment/presentaion/page/success_screen.dart';
+import 'package:flower_app/project_layers/presentaion_layer/payment/presentaion/page/webvieww_screen.dart';
 import 'package:flower_app/project_layers/presentaion_layer/search/cubit/search_cubit.dart';
 import 'package:flower_app/project_layers/presentaion_layer/search/views/search_view.dart';
 import 'package:flutter/material.dart';
@@ -76,9 +79,8 @@ abstract class Routes {
               const TermsAndConditionsView(),
         );
       case AppRoutes.chackoutView:
-        return MaterialPageRoute(
-          builder: (context) => ChackoutView(),
-        );
+        final args = settings.arguments as UserCart;
+        return MaterialPageRoute(builder: (_) => CheckoutPage(userCart: args));
       case AppRoutes.aboutUs:
         return MaterialPageRoute(
           builder: (context) => AboutPage(),
@@ -114,6 +116,12 @@ abstract class Routes {
         return MaterialPageRoute(
           builder: (_) => CategoryTab(),
         );
+              case AppRoutes.successPayment:
+        return MaterialPageRoute(builder: (_) => const PaymentSuccessScreen());
+      case AppRoutes.webView:
+        final url = settings.arguments as String;
+        return MaterialPageRoute(builder: (_) => WebviewScreen(url: url));
+
       default:
         return MaterialPageRoute(
           builder: (context) => NotFoundScreen(),

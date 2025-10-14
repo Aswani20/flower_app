@@ -43,6 +43,10 @@ dependencies:
   geocoding: ^4.0.0
   google_maps_flutter: ^2.13.1
   auto_size_text: ^3.0.0
+  internet_connection_checker: ^3.0.1
+  equatable: ^2.0.5
+  lottie: ^3.3.2
+  webview_flutter: ^4.13.0
 
   
 dev_dependencies:

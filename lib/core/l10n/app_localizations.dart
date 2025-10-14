@@ -842,6 +842,126 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Checkout'**
   String get checkout;
+
+  /// No description provided for @delivery_address.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery Address'**
+  String get delivery_address;
+
+  /// No description provided for @no_addresses_found.
+  ///
+  /// In en, this message translates to:
+  /// **'No addresses found'**
+  String get no_addresses_found;
+
+  /// No description provided for @add_new.
+  ///
+  /// In en, this message translates to:
+  /// **'Add New'**
+  String get add_new;
+
+  /// No description provided for @its_a_gift.
+  ///
+  /// In en, this message translates to:
+  /// **'It\'s a gift'**
+  String get its_a_gift;
+
+  /// No description provided for @street.
+  ///
+  /// In en, this message translates to:
+  /// **'Street'**
+  String get street;
+
+  /// No description provided for @enter_your_street.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your street'**
+  String get enter_your_street;
+
+  /// No description provided for @enter_your_city.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your city'**
+  String get enter_your_city;
+
+  /// No description provided for @phone.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone'**
+  String get phone;
+
+  /// No description provided for @enter_your_phone.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your phone'**
+  String get enter_your_phone;
+
+  /// No description provided for @subtotal.
+  ///
+  /// In en, this message translates to:
+  /// **'Subtotal'**
+  String get subtotal;
+
+  /// No description provided for @place_order.
+  ///
+  /// In en, this message translates to:
+  /// **'Place Order'**
+  String get place_order;
+
+  /// No description provided for @payment_method.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment Method'**
+  String get payment_method;
+
+  /// No description provided for @payment_cancled.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment Cancelled'**
+  String get payment_cancled;
+
+  /// No description provided for @cash_on_delivery.
+  ///
+  /// In en, this message translates to:
+  /// **'Cash on Delivery'**
+  String get cash_on_delivery;
+
+  /// No description provided for @credit_card.
+  ///
+  /// In en, this message translates to:
+  /// **'Credit Card'**
+  String get credit_card;
+
+  /// No description provided for @delevery_time.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery Time'**
+  String get delevery_time;
+
+  /// No description provided for @schedule.
+  ///
+  /// In en, this message translates to:
+  /// **'Schedule'**
+  String get schedule;
+
+  /// No description provided for @your_order_placed.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Order Placed'**
+  String get your_order_placed;
+
+  /// No description provided for @successfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Successfully'**
+  String get successfully;
+
+  /// No description provided for @addressDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Address Details'**
+  String get addressDetails;
 }
 
 class _AppLocalizationsDelegate
