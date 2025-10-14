@@ -12,6 +12,15 @@
   "savedAddresses": "Saved Addresses",
   "notification": "Notifications",
   "aboutUs": "About Us",
+  "searchForYourFavoriteProducts": "Search for your favorite products",
+  "searchInProduct": "Search in product",
+  "searchHint": "Type in the search bar above to start searching for products",
+  "searching": "Searching...",
+  "resultFor":"Result For",
+  "noResultFound": "No Result Found For",
+  "wasFound":"Was Found",
+  "trySearchWithDeffrentKeys":"try search with deferent word",
+  "search_error": "Search Error",
   "firstName": "First Name",
   "firstNameHint": "Enter first name",
   "lastName": "Last Name",
@@ -105,6 +114,13 @@
   "save_address" : "Save Address" ,
   "add_new_address" : "Add New Address" ,
   "please_choose" : "choose" ,
-  "address_added_successfully" : "Address added successfully"
-
-  }
+  "address_added_successfully" : "Address added successfully",
+  "active" : "Active",
+  "completed" : "Completed",
+  "deliver_to": "Deliver to",
+  "items" : "items",
+  "sub_total" : "Sub Total",
+  "delivery_fee" : "Delivery Fee",
+  "total" : "Total",
+  "checkout" : "Checkout"
+}

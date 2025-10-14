@@ -3,51 +3,55 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i15;
-import 'dart:io' as _i30;
+import 'dart:async' as _i16;
+import 'dart:io' as _i31;
 
 import 'package:flower_app/project_layers/api_layer/api_client/api_client.dart'
-    as _i14;
+    as _i15;
 import 'package:flower_app/project_layers/api_layer/models/categories_response.dart'
     as _i7;
 import 'package:flower_app/project_layers/api_layer/models/get_all_notification_response_dto.dart'
     as _i12;
 import 'package:flower_app/project_layers/api_layer/models/request/add_address_request_dto.dart'
-    as _i31;
+    as _i32;
 import 'package:flower_app/project_layers/api_layer/models/request/change_password_request_body.dart'
-    as _i28;
-import 'package:flower_app/project_layers/api_layer/models/request/forget_password_request_dto.dart'
-    as _i23;
-import 'package:flower_app/project_layers/api_layer/models/request/login_request.dart'
-    as _i21;
-import 'package:flower_app/project_layers/api_layer/models/request/reset_password_request_dto.dart'
-    as _i27;
-import 'package:flower_app/project_layers/api_layer/models/request/sign_up_request.dart'
-    as _i20;
-import 'package:flower_app/project_layers/api_layer/models/request/update_profile_request_dto.dart'
     as _i29;
+import 'package:flower_app/project_layers/api_layer/models/request/forget_password_request_dto.dart'
+    as _i24;
+import 'package:flower_app/project_layers/api_layer/models/request/login_request.dart'
+    as _i22;
+import 'package:flower_app/project_layers/api_layer/models/request/reset_password_request_dto.dart'
+    as _i28;
+import 'package:flower_app/project_layers/api_layer/models/request/sign_up_request.dart'
+    as _i21;
+import 'package:flower_app/project_layers/api_layer/models/request/update_profile_request_dto.dart'
+    as _i30;
 import 'package:flower_app/project_layers/api_layer/models/request/verify_reset_code_request_dto.dart'
-    as _i25;
+    as _i26;
 import 'package:flower_app/project_layers/api_layer/models/response/address_response_dto.dart'
-    as _i13;
+    as _i14;
 import 'package:flower_app/project_layers/api_layer/models/response/best_seller_response.dart'
-    as _i17;
-import 'package:flower_app/project_layers/api_layer/models/response/best_seller_response_dto.dart'
     as _i18;
+import 'package:flower_app/project_layers/api_layer/models/response/best_seller_response_dto.dart'
+    as _i19;
+import 'package:flower_app/project_layers/api_layer/models/response/cart_response_dto.dart'
+    as _i33;
 import 'package:flower_app/project_layers/api_layer/models/response/category_response_dto.dart'
-    as _i16;
+    as _i17;
 import 'package:flower_app/project_layers/api_layer/models/response/change_password_response_dto.dart'
     as _i9;
 import 'package:flower_app/project_layers/api_layer/models/response/forget_password_response_dto.dart'
-    as _i22;
+    as _i23;
 import 'package:flower_app/project_layers/api_layer/models/response/get_logged_user_data_response_dto.dart'
     as _i8;
 import 'package:flower_app/project_layers/api_layer/models/response/login_response.dart'
     as _i6;
 import 'package:flower_app/project_layers/api_layer/models/response/occasion_response_dto.dart'
-    as _i19;
+    as _i20;
+import 'package:flower_app/project_layers/api_layer/models/response/order_response.dart'
+    as _i13;
 import 'package:flower_app/project_layers/api_layer/models/response/reset_password_response_dto.dart'
-    as _i26;
+    as _i27;
 import 'package:flower_app/project_layers/api_layer/models/response/sign_up_response.dart'
     as _i5;
 import 'package:flower_app/project_layers/api_layer/models/response/update_photo_response_dto.dart'
@@ -55,7 +59,7 @@ import 'package:flower_app/project_layers/api_layer/models/response/update_photo
 import 'package:flower_app/project_layers/api_layer/models/response/update_profile_response_dto.dart'
     as _i10;
 import 'package:flower_app/project_layers/api_layer/models/response/verify_reset_code_response.dart'
-    as _i24;
+    as _i25;
 import 'package:flower_app/project_layers/data_layer/model/occasions_response.dart'
     as _i2;
 import 'package:flower_app/project_layers/data_layer/model/products_response.dart'
@@ -146,144 +150,150 @@ class _FakeGetAllNotificationResponseDto_10 extends _i1.SmartFake
   ) : super(parent, parentInvocation);
 }
 
-class _FakeAddressResponseDto_11 extends _i1.SmartFake
-    implements _i13.AddressResponseDto {
-  _FakeAddressResponseDto_11(Object parent, Invocation parentInvocation)
+class _FakeOrderResponse_11 extends _i1.SmartFake
+    implements _i13.OrderResponse {
+  _FakeOrderResponse_11(Object parent, Invocation parentInvocation)
+    : super(parent, parentInvocation);
+}
+
+class _FakeAddressResponseDto_12 extends _i1.SmartFake
+    implements _i14.AddressResponseDto {
+  _FakeAddressResponseDto_12(Object parent, Invocation parentInvocation)
     : super(parent, parentInvocation);
 }
 
 /// A class which mocks [ApiClient].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockApiClient extends _i1.Mock implements _i14.ApiClient {
+class MockApiClient extends _i1.Mock implements _i15.ApiClient {
   MockApiClient() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i15.Future<_i2.OccasionsResponse> getOccasions() =>
+  _i16.Future<_i2.OccasionsResponse> getOccasions() =>
       (super.noSuchMethod(
             Invocation.method(#getOccasions, []),
-            returnValue: _i15.Future<_i2.OccasionsResponse>.value(
+            returnValue: _i16.Future<_i2.OccasionsResponse>.value(
               _FakeOccasionsResponse_0(
                 this,
                 Invocation.method(#getOccasions, []),
               ),
             ),
           )
-          as _i15.Future<_i2.OccasionsResponse>);
+          as _i16.Future<_i2.OccasionsResponse>);
 
   @override
-  _i15.Future<_i3.ProductsResponse> getProductsById(String? occasionId) =>
+  _i16.Future<_i3.ProductsResponse> getProductsById(String? occasionId) =>
       (super.noSuchMethod(
             Invocation.method(#getProductsById, [occasionId]),
-            returnValue: _i15.Future<_i3.ProductsResponse>.value(
+            returnValue: _i16.Future<_i3.ProductsResponse>.value(
               _FakeProductsResponse_1(
                 this,
                 Invocation.method(#getProductsById, [occasionId]),
               ),
             ),
           )
-          as _i15.Future<_i3.ProductsResponse>);
+          as _i16.Future<_i3.ProductsResponse>);
 
   @override
-  _i15.Future<_i4.HttpResponse<_i16.CategoryResponseDto>> getCategories() =>
+  _i16.Future<_i4.HttpResponse<_i17.CategoryResponseDto>> getCategories() =>
       (super.noSuchMethod(
             Invocation.method(#getCategories, []),
             returnValue:
-                _i15.Future<_i4.HttpResponse<_i16.CategoryResponseDto>>.value(
-                  _FakeHttpResponse_2<_i16.CategoryResponseDto>(
+                _i16.Future<_i4.HttpResponse<_i17.CategoryResponseDto>>.value(
+                  _FakeHttpResponse_2<_i17.CategoryResponseDto>(
                     this,
                     Invocation.method(#getCategories, []),
                   ),
                 ),
           )
-          as _i15.Future<_i4.HttpResponse<_i16.CategoryResponseDto>>);
+          as _i16.Future<_i4.HttpResponse<_i17.CategoryResponseDto>>);
 
   @override
-  _i15.Future<_i4.HttpResponse<_i17.BestSellerResponse>>
+  _i16.Future<_i4.HttpResponse<_i18.BestSellerResponse>>
   getBestSellersProduct() =>
       (super.noSuchMethod(
             Invocation.method(#getBestSellersProduct, []),
             returnValue:
-                _i15.Future<_i4.HttpResponse<_i17.BestSellerResponse>>.value(
-                  _FakeHttpResponse_2<_i17.BestSellerResponse>(
+                _i16.Future<_i4.HttpResponse<_i18.BestSellerResponse>>.value(
+                  _FakeHttpResponse_2<_i18.BestSellerResponse>(
                     this,
                     Invocation.method(#getBestSellersProduct, []),
                   ),
                 ),
           )
-          as _i15.Future<_i4.HttpResponse<_i17.BestSellerResponse>>);
+          as _i16.Future<_i4.HttpResponse<_i18.BestSellerResponse>>);
 
   @override
-  _i15.Future<_i4.HttpResponse<_i18.BestSellerResponseDto>> getBestSellers() =>
+  _i16.Future<_i4.HttpResponse<_i19.BestSellerResponseDto>> getBestSellers() =>
       (super.noSuchMethod(
             Invocation.method(#getBestSellers, []),
             returnValue:
-                _i15.Future<_i4.HttpResponse<_i18.BestSellerResponseDto>>.value(
-                  _FakeHttpResponse_2<_i18.BestSellerResponseDto>(
+                _i16.Future<_i4.HttpResponse<_i19.BestSellerResponseDto>>.value(
+                  _FakeHttpResponse_2<_i19.BestSellerResponseDto>(
                     this,
                     Invocation.method(#getBestSellers, []),
                   ),
                 ),
           )
-          as _i15.Future<_i4.HttpResponse<_i18.BestSellerResponseDto>>);
+          as _i16.Future<_i4.HttpResponse<_i19.BestSellerResponseDto>>);
 
   @override
-  _i15.Future<_i4.HttpResponse<_i19.OccasionResponseDto>> getOccasionss() =>
+  _i16.Future<_i4.HttpResponse<_i20.OccasionResponseDto>> getOccasionss() =>
       (super.noSuchMethod(
             Invocation.method(#getOccasionss, []),
             returnValue:
-                _i15.Future<_i4.HttpResponse<_i19.OccasionResponseDto>>.value(
-                  _FakeHttpResponse_2<_i19.OccasionResponseDto>(
+                _i16.Future<_i4.HttpResponse<_i20.OccasionResponseDto>>.value(
+                  _FakeHttpResponse_2<_i20.OccasionResponseDto>(
                     this,
                     Invocation.method(#getOccasionss, []),
                   ),
                 ),
           )
-          as _i15.Future<_i4.HttpResponse<_i19.OccasionResponseDto>>);
+          as _i16.Future<_i4.HttpResponse<_i20.OccasionResponseDto>>);
 
   @override
-  _i15.Future<_i5.SignUpResponse> signUp(
-    _i20.SignUpRequestBody? signUpRequest,
+  _i16.Future<_i5.SignUpResponse> signUp(
+    _i21.SignUpRequestBody? signUpRequest,
   ) =>
       (super.noSuchMethod(
             Invocation.method(#signUp, [signUpRequest]),
-            returnValue: _i15.Future<_i5.SignUpResponse>.value(
+            returnValue: _i16.Future<_i5.SignUpResponse>.value(
               _FakeSignUpResponse_3(
                 this,
                 Invocation.method(#signUp, [signUpRequest]),
               ),
             ),
           )
-          as _i15.Future<_i5.SignUpResponse>);
+          as _i16.Future<_i5.SignUpResponse>);
 
   @override
-  _i15.Future<_i6.LoginResponse> login({required _i21.LoginRequest? request}) =>
+  _i16.Future<_i6.LoginResponse> login({required _i22.LoginRequest? request}) =>
       (super.noSuchMethod(
             Invocation.method(#login, [], {#request: request}),
-            returnValue: _i15.Future<_i6.LoginResponse>.value(
+            returnValue: _i16.Future<_i6.LoginResponse>.value(
               _FakeLoginResponse_4(
                 this,
                 Invocation.method(#login, [], {#request: request}),
               ),
             ),
           )
-          as _i15.Future<_i6.LoginResponse>);
+          as _i16.Future<_i6.LoginResponse>);
 
   @override
-  _i15.Future<_i4.HttpResponse<_i22.ForgetPasswordResponseDto>> forgetPassword({
-    required _i23.ForgetPasswordRequestDto? forgetPasswordRequestDto,
+  _i16.Future<_i4.HttpResponse<_i23.ForgetPasswordResponseDto>> forgetPassword({
+    required _i24.ForgetPasswordRequestDto? forgetPasswordRequestDto,
   }) =>
       (super.noSuchMethod(
             Invocation.method(#forgetPassword, [], {
               #forgetPasswordRequestDto: forgetPasswordRequestDto,
             }),
             returnValue:
-                _i15.Future<
-                  _i4.HttpResponse<_i22.ForgetPasswordResponseDto>
+                _i16.Future<
+                  _i4.HttpResponse<_i23.ForgetPasswordResponseDto>
                 >.value(
-                  _FakeHttpResponse_2<_i22.ForgetPasswordResponseDto>(
+                  _FakeHttpResponse_2<_i23.ForgetPasswordResponseDto>(
                     this,
                     Invocation.method(#forgetPassword, [], {
                       #forgetPasswordRequestDto: forgetPasswordRequestDto,
@@ -291,22 +301,22 @@ class MockApiClient extends _i1.Mock implements _i14.ApiClient {
                   ),
                 ),
           )
-          as _i15.Future<_i4.HttpResponse<_i22.ForgetPasswordResponseDto>>);
+          as _i16.Future<_i4.HttpResponse<_i23.ForgetPasswordResponseDto>>);
 
   @override
-  _i15.Future<_i4.HttpResponse<_i24.VerifyResetCodeResponseDto>>
+  _i16.Future<_i4.HttpResponse<_i25.VerifyResetCodeResponseDto>>
   verifyResetCode({
-    required _i25.VerifyResetCodeRequestDto? verifyResetCodeRequestDto,
+    required _i26.VerifyResetCodeRequestDto? verifyResetCodeRequestDto,
   }) =>
       (super.noSuchMethod(
             Invocation.method(#verifyResetCode, [], {
               #verifyResetCodeRequestDto: verifyResetCodeRequestDto,
             }),
             returnValue:
-                _i15.Future<
-                  _i4.HttpResponse<_i24.VerifyResetCodeResponseDto>
+                _i16.Future<
+                  _i4.HttpResponse<_i25.VerifyResetCodeResponseDto>
                 >.value(
-                  _FakeHttpResponse_2<_i24.VerifyResetCodeResponseDto>(
+                  _FakeHttpResponse_2<_i25.VerifyResetCodeResponseDto>(
                     this,
                     Invocation.method(#verifyResetCode, [], {
                       #verifyResetCodeRequestDto: verifyResetCodeRequestDto,
@@ -314,21 +324,21 @@ class MockApiClient extends _i1.Mock implements _i14.ApiClient {
                   ),
                 ),
           )
-          as _i15.Future<_i4.HttpResponse<_i24.VerifyResetCodeResponseDto>>);
+          as _i16.Future<_i4.HttpResponse<_i25.VerifyResetCodeResponseDto>>);
 
   @override
-  _i15.Future<_i4.HttpResponse<_i26.ResetPasswordResponseDto>> resetPassword({
-    required _i27.ResetPasswordRequestDto? resetPasswordRequestDto,
+  _i16.Future<_i4.HttpResponse<_i27.ResetPasswordResponseDto>> resetPassword({
+    required _i28.ResetPasswordRequestDto? resetPasswordRequestDto,
   }) =>
       (super.noSuchMethod(
             Invocation.method(#resetPassword, [], {
               #resetPasswordRequestDto: resetPasswordRequestDto,
             }),
             returnValue:
-                _i15.Future<
-                  _i4.HttpResponse<_i26.ResetPasswordResponseDto>
+                _i16.Future<
+                  _i4.HttpResponse<_i27.ResetPasswordResponseDto>
                 >.value(
-                  _FakeHttpResponse_2<_i26.ResetPasswordResponseDto>(
+                  _FakeHttpResponse_2<_i27.ResetPasswordResponseDto>(
                     this,
                     Invocation.method(#resetPassword, [], {
                       #resetPasswordRequestDto: resetPasswordRequestDto,
@@ -336,130 +346,189 @@ class MockApiClient extends _i1.Mock implements _i14.ApiClient {
                   ),
                 ),
           )
-          as _i15.Future<_i4.HttpResponse<_i26.ResetPasswordResponseDto>>);
+          as _i16.Future<_i4.HttpResponse<_i27.ResetPasswordResponseDto>>);
 
   @override
-  _i15.Future<_i7.CategoriesResponse> getAllCategories() =>
+  _i16.Future<_i7.CategoriesResponse> getAllCategories() =>
       (super.noSuchMethod(
             Invocation.method(#getAllCategories, []),
-            returnValue: _i15.Future<_i7.CategoriesResponse>.value(
+            returnValue: _i16.Future<_i7.CategoriesResponse>.value(
               _FakeCategoriesResponse_5(
                 this,
                 Invocation.method(#getAllCategories, []),
               ),
             ),
           )
-          as _i15.Future<_i7.CategoriesResponse>);
+          as _i16.Future<_i7.CategoriesResponse>);
 
   @override
-  _i15.Future<_i3.ProductsResponse> getProductsByIdF(
+  _i16.Future<_i3.ProductsResponse> getProductsByIdF(
     Map<String, dynamic>? filters,
+    String? search,
   ) =>
       (super.noSuchMethod(
-            Invocation.method(#getProductsByIdF, [filters]),
-            returnValue: _i15.Future<_i3.ProductsResponse>.value(
+            Invocation.method(#getProductsByIdF, [filters, search]),
+            returnValue: _i16.Future<_i3.ProductsResponse>.value(
               _FakeProductsResponse_1(
                 this,
-                Invocation.method(#getProductsByIdF, [filters]),
+                Invocation.method(#getProductsByIdF, [filters, search]),
               ),
             ),
           )
-          as _i15.Future<_i3.ProductsResponse>);
+          as _i16.Future<_i3.ProductsResponse>);
 
   @override
-  _i15.Future<_i8.GetLoggedUserDataResponseDto> getLoggedUserData() =>
+  _i16.Future<_i8.GetLoggedUserDataResponseDto> getLoggedUserData() =>
       (super.noSuchMethod(
             Invocation.method(#getLoggedUserData, []),
-            returnValue: _i15.Future<_i8.GetLoggedUserDataResponseDto>.value(
+            returnValue: _i16.Future<_i8.GetLoggedUserDataResponseDto>.value(
               _FakeGetLoggedUserDataResponseDto_6(
                 this,
                 Invocation.method(#getLoggedUserData, []),
               ),
             ),
           )
-          as _i15.Future<_i8.GetLoggedUserDataResponseDto>);
+          as _i16.Future<_i8.GetLoggedUserDataResponseDto>);
 
   @override
-  _i15.Future<_i9.ChangePasswordResponseDto> changePassword(
-    _i28.ChangePasswordRequestBody? request,
+  _i16.Future<_i9.ChangePasswordResponseDto> changePassword(
+    _i29.ChangePasswordRequestBody? request,
   ) =>
       (super.noSuchMethod(
             Invocation.method(#changePassword, [request]),
-            returnValue: _i15.Future<_i9.ChangePasswordResponseDto>.value(
+            returnValue: _i16.Future<_i9.ChangePasswordResponseDto>.value(
               _FakeChangePasswordResponseDto_7(
                 this,
                 Invocation.method(#changePassword, [request]),
               ),
             ),
           )
-          as _i15.Future<_i9.ChangePasswordResponseDto>);
+          as _i16.Future<_i9.ChangePasswordResponseDto>);
 
   @override
-  _i15.Future<_i10.UpdateProfileResponseDto> editProfile(
-    _i29.UpdateProfileRequestDto? request,
+  _i16.Future<_i10.UpdateProfileResponseDto> editProfile(
+    _i30.UpdateProfileRequestDto? request,
   ) =>
       (super.noSuchMethod(
             Invocation.method(#editProfile, [request]),
-            returnValue: _i15.Future<_i10.UpdateProfileResponseDto>.value(
+            returnValue: _i16.Future<_i10.UpdateProfileResponseDto>.value(
               _FakeUpdateProfileResponseDto_8(
                 this,
                 Invocation.method(#editProfile, [request]),
               ),
             ),
           )
-          as _i15.Future<_i10.UpdateProfileResponseDto>);
+          as _i16.Future<_i10.UpdateProfileResponseDto>);
 
   @override
-  _i15.Future<_i11.UpdatePhotoResponseDto> changePhoto(_i30.File? photo) =>
+  _i16.Future<_i11.UpdatePhotoResponseDto> changePhoto(_i31.File? photo) =>
       (super.noSuchMethod(
             Invocation.method(#changePhoto, [photo]),
-            returnValue: _i15.Future<_i11.UpdatePhotoResponseDto>.value(
+            returnValue: _i16.Future<_i11.UpdatePhotoResponseDto>.value(
               _FakeUpdatePhotoResponseDto_9(
                 this,
                 Invocation.method(#changePhoto, [photo]),
               ),
             ),
           )
-          as _i15.Future<_i11.UpdatePhotoResponseDto>);
+          as _i16.Future<_i11.UpdatePhotoResponseDto>);
 
   @override
-  _i15.Future<_i12.GetAllNotificationResponseDto> getNotifications() =>
+  _i16.Future<_i12.GetAllNotificationResponseDto> getNotifications() =>
       (super.noSuchMethod(
             Invocation.method(#getNotifications, []),
-            returnValue: _i15.Future<_i12.GetAllNotificationResponseDto>.value(
+            returnValue: _i16.Future<_i12.GetAllNotificationResponseDto>.value(
               _FakeGetAllNotificationResponseDto_10(
                 this,
                 Invocation.method(#getNotifications, []),
               ),
             ),
           )
-          as _i15.Future<_i12.GetAllNotificationResponseDto>);
+          as _i16.Future<_i12.GetAllNotificationResponseDto>);
 
   @override
-  _i15.Future<_i13.AddressResponseDto> addAddresses(
-    _i31.AddAddressRequestDto? request,
+  _i16.Future<_i13.OrderResponse> orders() =>
+      (super.noSuchMethod(
+            Invocation.method(#orders, []),
+            returnValue: _i16.Future<_i13.OrderResponse>.value(
+              _FakeOrderResponse_11(this, Invocation.method(#orders, [])),
+            ),
+          )
+          as _i16.Future<_i13.OrderResponse>);
+
+  @override
+  _i16.Future<_i14.AddressResponseDto> addAddresses(
+    _i32.AddAddressRequestDto? request,
   ) =>
       (super.noSuchMethod(
             Invocation.method(#addAddresses, [request]),
-            returnValue: _i15.Future<_i13.AddressResponseDto>.value(
-              _FakeAddressResponseDto_11(
+            returnValue: _i16.Future<_i14.AddressResponseDto>.value(
+              _FakeAddressResponseDto_12(
                 this,
                 Invocation.method(#addAddresses, [request]),
               ),
             ),
           )
-          as _i15.Future<_i13.AddressResponseDto>);
+          as _i16.Future<_i14.AddressResponseDto>);
 
   @override
-  _i15.Future<_i13.AddressResponseDto> getAllAddresses() =>
+  _i16.Future<_i14.AddressResponseDto> getAllAddresses() =>
       (super.noSuchMethod(
             Invocation.method(#getAllAddresses, []),
-            returnValue: _i15.Future<_i13.AddressResponseDto>.value(
-              _FakeAddressResponseDto_11(
+            returnValue: _i16.Future<_i14.AddressResponseDto>.value(
+              _FakeAddressResponseDto_12(
                 this,
                 Invocation.method(#getAllAddresses, []),
               ),
             ),
           )
-          as _i15.Future<_i13.AddressResponseDto>);
+          as _i16.Future<_i14.AddressResponseDto>);
+
+  @override
+  _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>> addToCart(
+    Map<String, dynamic>? body,
+    String? token,
+  ) =>
+      (super.noSuchMethod(
+            Invocation.method(#addToCart, [body, token]),
+            returnValue:
+                _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>>.value(
+                  _FakeHttpResponse_2<_i33.CartResponseDto>(
+                    this,
+                    Invocation.method(#addToCart, [body, token]),
+                  ),
+                ),
+          )
+          as _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>>);
+
+  @override
+  _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>> getCart(String? token) =>
+      (super.noSuchMethod(
+            Invocation.method(#getCart, [token]),
+            returnValue:
+                _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>>.value(
+                  _FakeHttpResponse_2<_i33.CartResponseDto>(
+                    this,
+                    Invocation.method(#getCart, [token]),
+                  ),
+                ),
+          )
+          as _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>>);
+
+  @override
+  _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>> deleteItemFromCart(
+    String? itemId,
+    String? token,
+  ) =>
+      (super.noSuchMethod(
+            Invocation.method(#deleteItemFromCart, [itemId, token]),
+            returnValue:
+                _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>>.value(
+                  _FakeHttpResponse_2<_i33.CartResponseDto>(
+                    this,
+                    Invocation.method(#deleteItemFromCart, [itemId, token]),
+                  ),
+                ),
+          )
+          as _i16.Future<_i4.HttpResponse<_i33.CartResponseDto>>);
 }

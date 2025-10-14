@@ -1,5 +1,5 @@
+import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flower_app/core/l10n/app_localizations.dart';
-import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/gen/assets.gen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -7,13 +7,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 class HomeSearchSection extends StatelessWidget {
-
   final void Function(String)? onChanged;
 
-  const HomeSearchSection({
-    super.key,
-    this.onChanged,
-  });
+  const HomeSearchSection({super.key, this.onChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -26,35 +22,61 @@ class HomeSearchSection extends StatelessWidget {
         ),
         Text(
           AppLocalizations.of(context)!.flowery,
-    
+
           style: Theme.of(context).textTheme.titleMedium,
         ),
         SizedBox(width: 15.w),
         Expanded(
           child: TextField(
-            onChanged: onChanged,
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              height: 1.5.h,
-              fontSize: 16.sp,
-            ),
             decoration: InputDecoration(
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16.r),
-                borderSide: BorderSide(color: AppColors.white[700]!),
+              hintText: context.l10n.search,
+              hintStyle: const TextStyle(
+                color: Colors.grey,
+                fontSize: 16,
+              ),
+              prefixIcon: const Icon(
+                CupertinoIcons.search,
+                color: Colors.grey,
+              ),
+
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(16),
+                borderSide: BorderSide(
+                  color: Colors.grey,
+                ),
               ),
               focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(16.r),
-                borderSide: BorderSide(color: AppColors.white[700]!),
+                borderRadius: BorderRadius.circular(16),
+                borderSide: BorderSide.none,
               ),
-              prefixIcon: Icon(
-                CupertinoIcons.search,
-                size: 24.sp,
-                color: AppColors.white[700]!,
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(16),
+                borderSide: BorderSide.none,
               ),
-              hintText: AppLocalizations.of(context)!.search,
-              hintStyle: Theme.of(context).textTheme.bodyMedium
-                  ?.copyWith(color: AppColors.white[700]),
+              filled: true,
+              fillColor: Colors.grey[200],
+              contentPadding: const EdgeInsets.symmetric(
+                horizontal: 8,
+                vertical: 8,
+              ),
             ),
+            // onChanged: (value) {
+            //   setState(() {});
+            //   Future.delayed(
+            //     const Duration(milliseconds: 500),
+            //     () {
+            //       if (value.trim() ==
+            //           widget.controller.text.trim()) {
+            //         context
+            //             .read<SearchCubit>()
+            //             .searchProducts(value);
+            //       }
+            //     },
+            //   );
+            // },
+            // onSubmitted: (value) => context
+            //     .read<SearchCubit>()
+            //     .searchProducts(value),
           ),
         ),
       ],

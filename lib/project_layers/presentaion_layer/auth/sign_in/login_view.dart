@@ -5,6 +5,7 @@ import '../../../../core/di/di.dart';
 import '../../../../core/dialog/dialog.dart';
 import '../../../../core/route/app_routes.dart';
 import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_styles.dart';
 import '../../../../core/theme/app_validator.dart';
 import 'cubit/login_cubit.dart';
 
@@ -137,12 +138,8 @@ class _SignInViewState extends State<SignInView> {
                               },
                               child: Text(
                                 "${context.l10n.forget_password}?",
-                                style: const TextStyle(
-                                  color: AppColors.black,
-                                  decoration:
-                                      TextDecoration
-                                          .underline,
-                                ),
+                                style: AppStyles
+                                    .font14BlackW500,
                               ),
                             ),
                           ],
@@ -175,11 +172,8 @@ class _SignInViewState extends State<SignInView> {
                             },
                             child: Text(
                               context.l10n.login_as_guest,
-                              style: TextStyle(
-                                color: AppColors.black,
-                                fontWeight:
-                                    FontWeight.bold,
-                              ),
+                              style:
+                                  AppStyles.medium16black,
                             ),
                           ),
                         ),
@@ -193,9 +187,8 @@ class _SignInViewState extends State<SignInView> {
                               context
                                   .l10n
                                   .dontHaveAccount,
-                              style: const TextStyle(
-                                color: AppColors.black,
-                              ),
+                              style:
+                                  AppStyles.medium16black,
                             ),
                             8.widthBox,
                             GestureDetector(
@@ -207,12 +200,15 @@ class _SignInViewState extends State<SignInView> {
                               },
                               child: Text(
                                 context.l10n.signUp,
-                                style: const TextStyle(
-                                  color: AppColors.pink,
-                                  decoration:
-                                      TextDecoration
-                                          .underline,
-                                ),
+                                style: AppStyles
+                                    .medium16black
+                                    .copyWith(
+                                      color:
+                                          AppColors.pink,
+                                      decoration:
+                                          TextDecoration
+                                              .underline,
+                                    ),
                               ),
                             ),
                           ],
@@ -241,7 +237,7 @@ class _SignInViewState extends State<SignInView> {
             posFunction: (p0) {
               Navigator.pushReplacementNamed(
                 context,
-                AppRoutes.savedAddresses,
+                AppRoutes.homeScreen,
               );
             },
           );

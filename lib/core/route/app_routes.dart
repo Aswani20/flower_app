@@ -22,9 +22,11 @@ abstract class AppRoutes {
       "/terms_and_conditions";
 
   static const String chackoutView = "/chackout_view";
+  static const String OrdersPage = "/Orders_page";
   static const String aboutUs = "/about_us";
   static const String addAddress = "/add_address";
   static const String savedAddresses = "/saved_addresses";
   static const String CategoryTab = "/Category_tab";
 
+  static const String searchView = "/search_view";
 }

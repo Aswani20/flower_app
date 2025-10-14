@@ -12,6 +12,15 @@
   "savedAddresses": "العناوين المحفوظة",
   "notification": "الاشعارات",
   "aboutUs": "عن التطبيق",
+  "searchForYourFavoriteProducts":"ابحث عن المنتجات المفضلة لديك",
+  "searchInProduct":"ابحث عن المنتجات...",
+  "searchHint": "اكتب في شريط البحث أعلاه للبدء",
+  "searching": "جاري البحث...",
+  "resultFor":"نتيجة لـ",
+  "noResultFound": "لا توجد نتائج لـ",
+  "trySearchWithDeffrentKeys":"حاول البحث بكلمات مختلفة",
+  "search_error": "حدث خطأ أثناء البحث",
+  "wasFound":"تم العثور على ",
   "firstName": "الاسم الاول",
   "firstNameHint": "ادخل الاسم الاول",
   "lastName": "الاسم الاخير",
@@ -92,5 +101,7 @@
   "save_address" : "حفظ العنوان" ,
   "add_new_address" : "إضافة عنوان جديد",
   "please_choose" : "اختر" ,
-  "address_added_successfully" : "تم إضافة العنوان بنجاح"
+  "address_added_successfully" : "تم إضافة العنوان بنجاح",
+  "active" : "نشط",
+  "completed" : "مكتمل"
   }

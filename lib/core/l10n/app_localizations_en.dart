@@ -49,6 +49,36 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutUs => 'About Us';
 
   @override
+  String get searchForYourFavoriteProducts =>
+      'Search for your favorite products';
+
+  @override
+  String get searchInProduct => 'Search in product';
+
+  @override
+  String get searchHint =>
+      'Type in the search bar above to start searching for products';
+
+  @override
+  String get searching => 'Searching...';
+
+  @override
+  String get resultFor => 'Result For';
+
+  @override
+  String get noResultFound => 'No Result Found For';
+
+  @override
+  String get wasFound => 'Was Found';
+
+  @override
+  String get trySearchWithDeffrentKeys =>
+      'try search with deferent word';
+
+  @override
+  String get search_error => 'Search Error';
+
+  @override
   String get firstName => 'First Name';
 
   @override
@@ -350,4 +380,28 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get address_added_successfully =>
       'Address added successfully';
+
+  @override
+  String get active => 'Active';
+
+  @override
+  String get completed => 'Completed';
+
+  @override
+  String get deliver_to => 'Deliver to';
+
+  @override
+  String get items => 'items';
+
+  @override
+  String get sub_total => 'Sub Total';
+
+  @override
+  String get delivery_fee => 'Delivery Fee';
+
+  @override
+  String get total => 'Total';
+
+  @override
+  String get checkout => 'Checkout';
 }

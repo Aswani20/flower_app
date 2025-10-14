@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flower_app/core/api_result/api_result.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/category_entity.dart';
 import 'package:flower_app/project_layers/domain_layer/entities/product_entity.dart';
@@ -13,12 +14,14 @@ part 'category_state.dart';
 class CategoryCubit extends Cubit<CategoryState> {
   CategoryUseCase categoryUseCase;
   ProductUseCase productUseCase;
+
   CategoryCubit(this.categoryUseCase, this.productUseCase)
     : super(CategoryInitial());
 
   String? selectedFilter = 'New';
   int selectedTabIndex = 0;
   List<CategoryEntity>? currentCategories;
+
   void updateFilter(String? filter) {
     selectedFilter = filter ?? 'New';
     if (currentCategories != null &&
@@ -70,7 +73,6 @@ class CategoryCubit extends Cubit<CategoryState> {
       case ApiSuccessResult<List<CategoryEntity>>():
         currentCategories = result.data;
         emit(CategoryLoaded(categories: result.data));
-
         if (result.data.isNotEmpty) {
           getProducts(
             ProductFilter(
@@ -89,12 +91,13 @@ class CategoryCubit extends Cubit<CategoryState> {
     emit(ProductLoading());
     ApiResult<List<ProductEntity>> result =
         await productUseCase.call(filter);
+
     switch (result) {
       case ApiSuccessResult<List<ProductEntity>>():
         emit(ProductLoaded(products: result.data));
-
       case ApiErrorResult<List<ProductEntity>>():
         emit(ProductError(message: result.errorMessage));
     }
+    return Future.value();
   }
 }
