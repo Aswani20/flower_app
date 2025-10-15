@@ -134,7 +134,7 @@ abstract class ApiClient {
   Future<GetAllNotificationResponseDto>
   getNotifications();
 
-  @GET('/v1/orders')
+  @GET('/v1/orders/pending-orders')
   Future<OrderResponse> orders();
 
   @PATCH('/v1/addresses')

@@ -21,14 +21,14 @@ class TrackOrderMap extends StatelessWidget {
         return getIt<MapViewModel>()
           ..listenToOrderUpdates(order);
       },
-      child: const MapViewBody(),
+      child: MapViewBody(order: order),
     );
   }
 }
 
 class MapViewBody extends StatelessWidget {
-  const MapViewBody({super.key});
-
+  const MapViewBody({required this.order, super.key});
+  final String order;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,21 +55,21 @@ class MapViewBody extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    'Error loading map',
-                    style: AppStyles.medium18black,
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
                     state.error,
                     style: AppStyles.regular14grey,
                     textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    'No Driver Assigned Yet',
+                    style: AppStyles.medium18black,
                   ),
                   const SizedBox(height: 16),
                   ElevatedButton(
                     onPressed: () {
                       context
                           .read<MapViewModel>()
-                          .refreshLocation();
+                          .listenToOrderUpdates(order);
                     },
                     child: const Text('Retry'),
                   ),

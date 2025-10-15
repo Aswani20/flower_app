@@ -1,3 +1,4 @@
+import 'package:flower_app/project_layers/api_layer/models/response/order_response.dart';
 import 'package:flower_app/project_layers/domain_layer/use_cases/best_seller_use_case.dart';
 import 'package:flower_app/project_layers/presentaion_layer/best_seller/widgets/app_bar_best_seller.dart';
 import 'package:flower_app/project_layers/presentaion_layer/best_seller/widgets/product_card.dart';
@@ -135,7 +136,8 @@ class BestSellerScreen extends StatelessWidget {
                       final product =
                           cubit.bestSellers[index];
                       return ProductCard(
-                        product: product,
+                        product: 
+                          Product.fromJson(product.toJson()),
                       );
                     },
                   ),

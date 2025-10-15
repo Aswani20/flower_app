@@ -43,6 +43,30 @@ class BestSellerEntity {
   int? v;
   bool? isSuperAdmin;
   int? sold;
+
+
+  toJson() {
+    return {
+      "rateAvg": rateAvg,
+      "rateCount": rateCount,
+      "_id": id,
+      "title": title,
+      "slug": slug,
+      "description": description,
+      "imgCover": imgCover,
+      "images": images,
+      "price": price,
+      "priceAfterDiscount": priceAfterDiscount,
+      "quantity": quantity,
+      "category": category,
+      "occasion": occasion,
+      "createdAt": createdAt,
+      "updatedAt": updatedAt,
+      "__v": v,
+      "isSuperAdmin": isSuperAdmin,
+      "sold": sold,
+    };
+  }
 }
 
 

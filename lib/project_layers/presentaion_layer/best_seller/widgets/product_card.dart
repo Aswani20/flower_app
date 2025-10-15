@@ -1,11 +1,11 @@
 import 'package:flower_app/core/theme/app_styles.dart';
+import 'package:flower_app/project_layers/api_layer/models/response/order_response.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/route/app_routes.dart';
 import '../../../../core/theme/app_colors.dart';
-import '../../../domain_layer/entities/best_seller_response_entity.dart';
 
 class ProductCard extends StatelessWidget {
-  final BestSellerEntity product;
+  final Product product;
 
   const ProductCard({super.key, required this.product});
 

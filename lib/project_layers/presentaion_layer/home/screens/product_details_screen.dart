@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flower_app/core/theme/app_colors.dart';
 import 'package:flower_app/core/theme/app_styles.dart';
-import 'package:flower_app/project_layers/domain_layer/entities/best_seller_response_entity.dart';
+import 'package:flower_app/project_layers/domain_layer/entities/product_entity.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/cart_tab/cubit/cart_states.dart';
 import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/cart_tab/cubit/cart_view_model.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +28,7 @@ class _ProductDetailsScreenState
   Widget build(BuildContext context) {
     var productItem =
     ModalRoute.of(context)!.settings.arguments
-    as BestSellerEntity;
+    as ProductEntity;
     return BlocListener<CartViewModel, CartStates>(
       listener: (context, state) {
         if(state is AddCartLoadingStates){
