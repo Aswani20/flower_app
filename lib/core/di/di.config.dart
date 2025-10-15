@@ -346,21 +346,17 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i196.LoginDataSource>(
       () => _i576.LoginDataSourceImpl(gh<_i778.ApiClient>()),
     );
-<<<<<<< HEAD
     gh.factory<_i934.MapViewModel>(
       () => _i934.MapViewModel(
         googleMapsApiClient: gh<_i67.GoogleMapsApiClient>(),
       ),
-=======
+    );
     gh.factory<_i916.OrdersDataSource>(
       () => _i364.OrdersDataSourceImpl(apiClient: gh<_i778.ApiClient>()),
->>>>>>> dev
     );
     gh.factory<_i956.CategoryRemoteDataSource>(
       () => _i622.CategoryRemoteDataSourceImpl(gh<_i778.ApiClient>()),
     );
-<<<<<<< HEAD
-=======
     gh.factory<_i988.CartViewModel>(
       () => _i988.CartViewModel(
         addToCartUseCase: gh<_i1003.AddToCartUseCase>(),
@@ -371,7 +367,6 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i771.PaymentDataSource>(
       () => _i553.PaymentDataSourceImp(gh<_i778.ApiClient>()),
     );
->>>>>>> dev
     gh.factory<_i366.AddAddressUseCase>(
       () => _i366.AddAddressUseCase(gh<_i1.AddressRepo>()),
     );
@@ -470,12 +465,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i7.OccasionUseCase>(
       () => _i7.OccasionUseCase(homeRepo: gh<_i900.HomeRepo>()),
     );
-<<<<<<< HEAD
-=======
     gh.factory<_i389.GetOrdersUseCase>(
       () => _i389.GetOrdersUseCase(gh<_i395.OrdersRepository>()),
     );
->>>>>>> dev
     gh.factory<_i125.BestSellerViewModel>(
       () => _i125.BestSellerViewModel(gh<_i124.BestSellerUseCase>()),
     );

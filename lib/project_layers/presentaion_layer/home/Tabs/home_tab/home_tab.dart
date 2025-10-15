@@ -172,7 +172,7 @@ class _HomeTabBody extends StatelessWidget {
           onPressed: () {
             Navigator.pushNamed(
               context,
-              AppRoutes.categoryTab,
+              AppRoutes.CategoryTab,
             );
           },
         ),
@@ -330,7 +330,7 @@ class _HomeTabBody extends StatelessWidget {
                   onTap: () {
                     Navigator.pushNamed(
                       context,
-                      AppRoutes.OccasionScreen,
+                      AppRoutes.occasionScreen,
                     );
                   },
                   occasion: viewModel.occasions[index],
