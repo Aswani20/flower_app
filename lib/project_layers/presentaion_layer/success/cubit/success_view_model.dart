@@ -3,7 +3,10 @@ import 'package:flower_app/project_layers/firebase_layer/firestore_manager.dart'
 import 'package:flower_app/project_layers/presentaion_layer/success/cubit/success_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
 
+
+@injectable
 class SuccessViewModel extends Cubit<SuccessStates> {
   SuccessViewModel() : super(SuccessInitialState());
 

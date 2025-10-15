@@ -10,12 +10,22 @@ class OrdersListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (orders.isEmpty) {
+      return SizedBox(
+        height: MediaQuery.of(context).size.height * 0.6,
+        child: const Center(
+          child: Text('No orders found'),
+        ),
+      );
+    }
+
     return ListView.builder(
+      physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       itemBuilder: (context, index) => Padding(
         padding: const EdgeInsets.symmetric(
-          vertical: 16,
-          horizontal: 28,
+          vertical: 8,
+          horizontal: 16,
         ),
         child: OrderCard(orderItem: orders[index]),
       ),

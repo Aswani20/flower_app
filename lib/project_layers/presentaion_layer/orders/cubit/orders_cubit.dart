@@ -21,7 +21,7 @@ class OrdersCubit extends Cubit<OrdersState> {
     switch (result) {
       case ApiSuccessResult<List<OrdersEntity>>():
         final pending = result.data
-            .where((o) => o.state == "pending")
+            .where((o) => o.state != "completed")
             .toList();
         final completed = result.data
             .where((o) => o.state == "completed")

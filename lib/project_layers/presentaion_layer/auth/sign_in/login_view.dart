@@ -10,7 +10,7 @@ import '../../../../core/theme/app_validator.dart';
 import 'cubit/login_cubit.dart';
 
 class SignInView extends StatefulWidget {
-  SignInView({super.key});
+  const SignInView({super.key});
 
   @override
   State<SignInView> createState() => _SignInViewState();

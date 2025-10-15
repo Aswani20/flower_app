@@ -17,7 +17,9 @@ import 'package:flower_app/project_layers/presentaion_layer/home/home_screen.dar
 import 'package:flower_app/project_layers/presentaion_layer/map/view/map_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/notifications_list/cubit/notifications_list_cubit.dart';
 import 'package:flower_app/project_layers/presentaion_layer/notifications_list/views/notifications_list_view.dart';
+import 'package:flower_app/project_layers/presentaion_layer/success/cubit/success_view_model.dart';
 import 'package:flower_app/project_layers/presentaion_layer/success/success_view.dart';
+import 'package:flower_app/project_layers/presentaion_layer/track_order/cubit/track_order_view_model.dart';
 import 'package:flower_app/project_layers/presentaion_layer/track_order/view/track_order_view.dart';
 import 'package:flower_app/project_layers/presentaion_layer/payment/presentaion/page/success_screen.dart';
 import 'package:flower_app/project_layers/presentaion_layer/payment/presentaion/page/webvieww_screen.dart';
@@ -83,7 +85,9 @@ abstract class Routes {
         );
       case AppRoutes.chackoutView:
         final args = settings.arguments as UserCart;
-        return MaterialPageRoute(builder: (_) => CheckoutPage(userCart: args));
+        return MaterialPageRoute(
+          builder: (_) => CheckoutPage(userCart: args),
+        );
       case AppRoutes.aboutUs:
         return MaterialPageRoute(
           builder: (context) => AboutPage(),
@@ -126,18 +130,38 @@ abstract class Routes {
 
       case AppRoutes.trackOrderView:
         return MaterialPageRoute(
-          builder: (_) => TrackOrderView(),
+          builder: (context) {
+            var orderId = settings.arguments as String?;
+            return BlocProvider(
+              create: (context) =>
+                  getIt<TrackOrderViewModel>()
+                    ..loadOrderData(orderId!),
+              child: TrackOrderView(),
+            );
+          },
         );
 
-              case AppRoutes.successView:
+      case AppRoutes.successView:
         return MaterialPageRoute(
-          builder: (_) => SuccessView(),
+          builder: (context) {
+            var orderId = settings.arguments as String;
+            return BlocProvider(
+              create: (context) =>
+                  getIt<SuccessViewModel>()
+                    ..checkOrderExists(orderId),
+              child: SuccessView(orderId: orderId),
+            );
+          },
         );
-              case AppRoutes.successPayment:
-        return MaterialPageRoute(builder: (_) => const PaymentSuccessScreen());
+      case AppRoutes.successPayment:
+        return MaterialPageRoute(
+          builder: (_) => const PaymentSuccessScreen(),
+        );
       case AppRoutes.webView:
         final url = settings.arguments as String;
-        return MaterialPageRoute(builder: (_) => WebviewScreen(url: url));
+        return MaterialPageRoute(
+          builder: (_) => WebviewScreen(url: url),
+        );
 
       default:
         return MaterialPageRoute(

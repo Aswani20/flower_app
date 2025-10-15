@@ -49,7 +49,7 @@ class ProductItem extends StatelessWidget {
               child: Row(
                 children: [
                   Text(
-                    '\EGP ${product.priceAfterDiscount?.toStringAsFixed(0) ?? '0.00'}',
+                    'EGP ${product.priceAfterDiscount?.toStringAsFixed(0) ?? '0.00'}',
                     style: AppStyles.font14BlackW500,
                   ),
                   Text(

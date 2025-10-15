@@ -1,7 +1,6 @@
 import 'package:flower_app/core/di/di.dart';
 import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flower_app/core/route/app_routes.dart';
-import 'package:flower_app/project_layers/domain_layer/entities/address_response_entity.dart';
 import 'package:flower_app/project_layers/presentaion_layer/addresses/address_state.dart';
 import 'package:flower_app/project_layers/presentaion_layer/addresses/saved_addresses/components/address_tile.dart';
 import 'package:flower_app/project_layers/presentaion_layer/addresses/saved_addresses/cubit/saved_address_cubit.dart';

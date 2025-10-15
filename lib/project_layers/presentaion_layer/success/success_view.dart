@@ -7,28 +7,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 
+
 class SuccessView extends StatelessWidget {
-  const SuccessView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    var orderId =
-        ModalRoute.of(context)!.settings.arguments
-            as String? ??
-        "68bf236aa8bca307f9e2f5a2";
-
-    return BlocProvider(
-      create: (context) =>
-          SuccessViewModel()..checkOrderExists(orderId),
-      child: _SuccessViewContent(orderId: orderId),
-    );
-  }
-}
-
-class _SuccessViewContent extends StatelessWidget {
   final String orderId;
 
-  const _SuccessViewContent({required this.orderId});
+  const SuccessView({super.key, required this.orderId});
 
   @override
   Widget build(BuildContext context) {
