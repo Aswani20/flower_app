@@ -134,7 +134,7 @@ abstract class ApiClient {
   Future<GetAllNotificationResponseDto>
   getNotifications();
 
-  @GET('/v1/orders/pending-orders')
+  @GET('/v1/orders')
   Future<OrderResponse> orders();
 
   @PATCH('/v1/addresses')
@@ -172,6 +172,7 @@ abstract class ApiClient {
   Future<CashPayResponceModelDto> paymentCash(
     @Body() PaymentRequestModelDto paymentRequestModelDto,
   );
+
 
 
 }

@@ -241,6 +241,10 @@ import '../../project_layers/presentaion_layer/payment/presentaion/view_model/pa
     as _i658;
 import '../../project_layers/presentaion_layer/search/cubit/search_cubit.dart'
     as _i211;
+import '../../project_layers/presentaion_layer/success/cubit/success_view_model.dart'
+    as _i675;
+import '../../project_layers/presentaion_layer/track_order/cubit/track_order_view_model.dart'
+    as _i107;
 import '../../project_layers/presentation_layer/occasion/view_model/occasion_cubit.dart'
     as _i1000;
 import 'modules/dio_module.dart' as _i983;
@@ -255,6 +259,8 @@ extension GetItInjectableX on _i174.GetIt {
     final gh = _i526.GetItHelper(this, environment, environmentFilter);
     final dioModule = _$DioModule();
     final internetConnectionModule = _$InternetConnectionModule();
+    gh.factory<_i675.SuccessViewModel>(() => _i675.SuccessViewModel());
+    gh.factory<_i107.TrackOrderViewModel>(() => _i107.TrackOrderViewModel());
     gh.singleton<_i528.PrettyDioLogger>(
       () => dioModule.providePrettyDioLogger(),
     );

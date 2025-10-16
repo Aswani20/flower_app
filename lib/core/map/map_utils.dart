@@ -110,14 +110,18 @@ class MapUtils {
     double maxLng = locations.first.longitude;
 
     for (var location in locations) {
-      if (location.latitude < minLat)
+      if (location.latitude < minLat) {
         minLat = location.latitude;
-      if (location.latitude > maxLat)
+      }
+      if (location.latitude > maxLat) {
         maxLat = location.latitude;
-      if (location.longitude < minLng)
+      }
+      if (location.longitude < minLng) {
         minLng = location.longitude;
-      if (location.longitude > maxLng)
+      }
+      if (location.longitude > maxLng) {
         maxLng = location.longitude;
+      }
     }
 
     return LatLngBounds(

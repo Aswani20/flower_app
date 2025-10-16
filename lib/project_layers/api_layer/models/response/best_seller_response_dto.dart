@@ -67,6 +67,7 @@ class BestSellerDto extends BestSellerEntity {
     sold = json['sold']?.toInt();
     id = json['id'];
   }
+  @override
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     map['rateAvg'] = rateAvg;

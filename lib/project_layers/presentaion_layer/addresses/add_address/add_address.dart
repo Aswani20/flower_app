@@ -179,7 +179,7 @@ class _AddAddressBody extends StatelessWidget {
                         Expanded(
                           child: DropdownButtonFormField(
                             style: _formStyle(context),
-                            value: context
+                            initialValue: context
                                 .read<AddAddressCubit>()
                                 .selectedCity,
                             onChanged: (city) {
@@ -238,7 +238,7 @@ class _AddAddressBody extends StatelessWidget {
                           child: DropdownButtonFormField(
                             style: _formStyle(context),
 
-                            value: context
+                            initialValue: context
                                 .read<AddAddressCubit>()
                                 .selectedArea,
                             onChanged: (area) {

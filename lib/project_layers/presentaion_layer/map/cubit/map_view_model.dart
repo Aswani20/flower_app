@@ -3,7 +3,6 @@ import 'package:flower_app/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:injectable/injectable.dart';
 import 'map_states.dart';
@@ -15,23 +14,21 @@ import '../../../api_layer/api_client/google_maps_api_client.dart';
 
 @injectable
 class MapViewModel extends Cubit<MapStates> {
-  late String orderId;
   final GoogleMapsApiClient googleMapsApiClient;
 
   StreamSubscription<OrdersDto?>?
   _orderStreamSubscription;
 
-  MapViewModel({
-   required  this.googleMapsApiClient,
-  }) :
-       super(MapInitialState()) {
+  MapViewModel({required this.googleMapsApiClient})
+    : super(MapInitialState()) {
     // Start listening to Firebase stream
   }
 
   GoogleMapController? _mapController;
 
   // Google Maps API Key
-  static final String _googleApiKey = dotenv.env['GOOGLE_MAPS_API_KEY'] ?? '';
+  static final String _googleApiKey =
+      "AIzaSyDmfAltRmPwfGaXuE9k1Z5XDFHwCjUzLOk";
 
   List<LatLng> _routePoints =
       []; // Store the actual route from Directions API
@@ -64,6 +61,9 @@ class MapViewModel extends Cubit<MapStates> {
 
   // 🔥 Listen to Firebase order updates
   void listenToOrderUpdates(String orderId) {
+    print(
+      '📡 Starting to listen to updates for order: $orderId',
+    );
     emit(MapLoadingState());
 
     _orderStreamSubscription =
@@ -72,7 +72,37 @@ class MapViewModel extends Cubit<MapStates> {
         ).listen(
           (orderData) async {
             if (orderData == null) {
-              emit(MapErrorState('Order not found'));
+              emit(
+                MapErrorState(
+                  'Driver not assigned yet',
+                ),
+              );
+              return;
+            }
+
+            print('📦 Received order data:');
+            print('  - Order ID: ${orderData.id}');
+            print('  - Order State: ${orderData.state}');
+            print(
+              '  - Has Driver: ${orderData.driver != null}',
+            );
+            if (orderData.driver != null) {
+              print(
+                '  - Driver Name: ${orderData.driver?.firstName} ${orderData.driver?.lastName}',
+              );
+              print(
+                '  - Driver Location: ${orderData.driver?.lat}, ${orderData.driver?.long}',
+              );
+            }
+
+            // If there's no driver assigned yet
+            if (orderData.driver == null) {
+              print('⚠️ No driver assigned to order yet');
+              emit(
+                MapErrorState(
+                  'Waiting for driver assignment',
+                ),
+              );
               return;
             }
 
@@ -94,9 +124,10 @@ class MapViewModel extends Cubit<MapStates> {
             }
           },
           onError: (error) {
+            print('❌ Error in order stream: $error');
             emit(
               MapErrorState(
-                'Failed to load order data: $error',
+                'Unable to connect to tracking system. Please try again.',
               ),
             );
           },
@@ -127,7 +158,6 @@ class MapViewModel extends Cubit<MapStates> {
                   newDriverLocation.latitude ||
               _deliveryPersonLocation!.longitude !=
                   newDriverLocation.longitude);
-
 
       if (driverLocationChanged) {
         _deliveryPersonLocation = newDriverLocation;
@@ -298,7 +328,8 @@ class MapViewModel extends Cubit<MapStates> {
             width: 5,
             geodesic: true, // لجعل الخط يتبع انحناء الأرض
           ),
-        );      }
+        );
+      }
 
       emit(
         MapLoadedState(
@@ -314,7 +345,6 @@ class MapViewModel extends Cubit<MapStates> {
           driverPhoneNo: _driverPhoneNo,
         ),
       );
-
     } catch (e) {
       emit(
         MapErrorState(
@@ -492,7 +522,7 @@ class MapViewModel extends Cubit<MapStates> {
       // حجم العرض: 80 بكسل على الخريطة (حجم مناسب للرؤية الواضحة)
       // imageScale: 3.0 للحصول على جودة عالية مع أداء جيد
       final icon = await SvgToIcon.fromPngAsset(
-       Assets.images.motorcycleDelivery.path,
+        Assets.images.motorcycleDelivery.path,
         width:
             65, // حجم العرض النهائي على الخريطة (أكبر للوضوح)
         imageScale:

@@ -11,43 +11,30 @@ import '../cubit/track_order_states.dart';
 
 class TrackOrderView extends StatelessWidget {
   const TrackOrderView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    var orderId =
-        ModalRoute.of(context)!.settings.arguments
-            as String?;
-
-    return BlocProvider(
-      create: (context) => TrackOrderViewModel(
-        orderId ?? "68bf236aa8bca307f9e2f5a2",
-      )..loadOrderData(),
-      child: const TrackOrderBody(),
-    );
-  }
-}
-
-class TrackOrderBody extends StatelessWidget {
-  const TrackOrderBody({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.white,
+        automaticallyImplyLeading: false,
         elevation: 0,
-        leadingWidth: 20,
-        leading: IconButton(
-          padding: EdgeInsets.only(left: 15.0),
-          icon: const Icon(
-            Icons.arrow_back_ios,
-            color: AppColors.black,
-            size: 25,
-          ),
-          onPressed: () => Navigator.pop(context),
-        ),
-        title: Text(
-          'Track order',
-          style: AppStyles.appBarTitleStyle,
+        leadingWidth: 0,
+        title: Row(
+          children: [
+            InkWell(
+              onTap: () => Navigator.pop(context),
+              child: const Icon(
+                Icons.arrow_back_ios,
+                color: AppColors.black,
+                size: 25,
+              ),
+            ),
+
+            Text(
+              'Track order',
+              style: AppStyles.appBarTitleStyle,
+            ),
+          ],
         ),
         centerTitle: false,
       ),

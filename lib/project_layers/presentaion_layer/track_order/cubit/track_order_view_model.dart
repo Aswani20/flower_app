@@ -3,33 +3,36 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flower_app/project_layers/firebase_layer/firestore_manager.dart';
 import 'package:flower_app/project_layers/firebase_layer/models/orders_response_dto.dart';
 import 'package:flower_app/core/enum/order_state_enum.dart';
+import 'package:injectable/injectable.dart';
 import 'package:intl/intl.dart';
 import 'track_order_states.dart';
 
+@injectable
 class TrackOrderViewModel
     extends Cubit<TrackOrderStates> {
-  String? orderId;
-  TrackOrderViewModel(String orderIdparam) : super(TrackOrderInitialState()){
-    orderId = orderIdparam;
-  }
+  late String orderId;
+  TrackOrderViewModel() : super(TrackOrderInitialState());
 
   StreamSubscription<OrdersDto?>? _orderSubscription;
 
-  Future<void> loadOrderData() async {
+  Future<void> loadOrderData(String orderId) async {
+    this.orderId = orderId;
     emit(TrackOrderLoadingState());
 
     try {
       // Subscribe to real-time order updates from Firebase
       _orderSubscription =
           FirebaseUtils.fetchOrderFromFirebase(
-            orderId: orderId ?? "",
+            orderId: orderId,
           ).listen(
             (order) {
               if (order != null) {
                 _handleOrderUpdate(order);
               } else {
                 emit(
-                  TrackOrderErrorState('Order not found'),
+                  TrackOrderErrorState(
+                    'Driver not assigned yet',
+                  ),
                 );
               }
             },
@@ -52,6 +55,7 @@ class TrackOrderViewModel
 
   void _handleOrderUpdate(OrdersDto order) {
     try {
+      print('Order data updated: ${order.state}');
       // Convert order state string to enum
       OrderState currentOrderState = _parseOrderState(
         order.state ?? '',
@@ -105,6 +109,9 @@ class TrackOrderViewModel
       return OrderState.outForDelivery;
     } else if (normalized.contains('delivered') ||
         normalized == 'delivered') {
+      return OrderState.delivered;
+    } else if (normalized.contains('arrived') ||
+        normalized == 'arrived') {
       return OrderState.delivered;
     }
 
@@ -182,7 +189,6 @@ class TrackOrderViewModel
   ) {
     return checkState.index <= currentState.index;
   }
-
 
   @override
   Future<void> close() {

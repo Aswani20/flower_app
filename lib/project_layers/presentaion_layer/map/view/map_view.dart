@@ -78,19 +78,23 @@ class MapViewBody extends StatelessWidget {
             );
           }
 
-          // ✅ Handle both MapLoadedState and MapLocationUpdatedState
+          // Handle map states
           if (state is MapLoadedState ||
               state is MapLocationUpdatedState) {
-            // Get the loaded state data
-            final MapLoadedState loadedState;
-
+            // Get current map state
+            final MapLoadedState mapState;
             if (state is MapLoadedState) {
-              loadedState = state;
+              mapState = state;
+            } else if (state is MapLocationUpdatedState) {
+              if (state is! MapLoadedState) {
+                return const Center(
+                  child: Text('Waiting for map data...'),
+                );
+              }
+              mapState = state as MapLoadedState;
             } else {
               return const Center(
-                child: CircularProgressIndicator(
-                  color: AppColors.pink,
-                ),
+                child: Text('Invalid map state'),
               );
             }
 
@@ -104,11 +108,11 @@ class MapViewBody extends StatelessWidget {
                             .onMapCreated(controller);
                       },
                   initialCameraPosition: CameraPosition(
-                    target: loadedState.currentLocation,
+                    target: mapState.currentLocation,
                     zoom: 14.0,
                   ),
-                  markers: loadedState.markers,
-                  polylines: loadedState.polylines,
+                  markers: mapState.markers,
+                  polylines: mapState.polylines,
                   zoomControlsEnabled: false,
                   mapToolbarEnabled: false,
                   myLocationButtonEnabled: false,
@@ -124,26 +128,32 @@ class MapViewBody extends StatelessWidget {
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       color: AppColors.white,
-                      borderRadius: BorderRadius.circular(
-                        16,
-                      ),
+                      borderRadius:
+                          const BorderRadius.vertical(
+                            top: Radius.circular(16),
+                          ),
                       boxShadow: [
                         BoxShadow(
-                          color: AppColors.black
-                              .withValues(alpha: 0.1),
+                          color: Colors.black.withOpacity(
+                            0.1,
+                          ),
                           blurRadius: 10,
                           offset: const Offset(0, -2),
                         ),
                       ],
                     ),
-
-                    child: DeliveryContactInfo(
-                      deliveryPersonName:
-                          loadedState.deliveryPersonName,
-                      estimatedArrival:
-                          loadedState.estimatedArrival,
-                      showDetailsButton: true,
-                      phoneNo: loadedState.driverPhoneNo,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        DeliveryContactInfo(
+                          deliveryPersonName:
+                              mapState.deliveryPersonName,
+                          estimatedArrival:
+                              mapState.estimatedArrival,
+                          showDetailsButton: true,
+                          phoneNo: mapState.driverPhoneNo,
+                        ),
+                      ],
                     ),
                   ),
                 ),

@@ -27,17 +27,25 @@ class _ProductDetailsScreenState
   @override
   Widget build(BuildContext context) {
     var productItem =
-    ModalRoute.of(context)!.settings.arguments
-    as ProductEntity;
+        ModalRoute.of(context)!.settings.arguments
+            as ProductEntity;
     return BlocListener<CartViewModel, CartStates>(
       listener: (context, state) {
-        if(state is AddCartLoadingStates){
-          Fluttertoast.showToast(msg: context.l10n.loading, backgroundColor: AppColors.grey);
-        }
-        else if(state is AddCartErrorStates){
-          Fluttertoast.showToast(msg: "Sold Out", backgroundColor: AppColors.red);
-        }else{
-          Fluttertoast.showToast(msg: "Item Added to Cart", backgroundColor: AppColors.green);
+        if (state is AddCartLoadingStates) {
+          Fluttertoast.showToast(
+            msg: context.l10n.loading,
+            backgroundColor: AppColors.grey,
+          );
+        } else if (state is AddCartErrorStates) {
+          Fluttertoast.showToast(
+            msg: "Sold Out",
+            backgroundColor: AppColors.red,
+          );
+        } else {
+          Fluttertoast.showToast(
+            msg: "Item Added to Cart",
+            backgroundColor: AppColors.green,
+          );
         }
       },
       child: SafeArea(
@@ -45,7 +53,7 @@ class _ProductDetailsScreenState
           body: SingleChildScrollView(
             child: Column(
               crossAxisAlignment:
-              CrossAxisAlignment.stretch,
+                  CrossAxisAlignment.stretch,
               children: [
                 SizedBox(
                   height: context.height * 0.5,
@@ -55,15 +63,15 @@ class _ProductDetailsScreenState
                     children: [
                       CarouselSlider(
                         carouselController:
-                        carouselSliderController,
+                            carouselSliderController,
                         items: productItem.images!
                             .map(
                               (image) => Image.network(
-                            image,
-                            width: context.width,
-                            fit: BoxFit.fill,
-                          ),
-                        )
+                                image,
+                                width: context.width,
+                                fit: BoxFit.fill,
+                              ),
+                            )
                             .toList(),
                         options: CarouselOptions(
                           height: context.height,
@@ -101,7 +109,7 @@ class _ProductDetailsScreenState
                         child: DotIndicator(
                           imagesList: productItem.images!,
                           controller:
-                          carouselSliderController,
+                              carouselSliderController,
                           selectedPage: selectedPage,
                         ),
                       ),
@@ -112,32 +120,33 @@ class _ProductDetailsScreenState
                   padding: const EdgeInsets.all(16.0),
                   child: Column(
                     crossAxisAlignment:
-                    CrossAxisAlignment.start,
+                        CrossAxisAlignment.start,
                     spacing: 24,
                     children: [
                       Row(
                         mainAxisAlignment:
-                        MainAxisAlignment.spaceBetween,
+                            MainAxisAlignment
+                                .spaceBetween,
                         crossAxisAlignment:
-                        CrossAxisAlignment.start,
+                            CrossAxisAlignment.start,
                         children: [
                           Column(
                             spacing: 4,
                             crossAxisAlignment:
-                            CrossAxisAlignment.start,
+                                CrossAxisAlignment.start,
                             children: [
                               RichText(
                                 text: TextSpan(
                                   children: [
                                     TextSpan(
                                       text:
-                                      '${context.l10n.egp} ',
+                                          '${context.l10n.egp} ',
                                       style: AppStyles
                                           .bold20black,
                                     ),
                                     TextSpan(
                                       text:
-                                      "${productItem.price}",
+                                          "${productItem.price}",
                                       style: AppStyles
                                           .bold20black,
                                     ),
@@ -148,8 +157,8 @@ class _ProductDetailsScreenState
                                 context
                                     .l10n
                                     .all_prices_include_tax,
-                                style:
-                                AppStyles.regular13grey,
+                                style: AppStyles
+                                    .regular13grey,
                               ),
                               Text(
                                 productItem.title ??
@@ -158,10 +167,12 @@ class _ProductDetailsScreenState
                                         .product_title,
                                 style: AppStyles
                                     .medium16black
-                                    .copyWith(fontSize: 14),
+                                    .copyWith(
+                                      fontSize: 14,
+                                    ),
                                 maxLines: 2,
                                 overflow:
-                                TextOverflow.ellipsis,
+                                    TextOverflow.ellipsis,
                               ),
                             ],
                           ),
@@ -170,13 +181,14 @@ class _ProductDetailsScreenState
                               children: [
                                 TextSpan(
                                   text:
-                                  '${context.l10n.status}: ',
+                                      '${context.l10n.status}: ',
                                   style: AppStyles
                                       .medium16black,
                                 ),
                                 TextSpan(
-                                  text:
-                                  context.l10n.in_stock,
+                                  text: context
+                                      .l10n
+                                      .in_stock,
                                   style: AppStyles
                                       .regular14black,
                                 ),
@@ -188,18 +200,20 @@ class _ProductDetailsScreenState
                       Column(
                         spacing: 8,
                         crossAxisAlignment:
-                        CrossAxisAlignment.start,
+                            CrossAxisAlignment.start,
                         children: [
                           Text(
                             context.l10n.description,
-                            style: AppStyles.medium16black,
+                            style:
+                                AppStyles.medium16black,
                           ),
                           Text(
                             productItem.description ??
                                 context
                                     .l10n
                                     .description_body,
-                            style: AppStyles.regular14black,
+                            style:
+                                AppStyles.regular14black,
                             textAlign: TextAlign.justify,
                           ),
                         ],
@@ -207,20 +221,23 @@ class _ProductDetailsScreenState
                       Column(
                         spacing: 4,
                         crossAxisAlignment:
-                        CrossAxisAlignment.start,
+                            CrossAxisAlignment.start,
                         children: [
                           Text(
                             context.l10n.bouquet_include,
-                            style: AppStyles.medium16black,
+                            style:
+                                AppStyles.medium16black,
                           ),
                           4.heightBox,
                           Text(
                             "${productItem.quantity} ${productItem.title}",
-                            style: AppStyles.regular14black,
+                            style:
+                                AppStyles.regular14black,
                           ),
                           Text(
                             "Rating: ${productItem.rateAvg}",
-                            style: AppStyles.regular14black,
+                            style:
+                                AppStyles.regular14black,
                           ),
                         ],
                       ),
@@ -234,12 +251,16 @@ class _ProductDetailsScreenState
                   ),
                   child: ElevatedButton(
                     onPressed: () {
-                      CartViewModel.get(context).addToCart(productItem.id!);
+                      CartViewModel.get(
+                        context,
+                      ).addToCart(productItem.id!);
                     },
                     child: Text(
                       context.l10n.add_to_cart,
                       style: AppStyles.medium16black
-                          .copyWith(color: AppColors.white),
+                          .copyWith(
+                            color: AppColors.white,
+                          ),
                     ),
                   ),
                 ),

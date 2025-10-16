@@ -15,11 +15,16 @@ class OrderCard extends StatelessWidget {
   Widget build(BuildContext context) {
     var trans = AppLocalizations.of(context)!;
     return Container(
+      margin: EdgeInsets.only(
+        top: 5.h,
+        left: 10.w,
+        right: 10.w,
+      ),
       width: double.infinity,
-      height: 130.h,
+      height: 180.h,
       decoration: BoxDecoration(
         border: Border.all(
-          color: Colors.grey.shade300,
+          color: Colors.grey,
           width: 1.h,
         ),
         borderRadius: BorderRadius.circular(10.r),
@@ -29,7 +34,6 @@ class OrderCard extends StatelessWidget {
         child: Row(
           children: [
             Container(
-              height: 109.h,
               width: 127.h,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.r),
@@ -48,9 +52,9 @@ class OrderCard extends StatelessWidget {
             Expanded(
               child: Column(
                 crossAxisAlignment:
-                    CrossAxisAlignment.start,
+                    CrossAxisAlignment.stretch,
                 children: [
-                  SizedBox(height: 8.h),
+                  SizedBox(height: 10.h),
                   Text(
                     orderItem
                         .orderItems![0]
@@ -65,7 +69,7 @@ class OrderCard extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                         ),
                   ),
-                  SizedBox(height: 4.h),
+                  SizedBox(height: 10.h),
                   Text(
                     '${trans.egp}: ${orderItem.totalPrice}',
                     style: Theme.of(context)
@@ -78,9 +82,7 @@ class OrderCard extends StatelessWidget {
                   ),
 
                   Text(
-                    orderItem.state == "completed"
-                        ? '${"delivered_on"} ${orderItem.updatedAt}'
-                        : '${"order_number"}:${orderItem.orderNumber!}',
+                    "Order Number${orderItem.orderNumber}",
                     style: Theme.of(context)
                         .textTheme
                         .labelSmall!
@@ -88,26 +90,33 @@ class OrderCard extends StatelessWidget {
                           color: Colors.grey.shade600,
                         ),
                   ),
-                  SizedBox(height: 8.h),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 30.h,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        if (orderItem.state ==
-                            "pending") {
-                          // Navigate to map view with order ID
-                          Navigator.pushNamed(
-                            context,
-                            AppRoutes.trackOrderMap,
-                            arguments: orderItem.id,
-                          );
-                        } 
-                      },
-                      child: Text(
-                        orderItem.state == "pending"
-                            ? "track_order"
-                            : "reorder",
+                  SizedBox(height: 10.h),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 1.h,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius:
+                            BorderRadius.circular(24.r),
+                      ),
+                    ),
+                    onPressed: () {
+                      if (orderItem.state !=
+                          "completed") {
+                        print("order id ${orderItem.id}");
+                        // Navigate to map view with order ID
+                        Navigator.pushNamed(
+                          context,
+                          AppRoutes.successView,
+                          arguments: orderItem.id,
+                        );
+                      }
+                    },
+                    child: Text(
+                      "Track order",
+                      style: TextStyle(
+                        color: Colors.white,
                       ),
                     ),
                   ),

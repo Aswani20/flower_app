@@ -96,6 +96,7 @@ class ProductDTO {
   Map<String, dynamic> toJson() =>
       _$ProductDTOToJson(this);
   ProductEntity toProductEntity() => ProductEntity(
+    
     id: id,
     rateAvg: rateAvg,
     rateCount: rateCount,

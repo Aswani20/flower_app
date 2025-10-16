@@ -20,22 +20,38 @@ class FirebaseUtils {
     required String orderId,
   }) {
     try {
+      debugPrint(
+        '🔍 Fetching order $orderId from Firebase',
+      );
       var ordersCollection = _getDriverCollection();
-      return ordersCollection
-          .doc(orderId)
-          .snapshots()
-          .map((snapshot) {
-            if (!snapshot.exists ||
-                snapshot.data() == null) {
-              return null;
-            }
-            return snapshot.data()!;
-          });
+
+      return ordersCollection.doc(orderId).snapshots().map((
+        snapshot,
+      ) {
+        if (!snapshot.exists) {
+          debugPrint(
+            '❌ Order document $orderId does not exist in Firebase',
+          );
+          return null;
+        }
+        if (snapshot.data() == null) {
+          debugPrint(
+            '❌ Order document $orderId exists but has no data',
+          );
+          return null;
+        }
+
+        final data = snapshot.data()!;
+        debugPrint(
+          '✅ Order data retrieved: driver=${data.driver?.firstName ?? 'No driver'}, state=${data.state}',
+        );
+
+        return data;
+      });
     } catch (e) {
       debugPrint(
-        'Error setting up order stream from Firebase:/ $e',
+        '❌ Error setting up order stream from Firebase: $e',
       );
-      // Return a stream that emits null in case of error
       return Stream.value(null);
     }
   }

@@ -26,12 +26,12 @@ class OrdersBlocBuilder extends StatelessWidget {
             ),
           );
         } else if (state.isSuccess) {
-          return OrdersListView(
-            orders: selectedIndex == 0
-                ? state.pendingOrders!
-                : state.completedOrders!,
-          );
-        } else if (state.errorMessage != '') {
+          final orders = selectedIndex == 0
+              ? state.pendingOrders!
+              : state.completedOrders!;
+          return OrdersListView(orders: orders);
+        } else if (state.errorMessage?.isNotEmpty ==
+            true) {
           return SizedBox(
             height:
                 MediaQuery.of(context).size.height * .8,
@@ -40,7 +40,13 @@ class OrdersBlocBuilder extends StatelessWidget {
             ),
           );
         } else {
-          return const Text("something went wrong");
+          return SizedBox(
+            height:
+                MediaQuery.of(context).size.height * .8,
+            child: const Center(
+              child: Text("No orders available"),
+            ),
+          );
         }
       },
     );

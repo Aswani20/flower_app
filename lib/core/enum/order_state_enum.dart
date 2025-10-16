@@ -5,6 +5,7 @@ enum OrderState {
   delivered;
 
   // Convert the enum value to a user-friendly string
+  @override
   String toString() {
     switch (this) {
       case OrderState.receivedYourOrder:
@@ -15,6 +16,7 @@ enum OrderState {
         return 'Out for delivery';
       case OrderState.delivered:
         return 'Delivered';
+        
     }
   }
 }
