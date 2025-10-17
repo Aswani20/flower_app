@@ -39,23 +39,17 @@ class HomeCard extends StatelessWidget {
                 const Center(child: Icon(Icons.error)),
           ),
         ),
-        Padding(
-          padding: EdgeInsetsGeometry.only(
-            top: 6.h,
-            bottom: 4.h,
-          ),
-          child: Text(
-            bestSeller?.title ?? occasion?.name ?? '',
-            style: Theme.of(context).textTheme.bodySmall
-                ?.copyWith(color: AppColors.black[300]),
-          ),
+        Text(
+          bestSeller?.title ?? occasion?.name ?? '',
+          style: Theme.of(context).textTheme.bodySmall
+              ?.copyWith(color: AppColors.black[300]),
         ),
         if (bestSeller != null)
           Text(
             '${bestSeller?.price} ${AppLocalizations.of(context)!.egp}',
             style: Theme.of(context)
                 .textTheme
-                .labelMedium!
+                .labelSmall!
                 .copyWith(
                   color: AppColors.black[500],
 
