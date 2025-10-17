@@ -17,6 +17,7 @@ class AddressEntity {
   final String? lat;
   final String? long;
   final String? username;
+  // ignore: unused_field
   final String? _id;
   const AddressEntity({
     this.street,

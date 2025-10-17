@@ -1,7 +1,6 @@
-import 'package:flower_app/core/theme/app_styles.dart';
+import 'package:flower_app/core/extensions/spacer_media_quiey.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/order_response.dart';
 import 'package:flutter/material.dart';
-import '../../../../core/route/app_routes.dart';
 import '../../../../core/theme/app_colors.dart';
 
 class ProductCard extends StatelessWidget {
@@ -12,143 +11,125 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 2,
+      color: AppColors.white,
+      elevation: 0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
+        side: BorderSide(
+          color: AppColors.grey.withOpacity(.7),
+        ),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            child: Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
-                borderRadius: const BorderRadius.vertical(
-                  top: Radius.circular(12),
-                ),
-                color: AppColors.grey,
-                image: product.imgCover != null
-                    ? DecorationImage(
-                        image: NetworkImage(
-                          product.imgCover!,
-                        ),
-                        fit: BoxFit.cover,
-                      )
-                    : null,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: Image.network(
+                product.imgCover ??
+                    'https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+
+                width: double.infinity,
+                height: 200,
+                fit: BoxFit.fill,
               ),
-              child: product.imgCover == null
-                  ? const Center(
-                      child: Icon(
-                        Icons.image_not_supported,
-                        color: Colors.grey,
-                      ),
-                    )
-                  : null,
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment:
-                  CrossAxisAlignment.start,
-              children: [
-                Text(
-                  product.title ?? 'Product Name',
-                  style: AppStyles.font14BlackW500,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
+            SizedBox(height: 1.heightPercent(context)),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 8.0,
+              ),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  product.title.toString(),
+
+                  style: TextStyle(
+                    color: AppColors.black,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
-                const SizedBox(height: 4),
-                Row(
-                  children: [
-                    Text(
-                      'EGP ${product.sold?.toStringAsFixed(2) ?? '0.00'}',
-                      style: TextStyle(
-                        color: AppColors.black,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 12,
-                      ),
-                    ),
-                    Text(
-                      ' ${product.priceAfterDiscount?.toStringAsFixed(2) ?? '0.00'}',
-                      style: TextStyle(
-                        color: AppColors.grey,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 11,
-                        decoration:
-                            TextDecoration.lineThrough,
-                      ),
-                    ),
-                    Text(
-                      ' ${product.quantity?.toStringAsFixed(2) ?? '0'}',
-                      style: TextStyle(
-                        color: AppColors.green,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 11,
-                      ),
-                    ),
-                  ],
-                ),
-                if (product.price != null &&
-                    (product.price! >
-                        (product.price ?? 0)))
-                  Expanded(
-                    child: Text(
-                      '\$${product.sold?.toStringAsFixed(2) ?? '0.00'}',
-                      style: const TextStyle(
-                        color: Colors.grey,
-                        fontSize: 12,
-                        decoration:
-                            TextDecoration.lineThrough,
-                      ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 6.0,
+              ),
+              child: Row(
+                children: [
+                  Text(
+                    "${'EGP'} ${product.priceAfterDiscount}",
+
+                    style: TextStyle(
+                      color: AppColors.black,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
-                const SizedBox(height: 4),
-                Row(
-                  crossAxisAlignment:
-                      CrossAxisAlignment.center,
-                  mainAxisAlignment:
-                      MainAxisAlignment.center,
-                  children: [
-                    Expanded(
-                      child: ElevatedButton.icon(
-                        onPressed: () {
-                          // Navigator to product details screen and give the product[index]
-                          Navigator.pushNamed(
-                            context,
-                            AppRoutes
-                                .productDetailsScreen,
-                            arguments: product,
-                          );
-                        },
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.circular(22),
-                          ),
-                          elevation: 2,
-                        ),
-                        icon: const Icon(
-                          Icons.shopping_cart_outlined,
-                          size: 16,
-                          color: Colors.white,
-                        ),
-                        label: const Text(
-                          "Add to Cart",
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.white,
-                          ),
-                        ),
-                      ),
+                  SizedBox(
+                    width: 1.widthPercent(context),
+                  ),
+                  Text(
+                    "${product.price}",
+
+                    style: TextStyle(
+                      color: AppColors.grey,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 12,
+                      decoration:
+                          TextDecoration.lineThrough,
+                      decorationColor: AppColors.grey,
                     ),
-                  ],
-                ),
-              ],
+                  ),
+
+                  // Text(
+                  //   "${state.product.discount}%",
+
+                  //   style: TextStyle(
+                  //     color:
+                  //         AppColors
+                  //             .green,
+                  //     fontSize: 12,
+                  //     fontWeight:
+                  //         FontWeight
+                  //             .w400,
+                  //   ),
+                  // ),
+                ],
+              ),
             ),
-          ),
-        ],
+            SizedBox(height: 5),
+            Container(
+              width: 147,
+              height: 30,
+              decoration: BoxDecoration(
+                color: AppColors.pink,
+                borderRadius: BorderRadius.circular(25),
+              ),
+              child: Row(
+                mainAxisAlignment:
+                    MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.shopping_cart,
+                    color: AppColors.white,
+                  ),
+                  SizedBox(width: 8),
+                  Text(
+                    // context.l10n.addToCart,
+                    'Add To Cart',
+                    style: TextStyle(
+                      color: AppColors.white,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

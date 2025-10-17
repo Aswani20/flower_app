@@ -8,9 +8,9 @@ import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/cart_tab/c
 import 'package:flutter/material.dart';
 
 class CartItem extends StatefulWidget {
-  CartItemsEntity cartItemsEntity;
+ final  CartItemsEntity cartItemsEntity;
 
-  CartItem({super.key, required this.cartItemsEntity});
+const  CartItem({super.key, required this.cartItemsEntity});
 
   @override
   State<CartItem> createState() => _CartItemState();
@@ -55,6 +55,8 @@ class _CartItemState extends State<CartItem> {
                 spacing: 4,
                 children: [
                   Text(
+                   
+                    
                     widget
                             .cartItemsEntity
                             .product!
@@ -63,7 +65,7 @@ class _CartItemState extends State<CartItem> {
                     style: AppStyles.medium16black,
                     overflow: TextOverflow.ellipsis,
                     softWrap: true,
-                    maxLines: 2,
+                    maxLines: 1,
                   ),
                   Text(
                     'Available Quantity ${widget.cartItemsEntity.product!.quantity}',
@@ -73,12 +75,15 @@ class _CartItemState extends State<CartItem> {
                     maxLines: 1,
                   ),
                   Spacer(),
-                  Text(
-                    '${context.l10n.egp} ${widget.cartItemsEntity.price}',
-                    style: AppStyles.regular14black
-                        .copyWith(
-                          fontWeight: FontWeight.w600,
-                        ),
+                  FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      '${context.l10n.egp} ${widget.cartItemsEntity.price}',
+                      style: AppStyles.regular14black
+                          .copyWith(
+                            fontWeight: FontWeight.w600,
+                          ),
+                    ),
                   ),
                 ],
               ),

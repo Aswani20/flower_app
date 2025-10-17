@@ -24,8 +24,7 @@ class DeliveryAddressCard extends StatelessWidget {
     return GestureDetector(
       onTap: onSelect,
       child: Container(
-        height: 83.h,
-
+        height: MediaQuery.of(context).size.height * 0.15,
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -39,6 +38,7 @@ class DeliveryAddressCard extends StatelessWidget {
           ],
         ),
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(width: 8),
             Expanded(
@@ -53,19 +53,24 @@ class DeliveryAddressCard extends StatelessWidget {
                         onChanged: (_) => onSelect(),
                         activeColor: Colors.pink,
                       ),
-                      Text(
-                        title,
-                        style: Theme.of(context).textTheme.displayMedium!
-                            .copyWith(
-                              color: AppColors.black,
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.w500,
-                            ),
+                      Expanded(
+                        child: Text(
+                                   maxLines: 1,
+                                            overflow: TextOverflow.ellipsis,
+                          title,
+                          style: Theme.of(context).textTheme.displayMedium!
+                              .copyWith(
+                                color: AppColors.black,
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w500,
+                              ),
+                        ),
                       ),
                     ],
                   ),
-                  const SizedBox(height: 4),
                   Text(
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     subtitle,
                     style: TextStyle(
                       fontSize: 14,
