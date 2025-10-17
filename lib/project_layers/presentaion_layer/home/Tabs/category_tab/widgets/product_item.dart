@@ -41,6 +41,8 @@ class ProductItem extends StatelessWidget {
               child: Align(
                 alignment: Alignment.topLeft,
                 child: Text(
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   product.title.toString(),
 
                   style: TextStyle(
@@ -55,47 +57,49 @@ class ProductItem extends StatelessWidget {
               padding: const EdgeInsets.symmetric(
                 horizontal: 6.0,
               ),
-              child: Row(
-                children: [
-                  Text(
-                    "${'EGP'} ${product.priceAfterDiscount}",
-
-                    style: TextStyle(
-                      color: AppColors.black,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Row(
+                  children: [
+                    Text(
+                      "${'EGP'} ${product.priceAfterDiscount}",
+                
+                      style: TextStyle(
+                        color: AppColors.black,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 1.widthPercent(context),
-                  ),
-                  Text(
-                    "${product.price}",
-
-                    style: TextStyle(
-                      color: AppColors.grey,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12,
-                      decoration:
-                          TextDecoration.lineThrough,
-                      decorationColor: AppColors.grey,
+                    SizedBox(
+                      width: 1.widthPercent(context),
                     ),
-                  ),
-
-                  // Text(
-                  //   "${state.product.discount}%",
-
-                  //   style: TextStyle(
-                  //     color:
-                  //         AppColors
-                  //             .green,
-                  //     fontSize: 12,
-                  //     fontWeight:
-                  //         FontWeight
-                  //             .w400,
-                  //   ),
-                  // ),
-                ],
+                    Text(
+                      "${product.price}",
+                      style: TextStyle(
+                        color: AppColors.grey,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 12,
+                        decoration:
+                            TextDecoration.lineThrough,
+                        decorationColor: AppColors.grey,
+                      ),
+                    ),
+                
+                    // Text(
+                    //   "${state.product.discount}%",
+                
+                    //   style: TextStyle(
+                    //     color:
+                    //         AppColors
+                    //             .green,
+                    //     fontSize: 12,
+                    //     fontWeight:
+                    //         FontWeight
+                    //             .w400,
+                    //   ),
+                    // ),
+                  ],
+                ),
               ),
             ),
             SizedBox(height: 5),

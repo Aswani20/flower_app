@@ -17,7 +17,7 @@ class OrdersFilter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 24.h,
+      height: 40.h,
       decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(

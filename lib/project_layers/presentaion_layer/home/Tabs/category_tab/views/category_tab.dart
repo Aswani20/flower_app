@@ -11,6 +11,7 @@ import '../widgets/category_body_builder.dart';
 import '../widgets/custtom_search.dart';
 import '../widgets/filter_bottom.dart';
 
+// ignore: camel_case_types
 class categoryTab extends StatelessWidget {
   const categoryTab({super.key});
 

@@ -16,7 +16,7 @@ class AddressSelector extends StatelessWidget {
       spacing: 8.w,
       children: [
         SvgPicture.asset(Assets.svg.location),
-        Text(address, style: TextStyle(color: AppColors.black[500]!)),
+        Expanded(child: Text(address, style: TextStyle(color: AppColors.black[500]!))),
         InkWell(
           onTap: onTap,
           child: SvgPicture.asset(Assets.svg.arrowDown),

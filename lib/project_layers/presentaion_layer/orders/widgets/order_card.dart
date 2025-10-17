@@ -90,11 +90,11 @@ class OrderCard extends StatelessWidget {
                           color: Colors.grey.shade600,
                         ),
                   ),
-                  SizedBox(height: 10.h),
+                  Spacer(),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.symmetric(
-                        vertical: 1.h,
+                        vertical: 0.5.h,
                       ),
                       shape: RoundedRectangleBorder(
                         borderRadius:
