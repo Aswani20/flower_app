@@ -6,9 +6,8 @@ import 'package:flutter/material.dart';
 import '../cubit/cart_view_model.dart';
 
 class CardHeader extends StatefulWidget {
-  int itemNumbers;
-
-  CardHeader({super.key, required this.itemNumbers});
+ final int itemNumbers;
+ const CardHeader({super.key, required this.itemNumbers});
 
   @override
   State<CardHeader> createState() => _CardHeaderState();

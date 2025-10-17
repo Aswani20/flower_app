@@ -1,6 +1,6 @@
+import 'package:flower_app/core/extensions/project_extensions.dart';
 import 'package:flower_app/project_layers/api_layer/models/response/order_response.dart';
 import 'package:flower_app/project_layers/domain_layer/use_cases/best_seller_use_case.dart';
-import 'package:flower_app/project_layers/presentaion_layer/best_seller/widgets/app_bar_best_seller.dart';
 import 'package:flower_app/project_layers/presentaion_layer/best_seller/widgets/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,7 +14,9 @@ class BestSellerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarBestSeller(),
+      appBar: AppBar(
+        title: Text(context.l10n.best_seller),
+      ),
       body: BlocProvider(
         create: (_) => BestSellerViewModel(
           getIt<BestSellerUseCase>(),
@@ -123,7 +125,7 @@ class BestSellerScreen extends StatelessWidget {
                     cubit.refreshData();
                   },
                   child: GridView.builder(
-                    padding: const EdgeInsets.all(16),
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0, ),
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,

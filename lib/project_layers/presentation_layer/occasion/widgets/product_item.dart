@@ -46,21 +46,24 @@ class ProductItem extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 6.0),
-              child: Row(
-                children: [
-                  Text(
-                    'EGP ${product.priceAfterDiscount?.toStringAsFixed(0) ?? '0.00'}',
-                    style: AppStyles.font14BlackW500,
-                  ),
-                  Text(
-                    ' ${product.price?.toStringAsFixed(0) ?? '0.00'}',
-                    style: AppStyles.font12grayW500LineThrough,
-                  ),
-                  Text(
-                    ' ${product.sold?.toStringAsFixed(0) ?? '0'}%',
-                    style: AppStyles.font12greenW500,
-                  ),
-                ],
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Row(
+                  children: [
+                    Text(
+                      'EGP ${product.priceAfterDiscount?.toStringAsFixed(0) ?? '0.00'}',
+                      style: AppStyles.font14BlackW500,
+                    ),
+                    Text(
+                      ' ${product.price?.toStringAsFixed(0) ?? '0.00'}',
+                      style: AppStyles.font12grayW500LineThrough,
+                    ),
+                    Text(
+                      ' ${product.sold?.toStringAsFixed(0) ?? '0'}%',
+                      style: AppStyles.font12greenW500,
+                    ),
+                  ],
+                ),
               ),
             ),
             SizedBox(height: 5),
