@@ -1,6 +1,10 @@
+import 'package:flower_app/core/extensions/project_extensions.dart';
+import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/cart_tab/cubit/cart_states.dart';
+import 'package:flower_app/project_layers/presentaion_layer/home/Tabs/cart_tab/cubit/cart_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:fluttertoast/fluttertoast.dart';
 import '../../../../core/l10n/app_localizations.dart';
 import '../../../../core/route/app_routes.dart';
 import '../../../../core/theme/app_colors.dart';
@@ -104,17 +108,27 @@ class OrderCard extends StatelessWidget {
                     onPressed: () {
                       if (orderItem.state !=
                           "completed") {
-                        print("order id ${orderItem.id}");
                         // Navigate to map view with order ID
                         Navigator.pushNamed(
                           context,
                           AppRoutes.successView,
                           arguments: orderItem.id,
                         );
+                      } else {
+                        CartViewModel.get(
+                          context,
+                        ).addToCart(
+                          orderItem
+                              .orderItems![0]
+                              .productEntity!
+                              .id!,
+                        );
                       }
                     },
                     child: Text(
-                      "Track order",
+                      orderItem.state != "completed"
+                          ? "Track order"
+                          : "Reorder",
                       style: TextStyle(
                         color: Colors.white,
                       ),

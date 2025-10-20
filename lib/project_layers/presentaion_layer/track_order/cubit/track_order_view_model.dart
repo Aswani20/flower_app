@@ -55,7 +55,6 @@ class TrackOrderViewModel
 
   void _handleOrderUpdate(OrdersDto order) {
     try {
-      print('Order data updated: ${order.state}');
       // Convert order state string to enum
       OrderState currentOrderState = _parseOrderState(
         order.state ?? '',
