@@ -32,10 +32,21 @@ The base URL for all requests is: https://flower.elevateegy.com/api/v1
 Here are some screenshots of the app in action:
 
 <p align="center">
-  <img src="assets/screenshots/login.png" alt="Login Screen" width="20%" />
-  <img src="assets/screenshots/register.png" alt="Register Screen" width="20%" />
-  <img src="assets/screenshots/home_screen.png" alt="Home screen" width="20%" />
-  <img src="assets/screenshots/setting_screen.png" alt="Setting Screen" width="20%" />
+  <img src="assets/screenshots/login_screen.png" alt="Login Screen" width="20%" />
+  <img src="assets/screenshots/register_screen.png" alt="Register Screen" width="20%" />
+  <img src="assets/screenshots/forget_password.png" alt="Forget Screen" width="20%" />
+  <img src="assets/screenshots/OTP_screen.png" alt="otp Screen" width="20%" />
+  <img src="assets/screenshots/home_tab.png" alt="Home screen" width="20%" />
+  <img src="assets/screenshots/search_screen.png" alt="Search screen" width="20%" />
+  <img src="assets/screenshots/bestseller_screen.png" alt="BestSeller screen" width="20%" />
+  <img src="assets/screenshots/category_tab.png" alt="Category screen" width="20%" />
+  <img src="assets/screenshots/cart_tab.png" alt="Cart screen" width="20%" />
+  <img src="assets/screenshots/filter.png" alt="Filter screen" width="20%" />
+  <img src="assets/screenshots/profile_tab.png" alt="Profile screen" width="20%" />
+  <img src="assets/screenshots/about_us.png" alt="About Us screen" width="20%" />
+  <img src="assets/screenshots/profile_tab.png" alt="Profile screen" width="20%" />
+  <img src="assets/screenshots/terms&conditions.png" alt="Terms Condition screen" width="20%" />
+  <img src="assets/screenshots/logout.png" alt="Logout Screen" width="20%" />
 </p>
 
 
