@@ -44,8 +44,8 @@ Here are some screenshots of the app in action:
   <img src="assets/screenshots/filter.png" alt="Filter screen" width="20%" />
   <img src="assets/screenshots/profile_tab.png" alt="Profile screen" width="20%" />
   <img src="assets/screenshots/about_us.png" alt="About Us screen" width="20%" />
-  <img src="assets/screenshots/profile_tab.png" alt="Profile screen" width="20%" />
   <img src="assets/screenshots/terms&conditions.png" alt="Terms Condition screen" width="20%" />
+  <img src="assets/screenshots/edit_profile.png" alt="Edit Profile screen" width="20%" />
   <img src="assets/screenshots/logout.png" alt="Logout Screen" width="20%" />
 </p>
 
